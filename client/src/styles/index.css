@@ -128,7 +128,8 @@ section.hero {
   font-size: 20px;
   border: 2px solid #fff;
   border-radius: 0px;
-  background-color: transparent;
+  background: rgba(255, 255, 255, 0); /* browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4cffffff', endColorstr='#4cffffff'); /* IE */
   color: #fff;
 }
 
