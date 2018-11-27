@@ -129,7 +129,7 @@ const Contact = props => {
                 <Form.Control className="has-icons-left">
                   <Form.Input required onChange={this.onChange} name="name" id="form-name" type="text" placeholder="Your name (required)" value={name}/>
                   <span className="icon is-small is-left">
-                    <i className="fa fa-home"></i>
+                    <i className="fa fa-user"></i>
                   </span>
                 </Form.Control>
               </Form.Field>
