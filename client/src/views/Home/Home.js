@@ -28,13 +28,19 @@ const Home = props => {
                     </Heading>
                     Python, C++, Java, Clojure.
                     <Heading className="has-text-centered" subtitle size={6}>
-                      Development tools
+                      Development tools + machine learning libraries used
                     </Heading>
                     <ul className="is-unstyled">
                       <li>Github</li>
                       <li>Atom</li>
                       <li>IntellIJ</li>
                       <li>Android Studio</li>
+                      <li>Pytorch</li>
+                      <li>Scikit-learn</li>
+                      <li>Tensorflow (Keras)</li>
+                      <li>Skorch</li>
+                      <li>LIME</li>
+                      <li>H2O</li>
                     </ul>
                   </Content>
                 </Card.Content>
