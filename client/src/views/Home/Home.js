@@ -50,7 +50,7 @@ const Home = props => {
               <Card className="is-shady card-equal-height">
                 <Card.Header className="card-header">
                     <span className="icon big-icon">
-                      <i className="fa fa-apple"></i>
+                      <i className="fa fa-cogs"></i>
                     </span>
                 </Card.Header>
                 <Card.Content>
