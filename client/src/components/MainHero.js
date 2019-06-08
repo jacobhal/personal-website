@@ -12,10 +12,10 @@ class MainHero extends React.Component {
           </Hero.Head>
           <Hero.Body>
             <Container className="has-text-centered">
-              <Heading className="has-text-centered" subtitle size={6} id="hero-subtitle">
+              <Heading className="has-text-centered outline" subtitle size={6} id="hero-subtitle">
                 {this.props.subtitle}
               </Heading>
-              <Heading className="has-text-centered" id="hero-title">{this.props.title}</Heading>
+              <Heading className="has-text-centered outline" id="hero-title">{this.props.title}</Heading>
               {this.props.button}
             </Container>
           </Hero.Body>

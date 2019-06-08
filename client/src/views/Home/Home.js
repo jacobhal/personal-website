@@ -85,9 +85,10 @@ const Home = props => {
                 <Card.Content>
                   <Content className="has-text-centered">
                     <Heading className="has-text-centered" subtitle size={3}>
-                      Front-end Developer
+                      Full-stack Developer
                     </Heading>
-                    During my education I have been interested in back-end as well as front-end programming.
+                    During my education I have been interested in back-end as well as front-end programming. Below
+                    is a list of programming languages and tools of a more web-related nature that I have used.
                     <Heading className="has-text-centered" subtitle size={6}>
                       Web languages
                     </Heading>

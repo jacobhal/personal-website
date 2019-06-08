@@ -122,6 +122,16 @@ section.hero {
   font-size: 23px;
 }
 
+.outline
+{
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000 !important;
+}
+
 #btn-resume, #btn-linkedin, #btn-github, #btn-resume-mobile {
   width: 300px;
   height: 60px;
