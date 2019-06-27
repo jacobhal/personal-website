@@ -79,7 +79,7 @@ section.hero {
 
 /* Mobile only */
 @media only screen and (max-width: 350px) {
-  #btn-github, #btn-resume-mobile, #btn-linkedin {
+  #btn-github, #btn-resume-mobile, #btn-resume-mobile-english, #btn-linkedin {
     width: 220px !important;
   }
 
@@ -132,7 +132,7 @@ section.hero {
     1px 1px 0 #000 !important;
 }
 
-#btn-resume, #btn-linkedin, #btn-github, #btn-resume-mobile {
+#btn-resume, #btn-linkedin, #btn-github, #btn-resume-mobile, #btn-resume-english, #btn-resume-mobile-english {
   width: 300px;
   height: 60px;
   font-size: 20px;
@@ -143,11 +143,20 @@ section.hero {
   color: #fff;
 }
 
-#btn-resume {
+#btn-resume, #btn-resume-english {
   width: 320px;
 }
 
-#btn-resume:hover, #btn-linkedin:hover, #btn-github:hover {
+#btn-resume {
+  margin-bottom: 20px;
+}
+
+#btn-resume-mobile {
+  margin-bottom: 10px;
+}
+
+#btn-resume:hover, #btn-resume-english:hover, #btn-linkedin:hover, #btn-github:hover, #btn-resume-mobile:hover,
+#btn-resume-mobile-english:hover {
   background-color: #fff;
   color: #000;
 }
