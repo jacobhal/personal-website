@@ -132,6 +132,16 @@ section.hero {
     1px 1px 0 #000 !important;
 }
 
+#wrapper-btn-github {
+  padding: 0 !important;
+  margin: 0 0 10px 0 !important;
+}
+
+#wrapper-btn-linkedin {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 #btn-resume, #btn-linkedin, #btn-github, #btn-resume-mobile, #btn-resume-english, #btn-resume-mobile-english {
   width: 300px;
   height: 60px;

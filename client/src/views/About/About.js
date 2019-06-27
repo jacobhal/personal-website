@@ -11,10 +11,10 @@ const About = props => {
         background="has-bg-img-ocean"
         button={
           <Columns>
-            <Columns.Column>
+            <Columns.Column id='wrapper-btn-github' className='wrapper-btn-github'>
               <a href="https://github.com/jacobhal" target="_blank" rel="noopener noreferrer"><Button id="btn-github">GITHUB</Button></a>
             </Columns.Column>
-            <Columns.Column>
+            <Columns.Column id='wrapper-btn-linkedin' className='wrapper-btn-linkedin'>
               <a href="https://www.linkedin.com/in/jacob-hallman-603829164/" target="_blank" rel="noopener noreferrer">
               <Button id="btn-linkedin">LINKEDIN</Button></a>
             </Columns.Column>
