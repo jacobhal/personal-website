@@ -39,6 +39,11 @@ code {
   background-size: cover;
 }
 
+.has-bg-img-bulb {
+  background: url('../assets/images/bulb2.jpg')center center;
+  background-size: cover;
+}
+
 .pdf-page {
   width: 1200px !important;
 }
@@ -79,7 +84,7 @@ section.hero {
 
 /* Mobile only */
 @media only screen and (max-width: 350px) {
-  #btn-github, #btn-resume-mobile, #btn-resume-mobile-english, #btn-linkedin {
+  #btn-github, #btn-resume-mobile, #btn-resume-mobile-english, #btn-linkedin, #btn-thesis {
     width: 220px !important;
   }
 
@@ -142,7 +147,7 @@ section.hero {
   margin: 0 !important;
 }
 
-#btn-resume, #btn-linkedin, #btn-github, #btn-resume-mobile, #btn-resume-english, #btn-resume-mobile-english {
+#btn-resume, #btn-linkedin, #btn-github, #btn-resume-mobile, #btn-resume-english, #btn-resume-mobile-english, #btn-thesis {
   width: 300px;
   height: 60px;
   font-size: 20px;
@@ -166,7 +171,7 @@ section.hero {
 }
 
 #btn-resume:hover, #btn-resume-english:hover, #btn-linkedin:hover, #btn-github:hover, #btn-resume-mobile:hover,
-#btn-resume-mobile-english:hover {
+#btn-resume-mobile-english:hover, #btn-thesis:hover {
   background-color: #fff;
   color: #000;
 }

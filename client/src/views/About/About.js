@@ -18,6 +18,13 @@ const About = props => {
               <a href="https://www.linkedin.com/in/jacob-hallman-603829164/" target="_blank" rel="noopener noreferrer">
               <Button id="btn-linkedin">LINKEDIN</Button></a>
             </Columns.Column>
+            <Columns.Column id='wrapper-btn-thesis' className='wrapper-btn-thesis'>
+              <a href="http://kth.diva-portal.org/smash/record.jsf?dswid=-8603&pid=diva2%3A1383464&c=1&searchType=SIMPLE&language=sv&query=jacob+hallman&af=%5B%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=false&sf=all" 
+              target="_blank" rel="noopener noreferrer">
+                <Button id="btn-thesis" className="is-hidden-tablet">THESIS</Button>
+                <Button id="btn-thesis" className="is-hidden-mobile">MASTER THESIS</Button>
+              </a>
+            </Columns.Column>
           </Columns>
         }
         fullheight="is-fullheight"/>

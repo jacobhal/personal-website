@@ -26,12 +26,11 @@ const Home = props => {
                     <Heading className="has-text-centered" subtitle size={6}>
                       Programming languages
                     </Heading>
-                    Python, C++, Java, Clojure.
+                    Python, C++, Java, C#, Clojure.
                     <Heading className="has-text-centered" subtitle size={6}>
-                      Development tools + machine learning libraries used
+                      IDEs + machine learning libraries I have used
                     </Heading>
                     <ul className="is-unstyled">
-                      <li>Github</li>
                       <li>Atom</li>
                       <li>IntellIJ</li>
                       <li>Android Studio</li>
@@ -61,15 +60,18 @@ const Home = props => {
                     I like to dive into new challenges and problems and can't get them out of my head until they are solved.
                     Since a few years back I have also been an avid user of Mac OSX.
                     <Heading className="has-text-centered" subtitle size={6}>
-                      Knowledge
+                      Operating Systems
                     </Heading>
-                    Command line.
+                    Windows, Ubuntu, Mac OSX.
                     <Heading className="has-text-centered" subtitle size={6}>
-                      Additional Operating Systems that I have experience with
+                      Useful development tools that I have experience with
                     </Heading>
                     <ul className="is-unstyled">
-                      <li>Windows</li>
-                      <li>Ubuntu</li>
+                      <li>Git + Github</li>
+                      <li>TFS</li>
+                      <li>Azure DevOps</li>
+                      <li>Octopus Deploy</li>
+                      <li>SQL Server</li>
                     </ul>
                   </Content>
                 </Card.Content>
@@ -103,7 +105,7 @@ const Home = props => {
                       <li>Bootstrap</li>
                       <li>Bulma</li>
                       <li>Materialize</li>
-                      <li>MySQL</li>
+                      <li>Typescript</li>
                     </ul>
                   </Content>
                 </Card.Content>

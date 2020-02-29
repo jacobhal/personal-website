@@ -59,6 +59,9 @@ const NavBar = () => {
         <Navbar.Container position="end">
           <Navbar.Item className="has-text-centered" href="/contact">Contact</Navbar.Item>
         </Navbar.Container>
+        <Navbar.Container position="end">
+          <Navbar.Item className="has-text-centered" href="/projects">Projects</Navbar.Item>
+        </Navbar.Container>
       </div>
     </Navbar.Menu>
   </Navbar>);
