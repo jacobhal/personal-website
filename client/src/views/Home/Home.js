@@ -68,8 +68,7 @@ const Home = props => {
                     </Heading>
                     <ul className="is-unstyled">
                       <li>Git + Github</li>
-                      <li>TFS</li>
-                      <li>Azure DevOps</li>
+                      <li>TFS/Azure DevOps</li>
                       <li>Octopus Deploy</li>
                       <li>SQL Server</li>
                     </ul>

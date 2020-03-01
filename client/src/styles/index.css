@@ -116,6 +116,10 @@ section.hero {
   opacity: 1.0;
 }
 
+.navbar-projects {
+  height: 90px !important;
+}
+
 #hero-title {
   font-weight: bolder;
   font-size: 62px;
