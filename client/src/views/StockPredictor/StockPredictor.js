@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useAPI } from './api-hook';
 
 import { NavBar } from '../../components/NavBar';
+import StockForm from './../../components/StockForm';
 import { Hero, Section, Container, Loader, Heading, } from 'react-bulma-components/full';
 import API from '../../services/API';
 import APIServiceUser from './APIServiceUser';
@@ -36,7 +37,7 @@ const StockPredictor = ()  => {
 
     useEffect(() => {
         setIsLoading(false);
-      }, [searchResult, companyInfo]); // Disable loading icon when searchResult or companyInfo is updated
+    }, [searchResult, companyInfo]); // Disable loading icon when searchResult or companyInfo is updated
     
     return (
         <div>
@@ -78,25 +79,14 @@ const StockPredictor = ()  => {
 
                     {dataFetchOption === 'Search' &&
                         <div>
-                            <form id="searchform" onSubmit={handleSubmit}>
-                                <div className="field">
-                                    <div className="control">
-                                        <input
-                                            className="input"
-                                            type="text"
-                                            id="searchbar"
-                                            placeholder="Enter a search string..."
-                                            onChange={e => setSearchTerm(e.target.value)}
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="field">
-                                    <div className="control">
-                                        <button className="button" type="submit">Search</button>
-                                    </div>
-                                </div>
-                            </form>
+                            <StockForm 
+                                formId="searchForm" 
+                                inputId="searchbar"
+                                placeholder="Enter a search string..."
+                                buttonValue="Search"
+                                onChangeFunc={e => setSearchTerm(e.target.value)}
+                                handleSubmitFunc={handleSubmit}
+                            />
                             <ul>
                             { isLoading ?
                                 <div>
@@ -121,25 +111,14 @@ const StockPredictor = ()  => {
 
                     {dataFetchOption === 'Equity' &&
                         <div>
-                            <form id="fetch-information-form" onSubmit={handleSubmit}>
-                                <div className="field">
-                                    <div className="control">
-                                        <input
-                                            className="input"
-                                            type="text"
-                                            id="fetch-information-input"
-                                            placeholder="Enter an equity string..."
-                                            onChange={e => setEquity(e.target.value)}
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="field">
-                                    <div className="control">
-                                        <button className="button" type="submit">Fetch information</button>
-                                    </div>
-                                </div>
-                            </form>
+                            <StockForm 
+                                formId="fetch-information-form" 
+                                inputId="fetch-information-input"
+                                placeholder="Enter an equity..."
+                                buttonValue="Fetch information"
+                                onChangeFunc={e => setEquity(e.target.value)}
+                                handleSubmitFunc={handleSubmit}
+                            />
                             <ul>
                                 { isLoading ?
                                 <div>
