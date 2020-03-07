@@ -259,3 +259,15 @@ footer li:before {
   margin-left: -1.5em;
   color: #147efb;
 }
+
+label.radio {
+  padding: 5px !important;
+}
+
+input.radio-value {
+  margin-right: 10px !important;
+}
+
+div.radio-form {
+  padding-bottom: 10px;
+}
