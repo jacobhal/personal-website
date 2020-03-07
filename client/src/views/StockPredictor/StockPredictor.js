@@ -8,13 +8,14 @@ import StockForm from './../../components/StockForm';
 import { Hero, Section, Container, Loader, Heading, } from 'react-bulma-components/full';
 import API from '../../services/API';
 import APIServiceUser from './APIServiceUser';
+import StockOverview from '../../components/StockOverview';
 
 const axios = require('axios');
 
 const StockPredictor = ()  => {
     // const { value, bind, reset } = useInput('');
     const [isLoading, setIsLoading] = useState(false);
-    const [dataFetchOption, setDataFetchOption] = useState('Search');
+    const [dataFetchOption, setDataFetchOption] = useState('Equity');
     const [searchTerm, setSearchTerm] = useState();
     const [equity, setEquity] = useState();
     const [searchResult, setSearchResult] = useState(); // Initial state value empty object
@@ -32,6 +33,7 @@ const StockPredictor = ()  => {
         else if (dataFetchOption === 'Equity') {       
             var res = await APIServiceUser.fetchCompanyInfo(equity);
             setCompanyInfo(res);
+            console.log(res['DATA']['INFO']);
         }
     }
 
@@ -57,24 +59,55 @@ const StockPredictor = ()  => {
                             <input 
                                 className="radio-value" 
                                 type="radio" 
-                                value="Search"
+                                value="Equity"
                                 name="datafetch" 
                                 defaultChecked
-                                onChange={() => setDataFetchOption('Search')}
+                                onChange={() => setDataFetchOption('Equity')}
                             />
-                            Search
+                            Equity
                         </label>
                         <label className="radio">
                             <input 
                                 className="radio-value" 
                                 type="radio" 
-                                value="Equity"
+                                value="Search"
                                 name="datafetch" 
-                                onChange={() => setDataFetchOption('Equity')}
+                                onChange={() => setDataFetchOption('Search')}
                             />
-                            Equity
+                            Search
                         </label>
                     </div>
+
+                    {dataFetchOption === 'Equity' &&
+                        <div>
+                            <StockForm 
+                                formId="fetch-information-form" 
+                                inputId="fetch-information-input"
+                                placeholder="Enter an equity..."
+                                buttonValue="Fetch information"
+                                onChangeFunc={e => setEquity(e.target.value)}
+                                handleSubmitFunc={handleSubmit}
+                            />
+                            <ul>
+                                { isLoading ?
+                                <div>
+                                    <Heading className="has-text-centered subtitle-style" subtitle>
+                                    Fetching results...
+                                    </Heading>
+                                    <Loader
+                                    className="loading-spinner"
+                                    style={{
+                                        width: 200,
+                                        height: 200,
+                                        border: '8px solid grey',
+                                        borderTopColor: 'transparent',
+                                        borderRightColor: 'transparent',
+                                    }} />
+                                </div> : 
+                                    companyInfo !== undefined ? <StockOverview data={companyInfo}/> : ''  }
+                            </ul>
+                        </div>
+                    }
 
 
                     {dataFetchOption === 'Search' &&
@@ -104,37 +137,6 @@ const StockPredictor = ()  => {
                                     }} />
                                 </div>
                                 : JSON.stringify(searchResult) }
-                            </ul>
-                        </div>
-                    }
-
-
-                    {dataFetchOption === 'Equity' &&
-                        <div>
-                            <StockForm 
-                                formId="fetch-information-form" 
-                                inputId="fetch-information-input"
-                                placeholder="Enter an equity..."
-                                buttonValue="Fetch information"
-                                onChangeFunc={e => setEquity(e.target.value)}
-                                handleSubmitFunc={handleSubmit}
-                            />
-                            <ul>
-                                { isLoading ?
-                                <div>
-                                    <Heading className="has-text-centered subtitle-style" subtitle>
-                                    Fetching results...
-                                    </Heading>
-                                    <Loader
-                                    className="loading-spinner"
-                                    style={{
-                                        width: 200,
-                                        height: 200,
-                                        border: '8px solid grey',
-                                        borderTopColor: 'transparent',
-                                        borderRightColor: 'transparent',
-                                    }} />
-                                </div> : JSON.stringify(companyInfo)  }
                             </ul>
                         </div>
                     }
