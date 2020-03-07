@@ -5,7 +5,8 @@ import { useAPI } from './api-hook';
 
 import { NavBar } from '../../components/NavBar';
 import { Hero, Section, Container, Loader, Heading, } from 'react-bulma-components/full';
-import API from '../../services/API';;
+import API from '../../services/API';
+import APIServiceUser from './APIServiceUser';
 
 const axios = require('axios');
 
@@ -19,51 +20,17 @@ const StockPredictor = ()  => {
     const [companyInfo, setCompanyInfo] = useState();
     const [companyHistory, setCompanyHistory] = useState();
     const [companyHistoryAlpha, setCompanyHistoryAlpha] = useState();
-    const myApi = new API({ url:'https://restful-stock-api.herokuapp.com' });
-
-    async function fetchSearch(keywords) {
-        myApi.createEntity({ name: 'search' });
-        myApi.endpoints.search.getAll({ params: {keywords: keywords} })
-            .then(res => res.data)
-            .then(data => setSearchResult(data));
-    }
-
-    async function fetchCompanyInfo(equity) {
-        myApi.createEntity({ name: 'getinfo' });
-        myApi.endpoints.getinfo.getAll({ params: {equity: equity} })
-            .then(res => res.data)
-            .then(data => setCompanyInfo(data));
-    }
-
-    async function fetchCompanyHistory(equity, period) {
-        myApi.createEntity({ name: 'gethistory' });
-        myApi.endpoints.gethistory.getAll({ params: {equity: equity, period: period} })
-            .then(res => res.data)
-            .then(data => setCompanyHistory(data));
-    }
-
-    async function fetchCompanyHistoryAlpha(equity, func) {
-        myApi.createEntity({ name: 'gethistoryalpha' });
-        myApi.endpoints.gethistoryalpha.getAll({ params: {equity: equity, function: func} })
-            .then(res => res.data)
-            .then(data => setCompanyHistoryAlpha(data));
-    }
-
-    async function fetchTest(keywords) {
-        axios.get(myApi.url)
-        .then(setTimeout(function (response) {
-            console.log(response);
-        }), 3000);
-    }
-
+    
     async function handleSubmit(e) {
         e.preventDefault();
         setIsLoading(true);
         if(dataFetchOption === 'Search') {
-            fetchSearch(searchTerm);
+            var res = await APIServiceUser.fetchSearch(searchTerm);
+            setSearchResult(res);
         }
         else if (dataFetchOption === 'Equity') {       
-            fetchCompanyInfo(equity);
+            var res = await APIServiceUser.fetchCompanyInfo(equity);
+            setCompanyInfo(res);
         }
     }
 
