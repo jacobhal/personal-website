@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TableItem = props => {
+const ProjectTableItem = props => {
     return (
             <tr>
                 <td><a className="projects-table-title" href={props.route}>{props.title}</a></td>
@@ -10,4 +10,4 @@ const TableItem = props => {
     );
 }
 
-export default TableItem;
+export default ProjectTableItem;

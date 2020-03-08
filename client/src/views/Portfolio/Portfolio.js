@@ -1,12 +1,12 @@
 import React from 'react';
 
-import MainHero from '../.././components/MainHero';
-import Table from '../.././components/Table';
+import MainHero from '../../components/MainHero';
+import Table from './components/ProjectTable';
 
 import { Section, Container } from 'react-bulma-components/full';
 
 
-export default function Projects() {
+export default function Portfolio() {
     const projectStatus = {
         TODO:   "In development",
         FINISHED:  "Complete",
@@ -23,7 +23,7 @@ export default function Projects() {
     ]
     return (
         <div>
-            <MainHero title="PERSONAL PROJECTS" subtitle="Check out some projects of mine" background="has-bg-img-bulb" />
+            <MainHero title="PERSONAL PROJECTS" subtitle="Check out some passion projects of mine" background="has-bg-img-bulb" />
             <Section>
                 <Container>
                 <h1 className="title">List of my projects</h1>

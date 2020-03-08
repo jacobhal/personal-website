@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 // import { useInput } from './../../hooks/input-hook';
 import { useAPI } from './api-hook';
 
 import { NavBar } from '../../components/NavBar';
-import StockForm from './../../components/StockForm';
+import StockForm from './components/StockForm';
+import StockOverview from './components/StockOverview';
+import StockTable from './components/StockTable';
 import { Hero, Section, Container, Loader, Heading, } from 'react-bulma-components/full';
 import API from '../../services/API';
 import APIServiceUser from './APIServiceUser';
-import StockOverview from '../../components/StockOverview';
 
 const axios = require('axios');
 
@@ -22,6 +23,10 @@ const StockPredictor = ()  => {
     const [companyInfo, setCompanyInfo] = useState();
     const [companyHistory, setCompanyHistory] = useState();
     const [companyHistoryAlpha, setCompanyHistoryAlpha] = useState();
+
+    // refs
+    // const searchRef = useRef(null);
+    // const equityRef = useRef(null);
     
     async function handleSubmit(e) {
         e.preventDefault();
@@ -29,6 +34,7 @@ const StockPredictor = ()  => {
         if(dataFetchOption === 'Search') {
             var res = await APIServiceUser.fetchSearch(searchTerm);
             setSearchResult(res);
+            console.log(res['DATA']['bestMatches']);
         }
         else if (dataFetchOption === 'Equity') {       
             var res = await APIServiceUser.fetchCompanyInfo(equity);
@@ -51,8 +57,8 @@ const StockPredictor = ()  => {
             <Section>
                 <Container>
                     <h1 className="title">Fetch stock data</h1>  
-                    <p>Search either by keywords to get a list of equities or specify an equity directly to get information about
-                        the organization.</p>    
+                    <p>Search either by keywords to get a list of companies or specify a stock symbol directly to get information about
+                        the company.</p>    
     
                     <div className="control radio-form">
                         <label className="radio">
@@ -62,6 +68,7 @@ const StockPredictor = ()  => {
                                 value="Equity"
                                 name="datafetch" 
                                 defaultChecked
+                                // onClick={() => equityRef.current.focus()}
                                 onChange={() => setDataFetchOption('Equity')}
                             />
                             Equity
@@ -72,6 +79,7 @@ const StockPredictor = ()  => {
                                 type="radio" 
                                 value="Search"
                                 name="datafetch" 
+                                // onClick={() => searchRef.current.focus()}
                                 onChange={() => setDataFetchOption('Search')}
                             />
                             Search
@@ -83,9 +91,10 @@ const StockPredictor = ()  => {
                             <StockForm 
                                 formId="fetch-information-form" 
                                 inputId="fetch-information-input"
-                                placeholder="Enter an equity..."
+                                placeholder="Enter a stock symbol..."
                                 buttonValue="Fetch information"
                                 onChangeFunc={e => setEquity(e.target.value)}
+                                // ref={equityRef}
                                 handleSubmitFunc={handleSubmit}
                             />
                             <ul>
@@ -118,6 +127,7 @@ const StockPredictor = ()  => {
                                 placeholder="Enter a search string..."
                                 buttonValue="Search"
                                 onChangeFunc={e => setSearchTerm(e.target.value)}
+                                // ref={searchRef}
                                 handleSubmitFunc={handleSubmit}
                             />
                             <ul>
@@ -136,7 +146,8 @@ const StockPredictor = ()  => {
                                         borderRightColor: 'transparent',
                                     }} />
                                 </div>
-                                : JSON.stringify(searchResult) }
+                                : 
+                                searchResult !== undefined ? <StockTable data={searchResult}/> : '' }
                             </ul>
                         </div>
                     }

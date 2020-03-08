@@ -1,8 +1,8 @@
 import React from 'react';
 
-import TableItem from './TableItem';
+import TableItem from './ProjectTableItem';
 
-export default function Table(props) {
+export default function ProjectTable(props) {
     const tableItems = props.projects.map((project) => (
         <TableItem 
             key={project.id}
