@@ -57,10 +57,10 @@ const NavBar = () => {
           <Navbar.Item className="has-text-centered" href="/about">About</Navbar.Item>
         </Navbar.Container>
         <Navbar.Container position="end">
-          <Navbar.Item className="has-text-centered" href="/contact">Contact</Navbar.Item>
+          <Navbar.Item className="has-text-centered" href="/portfolio">Portfolio</Navbar.Item>
         </Navbar.Container>
         <Navbar.Container position="end">
-          <Navbar.Item className="has-text-centered" href="/portfolio">Portfolio</Navbar.Item>
+          <Navbar.Item className="has-text-centered" href="/contact">Contact</Navbar.Item>
         </Navbar.Container>
       </div>
     </Navbar.Menu>
