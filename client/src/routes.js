@@ -5,6 +5,7 @@ import { Resume } from './views/Resume';
 import { Contact } from './views/Contact';
 import { Portfolio } from './views/Portfolio';
 import { StockPredictor } from './views/StockPredictor';
+import { ReactPlayground } from './views/ReactPlayground';
 import { Route, Switch } from 'react-router-dom';
 
 
@@ -18,7 +19,10 @@ export const Routes = () => {
           <Route path={`${process.env.PUBLIC_URL}/contact`} exact component={Contact}/>
           <Route path={`${process.env.PUBLIC_URL}/about`} exact component={About}/>
           <Route path={`${process.env.PUBLIC_URL}/portfolio`} exact component={Portfolio}/>
-          <Route path={`${process.env.PUBLIC_URL}/stockPredictor`} exact component={StockPredictor}/>
+
+          {/* Portfolio routes */}
+          <Route path={`${process.env.PUBLIC_URL}/stockpredictor`} exact component={StockPredictor}/>
+          <Route path={`${process.env.PUBLIC_URL}/react-playground`} exact component={ReactPlayground}/>
         </Switch>
       </div>
   );
