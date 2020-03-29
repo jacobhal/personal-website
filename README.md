@@ -17,3 +17,19 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
+
+## Deploying with git-ftp
+
+Run npm run build in the client/build directory as usual.
+Then setup git-ftp variables for username, password, url, syncroot, and remote-root.
+You can create different scopes. For example, I have a testing scope to test that everything works and a production scope
+that I use when everything is setup correctly.
+
+List config variables with: `git config --local -l`
+
+Initialise git-ftp with: `git ftp init -s production`
+
+Push to deployment server with: `git ftp push -s production --all`
+
+
+
