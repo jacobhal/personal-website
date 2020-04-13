@@ -16,6 +16,11 @@
     "nodemailer": "^4.7.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-simple-maps": "^2.0.0",
+    "react-tooltip": "^4.2.3",
     "recharts": "^2.0.0-beta.1"
+  },
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^3.0.0"
   }
 }
