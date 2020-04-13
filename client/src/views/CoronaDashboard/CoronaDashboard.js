@@ -35,7 +35,7 @@ const CoronaDashboard = () => {
                 //data["Sweden"][10]['confirmed'] 
                 <div>
                     <MapChart setTooltipContent={setMapContent} />
-                   {/* <ReactTooltip>{mapContent}</ReactTooltip> */}
+                    <ReactTooltip>{mapContent}</ReactTooltip>
                 </div>
                 : 
                     <div>
