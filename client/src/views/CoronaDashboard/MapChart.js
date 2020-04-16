@@ -5,6 +5,9 @@ import {
   Geographies,
   Geography
 } from "react-simple-maps";
+import moment from 'moment';
+import { getDayStatus, getFirstDayStatus } from './coronaParser';
+import { CountryMapper } from './countryMapper';
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
@@ -19,7 +22,7 @@ const rounded = num => {
   }
 };
 
-const MapChart = ({ setTooltipContent }) => {
+const MapChart = ({ setTooltipContent, coronaData }) => {
   return (
     <>
       <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
@@ -32,7 +35,36 @@ const MapChart = ({ setTooltipContent }) => {
                   geography={geo}
                   onMouseEnter={() => {
                     const { NAME, POP_EST } = geo.properties;
-                    setTooltipContent(`${NAME} — ${rounded(POP_EST)}`);
+                    let currentCountry = coronaData[NAME];
+                    console.log(coronaData);
+                    if (currentCountry === undefined) {
+                        currentCountry = coronaData[CountryMapper[NAME]];
+                    }
+                    if (currentCountry !== undefined) {
+                        let currentDate = moment().format("YYYY-MM-DD");  
+                         
+                        let firstReport = getFirstDayStatus(currentCountry);
+                        let lastReport = getDayStatus(currentCountry, currentDate);
+                        if (lastReport === null) {
+                            let previousDate = moment().subtract(1, 'days').format("YYYY-M-DD"); 
+                            lastReport = getDayStatus(currentCountry, previousDate);
+                        }
+                        let coronaCasesPer1000000population = (lastReport['confirmed']/POP_EST) * 1000000;
+                        let coronaDeathsPer1000000population = (lastReport['deaths']/POP_EST) * 1000000;
+                        setTooltipContent(`${NAME} <br />
+                                            Population: ${rounded(POP_EST)} <br />
+                                            Confirmed cases: ${lastReport['confirmed']} <br />
+                                            Confirmed cases per 1 million inhabitants: ${Math.round(coronaCasesPer1000000population)} <br />
+                                            Confirmed deaths: ${lastReport['deaths']} <br />
+                                            Confirmed deaths per 1 million inhabitants: ${Math.round(coronaDeathsPer1000000population)} <br />
+                                            Recovered: ${lastReport['recovered']}
+
+                                            `);
+                    } else {
+                        setTooltipContent(`${NAME} <br />
+                                           Population: ${rounded(POP_EST)} <br />
+                                           No Corona data available`);
+                    }
                   }}
                   onMouseLeave={() => {
                     setTooltipContent("");

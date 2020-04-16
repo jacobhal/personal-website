@@ -31,11 +31,12 @@ const CoronaDashboard = () => {
             </Hero>
             <Section>
                 <Container>
+                <h1 className="title">Corona dashboard</h1>  
                 { !isLoading ? 
                 //data["Sweden"][10]['confirmed'] 
-                <div>
-                    <MapChart setTooltipContent={setMapContent} />
-                    <ReactTooltip>{mapContent}</ReactTooltip>
+                <div style={{border: '2px solid #000' }}>
+                    <MapChart setTooltipContent={setMapContent}  coronaData={data}/>
+                    <ReactTooltip multiline={true} html={true}>{mapContent}</ReactTooltip>
                 </div>
                 : 
                     <div>
