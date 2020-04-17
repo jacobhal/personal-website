@@ -6,21 +6,11 @@ import {
   Geography
 } from "react-simple-maps";
 import moment from 'moment';
-import { getDayStatus, getFirstDayStatus } from './coronaParser';
+import { getDayStatus, getFirstDayStatus, rounded } from './coronaParser';
 import { CountryMapper } from './countryMapper';
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
-
-const rounded = num => {
-  if (num > 1000000000) {
-    return Math.round(num / 100000000) / 10 + "Bn";
-  } else if (num > 1000000) {
-    return Math.round(num / 100000) / 10 + "M";
-  } else {
-    return Math.round(num / 100) / 10 + "K";
-  }
-};
 
 const MapChart = ({ setTooltipContent, coronaData }) => {
   return (
@@ -36,7 +26,6 @@ const MapChart = ({ setTooltipContent, coronaData }) => {
                   onMouseEnter={() => {
                     const { NAME, POP_EST } = geo.properties;
                     let currentCountry = coronaData[NAME];
-                    console.log(coronaData);
                     if (currentCountry === undefined) {
                         currentCountry = coronaData[CountryMapper[NAME]];
                     }

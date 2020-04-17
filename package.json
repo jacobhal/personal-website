@@ -12,10 +12,13 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "bootstrap": "^4.4.1",
     "express": "^4.16.4",
     "moment": "^2.24.0",
     "nodemailer": "^4.7.0",
     "react": "^16.13.0",
+    "react-bootstrap": "^1.0.0",
+    "react-bootstrap-table-next": "^4.0.0",
     "react-dom": "^16.13.0",
     "react-moment": "^0.9.7",
     "react-simple-maps": "^2.0.0",

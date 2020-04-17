@@ -5,22 +5,117 @@ import axios from 'axios';
 import { NavBar } from '../../components/NavBar';
 import MapChart from "./MapChart";
 import { Hero, Section, Container, Loader, Heading, } from 'react-bulma-components/full';
+import Tabs from 'react-bootstrap/Tabs';
+import Tab from 'react-bootstrap/Tab';
+import BootstrapTable from 'react-bootstrap-table-next';
+import moment from 'moment';
+import { getDayStatus, getFirstDayStatus, getPercent, getCoronaCasesPer1MPopulation, rounded } from './coronaParser';
+import { CountryMapper } from './countryMapper';
 
 const CoronaDashboard = () => {
     const [data, setData] = useState(null);
+    const [geoData, setGeoData] = useState(null);
+    const [fullData, setFullData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [mapContent, setMapContent] = useState("");
     const apiURL = "https://pomber.github.io/covid19/timeseries.json";
+    const geoURL = "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
     useEffect(() => {
         const fetchData = async () => {
             setIsLoading(true);
             const result = await axios(apiURL);
+            const geoResult = await axios(geoURL);
+            let gD = geoResult.data.objects.ne_110m_admin_0_countries.geometries;
             setData(result.data);
+            setGeoData(gD);
+            // Construct the full dataset
+            let finalDataSet = [];
+
+            gD.map(geo => {
+                let currentCountryObj = {};
+                // Load current country geodata and corona data
+                let currentCountryGeoData = geo.properties;
+                let currentCountryCoronaData = result.data[currentCountryGeoData.NAME];
+                if (currentCountryCoronaData === undefined) {
+                    currentCountryCoronaData = result.data[CountryMapper[currentCountryGeoData.NAME]];
+                }
+
+
+                if (currentCountryCoronaData !== undefined) {
+
+                    let currentDate = moment().format("YYYY-MM-DD");  
+
+                    // Fetch first and last corona day status
+                    let firstReport = getFirstDayStatus(currentCountryCoronaData);
+                    let lastReport = getDayStatus(currentCountryCoronaData, currentDate);
+                    if (lastReport === null) {
+                        let previousDate = moment().subtract(1, 'days').format("YYYY-M-DD"); 
+                        lastReport = getDayStatus(currentCountryCoronaData, previousDate);
+                    }
+                    
+                    let coronaCasesPer1000000population = getCoronaCasesPer1MPopulation(lastReport, currentCountryGeoData.POP_EST, 'confirmed');
+                    let coronaDeathsPer1000000population = getCoronaCasesPer1MPopulation(lastReport, currentCountryGeoData.POP_EST, 'deaths');
+                    let coronaRecoveredPercent = getPercent(lastReport['confirmed'], lastReport['recovered']);
+                    let coronaDeathsPercent = getPercent(lastReport['confirmed'], lastReport['deaths']);
+                    let coronaCasesPopulationPercent = getPercent(currentCountryGeoData.POP_EST, lastReport['confirmed']);
+                    let coronaDeathsPopulationPercent = getPercent(currentCountryGeoData.POP_EST, lastReport['deaths']);
+
+                    currentCountryObj = {
+                        name: currentCountryGeoData.NAME,
+                        confirmed: lastReport['confirmed'],
+                        population: rounded(currentCountryGeoData.POP_EST),
+                        coronaCasesPer1000000population: coronaCasesPer1000000population,
+                        coronaDeathsPer1000000population: coronaDeathsPer1000000population,
+                        coronaRecoveredPercent: coronaRecoveredPercent,
+                        coronaDeathsPercent: coronaDeathsPercent,
+                        coronaCasesPopulationPercent: coronaCasesPopulationPercent,
+                        coronaDeathsPopulationPercent: coronaDeathsPopulationPercent
+                    }
+                } else {
+                    currentCountryObj = {
+                        name: currentCountryGeoData.NAME,
+                        population: rounded(currentCountryGeoData.POP_EST)
+                    }
+                }
+                finalDataSet.push(currentCountryObj);
+            });
+            setFullData(finalDataSet);
             setIsLoading(false);
         };
         fetchData();
       }, []);
+
+      const columns = [{
+        dataField: 'name',
+        text: 'Country',
+        sort: true
+      },
+      {
+        dataField: 'confirmed',
+        text: 'Cases',
+        sort: true
+      }, {
+        dataField: 'population',
+        text: 'Population',
+        sort: true
+      }, {
+        dataField: 'coronaCasesPer1000000population',
+        text: 'Cases/1M pop',
+        sort: true
+      }, {
+        dataField: 'coronaDeathsPer1000000population',
+        text: 'Deaths/1M pop',
+        sort: true
+      }, {
+        dataField: 'coronaRecoveredPercent',
+        text: 'Recovered (%)',
+        sort: true
+      }, {
+        dataField: 'coronaDeathsPercent',
+        text: 'Deaths (%)',
+        sort: true
+      }];
 
     return (
         <div>
@@ -30,30 +125,54 @@ const CoronaDashboard = () => {
                 </Hero.Head>
             </Hero>
             <Section>
-                <Container>
-                <h1 className="title">Corona dashboard</h1>  
-                { !isLoading ? 
-                //data["Sweden"][10]['confirmed'] 
-                <div style={{border: '2px solid #000' }}>
-                    <MapChart setTooltipContent={setMapContent}  coronaData={data}/>
-                    <ReactTooltip multiline={true} html={true}>{mapContent}</ReactTooltip>
-                </div>
-                : 
-                    <div>
-                        <Heading className="has-text-centered subtitle-style" subtitle>
-                        Fetching data...
-                        </Heading>
-                        <Loader
-                        className="loading-spinner"
-                        style={{
-                            width: 200,
-                            height: 200,
-                            border: '8px solid grey',
-                            borderTopColor: 'transparent',
-                            borderRightColor: 'transparent',
-                        }} />
-                    </div> }
-                </Container>
+                <Tabs defaultActiveKey="table" className="corona-tab" variant="tabs">
+                    <Tab eventKey="dashboard" title="Dashboard">
+                    { !isLoading ? 
+                    //data["Sweden"][10]['confirmed'] 
+                    <div style={{border: '2px solid #000' }}>
+                        <MapChart setTooltipContent={setMapContent}  coronaData={data}/>
+                        <ReactTooltip multiline={true} html={true}>{mapContent}</ReactTooltip>
+                    </div>
+                    : 
+                        <div>
+                            <Heading className="has-text-centered subtitle-style" subtitle>
+                            Fetching data...
+                            </Heading>
+                            <Loader
+                            className="loading-spinner"
+                            style={{
+                                width: 200,
+                                height: 200,
+                                border: '8px solid grey',
+                                borderTopColor: 'transparent',
+                                borderRightColor: 'transparent',
+                            }} />
+                        </div> }
+                    </Tab>
+                    <Tab eventKey="table" title="Table">
+                        { !isLoading ? 
+                        <BootstrapTable keyField='name' data={ fullData } columns={ columns } />
+                        :
+                        <div>
+                            <Heading className="has-text-centered subtitle-style" subtitle>
+                            Fetching data...
+                            </Heading>
+                            <Loader
+                            className="loading-spinner"
+                            style={{
+                                width: 200,
+                                height: 200,
+                                border: '8px solid grey',
+                                borderTopColor: 'transparent',
+                                borderRightColor: 'transparent',
+                            }} />
+                        </div>
+                        }
+                    </Tab>
+                    <Tab eventKey="graphs" title="Graphs">
+                        Graphs
+                    </Tab>
+                </Tabs>
             </Section>
         </div>
     )
