@@ -126,7 +126,7 @@ const CoronaDashboard = () => {
             </Hero>
             <Section>
                 <Tabs defaultActiveKey="table" className="corona-tab" variant="tabs">
-                    <Tab eventKey="dashboard" title="Dashboard">
+                    <Tab eventKey="map" title="Map">
                     { !isLoading ? 
                     //data["Sweden"][10]['confirmed'] 
                     <div style={{border: '2px solid #000' }}>
