@@ -64,7 +64,7 @@ const CoronaDashboard = () => {
 
                     currentCountryObj = {
                         name: currentCountryGeoData.NAME,
-                        confirmed: lastReport['confirmed'] + ' (' + lastReport['deaths'] + ')',
+                        confirmed: lastReport['confirmed'] + ' cases & ' + lastReport['deaths'] + ' deaths',
                         population: rounded(currentCountryGeoData.POP_EST),
                         coronaCasesPer1000000population: coronaCasesPer1000000population,
                         coronaDeathsPer1000000population: coronaDeathsPer1000000population,
@@ -95,8 +95,7 @@ const CoronaDashboard = () => {
       },
       {
         dataField: 'confirmed',
-        text: 'Cases (deaths)',
-        sort: true
+        text: 'Cases & deaths'
       }, {
         dataField: 'population',
         text: 'Population'
