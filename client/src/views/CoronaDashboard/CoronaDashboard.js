@@ -48,12 +48,14 @@ const CoronaDashboard = () => {
                     let currentDate = moment().format("YYYY-MM-DD");  
 
                     // Fetch first and last corona day status
-                    let firstReport = getFirstDayStatus(currentCountryCoronaData);
-                    let lastReport = getDayStatus(currentCountryCoronaData, currentDate);
-                    if (lastReport === null) {
-                        let previousDate = moment().subtract(1, 'days').format("YYYY-M-DD"); 
-                        lastReport = getDayStatus(currentCountryCoronaData, previousDate);
-                    }
+                    // let firstReport = getFirstDayStatus(currentCountryCoronaData);
+                    // let lastReport = getDayStatus(currentCountryCoronaData, currentDate);
+                    let lastReport = currentCountryCoronaData[Object.keys(currentCountryCoronaData).length - 1];
+                    // if (lastReport === null) {
+                    //     let previousDate = moment().subtract(1, 'days').format("YYYY-M-DD"); 
+                    //     lastReport = getDayStatus(currentCountryCoronaData, previousDate);
+                    //     console.log(lastReport);
+                    // }
                     
                     let coronaCasesPer1000000population = getCoronaCasesPer1MPopulation(lastReport, currentCountryGeoData.POP_EST, 'confirmed');
                     let coronaDeathsPer1000000population = getCoronaCasesPer1MPopulation(lastReport, currentCountryGeoData.POP_EST, 'deaths');

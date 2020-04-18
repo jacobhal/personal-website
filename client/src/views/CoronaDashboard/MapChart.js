@@ -49,12 +49,13 @@ const MapChart = ({ setTooltipContent, coronaData }) => {
                 if (currentCountry !== undefined) {
                   let currentDate = moment().format("YYYY-MM-DD");  
                          
-                  var firstReport = getFirstDayStatus(currentCountry);
-                  var lastReport = getDayStatus(currentCountry, currentDate);
-                  if (lastReport === null) {
-                      let previousDate = moment().subtract(1, 'days').format("YYYY-M-DD"); 
-                      lastReport = getDayStatus(currentCountry, previousDate);
-                  }
+                  // var firstReport = getFirstDayStatus(currentCountry);
+                  // var lastReport = getDayStatus(currentCountry, currentDate);
+                  var lastReport = currentCountry[Object.keys(currentCountry).length - 1];
+                  // if (lastReport === null) {
+                  //     let previousDate = moment().subtract(1, 'days').format("YYYY-M-DD"); 
+                  //     lastReport = getDayStatus(currentCountry, previousDate);
+                  // }
                   var coronaCasesPer1000000population = (lastReport['confirmed']/POP_EST) * 1000000;
                   var coronaDeathsPer1000000population = (lastReport['deaths']/POP_EST) * 1000000;
                 }
