@@ -125,17 +125,17 @@ const CoronaDashboard = () => {
                 </Hero.Head>
             </Hero>
             <Section>
-                <Tabs defaultActiveKey="table" className="corona-tab" variant="tabs">
-                    <Tab eventKey="map" title="Map">
-                    { !isLoading ? 
-                    //data["Sweden"][10]['confirmed'] 
-                    <div style={{border: '2px solid #000' }}>
-                        <MapChart setTooltipContent={setMapContent}  coronaData={data}/>
-                        <ReactTooltip multiline={true} html={true}>{mapContent}</ReactTooltip>
-                    </div>
-                    : <DefaultLoader>Fetching data...</DefaultLoader>}
+                <Tabs defaultActiveKey="map" className="corona-tab" variant="tabs">
+                    <Tab eventKey="map" title="Map" icon="fa-map" isactive="is-active">
+                        { !isLoading ? 
+                        //data["Sweden"][10]['confirmed'] 
+                        <div style={{border: '2px solid #000' }}>
+                            <MapChart setTooltipContent={setMapContent}  coronaData={data}/>
+                            <ReactTooltip multiline={true} html={true}>{mapContent}</ReactTooltip>
+                        </div>
+                        : <DefaultLoader>Fetching data...</DefaultLoader>}
                     </Tab>
-                    <Tab eventKey="table" title="Table">
+                    <Tab eventKey="table" title="Table" icon="fa-table">
                         { !isLoading ? 
                         <BootstrapTable keyField='name' data={ fullData } columns={ columns } />
                         : <DefaultLoader>Fetching data...</DefaultLoader>}
