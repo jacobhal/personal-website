@@ -9,7 +9,7 @@ import { Section, Container } from 'react-bulma-components/full';
 export default function Portfolio() {
     const projectStatus = {
         TODO:   "In development",
-        FINISHED:  "Complete",
+        FINISHED:  "Finished",
         ABANDONED: "Abandoned"
     };
     let projects = [
@@ -32,7 +32,7 @@ export default function Portfolio() {
             title: "Corona dashboard",
             route: "/corona-dashboard",
             description: "A live update corona dashboard using data from John Hopkins",
-            status: projectStatus.TODO
+            status: projectStatus.FINISHED
         }
     ]
     return (

@@ -4,7 +4,8 @@ import axios from 'axios';
 
 import { NavBar } from '../../components/NavBar';
 import MapChart from "./MapChart";
-import { Hero, Section, Container, Loader, Heading, } from 'react-bulma-components/full';
+import { Hero, Section, Container, Heading, } from 'react-bulma-components/full';
+import DefaultLoader from './../../components/DefaultLoader';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import BootstrapTable from 'react-bootstrap-table-next';
@@ -63,7 +64,7 @@ const CoronaDashboard = () => {
 
                     currentCountryObj = {
                         name: currentCountryGeoData.NAME,
-                        confirmed: lastReport['confirmed'],
+                        confirmed: lastReport['confirmed'] + ' (' + lastReport['deaths'] + ')',
                         population: rounded(currentCountryGeoData.POP_EST),
                         coronaCasesPer1000000population: coronaCasesPer1000000population,
                         coronaDeathsPer1000000population: coronaDeathsPer1000000population,
@@ -72,13 +73,14 @@ const CoronaDashboard = () => {
                         coronaCasesPopulationPercent: coronaCasesPopulationPercent,
                         coronaDeathsPopulationPercent: coronaDeathsPopulationPercent
                     }
+                    finalDataSet.push(currentCountryObj);
                 } else {
-                    currentCountryObj = {
-                        name: currentCountryGeoData.NAME,
-                        population: rounded(currentCountryGeoData.POP_EST)
-                    }
+                    // currentCountryObj = {
+                    //     name: currentCountryGeoData.NAME,
+                    //     population: rounded(currentCountryGeoData.POP_EST)
+                    // }
                 }
-                finalDataSet.push(currentCountryObj);
+                
             });
             setFullData(finalDataSet);
             setIsLoading(false);
@@ -93,12 +95,11 @@ const CoronaDashboard = () => {
       },
       {
         dataField: 'confirmed',
-        text: 'Cases',
+        text: 'Cases (deaths)',
         sort: true
       }, {
         dataField: 'population',
-        text: 'Population',
-        sort: true
+        text: 'Population'
       }, {
         dataField: 'coronaCasesPer1000000population',
         text: 'Cases/1M pop',
@@ -133,44 +134,12 @@ const CoronaDashboard = () => {
                         <MapChart setTooltipContent={setMapContent}  coronaData={data}/>
                         <ReactTooltip multiline={true} html={true}>{mapContent}</ReactTooltip>
                     </div>
-                    : 
-                        <div>
-                            <Heading className="has-text-centered subtitle-style" subtitle>
-                            Fetching data...
-                            </Heading>
-                            <Loader
-                            className="loading-spinner"
-                            style={{
-                                width: 200,
-                                height: 200,
-                                border: '8px solid grey',
-                                borderTopColor: 'transparent',
-                                borderRightColor: 'transparent',
-                            }} />
-                        </div> }
+                    : <DefaultLoader>Fetching data...</DefaultLoader>}
                     </Tab>
                     <Tab eventKey="table" title="Table">
                         { !isLoading ? 
                         <BootstrapTable keyField='name' data={ fullData } columns={ columns } />
-                        :
-                        <div>
-                            <Heading className="has-text-centered subtitle-style" subtitle>
-                            Fetching data...
-                            </Heading>
-                            <Loader
-                            className="loading-spinner"
-                            style={{
-                                width: 200,
-                                height: 200,
-                                border: '8px solid grey',
-                                borderTopColor: 'transparent',
-                                borderRightColor: 'transparent',
-                            }} />
-                        </div>
-                        }
-                    </Tab>
-                    <Tab eventKey="graphs" title="Graphs">
-                        Graphs
+                        : <DefaultLoader>Fetching data...</DefaultLoader>}
                     </Tab>
                 </Tabs>
             </Section>

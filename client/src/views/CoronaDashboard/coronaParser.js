@@ -16,7 +16,7 @@ export function getCoronaCasesPer1MPopulation(coronaData, population, category) 
 }
 
 export function getPercent(population, val) {
-    return Math.round((val/population) * 100);
+    return Math.round((Math.round(val)/Math.round(population)) * 100);
 }
 
 export const rounded = num => {
