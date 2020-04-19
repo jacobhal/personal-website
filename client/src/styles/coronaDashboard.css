@@ -24,14 +24,17 @@ nav.corona-tab {
 
 div.react-bootstrap-table table {
     display: table;
-    width: 100% !important;
+    width: 100%;
 }
 
 @media only screen and (max-width: 768px) {
     div.react-bootstrap-table table {
         display: block;
         overflow-x: auto !important;
-        width: 1400px;
+    }
+
+    div.react-bootstrap-table table th, div.react-bootstrap-table table td {
+        min-width: 170px;
     }
   }
 
