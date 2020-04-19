@@ -21,3 +21,17 @@ nav.corona-tab {
     color: #597b9c !important;
     background-color: #f5f1f1;
 }
+
+div.react-bootstrap-table table {
+    display: table;
+    width: 100% !important;
+}
+
+@media only screen and (max-width: 768px) {
+    div.react-bootstrap-table table {
+        display: block;
+        overflow-x: auto !important;
+        width: 1400px;
+    }
+  }
+

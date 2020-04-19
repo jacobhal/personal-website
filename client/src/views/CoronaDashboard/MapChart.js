@@ -25,7 +25,7 @@ const MapChart = ({ setTooltipContent, coronaData }) => {
 
   const minColor = "rgb(189, 129, 129)";
   const maxColor = "rgb(255, 0, 0)";
-  const inactiveColor = "rgb(68, 66, 66)";
+  const inactiveColor = "rgb(107, 104, 104)";
   const hoverColor = "rgb(97, 117, 172)";
   const minValue = 0;
   const maxValue = maxDeaths/100;

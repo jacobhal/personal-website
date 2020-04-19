@@ -9,6 +9,7 @@ import DefaultLoader from './../../components/DefaultLoader';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import BootstrapTable from 'react-bootstrap-table-next';
+import './../../styles/coronaDashboard.css';
 import moment from 'moment';
 import { getDayStatus, getFirstDayStatus, getPercent, getCoronaCasesPer1MPopulation, rounded } from './coronaParser';
 import { CountryMapper } from './countryMapper';
@@ -139,7 +140,7 @@ const CoronaDashboard = () => {
                     </Tab>
                     <Tab eventKey="table" title="Table" icon="fa-table">
                         { !isLoading ? 
-                        <BootstrapTable keyField='name' data={ fullData } columns={ columns } />
+                        <BootstrapTable className="corona-table" keyField='name' data={ fullData } columns={ columns } />
                         : <DefaultLoader>Fetching data...</DefaultLoader>}
                     </Tab>
                 </Tabs>
