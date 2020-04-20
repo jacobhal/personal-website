@@ -1,12 +1,7 @@
 nav.corona-tab {
     padding-bottom: 7px;
     margin-bottom: 10px;
-    z-index: 1;
-}
-
-nav.corona-tab a.nav-item.active {
-    border-bottom: 2px solid #fff;
-    z-index: 100;
+    z-index: -1;
 }
 
 .corona-tab a {
@@ -22,7 +17,7 @@ nav.corona-tab a.nav-item.active {
 
 .corona-tab a.active {
     color: #2b2929 !important;
-    /* background-color: #f5f1f1; */
+    background-color: #d7d7d7;
     border-top: 1px solid #d7d7d7;
     border-left: 1px solid #d7d7d7;
     border-right: 1px solid #d7d7d7;
