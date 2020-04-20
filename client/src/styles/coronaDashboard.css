@@ -3,6 +3,10 @@ nav.corona-tab {
     margin-bottom: 10px;
 }
 
+nav.corona-tab a.nav-item.active {
+    border-bottom: 2px solid #fff;
+}
+
 .corona-tab a {
     color: #207fdf !important;
 }
@@ -16,12 +20,12 @@ nav.corona-tab {
 
 .corona-tab a.active {
     color: #2b2929 !important;
-    background-color: #f5f1f1;
+    /* background-color: #f5f1f1; */
     border-top: 1px solid #d7d7d7;
     border-left: 1px solid #d7d7d7;
     border-right: 1px solid #d7d7d7;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
 }
 
 div.react-bootstrap-table table {
