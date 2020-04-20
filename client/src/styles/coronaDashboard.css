@@ -1,10 +1,12 @@
 nav.corona-tab {
     padding-bottom: 7px;
     margin-bottom: 10px;
+    z-index: 1;
 }
 
 nav.corona-tab a.nav-item.active {
     border-bottom: 2px solid #fff;
+    z-index: 100;
 }
 
 .corona-tab a {
