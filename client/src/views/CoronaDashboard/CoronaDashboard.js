@@ -34,8 +34,6 @@ const CoronaDashboard = () => {
                 axios.get(apiURL),
                 axios.get(geoJSON)
             ]).then(axios.spread((coronaResult, geoResult) => {
-                console.log(coronaResult);
-                console.log(geoResult);
                 let gD = geoResult.data.objects.ne_110m_admin_0_countries.geometries;
                 setData(coronaResult.data);
                 setGeoData(gD);
