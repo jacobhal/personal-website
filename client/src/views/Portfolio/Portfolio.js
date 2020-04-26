@@ -17,7 +17,9 @@ export default function Portfolio() {
             id: 1,
             title: "Stock predictor",
             route: "/stockpredictor",
-            description: "Financial market predictor using Machine learning and realtime data Stock API:s",
+            description: "Financial market predictor using Machine learning and realtime data Stock API:s. A separate API" + 
+             " was deployed to Heroku using Flask + MySQL which is where the data actual data fetching occurrs. The financial API:s" +
+             " being used are free versions of Yahoo Finance and Alphavantage.",
             status: projectStatus.TODO
         },
         {
@@ -32,6 +34,14 @@ export default function Portfolio() {
             title: "Corona dashboard",
             route: "/corona-dashboard",
             description: "A live update corona dashboard using data from John Hopkins",
+            status: projectStatus.FINISHED
+        },
+        ,
+        {
+            id: 4,
+            title: "Game review website",
+            route: "http://www.codehalls.com",
+            description: "An old school project built with Laravel and PHP (not responsive).",
             status: projectStatus.FINISHED
         }
     ]
