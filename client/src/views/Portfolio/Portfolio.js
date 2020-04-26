@@ -26,14 +26,14 @@ export default function Portfolio() {
             id: 2,
             title: "React playground",
             route: "/react-playground",
-            description: "This is a playground for exploring new React features since this entire website is built with React",
+            description: "This is a playground for exploring new React features since this entire website is built with React.",
             status: projectStatus.TODO
         },
         {
             id: 3,
             title: "Corona dashboard",
             route: "/corona-dashboard",
-            description: "A live update corona dashboard using data from John Hopkins",
+            description: "A live update corona dashboard using data from John Hopkins.",
             status: projectStatus.FINISHED
         },
         ,
