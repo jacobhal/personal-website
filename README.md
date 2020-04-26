@@ -6,6 +6,9 @@ The project contains an Express server that can be used if running on a Node.js 
 
 To modify the content of this page, modify files in the MAMP/git/personal-website folder. Use npm start in the folder to see the rendered webpage at localhost:3000/. When finished, go into client folder and run npm run build. This will produce a build folder. The content of the build folder can now be uploaded into public_html of the host website. The easiest way to do it is to establish and save a site manager FTP connection using Filezilla or similar tools.
 
+## Bulma and Bootstrap
+This project is using Bulma and Bulma React components for CSS styling. However, some things have been brought in from Bootstrap, such as Tab functionality. In order to prevent clashing between Bulma and Bootstrap, the pieces needed for tabs were selected here https://getbootstrap.com/docs/3.4/customize/ and downloaded as a min.css file.
+
 ## Available Scripts
 
 cd to the client directory to be able to run the following scrips:
