@@ -3,7 +3,7 @@ export function getFirstDayStatus(data) {
 }
 
 export function getDayStatus(data, date) {
-    for (let [key, value] of Object.entries(data)) {
+    for (let value of Object.values(data)) {
         if(value.date === date) {
             return value;
         }

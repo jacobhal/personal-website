@@ -1,17 +1,19 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // import { useInput } from './../../hooks/input-hook';
-import { useAPI } from './api-hook';
+// import { useAPI } from './api-hook';
 
 import { NavBar } from '../../components/NavBar';
 import StockForm from './components/StockForm';
 import StockOverview from './components/StockOverview';
 import StockTable from './components/StockTable';
-import { Hero, Section, Container, Loader, Heading, } from 'react-bulma-components/full';
-import API from '../../services/API';
+import { Hero, Section, Container } from 'react-bulma-components/full';
+import DefaultLoader from './../../components/DefaultLoader';
+import Errormessage from './../../components/Errormessage';
+// import API from '../../services/API';
 import APIServiceUser from './APIServiceUser';
 
-const axios = require('axios');
+// const axios = require('axios');
 
 const StockPredictor = ()  => {
     // const { value, bind, reset } = useInput('');
@@ -22,7 +24,8 @@ const StockPredictor = ()  => {
     const [searchResult, setSearchResult] = useState(); // Initial state value empty object
     const [companyInfo, setCompanyInfo] = useState();
     const [companyHistory, setCompanyHistory] = useState();
-    const [companyHistoryAlpha, setCompanyHistoryAlpha] = useState();
+    // const [companyHistoryAlpha, setCompanyHistoryAlpha] = useState();
+    const [error, setError] = useState(null);
 
     // refs
     // const searchRef = useRef(null);
@@ -34,12 +37,18 @@ const StockPredictor = ()  => {
         if(dataFetchOption === 'Search') {
             var res = await APIServiceUser.fetchSearch(searchTerm);
             setSearchResult(res);
-            console.log(res['DATA']['bestMatches']);
         }
-        else if (dataFetchOption === 'Equity') {       
-            var res = await APIServiceUser.fetchCompanyInfo(equity);
-            setCompanyInfo(res);
-            console.log(res['DATA']['INFO']);
+        else if (dataFetchOption === 'Equity') {    
+            try {   
+                var companyInfo = await APIServiceUser.fetchCompanyInfo(equity);
+                var history = await APIServiceUser.fetchCompanyHistory(equity, 'max');
+                setCompanyInfo(companyInfo);
+                setCompanyHistory(history);
+            } catch (error) {
+                setError(error);
+            }
+            // var tmp = await APIServiceUser.fetchCompanyHistoryAlpha(equity, 'TIME_SERIES_DAILY_ADJUSTED');
+            // console.log(tmp);
         }
     }
 
@@ -98,22 +107,11 @@ const StockPredictor = ()  => {
                                 handleSubmitFunc={handleSubmit}
                             />
                             <ul>
-                                { isLoading ?
-                                <div>
-                                    <Heading className="has-text-centered subtitle-style" subtitle>
-                                    Fetching results...
-                                    </Heading>
-                                    <Loader
-                                    className="loading-spinner"
-                                    style={{
-                                        width: 200,
-                                        height: 200,
-                                        border: '8px solid grey',
-                                        borderTopColor: 'transparent',
-                                        borderRightColor: 'transparent',
-                                    }} />
-                                </div> : 
-                                    companyInfo !== undefined ? <StockOverview data={companyInfo}/> : ''  }
+                                { (!isLoading && !error) ?
+                                (companyInfo !== undefined && companyHistory !== undefined) ? <StockOverview data={companyInfo} history={companyHistory}/> : ''
+                                :
+                                error !== null ? <Errormessage title="Error" topMargin="20px">Something went wrong!</Errormessage> :
+                                <DefaultLoader>Fetching data...</DefaultLoader> }
                             </ul>
                         </div>
                     }
@@ -131,23 +129,12 @@ const StockPredictor = ()  => {
                                 handleSubmitFunc={handleSubmit}
                             />
                             <ul>
-                            { isLoading ?
-                                <div>
-                                    <Heading className="has-text-centered subtitle-style" subtitle>
-                                    Fetching results...
-                                    </Heading>
-                                    <Loader
-                                    className="loading-spinner"
-                                    style={{
-                                        width: 200,
-                                        height: 200,
-                                        border: '8px solid grey',
-                                        borderTopColor: 'transparent',
-                                        borderRightColor: 'transparent',
-                                    }} />
-                                </div>
-                                : 
-                                searchResult !== undefined ? <StockTable data={searchResult}/> : '' }
+                            { (!isLoading && !error) ?
+                                searchResult !== undefined ? <StockTable data={searchResult}/> : ''
+                                :
+                                error !== null ? <Errormessage title="Error" topMargin="20px">Something went wrong!</Errormessage> :
+                                <DefaultLoader>Fetching results...</DefaultLoader>
+                                 }
                             </ul>
                         </div>
                     }

@@ -1,8 +1,9 @@
 import React from 'react';
+// import React, { useState, useEffect, useRef } from 'react';
 
 import { NavBar } from '../../components/NavBar';
 
-import { Hero, Section, Container, Loader, Heading, } from 'react-bulma-components/full';
+import { Hero, Section, Container} from 'react-bulma-components/full';
 
 const ReactPlayground = () => {
     return (

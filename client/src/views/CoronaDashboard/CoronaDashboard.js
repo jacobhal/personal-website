@@ -4,20 +4,20 @@ import axios from 'axios';
 
 import { NavBar } from '../../components/NavBar';
 import MapChart from "./MapChart";
-import { Hero, Section, Container, Heading, } from 'react-bulma-components/full';
+import { Hero, Section } from 'react-bulma-components/full';
 import DefaultLoader from './../../components/DefaultLoader';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import BootstrapTable from 'react-bootstrap-table-next';
 import './../../styles/coronaDashboard.css';
-import moment from 'moment';
-import { getDayStatus, getFirstDayStatus, getPercent, getCoronaCasesPer1MPopulation, rounded } from './coronaParser';
+// import moment from 'moment';
+import { getPercent, getCoronaCasesPer1MPopulation, rounded } from './coronaParser';
 import { CountryMapper } from './countryMapper';
 import Errormessage from './../../components/Errormessage';
 
 const CoronaDashboard = () => {
     const [data, setData] = useState(null);
-    const [geoData, setGeoData] = useState(null);
+    // const [geoData, setGeoData] = useState(null);
     const [fullData, setFullData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [mapContent, setMapContent] = useState("");
@@ -36,7 +36,7 @@ const CoronaDashboard = () => {
             ]).then(axios.spread((coronaResult, geoResult) => {
                 let gD = geoResult.data.objects.ne_110m_admin_0_countries.geometries;
                 setData(coronaResult.data);
-                setGeoData(gD);
+                // setGeoData(gD);
                 // Construct the full dataset
                 let finalDataSet = [];
 
@@ -52,7 +52,7 @@ const CoronaDashboard = () => {
 
                     if (currentCountryCoronaData !== undefined) {
 
-                        let currentDate = moment().format("YYYY-MM-DD");  
+                        // let currentDate = moment().format("YYYY-MM-DD");  
 
                         // Fetch first and last corona day status
                         // let firstReport = getFirstDayStatus(currentCountryCoronaData);
@@ -89,12 +89,11 @@ const CoronaDashboard = () => {
                         //     population: rounded(currentCountryGeoData.POP_EST)
                         // }
                     }
-                    
+                    return true;
                 });
                 setFullData(finalDataSet);
                 setIsLoading(false);
             })).catch(err => {
-                console.log(err);
                 setError(err);
                 setIsLoading(false);
             });

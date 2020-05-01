@@ -36,7 +36,6 @@ export default function Portfolio() {
             description: "A live update corona dashboard using data from John Hopkins.",
             status: projectStatus.FINISHED
         },
-        ,
         {
             id: 4,
             title: "Game review website",

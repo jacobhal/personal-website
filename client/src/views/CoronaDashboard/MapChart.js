@@ -5,8 +5,8 @@ import {
   Geographies,
   Geography
 } from "react-simple-maps";
-import moment from 'moment';
-import { getDayStatus, getFirstDayStatus, rounded, getCoronaCasesPer1MPopulation } from './coronaParser';
+// import moment from 'moment';
+import { rounded } from './coronaParser';
 import { CountryMapper } from './countryMapper';
 import { scaleLinear } from "d3-scale"
 
@@ -47,7 +47,7 @@ const MapChart = ({ setTooltipContent, coronaData }) => {
                     currentCountry = coronaData[CountryMapper[NAME]];
                 }
                 if (currentCountry !== undefined) {
-                  let currentDate = moment().format("YYYY-MM-DD");  
+                  // let currentDate = moment().format("YYYY-MM-DD");  
                          
                   // var firstReport = getFirstDayStatus(currentCountry);
                   // var lastReport = getDayStatus(currentCountry, currentDate);

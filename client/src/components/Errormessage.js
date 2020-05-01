@@ -1,14 +1,14 @@
 import React from 'react';
 
-const Errormessage = ({children, title}) => {
+const Errormessage = ({children, title, topMargin}) => {
     return (
-        <article className="message is-large is-danger">
-        <div className="message-header">
-            <p>{title}</p>
-        </div>
-        <div className="message-body">
-            {children}
-        </div>
+        <article className="message is-large is-danger" style={{marginTop: topMargin}}>
+            <div className="message-header">
+                <p>{title}</p>
+            </div>
+            <div className="message-body">
+                {children}
+            </div>
         </article>
     );
 }
