@@ -23,7 +23,7 @@ const StockPredictor = ()  => {
     const [equity, setEquity] = useState();
     const [searchResult, setSearchResult] = useState(); // Initial state value empty object
     const [companyInfo, setCompanyInfo] = useState();
-    const [companyHistory, setCompanyHistory] = useState();
+    // const [companyHistory, setCompanyHistory] = useState();
     // const [companyHistoryAlpha, setCompanyHistoryAlpha] = useState();
     const [error, setError] = useState(null);
 
@@ -41,9 +41,9 @@ const StockPredictor = ()  => {
         else if (dataFetchOption === 'Equity') {    
             try {   
                 var companyInfo = await APIServiceUser.fetchCompanyInfo(equity);
-                var history = await APIServiceUser.fetchCompanyHistory(equity, 'max');
+                // var history = await APIServiceUser.fetchCompanyHistory(equity, 'max');
                 setCompanyInfo(companyInfo);
-                setCompanyHistory(history);
+                // setCompanyHistory(history);
             } catch (error) {
                 setError(error);
             }
@@ -108,7 +108,7 @@ const StockPredictor = ()  => {
                             />
                             <ul>
                                 { (!isLoading && !error) ?
-                                (companyInfo !== undefined && companyHistory !== undefined) ? <StockOverview data={companyInfo} history={companyHistory}/> : ''
+                                (companyInfo !== undefined) ? <StockOverview data={companyInfo}/> : ''
                                 :
                                 error !== null ? <Errormessage title="Error" topMargin="20px">Something went wrong!</Errormessage> :
                                 <DefaultLoader>Fetching data...</DefaultLoader> }

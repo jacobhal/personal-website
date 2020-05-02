@@ -26,7 +26,6 @@ const error = props.data['DATA']['ERROR'];
     let htmlOutput;
 
     if (info !== undefined) {      
-        const history = props.history;
         const beta = info.beta;
         const dayHigh = info.dayHigh;
         const dayLow = info.dayLow;
