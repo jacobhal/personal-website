@@ -13,6 +13,7 @@ const StockForm = React.forwardRef((props, ref) => (
                     onChange={props.onChangeFunc}
                     // ref={ref}
                     autoFocus
+                    required
                 />
             </div>
         </div>
