@@ -51,6 +51,8 @@ const error = props.data['DATA']['ERROR'];
         const ask = info.ask;
         const bid = info.bid;
 
+        console.log(props.data.DATA)
+
         const recommendations = props.data.DATA.RECOMMENDATIONS;
         htmlOutput = <div>
                         <Heading size={4} style={{ 
@@ -66,15 +68,18 @@ const error = props.data['DATA']['ERROR'];
                         
                         <InfoRow label="Previous close" value={previousClose}></InfoRow>
                         <InfoRow label="Open" value={open}></InfoRow>
-                        <InfoRow label="Ask (what buyers are willing to pay)" value={ask}></InfoRow>
-                        <InfoRow label="Bid (what sellers are willing to sell for)" value={bid}></InfoRow>
+                        <InfoRow dataTip="The price buyers are willing to pay" label="Ask" value={ask}></InfoRow>
+                        <InfoRow dataTip="The price sellers are willing to sell for" label="Bid" value={bid}></InfoRow>
                         <InfoRow label={"Latest recommendation (" + parseDate(recommendations.Date[Object.keys(recommendations.Date).length - 1]) + ")"} 
                             value={recommendations['To Grade'][Object.keys(recommendations['To Grade']).length - 1]}></InfoRow>
-                        <InfoRow label="Trailing P/E vs Forward P/E (higher forward than trailing means decreased expected earnings)" value={trailingPE + " / " + forwardPE}></InfoRow>
-                        <InfoRow label="Trailing EPS vs Forward EPS (higher forward than trailing means earnings per share is expected to increase)" value={trailingEps + " / " + forwardEps}></InfoRow>
-                        <InfoRow label="beta" value={beta}></InfoRow>
+                        <InfoRow dataTip="Trailing = last 12 months, forward = next 12 months. Higher forward than trailing means decreased expected earnings"
+                            label="Trailing P/E vs Forward P/E" value={trailingPE + " / " + forwardPE}></InfoRow>
+                        <InfoRow dataTip="Higher forward EPS than trailing EPS means earnings per share is expected to increase" label="Trailing EPS vs Forward EPS" value={trailingEps + " / " + forwardEps}></InfoRow>
+                        <InfoRow dataTip="A stock with a beta of 1 is moving at the same volatility as the market. <br/> A stock with a beta greater than 1 is moving with greater volatility than the average, 
+                            and a stock with a beta less than 1 has less volatility than the average."label="beta" value={beta}></InfoRow>
+                        <InfoRow label="PEG-ratio" value={pegRatio}></InfoRow>
                         <InfoRow label="Dividend rate" value={dividendRate}></InfoRow>                        
-                        <InfoRow label="Dividend yield" value={dividendYield}></InfoRow>                        
+                        <InfoRow label="Dividend yield (%)" value={dividendYield*100 + ' %'}></InfoRow>                        
                         
                     </div>
     } else if (error !== undefined) {
