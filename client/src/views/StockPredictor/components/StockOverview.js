@@ -54,6 +54,35 @@ const error = props.data['DATA']['ERROR'];
         console.log(props.data.DATA)
 
         const recommendations = props.data.DATA.RECOMMENDATIONS;
+        var hashMap = new Object();
+        Object.values(recommendations['To Grade']).map((e, i) => {
+            if (e.toUpperCase() in hashMap) {
+                hashMap[e.toUpperCase()] += 1;
+            } else {
+                hashMap[e.toUpperCase()] = 1;
+            }
+        })
+        var hashMapSum = 0;
+        {Object.entries(hashMap).map(([recommendation, count]) => {
+            hashMapSum += count;
+        })}     
+        var hashMapDataTips = {
+            "OVERWEIGHT": 'If a stock is recommended to be overweight, the analyst opines that the stock is better value for money than others. <br/>' +
+                'If a particular stock is selling for $500 and the analyst feels that the stock is worth $600, the analyst would be declaring the stock to be overweight.',
+            "HOLD": "Recommendation is to hold on to this stock.",
+            "NEUTRAL": "Neutral recommendation.",
+            "BUY": "Recommendation is to buy.",
+            "SECTOR PERFORM": "The stock is performing in its sector.",
+            "OUTPERFORM": "In financial news media Outperform is commonly used as a rating given by analysts who publicly research and recommend securities.",
+            "EQUAL-WEIGHT": "Equal value for your money as other stocks.",
+            "MARKET PERFORM": "Market perform is an investment rating used by analysts when the expectation for a given stock or investment is that it will provide returns in line with those of the S&P 500 or other leading market averages.",
+            "SELL": "The recommendation is to sell this stock.",
+            "PERFORM": "The stock is likely to perform average.",
+            "UNDERPERFORM": "If an investment is underperforming, it is not keeping pace with other securities." +
+                "In a rising market, for example, a stock is underperforming if it is not experiencing gains equal to or greater to the advance in the S&P 500 Index.",
+            "UNDERWEIGHT": 'If a stock is deemed underweight, the analyst is saying they consider the investor should reduce their holding, so that it should "weigh" less'
+
+        }
         htmlOutput = <div>
                         <Heading size={4} style={{ 
                             borderTop: '2px solid #dbdbdb', 
@@ -77,9 +106,15 @@ const error = props.data['DATA']['ERROR'];
                         <InfoRow dataTip="Higher forward EPS than trailing EPS means earnings per share is expected to increase" label="Trailing EPS vs Forward EPS" value={trailingEps + " / " + forwardEps}></InfoRow>
                         <InfoRow dataTip="A stock with a beta of 1 is moving at the same volatility as the market. <br/> A stock with a beta greater than 1 is moving with greater volatility than the average, 
                             and a stock with a beta less than 1 has less volatility than the average."label="beta" value={beta}></InfoRow>
-                        <InfoRow label="PEG-ratio" value={pegRatio}></InfoRow>
+                        <InfoRow dataTip="The price/earnings to growth ratio (PEG ratio) is a stock's price-to-earnings (P/E) ratio divided by the growth rate of its earnings for a specified time period.
+                            <br/> The PEG ratio is used to determine a stock's value while also factoring in the company's expected earnings growth, and is thought to provide a more complete picture than the more standard P/E ratio."
+                            label="PEG ratio" value={pegRatio}></InfoRow>
                         <InfoRow label="Dividend rate" value={dividendRate}></InfoRow>                        
-                        <InfoRow label="Dividend yield (%)" value={dividendYield*100 + ' %'}></InfoRow>                        
+                        <InfoRow label="Dividend yield (%)" value={dividendYield*100 + ' %'}></InfoRow>      
+
+                        {Object.entries(hashMap).map(([recommendation, count]) => {
+                            return <InfoRow dataTip={hashMapDataTips[recommendation]} key={recommendation} label={recommendation} value={count + '  (' + ((count/hashMapSum)*100).toFixed(2) + ' %)'}></InfoRow>
+                        })}                  
                         
                     </div>
     } else if (error !== undefined) {
