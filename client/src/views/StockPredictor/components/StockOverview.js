@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading } from 'react-bulma-components/full';
+import { Heading, Columns } from 'react-bulma-components/full';
 import InfoRow from './InfoRow';
 
 const StockOverview = (props) => {
@@ -51,14 +51,13 @@ const error = props.data['DATA']['ERROR'];
         const ask = info.ask;
         const bid = info.bid;
 
-        console.log(props.data.DATA)
 
         const recommendations = props.data.DATA.RECOMMENDATIONS;
         var hashMap = new Object();
         Object.values(recommendations['To Grade']).map((e, i) => {
             if (e.toUpperCase() in hashMap) {
                 hashMap[e.toUpperCase()] += 1;
-            } else {
+            } else if (e){
                 hashMap[e.toUpperCase()] = 1;
             }
         })
@@ -93,28 +92,63 @@ const error = props.data['DATA']['ERROR'];
                         <Heading subtitle size={5}>
                             {sector} ({industry})
                         </Heading>
+
                         {/* <div>{info['longBusinessSummary']}</div> */}
+
+
+                        <div className="level">
+                            <div className="level-item has-text-centered">
+                                <div>
+                                <p className="heading">Previous close</p>
+                                <p className="title">{previousClose}</p>
+                                </div>
+                            </div>
+                            <div className="level-item has-text-centered">
+                                <div>
+                                <p className="heading">Open</p>
+                                <p className="title">{open}</p>
+                                </div>
+                            </div>
+                            <div className="level-item has-text-centered">
+                                <div>
+                                <p className="heading" data-tip="The price buyers are willing to pay">Ask</p>
+                                <p className="title">{ask}</p>
+                                </div>
+                            </div>
+                            <div className="level-item has-text-centered">
+                                <div>
+                                <p className="heading" data-tip="The price sellers are willing to sell for">Bid</p>
+                                <p className="title">{bid}</p>
+                                </div>
+                            </div>
+                        </div>
                         
-                        <InfoRow label="Previous close" value={previousClose}></InfoRow>
+                        {/* <InfoRow label="Previous close" value={previousClose}></InfoRow>
                         <InfoRow label="Open" value={open}></InfoRow>
                         <InfoRow dataTip="The price buyers are willing to pay" label="Ask" value={ask}></InfoRow>
-                        <InfoRow dataTip="The price sellers are willing to sell for" label="Bid" value={bid}></InfoRow>
-                        <InfoRow label={"Latest recommendation (" + parseDate(recommendations.Date[Object.keys(recommendations.Date).length - 1]) + ")"} 
-                            value={recommendations['To Grade'][Object.keys(recommendations['To Grade']).length - 1]}></InfoRow>
-                        <InfoRow dataTip="Trailing = last 12 months, forward = next 12 months. Higher forward than trailing means decreased expected earnings"
-                            label="Trailing P/E vs Forward P/E" value={trailingPE + " / " + forwardPE}></InfoRow>
-                        <InfoRow dataTip="Higher forward EPS than trailing EPS means earnings per share is expected to increase" label="Trailing EPS vs Forward EPS" value={trailingEps + " / " + forwardEps}></InfoRow>
-                        <InfoRow dataTip="A stock with a beta of 1 is moving at the same volatility as the market. <br/> A stock with a beta greater than 1 is moving with greater volatility than the average, 
-                            and a stock with a beta less than 1 has less volatility than the average."label="beta" value={beta}></InfoRow>
-                        <InfoRow dataTip="The price/earnings to growth ratio (PEG ratio) is a stock's price-to-earnings (P/E) ratio divided by the growth rate of its earnings for a specified time period.
-                            <br/> The PEG ratio is used to determine a stock's value while also factoring in the company's expected earnings growth, and is thought to provide a more complete picture than the more standard P/E ratio."
-                            label="PEG ratio" value={pegRatio}></InfoRow>
-                        <InfoRow label="Dividend rate" value={dividendRate}></InfoRow>                        
-                        <InfoRow label="Dividend yield (%)" value={dividendYield*100 + ' %'}></InfoRow>      
-
-                        {Object.entries(hashMap).map(([recommendation, count]) => {
-                            return <InfoRow dataTip={hashMapDataTips[recommendation]} key={recommendation} label={recommendation} value={count + '  (' + ((count/hashMapSum)*100).toFixed(2) + ' %)'}></InfoRow>
-                        })}                  
+                        <InfoRow dataTip="The price sellers are willing to sell for" label="Bid" value={bid}></InfoRow> */}
+                        <Columns>
+                            <Columns.Column>
+                                <InfoRow label={"Latest recommendation (" + parseDate(recommendations.Date[Object.keys(recommendations.Date).length - 1]) + ")"} 
+                                    value={recommendations['To Grade'][Object.keys(recommendations['To Grade']).length - 1]}></InfoRow>
+                                <InfoRow dataTip="Trailing = last 12 months, forward = next 12 months. Higher forward than trailing means decreased expected earnings"
+                                    label="Trailing P/E vs Forward P/E" value={trailingPE + " / " + forwardPE}></InfoRow>
+                                <InfoRow dataTip="Higher forward EPS than trailing EPS means earnings per share is expected to increase" label="Trailing EPS vs Forward EPS" value={trailingEps + " / " + forwardEps}></InfoRow>
+                                <InfoRow dataTip="A stock with a beta of 1 is moving at the same volatility as the market. <br/> A stock with a beta greater than 1 is moving with greater volatility than the average, 
+                                    and a stock with a beta less than 1 has less volatility than the average."label="beta" value={beta}></InfoRow>
+                                <InfoRow dataTip="The price/earnings to growth ratio (PEG ratio) is a stock's price-to-earnings (P/E) ratio divided by the growth rate of its earnings for a specified time period.
+                                    <br/> The PEG ratio is used to determine a stock's value while also factoring in the company's expected earnings growth, and is thought to provide a more complete picture than the more standard P/E ratio."
+                                    label="PEG ratio" value={pegRatio}></InfoRow>
+                                <InfoRow label="Dividend rate" value={dividendRate}></InfoRow>                        
+                                <InfoRow label="Dividend yield (%)" value={dividendYield*100 + ' %'}></InfoRow>      
+                            </Columns.Column>
+                            <Columns.Column>
+                            {
+                                Object.entries(hashMap).sort(([,val1], [,val2]) => val2 - val1).map(([recommendation, count]) => {
+                                return <InfoRow dataTip={hashMapDataTips[recommendation]} key={recommendation} label={recommendation} value={count + '  (' + ((count/hashMapSum)*100).toFixed(2) + ' %)'}></InfoRow>
+                            })}       
+                            </Columns.Column>
+                        </Columns>           
                         
                     </div>
     } else if (error !== undefined) {

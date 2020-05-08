@@ -10,6 +10,7 @@ import StockTable from './components/StockTable';
 import { Hero, Section, Container } from 'react-bulma-components/full';
 import DefaultLoader from './../../components/DefaultLoader';
 import Errormessage from './../../components/Errormessage';
+import './../../styles/stockPredictor.css';
 // import API from '../../services/API';
 import APIServiceUser from './APIServiceUser';
 

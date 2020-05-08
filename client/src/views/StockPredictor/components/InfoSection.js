@@ -1,18 +1,19 @@
 import React from 'react';
 import ReactTooltip from 'react-tooltip';
+import { Columns, Column } from 'react-bulma-components/full';
 
-const InfoRow = ({label, value, dataTip}) => {
+const InfoSection = () => {
     return (
-        <div className="columns info-row">
-            <div className="column has-text-centered">
+        <div className="columns">
+            <div className="column">
                 <ReactTooltip html={true}/>
                 <strong data-tip={dataTip}>{label}</strong>
             </div>
-            <div className="column has-text-centered">
+            <div className="column">
                 {value ? value : "N/A"}
             </div>
         </div>
     );
 }
 
-export default InfoRow;
+export default InfoSection;
