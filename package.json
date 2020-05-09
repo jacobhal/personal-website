@@ -20,6 +20,7 @@
     "react": "^16.13.0",
     "react-bootstrap": "^1.0.0",
     "react-bootstrap-table-next": "^4.0.0",
+    "react-collapsible": "^2.7.0",
     "react-dom": "^16.13.0",
     "react-moment": "^0.9.7",
     "react-simple-maps": "^2.0.0",

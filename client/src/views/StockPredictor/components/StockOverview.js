@@ -1,6 +1,7 @@
 import React from 'react';
 import { Heading, Columns } from 'react-bulma-components/full';
 import InfoRow from './InfoRow';
+import Collapsible from 'react-collapsible';
 
 const StockOverview = (props) => {
 /*
@@ -93,7 +94,9 @@ const error = props.data['DATA']['ERROR'];
                             {sector} ({industry})
                         </Heading>
 
-                        {/* <div>{info['longBusinessSummary']}</div> */}
+                        <Collapsible trigger="Business summary" className="accordion">
+                            <div>{info['longBusinessSummary']}</div>
+                        </Collapsible>
 
 
                         <div className="level">
