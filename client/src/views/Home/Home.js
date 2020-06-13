@@ -3,11 +3,15 @@ import React from 'react';
 import MainHero from '../.././components/MainHero';
 
 import { Heading, Section, Card, Content, Columns } from 'react-bulma-components/full';
+import { Helmet } from "react-helmet";
 
 const Home = props => {
     return (
       <div>
-        <MainHero title="DEVELOPER" subtitle="I'm always ready for new challenges" background="has-bg-img-keyboard" />
+        <Helmet>
+            <meta name="description" content="The personal website of Jacob Hallman - A fullstack developer" />
+        </Helmet>
+        <MainHero title="JACOB HALLMAN" subtitle="I'm always ready for new challenges" background="has-bg-img-keyboard" />
         <Section>
           <Columns>
             <Columns.Column>

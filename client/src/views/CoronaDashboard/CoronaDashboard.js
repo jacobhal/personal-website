@@ -14,6 +14,7 @@ import './../../styles/coronaDashboard.css';
 import { getPercent, getCoronaCasesPer1MPopulation, rounded } from './coronaParser';
 import { CountryMapper } from './countryMapper';
 import Errormessage from './../../components/Errormessage';
+import { Helmet } from "react-helmet";
 
 const CoronaDashboard = () => {
     const [data, setData] = useState(null);
@@ -52,18 +53,18 @@ const CoronaDashboard = () => {
 
                     if (currentCountryCoronaData !== undefined) {
 
-                        // let currentDate = moment().format("YYYY-MM-DD");  
+                        // let currentDate = moment().format("YYYY-MM-DD");
 
                         // Fetch first and last corona day status
                         // let firstReport = getFirstDayStatus(currentCountryCoronaData);
                         // let lastReport = getDayStatus(currentCountryCoronaData, currentDate);
                         let lastReport = currentCountryCoronaData[Object.keys(currentCountryCoronaData).length - 1];
                         // if (lastReport === null) {
-                        //     let previousDate = moment().subtract(1, 'days').format("YYYY-M-DD"); 
+                        //     let previousDate = moment().subtract(1, 'days').format("YYYY-M-DD");
                         //     lastReport = getDayStatus(currentCountryCoronaData, previousDate);
                         //     console.log(lastReport);
                         // }
-                        
+
                         let coronaCasesPer1000000population = getCoronaCasesPer1MPopulation(lastReport, currentCountryGeoData.POP_EST, 'confirmed');
                         let coronaDeathsPer1000000population = getCoronaCasesPer1MPopulation(lastReport, currentCountryGeoData.POP_EST, 'deaths');
                         let coronaRecoveredPercent = getPercent(lastReport['confirmed'], lastReport['recovered']);
@@ -97,8 +98,8 @@ const CoronaDashboard = () => {
                 setError(err);
                 setIsLoading(false);
             });
-            
-                
+
+
         };
         fetchData();
       }, []);
@@ -134,6 +135,10 @@ const CoronaDashboard = () => {
 
     return (
         <div>
+          <Helmet>
+              <title>Corona dashboard</title>
+              <meta name="description" content="A corona dashboard that compares the situation in different countries" />
+          </Helmet>
             <Hero color="black" className="navbar-projects">
                 <Hero.Head>
                     <NavBar />
@@ -142,8 +147,8 @@ const CoronaDashboard = () => {
             <Section>
                 <Tabs defaultActiveKey="map" className="corona-tab" variant="tabs">
                     <Tab eventKey="map" title="Map" icon="fa-map" isactive="is-active">
-                        { (!isLoading && !error) ? 
-                        //data["Sweden"][10]['confirmed'] 
+                        { (!isLoading && !error) ?
+                        //data["Sweden"][10]['confirmed']
                         <div style={{border: '2px solid #000' }}>
                             <MapChart setTooltipContent={setMapContent}  coronaData={data}/>
                             <ReactTooltip multiline={true} html={true}>{mapContent}</ReactTooltip>
@@ -152,7 +157,7 @@ const CoronaDashboard = () => {
                         <DefaultLoader>Fetching data...</DefaultLoader>}
                     </Tab>
                     <Tab eventKey="table" title="Table" icon="fa-table">
-                        { (!isLoading && !error) ? 
+                        { (!isLoading && !error) ?
                         <BootstrapTable className="corona-table" keyField='name' data={ fullData } columns={ columns } />
                         : error !== null ? <Errormessage title="Error">Something went wrong!</Errormessage> :
                         <DefaultLoader>Fetching data...</DefaultLoader>}
