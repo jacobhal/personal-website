@@ -27,7 +27,7 @@ export default function Portfolio() {
             title: "React playground",
             route: "/react-playground",
             description: "This is a playground for exploring new React features since this entire website is built with React.",
-            status: projectStatus.TODO
+            status: projectStatus.FINISHED
         },
         {
             id: 3,

@@ -13,10 +13,22 @@ const scope = {useState, useEffect, useContext, useMemo, useRef, useReducer};
 const ReactPlayground = () => {
 
     const exampleCode = `() => {
-        const [text, setText] = useState('Hello World!')
+        const [count, setCount] = useState(0)
+
+        useEffect(() => {
+            // Called whenever count is modified
+
+            // We can return a function in order to perform "cleanup logic"
+            return function cleanup() {
+                // Unsubscribe logic goes here
+              };
+        }, [count])
+        
         return (
             <div>
-                <strong>{text}</strong>
+                <button className="button is-primary" onClick={() => setCount(prevCount => prevCount + 1)}>
+                    Clicked {count} times
+                </button>
             </div>
         )
 }`;
@@ -31,12 +43,14 @@ const ReactPlayground = () => {
             <Section>
                 <Container>
                     <h1 className="title">React playground</h1>  
+                    <p style={{marginBottom: '10px'}}>{"Available hooks - {useState, useEffect, useContext, useMemo, useRef, useReducer}. Basic bulma css modifiers available."}</p>
                     <LiveProvider scope={scope} theme={dracula} code={exampleCode} >
                         <LiveEditor className="content"
                          style={{
                             fontFamily: '"Fira code", "Fira Mono", monospace',
                             fontSize: 16,
-                          }}/>
+                          }}
+                         />
                         <LiveError />
                         <LivePreview />
                     </LiveProvider>

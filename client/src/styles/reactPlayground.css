@@ -1,3 +1,4 @@
+/* Reset everything inside content tags in order to make bulma work with Prism */
 .content .tag, .content .number {
   display: inline;
   padding: inherit;
