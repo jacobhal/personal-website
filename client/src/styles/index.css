@@ -8,20 +8,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.tag:not(body) {
-  align-items: center !important;
-  background-color: inherit !important;
-  border-radius: 4px !important;
-  display: inline-flex !important;
-  font-size: inherit !important;
-  height: 2em !important;
-  justify-content: center !important;
-  line-height: 1.5 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  white-space: nowrap !important;
-}
-
 html {
   height: 100% !important;
 }
