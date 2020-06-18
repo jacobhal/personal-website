@@ -8,7 +8,7 @@ import './../../styles/reactPlayground.css';
 import { Hero, Section, Container} from 'react-bulma-components/full';
 import {LiveProvider, LiveEditor, LiveError, LivePreview} from 'react-live'
 
-const scope = {useState, useEffect, useContext, useMemo, useRef, useReducer};
+const scope = {useState, useEffect, useContext, useMemo, useRef, useReducer, useCallback};
 
 const ReactPlayground = () => {
 
@@ -43,7 +43,7 @@ const ReactPlayground = () => {
             <Section>
                 <Container>
                     <h1 className="title">React playground</h1>  
-                    <p style={{marginBottom: '10px'}}>{"Available hooks - {useState, useEffect, useContext, useMemo, useRef, useReducer}. Basic bulma css modifiers available."}</p>
+                    <p style={{marginBottom: '10px'}}>{"Available hooks - {useState, useEffect, useContext, useMemo, useRef, useReducer, useCallback}. Basic bulma css modifiers available."}</p>
                     <LiveProvider scope={scope} theme={dracula} code={exampleCode} >
                         <LiveEditor className="content"
                          style={{
