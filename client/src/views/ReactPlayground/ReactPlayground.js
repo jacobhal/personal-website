@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext, useMemo, useRef, useReducer} from 'react';
+import React, {useState, useEffect, useContext, useMemo, useRef, useReducer, useCallback} from 'react';
 
 import { NavBar } from '../../components/NavBar';
 import dracula from 'prism-react-renderer/themes/dracula';
