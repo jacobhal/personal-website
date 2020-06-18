@@ -14,15 +14,15 @@ const ReactPlayground = () => {
 
     const exampleCode = `() => {
         const [count, setCount] = useState(0)
+        const numbers = [1, 2, 3, 4, 5]
+        const numbersMapped = numbers.map( (number, i) => <li key={i}>{number * 2}</li> ) // [2, 4, 6, 8, 10]
+        const numbersFiltered = numbers.filter( (number) => number % 2 == 0) // [2, 4]
+        const reducerFunc = (accumulator, currentValue) => accumulator + currentValue;
+        const numbersReduced = numbers.reduce(reducerFunc) // 15
 
         useEffect(() => {
-            // Called whenever count is modified because we specified count in the dependency array
-
-            // We can return a function in order to perform "cleanup logic"
-            return function cleanup() {
-                // Unsubscribe logic goes here
-              };
-        }, [count])
+            return function cleanup() {} // We can return a function in order to unsubcribe events
+        }, [count]) // Called whenever count is modified because we specified count in the dependency array  
         
         return (
             <div>
