@@ -16,7 +16,7 @@ const ReactPlayground = () => {
         const [count, setCount] = useState(0)
 
         useEffect(() => {
-            // Called whenever count is modified
+            // Called whenever count is modified because we specified count in the dependency array
 
             // We can return a function in order to perform "cleanup logic"
             return function cleanup() {
@@ -43,7 +43,7 @@ const ReactPlayground = () => {
             <Section>
                 <Container>
                     <h1 className="title">React playground</h1>  
-                    <p style={{marginBottom: '10px'}}>{"Available hooks - {useState, useEffect, useContext, useMemo, useRef, useReducer, useCallback}. Basic bulma css modifiers available."}</p>
+                    <p style={{marginBottom: '10px'}}>{"Available hooks - {useState, useEffect, useContext, useMemo, useRef, useReducer, useCallback}. Basic bulma css modifiers are available."}</p>
                     <LiveProvider scope={scope} theme={dracula} code={exampleCode} >
                         <LiveEditor className="content"
                          style={{
