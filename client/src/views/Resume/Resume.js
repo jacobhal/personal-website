@@ -6,6 +6,7 @@ import pdf_english from '../../assets/CV_english.pdf';
 import MainHero from '../.././components/MainHero';
 
 import { Columns } from 'react-bulma-components/full';
+import { Helmet } from "react-helmet";
 
 class Resume extends React.Component {
 

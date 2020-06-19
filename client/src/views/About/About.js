@@ -3,6 +3,7 @@ import React from 'react';
 import MainHero from '../.././components/MainHero';
 
 import { Columns, Button } from 'react-bulma-components/full';
+import { Helmet } from "react-helmet";
 
 const About = props => {
     return (

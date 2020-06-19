@@ -1,6 +1,7 @@
 import React from 'react';
 
 import MainHero from '../.././components/MainHero';
+import { Helmet } from "react-helmet";
 
 import { Button, Section, Container, Loader, Heading, Message, Form } from 'react-bulma-components/full';
 

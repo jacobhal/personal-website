@@ -5,6 +5,7 @@ import dracula from 'prism-react-renderer/themes/dracula';
 import nightOwl from "prism-react-renderer/themes/nightOwl";
 import './../../styles/reactPlayground.css';
 
+import { Helmet } from "react-helmet";
 import { Hero, Section, Container} from 'react-bulma-components/full';
 import {LiveProvider, LiveEditor, LiveError, LivePreview} from 'react-live'
 

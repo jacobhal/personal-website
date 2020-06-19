@@ -4,7 +4,7 @@ import MainHero from '../../components/MainHero';
 import Table from './components/ProjectTable';
 
 import { Section, Container } from 'react-bulma-components/full';
-
+import { Helmet } from "react-helmet";
 
 export default function Portfolio() {
     const projectStatus = {
