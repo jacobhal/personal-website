@@ -9,7 +9,10 @@ const Home = props => {
     return (
       <div>
         <Helmet>
-            <meta name="description" content="The personal website of Jacob Hallman - A fullstack developer" />
+          <title>Jacob Hallman - Fullstack developer</title>
+          <meta name="description" content="The personal website of Jacob Hallman - A fullstack developer. 
+            Interests include web development, app development, machine learning and learning new things in general.
+            This website contains my resume, personal projects, my master's thesis and more." />
         </Helmet>
         <MainHero title="JACOB HALLMAN" subtitle="I'm always ready for new challenges" background="has-bg-img-keyboard" />
         <Section>

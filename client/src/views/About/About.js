@@ -7,6 +7,10 @@ import { Columns, Button } from 'react-bulma-components/full';
 const About = props => {
     return (
       <div>
+        <Helmet>
+          <title>Jacob Hallman - About</title>
+          <meta name="description" content="This page contains various links to social platforms such as LinkedInand Github as well as a link to my public master's thesis." />
+        </Helmet>
         <MainHero title="DIG A LITTLE DEEPER" subtitle="Visit my social accounts to find out more about my projects"
         background="has-bg-img-ocean"
         button={

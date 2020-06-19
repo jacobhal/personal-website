@@ -136,8 +136,9 @@ const CoronaDashboard = () => {
     return (
         <div>
           <Helmet>
-              <title>Corona dashboard</title>
-              <meta name="description" content="A corona dashboard that compares the situation in different countries" />
+              <title>Jacob Hallman - Corona dashboard</title>
+              <meta name="description" content="A corona dashboard that compares the COVID-19 situation in different countries. 
+                See an overview using the map view or compare different countries using various metrics in the table view." />
           </Helmet>
             <Hero color="black" className="navbar-projects">
                 <Hero.Head>

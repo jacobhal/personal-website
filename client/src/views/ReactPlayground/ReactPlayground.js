@@ -35,6 +35,10 @@ const ReactPlayground = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Jacob Hallman - React playground</title>
+                <meta name="description" content="This is a small playground that can be used to explore new react features. Most of the hooks provided by react are available as well as the basic Bulma CSS classes." />
+            </Helmet>
             <Hero color="black" className="navbar-projects">
                 <Hero.Head>
                     <NavBar />
@@ -43,7 +47,7 @@ const ReactPlayground = () => {
             <Section>
                 <Container>
                     <h1 className="title">React playground</h1>  
-                    <p style={{marginBottom: '10px'}}>{"Available hooks - {useState, useEffect, useContext, useMemo, useRef, useReducer, useCallback}. Basic bulma css modifiers are available."}</p>
+                    <p style={{marginBottom: '10px'}}>{"Available hooks - {useState, useEffect, useContext, useMemo, useRef, useReducer, useCallback}. Basic Bulma CSS modifiers are available."}</p>
                     <LiveProvider scope={scope} theme={dracula} code={exampleCode} >
                         <LiveEditor className="content"
                          style={{

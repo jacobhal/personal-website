@@ -46,6 +46,11 @@ export default function Portfolio() {
     ]
     return (
         <div>
+            <Helmet>
+            <title>Jacob Hallman - Portfolio of personal web projects</title>
+            <meta name="description" content="The personal web portfolio of Jacob Hallman includes various personal projects that I have been working on in my freetime. 
+                The projects ranges from exploring third-party libraries to implementing ideas that are on my mind." />
+            </Helmet>
             <MainHero title="PERSONAL PROJECTS" subtitle="Check out some passion projects of mine" background="has-bg-img-bulb" />
             <Section>
                 <Container>

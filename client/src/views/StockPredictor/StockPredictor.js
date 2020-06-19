@@ -59,6 +59,10 @@ const StockPredictor = ()  => {
     
     return (
         <div>
+            <Helmet>
+                <title>Jacob Hallman - Stock predictor</title>
+                <meta name="description" content="An ongoing project that uses multiple Stock APIs + machine learning in order to predict good buying opportunities on the stock market." />
+            </Helmet>
             <Hero color="black" className="navbar-projects">
                 <Hero.Head>
                     <NavBar />

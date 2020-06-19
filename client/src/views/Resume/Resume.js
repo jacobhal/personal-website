@@ -12,6 +12,10 @@ class Resume extends React.Component {
   render () {
     return (
       <div>
+        <Helmet>
+          <title>Jacob Hallman - Resume</title>
+          <meta name="description" content="Check out my resume in either english or swedish." />
+        </Helmet>
         <MainHero title="FIND OUT MORE" subtitle="Discover what I have done in my past"
         button={
         <Columns>
