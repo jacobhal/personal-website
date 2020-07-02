@@ -15,12 +15,11 @@ export default function Portfolio() {
     let projects = [
         {
             id: 1,
-            title: "Stock predictor",
-            route: "/stockpredictor",
-            description: "Financial market predictor using Machine learning and realtime data Stock API:s. A separate API" + 
-             " was deployed to Heroku using Flask + MySQL which is where the data actual data fetching occurrs. The financial API:s" +
-             " being used are free versions of Yahoo Finance and Alphavantage.",
-            status: projectStatus.TODO
+            title: "Restocker (Github)",
+            route: "https://github.com/jacobhal/restocker-api",
+            description: "Find out when your favourite products are back in stock by scraping the seller's website." + 
+             " The project uses Selenium + Python + Beautifulsoup to scrape websites and is scheduled to run every hour.",
+            status: projectStatus.FINISHED
         },
         {
             id: 2,
@@ -42,6 +41,15 @@ export default function Portfolio() {
             route: "http://www.codehalls.com",
             description: "An old school project built with Laravel and PHP (not responsive).",
             status: projectStatus.FINISHED
+        },
+        {
+            id: 5,
+            title: "Stock predictor",
+            route: "/stockpredictor",
+            description: "Financial market predictor using Machine learning and realtime data Stock API:s. A separate API" + 
+             " was deployed to Heroku using Flask + MySQL which is where the data actual data fetching occurrs. The financial API:s" +
+             " being used are free versions of Yahoo Finance and Alphavantage.",
+            status: projectStatus.TODO
         }
     ]
     return (
