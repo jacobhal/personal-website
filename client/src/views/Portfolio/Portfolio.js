@@ -15,24 +15,24 @@ export default function Portfolio() {
     let projects = [
         {
             id: 1,
-            title: "Restocker (Github)",
-            route: "https://github.com/jacobhal/restocker-api",
-            description: "Find out when your favourite products are back in stock by scraping the seller's website." + 
-             " The project uses Selenium + Python + Beautifulsoup to scrape websites and is scheduled to run every hour.",
-            status: projectStatus.FINISHED
-        },
-        {
-            id: 2,
             title: "React playground",
             route: "/react-playground",
             description: "This is a playground for exploring new React features since this entire website is built with React.",
             status: projectStatus.FINISHED
         },
         {
-            id: 3,
+            id: 2,
             title: "Corona dashboard",
             route: "/corona-dashboard",
             description: "A live update corona dashboard using data from John Hopkins.",
+            status: projectStatus.FINISHED
+        },
+        {
+            id: 3,
+            title: "Restocker (Github)",
+            route: "https://github.com/jacobhal/restocker-api",
+            description: "Find out when your favourite products are back in stock by scraping the seller's website." + 
+             " The project uses Selenium + Python + Beautifulsoup to scrape websites and is scheduled to run every hour.",
             status: projectStatus.FINISHED
         },
         {
