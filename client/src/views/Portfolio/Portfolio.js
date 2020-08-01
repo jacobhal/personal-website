@@ -52,6 +52,17 @@ export default function Portfolio() {
             status: projectStatus.TODO
         }
     ]
+
+    let courses = [
+        {
+            id: 1,
+            title: "Complete Git Guide: Understand and master Git and GitHub",
+            route: "https://github.com/jacobhal/git-course",
+            description: "A Git course on Udemy. It covers everything from git low-level commands to more advanced featues" +
+            " such as rebasing and cherry-picking.",
+            status: projectStatus.FINISHED
+        }     
+    ]
     return (
         <div>
             <Helmet>
@@ -62,8 +73,16 @@ export default function Portfolio() {
             <MainHero title="PERSONAL PROJECTS" subtitle="Check out some passion projects of mine" background="has-bg-img-bulb" />
             <Section>
                 <Container>
-                <h1 className="title">My projects</h1>
-                < Table projects={projects}/>
+                    <h1 className="title">My Udemy Courses</h1>
+                    <p>This is a list of Udemy courses that I have either completed or currently taking in my freetime. 
+                        These courses either contain skills that I use every day at work and want to improve on or things I am
+                        intrigued by and want to learn more about. Click the links to go to the Github repository corresponding
+                        to each course (certificates are shown in the main repository README file).</p>
+                    < Table projects={courses} tableFirstColumnTitle="Course"/>
+                    <h1 className="title">My Projects</h1>
+                    <p>This is a list of projects that I have done or am currently working on in my freetime. 
+                        It can be something I need or simply something I want to learn more about.</p>
+                    < Table projects={projects} tableFirstColumnTitle="Project"/>
                 </Container>
             </Section>
         </div>
