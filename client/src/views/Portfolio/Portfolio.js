@@ -53,6 +53,12 @@ export default function Portfolio() {
         }
     ]
 
+    const courseStatus = {
+        TODO:   "In progress",
+        FINISHED:  "Finished",
+        ABANDONED: "Abandoned"
+    };
+
     let courses = [
         {
             id: 1,
@@ -60,7 +66,7 @@ export default function Portfolio() {
             route: "https://github.com/jacobhal/git-course",
             description: "A Git course on Udemy. It covers everything from git low-level commands to more advanced featues" +
             " such as rebasing and cherry-picking.",
-            status: projectStatus.FINISHED
+            status: courseStatus.FINISHED
         }     
     ]
     return (
