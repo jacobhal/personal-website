@@ -2,7 +2,7 @@ import React from 'react';
 
 import MainHero from '../.././components/MainHero';
 
-import { Heading, Section, Card, Content, Columns } from 'react-bulma-components/full';
+import { Container, Card, Row } from 'react-bootstrap';
 import { Helmet } from "react-helmet";
 
 const Home = props => {
@@ -15,28 +15,27 @@ const Home = props => {
             This website contains my resume, personal projects, my master's thesis and more." />
         </Helmet>
         <MainHero title="JACOB HALLMAN" subtitle="I'm always ready for new challenges" background="has-bg-img-keyboard" />
-        <Section>
-          <Columns>
-            <Columns.Column>
+        <Container>
+            <Row>
               <Card className="is-shady card-equal-height">
-                <Card.Header className="card-header">
+                <Card.Title className="card-header">
                     <span className="icon big-icon">
                       <i className="fa fa-database"></i>
                     </span>
-                </Card.Header>
-                <Card.Content>
-                  <Content className="has-text-centered">
-                    <Heading className="has-text-centered" subtitle size={3}>
+                </Card.Title>
+                <Card.Body>
+                  <Card.Text className="has-text-centered">
+                    <h1 className="has-text-centered" subtitle size={3}>
                       Developer
-                    </Heading>
+                    </h1>
                     I have always been interested in technology and how it keeps changing our world.
-                    <Heading className="has-text-centered" subtitle size={6}>
+                    <h1 className="has-text-centered" subtitle size={6}>
                       Programming languages
-                    </Heading>
+                    </h1>
                     Python, C++, Java, C#, Clojure.
-                    <Heading className="has-text-centered" subtitle size={6}>
+                    <h1 className="has-text-centered" subtitle size={6}>
                       IDEs + machine learning libraries I have used
-                    </Heading>
+                    </h1>
                     <ul className="is-unstyled">
                       <li>Atom</li>
                       <li>IntellIJ</li>
@@ -48,62 +47,62 @@ const Home = props => {
                       <li>LIME</li>
                       <li>H2O</li>
                     </ul>
-                  </Content>
-                </Card.Content>
+                  </Card.Text>
+                </Card.Body>
               </Card>
-            </Columns.Column>
-            <Columns.Column>
+            </Row>
+            <Row>
               <Card className="is-shady card-equal-height">
-                <Card.Header className="card-header">
+                <Card.Title className="card-header">
                     <span className="icon big-icon">
                       <i className="fa fa-cogs"></i>
                     </span>
-                </Card.Header>
-                <Card.Content>
-                  <Content className="has-text-centered">
-                    <Heading className="has-text-centered" subtitle size={3}>
+                </Card.Title>
+                <Card.Body>
+                  <Card.Text className="has-text-centered">
+                    <h1 className="has-text-centered" subtitle size={3}>
                       Problem solver
-                    </Heading>
+                    </h1>
                     I like to dive into new challenges and problems and can't get them out of my head until they are solved.
                     Since a few years back I have also been an avid user of Mac OSX.
-                    <Heading className="has-text-centered" subtitle size={6}>
+                    <h1 className="has-text-centered" subtitle size={6}>
                       Operating Systems
-                    </Heading>
+                    </h1>
                     Windows, Ubuntu, Mac OSX.
-                    <Heading className="has-text-centered" subtitle size={6}>
+                    <h1 className="has-text-centered" subtitle size={6}>
                       Useful development tools that I have experience with
-                    </Heading>
+                    </h1>
                     <ul className="is-unstyled">
                       <li>Git + Github</li>
                       <li>TFS/Azure DevOps</li>
                       <li>Octopus Deploy</li>
                       <li>SQL Server</li>
                     </ul>
-                  </Content>
-                </Card.Content>
+                  </Card.Text>
+                </Card.Body>
               </Card>
-            </Columns.Column>
-            <Columns.Column>
+            </Row>
+            <Row>
               <Card className="is-shady card-equal-height">
-                <Card.Header className="card-header">
+                <Card.Title className="card-header">
                     <span className="icon big-icon">
                       <i className="fa fa-copy"></i>
                     </span>
-                </Card.Header>
-                <Card.Content>
-                  <Content className="has-text-centered">
-                    <Heading className="has-text-centered" subtitle size={3}>
+                </Card.Title>
+                <Card.Body>
+                  <Card.Text className="has-text-centered">
+                    <h1 className="has-text-centered" subtitle size={3}>
                       Full-stack Developer
-                    </Heading>
+                    </h1>
                     During my education I have been interested in back-end as well as front-end programming. Below
                     is a list of programming languages and tools of a more web-related nature that I have used.
-                    <Heading className="has-text-centered" subtitle size={6}>
+                    <h1 className="has-text-centered" subtitle size={6}>
                       Web languages
-                    </Heading>
+                    </h1>
                     HTML, CSS, JavaScript/JQuery, PHP, XPath.
-                    <Heading className="has-text-centered" subtitle size={6}>
+                    <h1 className="has-text-centered" subtitle size={6}>
                       Web tools
-                    </Heading>
+                    </h1>
                     <ul className="is-unstyled">
                       <li>Vue</li>
                       <li>React</li>
@@ -113,12 +112,11 @@ const Home = props => {
                       <li>Materialize</li>
                       <li>Typescript</li>
                     </ul>
-                  </Content>
-                </Card.Content>
+                  </Card.Text>
+                </Card.Body>
               </Card>
-            </Columns.Column>
-          </Columns>
-        </Section>
+            </Row>
+        </Container>
       </div>
     );
 }

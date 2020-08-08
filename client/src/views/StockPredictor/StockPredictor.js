@@ -7,7 +7,7 @@ import { NavBar } from '../../components/NavBar';
 import StockForm from './components/StockForm';
 import StockOverview from './components/StockOverview';
 import StockTable from './components/StockTable';
-import { Hero, Section, Container } from 'react-bulma-components/full';
+import { Jumbotron, Container } from 'react-bootstrap';
 import DefaultLoader from './../../components/DefaultLoader';
 import Errormessage from './../../components/Errormessage';
 import { Helmet } from "react-helmet";
@@ -64,13 +64,10 @@ const StockPredictor = ()  => {
                 <title>Jacob Hallman - Stock predictor</title>
                 <meta name="description" content="An ongoing project that uses multiple Stock APIs + machine learning in order to predict good buying opportunities on the stock market." />
             </Helmet>
-            <Hero color="black" className="navbar-projects">
-                <Hero.Head>
+            <Jumbotron color="black" className="navbar-projects">
                     <NavBar />
-                </Hero.Head>
-            </Hero>
-            <Section>
-                <Container>
+            </Jumbotron>
+            <Container>
                     <h1 className="title">Fetch stock data</h1>  
                     <p>Search either by keywords to get a list of companies or specify a stock symbol directly to get information about
                         the company.</p>    
@@ -145,7 +142,6 @@ const StockPredictor = ()  => {
                         </div>
                     }
                 </Container>
-            </Section>
         </div>
     );
 }

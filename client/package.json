@@ -4,16 +4,17 @@
   "private": true,
   "homepage": "https://jacobhal.se",
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.5.2",
     "jquery": "^3.5.1",
     "node-sass": "^4.14.1",
-    "react": "^16.13.0",
-    "react-bulma-components": "^2.3.0",
-    "react-dom": "^16.13.0",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.3.0",
+    "react-dom": "^16.13.1",
     "react-live": "^2.2.2",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.4.0",
-    "sass-loader": "^7.1.0"
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.1",
+    "sass-loader": "^9.0.3"
   },
   "scripts": {
     "start": "react-scripts start",

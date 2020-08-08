@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import { NavBar } from '../../components/NavBar';
 import MapChart from "./MapChart";
-import { Hero, Section } from 'react-bulma-components/full';
+import { Jumbotron, Container } from 'react-bootstrap';
 import DefaultLoader from './../../components/DefaultLoader';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
@@ -140,12 +140,10 @@ const CoronaDashboard = () => {
               <meta name="description" content="A corona dashboard that compares the COVID-19 situation in different countries. 
                 See an overview using the map view or compare different countries using various metrics in the table view." />
           </Helmet>
-            <Hero color="black" className="navbar-projects">
-                <Hero.Head>
+            <Jumbotron color="black" className="navbar-projects">
                     <NavBar />
-                </Hero.Head>
-            </Hero>
-            <Section>
+            </Jumbotron>
+            <Container>
                 <Tabs defaultActiveKey="map" className="corona-tab" variant="tabs">
                     <Tab eventKey="map" title="Map" icon="fa-map" isactive="is-active">
                         { (!isLoading && !error) ?
@@ -164,7 +162,7 @@ const CoronaDashboard = () => {
                         <DefaultLoader>Fetching data...</DefaultLoader>}
                     </Tab>
                 </Tabs>
-            </Section>
+            </Container>
         </div>
     )
 };

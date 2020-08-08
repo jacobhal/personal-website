@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTooltip from 'react-tooltip';
-import { Columns, Column } from 'react-bulma-components/full';
+import { Columns, Column } from 'react-bootstrap';
 
 const InfoSection = () => {
     return (

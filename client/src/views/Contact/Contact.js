@@ -3,7 +3,7 @@ import React from 'react';
 import MainHero from '../.././components/MainHero';
 import { Helmet } from "react-helmet";
 
-import { Button, Section, Container, Loader, Heading, Message, Form } from 'react-bulma-components/full';
+import { Button, Section, Container, Spinner, Alert, Form } from 'react-bootstrap';
 
 import axios from 'axios';
 import $ from 'jquery';
@@ -87,10 +87,8 @@ const Contact = props => {
       if(mailInProgress) {
       htmlOutput =
       <div>
-        <Heading className="has-text-centered subtitle-style" subtitle>
-          Sending Email
-        </Heading>
-        <Loader
+        
+        <Spinner
           className="loading-spinner"
           style={{
             width: 200,
@@ -111,57 +109,18 @@ const Contact = props => {
       }
       htmlOutput =
       <div>
-        <Message color={status ? "success" : "danger"}>
-          <Message.Header>
+        <Alert color={status ? "success" : "danger"}>
+          <Alert.Heading>
             {header}
-          </Message.Header>
-          <Message.Body>
+          </Alert.Heading>
             {msg}
-          </Message.Body>
-        </Message>
+        </Alert>
       </div>
 
     } else {
         htmlOutput =
         <form onSubmit={this.onSubmit} id="contact-form">
-            <Container id="form-container">
-              <Form.Field>
-                <Form.Label>Your name</Form.Label>
-                <Form.Control className="has-icons-left">
-                  <Form.Input required onChange={this.onChange} name="name" id="form-name" type="text" placeholder="Your name (required)" value={name}/>
-                  <span className="icon is-small is-left">
-                    <i className="fa fa-user"></i>
-                  </span>
-                </Form.Control>
-              </Form.Field>
-              <Form.Field>
-                <Form.Label>Your email</Form.Label>
-                <Form.Control className="has-icons-left">
-                  <Form.Input required onChange={this.onChange} name="email" id="form-email" type="email" placeholder="Your email (required)" value={email}/>
-                  <span className="icon is-small is-left">
-                    <i className="fa fa-envelope"></i>
-                  </span>
-                </Form.Control>
-              </Form.Field>
-              <Form.Field>
-                <Form.Label>Subject</Form.Label>
-                <Form.Control className="has-icons-left">
-                  <Form.Input onChange={this.onChange} name="subject" id="form-subject" type="text" placeholder="Subject" value={subject}/>
-                  <span className="icon is-small is-left">
-                    <i className="fa fa-folder-open"></i>
-                  </span>
-                </Form.Control>
-              </Form.Field>
-              <Form.Field>
-                <Form.Label>Message</Form.Label>
-                <Form.Control>
-                  <Form.Textarea required onChange={this.onChange} name="message" id="form-message" placeholder="Message (required)" value={message}/>
-                </Form.Control>
-              </Form.Field>
-              <Form.Control className="has-text-centered">
-                <Button id="btn-send">Send</Button>
-              </Form.Control>
-            </Container>
+            
           </form>
       }
       return (
@@ -171,9 +130,9 @@ const Contact = props => {
           <meta name="description" content="Don't hesitate to reach out to me! This form will send an email to me." />
         </Helmet>
         <MainHero title="REACH OUT TO ME" subtitle="Let's get in touch" background="has-bg-img-reach"/>
-        <Section>
+        <Container>
           {htmlOutput}
-        </Section>
+        </Container>
       </div>
       );
     }

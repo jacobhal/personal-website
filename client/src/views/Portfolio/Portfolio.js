@@ -3,7 +3,7 @@ import React from 'react';
 import MainHero from '../../components/MainHero';
 import Table from './components/ProjectTable';
 
-import { Section, Container } from 'react-bulma-components/full';
+import { Container } from 'react-bootstrap';
 import { Helmet } from "react-helmet";
 
 export default function Portfolio() {
@@ -77,20 +77,18 @@ export default function Portfolio() {
                 The projects ranges from exploring third-party libraries to implementing ideas that are on my mind." />
             </Helmet>
             <MainHero title="PERSONAL PROJECTS" subtitle="Check out some passion projects of mine" background="has-bg-img-bulb" />
-            <Section>
-                <Container>
-                    <h1 className="title">My Udemy Courses</h1>
-                    <p>This is a list of Udemy courses that I have either completed or that I am currently taking in my freetime. 
-                        These courses either contain skills that I use every day at work and want to improve on or things I am
-                        intrigued by and want to learn more about. Click the links to go to the Github repository corresponding
-                        to each course (certificates are shown in the main repository README file).</p>
-                    < Table projects={courses} tableFirstColumnTitle="Course"/>
-                    <h1 className="title">My Projects</h1>
-                    <p>This is a list of some of the projects that I have done or that I am currently working on in my freetime. 
-                        The projects are either things I can use in my daily life or simply technologies that I want to learn more about.</p>
-                    < Table projects={projects} tableFirstColumnTitle="Project"/>
-                </Container>
-            </Section>
+            <Container>
+                <h1 className="title">My Udemy Courses</h1>
+                <p>This is a list of Udemy courses that I have either completed or that I am currently taking in my freetime. 
+                    These courses either contain skills that I use every day at work and want to improve on or things I am
+                    intrigued by and want to learn more about. Click the links to go to the Github repository corresponding
+                    to each course (certificates are shown in the main repository README file).</p>
+                < Table projects={courses} tableFirstColumnTitle="Course"/>
+                <h1 className="title">My Projects</h1>
+                <p>This is a list of some of the projects that I have done or that I am currently working on in my freetime. 
+                    The projects are either things I can use in my daily life or simply technologies that I want to learn more about.</p>
+                < Table projects={projects} tableFirstColumnTitle="Project"/>
+            </Container>
         </div>
     );
 }

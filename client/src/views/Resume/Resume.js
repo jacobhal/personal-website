@@ -5,7 +5,7 @@ import pdf_english from '../../assets/CV_english.pdf';
 
 import MainHero from '../.././components/MainHero';
 
-import { Columns } from 'react-bulma-components/full';
+import { Columns } from 'react-bootstrap';
 import { Helmet } from "react-helmet";
 
 class Resume extends React.Component {
@@ -19,8 +19,7 @@ class Resume extends React.Component {
         </Helmet>
         <MainHero title="FIND OUT MORE" subtitle="Discover what I have done in my past"
         button={
-        <Columns>
-          <Columns.Column>
+          <Row>
             <div>
             <a download="CV_swedish.pdf" href={pdf} id="btn-resume" className="is-hidden-mobile button is-link">
               DOWNLOAD SWEDISH RESUME
@@ -41,8 +40,7 @@ class Resume extends React.Component {
                 ENGLISH RESUME
               </a>
             </div>
-          </Columns.Column>
-        </Columns>}
+          </Row>}
         fullheight="is-fullheight" background="has-bg-img-escalator"/>
 
       </div>

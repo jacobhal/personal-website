@@ -1,14 +1,12 @@
 import React from 'react';
 
-import { Loader, Heading } from 'react-bulma-components/full';
+import { Spinner } from 'react-bootstrap';
 
 const DefaultLoader = ({props, children}) => {
     return (
         <div>
-            <Heading className="has-text-centered subtitle-style" subtitle>
-            {children}
-            </Heading>
-            <Loader
+           
+            <Spinner
             className="loading-spinner"
             style={{
                 width: 200,

@@ -2,8 +2,6 @@ import React from 'react';
 
 import StockTableItem from './StockTableItem';
 
-import { Heading} from 'react-bulma-components/full';
-
 const StockTable = (props) => {
 /*
 1. symbol, 2. name, 3. type, 4. region, 5. marketOpen, 6. marketClose, 7. timezone, 8. currency, 9. matchScore 
@@ -20,10 +18,7 @@ const StockTable = (props) => {
     );
     return (
         <div>
-            <Heading subtitle size={4} style={{ 
-                borderTop: '2px solid #dbdbdb', 
-                marginTop: '20px', 
-                paddingTop: '10px'}}>Search results</Heading>
+            
             <table className="table">
                 <thead>
                     <tr>

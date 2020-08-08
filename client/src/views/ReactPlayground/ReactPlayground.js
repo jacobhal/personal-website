@@ -6,7 +6,7 @@ import nightOwl from "prism-react-renderer/themes/nightOwl";
 import './../../styles/reactPlayground.css';
 
 import { Helmet } from "react-helmet";
-import { Hero, Section, Container} from 'react-bulma-components/full';
+import { Jumbotron, Container} from 'react-bootstrap';
 import {LiveProvider, LiveEditor, LiveError, LivePreview} from 'react-live'
 
 const scope = {useState, useEffect, useContext, useMemo, useRef, useReducer, useCallback};
@@ -45,7 +45,6 @@ const ReactPlayground = () => {
                     <NavBar />
                 </Hero.Head>
             </Hero>
-            <Section>
                 <Container>
                     <h1 className="title">React playground</h1>  
                     <p style={{marginBottom: '10px'}}>{"Available hooks - {useState, useEffect, useContext, useMemo, useRef, useReducer, useCallback}. Basic Bulma CSS modifiers are available."}</p>
@@ -60,7 +59,6 @@ const ReactPlayground = () => {
                         <LivePreview />
                     </LiveProvider>
                 </Container>
-            </Section>
         </div>
     )
 };
