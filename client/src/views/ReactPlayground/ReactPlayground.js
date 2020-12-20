@@ -1,18 +1,33 @@
-import React, {useState, useEffect, useContext, useMemo, useRef, useReducer, useCallback} from 'react';
+import React, {
+    useState,
+    useEffect,
+    useContext,
+    useMemo,
+    useRef,
+    useReducer,
+    useCallback,
+} from 'react'
 
-import { NavBar } from '../../components/NavBar';
-import dracula from 'prism-react-renderer/themes/dracula';
-import nightOwl from "prism-react-renderer/themes/nightOwl";
-import './../../styles/reactPlayground.css';
+import { NavBar } from '../../components/NavBar'
+import dracula from 'prism-react-renderer/themes/dracula'
+import nightOwl from 'prism-react-renderer/themes/nightOwl'
+import './../../styles/reactPlayground.css'
 
-import { Helmet } from "react-helmet";
-import { Jumbotron, Container} from 'react-bootstrap';
-import {LiveProvider, LiveEditor, LiveError, LivePreview} from 'react-live'
+import { Helmet } from 'react-helmet'
+import { Jumbotron, Container } from 'react-bootstrap'
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 
-const scope = {useState, useEffect, useContext, useMemo, useRef, useReducer, useCallback};
+const scope = {
+    useState,
+    useEffect,
+    useContext,
+    useMemo,
+    useRef,
+    useReducer,
+    useCallback,
+}
 
 const ReactPlayground = () => {
-
     const exampleCode = `() => {
         const [count, setCount] = useState(0)
         const numbers = [1, 2, 3, 4, 5]
@@ -32,35 +47,41 @@ const ReactPlayground = () => {
                 </button>
             </div>
         )
-}`;
+}`
 
     return (
         <div>
             <Helmet>
                 <title>Jacob Hallman - React playground</title>
-                <meta name="description" content="This is a small playground that can be used to explore new react features. Most of the hooks provided by react are available as well as the basic Bulma CSS classes." />
+                <meta
+                    name="description"
+                    content="This is a small playground that can be used to explore new react features. Most of the hooks provided by react are available as well as the basic Bulma CSS classes."
+                />
             </Helmet>
-            <Hero color="black" className="navbar-projects">
-                <Hero.Head>
-                    <NavBar />
-                </Hero.Head>
-            </Hero>
-                <Container>
-                    <h1 className="title">React playground</h1>  
-                    <p style={{marginBottom: '10px'}}>{"Available hooks - {useState, useEffect, useContext, useMemo, useRef, useReducer, useCallback}. Basic Bulma CSS modifiers are available."}</p>
-                    <LiveProvider scope={scope} theme={dracula} code={exampleCode} >
-                        <LiveEditor className="content"
-                         style={{
+            <Jumbotron color="black" className="navbar-projects">
+                <NavBar />
+            </Jumbotron>
+            <Container>
+                <h1 className="title">React playground</h1>
+                <p style={{ marginBottom: '10px' }}>
+                    {
+                        'Available hooks - {useState, useEffect, useContext, useMemo, useRef, useReducer, useCallback}. Basic Bulma CSS modifiers are available.'
+                    }
+                </p>
+                <LiveProvider scope={scope} theme={dracula} code={exampleCode}>
+                    <LiveEditor
+                        className="content"
+                        style={{
                             fontFamily: '"Fira code", "Fira Mono", monospace',
                             fontSize: 16,
-                          }}
-                         />
-                        <LiveError />
-                        <LivePreview />
-                    </LiveProvider>
-                </Container>
+                        }}
+                    />
+                    <LiveError />
+                    <LivePreview />
+                </LiveProvider>
+            </Container>
         </div>
     )
-};
+}
 
-export default ReactPlayground;
+export default ReactPlayground

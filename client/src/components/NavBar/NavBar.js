@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import logo from '../../assets/images/favicon-256.png'
-import $ from 'jquery'
 
 import { Navbar, Nav } from 'react-bootstrap'
 
@@ -25,13 +24,13 @@ const NavBar = () => {
                     onClick={handleNavIconToggle}
                     className={isBurgerOpen ? 'open' : null}
                 >
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <span className="icon-bar"></span>
+                    <span className="icon-bar"></span>
+                    <span className="icon-bar"></span>
                 </div>
             </Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="ml-auto" pullRight>
+                <Nav className="ml-auto">
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/resume">Resume</Nav.Link>
                     <Nav.Link href="/about">About</Nav.Link>
