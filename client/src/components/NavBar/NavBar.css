@@ -90,3 +90,11 @@ div.navbar-nav:hover > a:hover {
 .blue {
     background-color: #9999cc;
 }
+
+/* Desktop only */
+@media only screen and (max-width: 768px) {
+    .navbar-nav a {
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+            1px 1px 0 #000 !important;
+    }
+}

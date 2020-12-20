@@ -19,6 +19,10 @@ body {
     min-height: 100% !important;
 }
 
+div#root {
+    height: 100% !important;
+}
+
 a {
     text-decoration: none !important;
 }
@@ -62,15 +66,18 @@ code {
 /* JUMBOTRONS */
 
 .jumbotron-normal {
+    border-radius: 0 !important;
     padding: 20px 50px;
     margin: 0;
+    margin-bottom: 20px;
     height: 500px;
 }
 
 .jumbotron-full-page {
-    padding: 20px 50px;
+    border-radius: 0 !important;
+    padding: 20px 50px 20px 50px;
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 #jumbotron-title {
@@ -86,7 +93,15 @@ code {
 }
 
 .jumbotron-content {
-    margin-top: 160px;
+    padding-top: 160px;
+}
+
+.vertical-center {
+    min-height: 100%; /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+
+    display: flex;
+    align-items: center;
 }
 
 /* CARDS */
@@ -108,7 +123,38 @@ code {
 
 /* BUTTONS */
 
-#wrapper-btn-github {
+.main-button {
+    padding-top: 10px;
+    width: 300px;
+    height: 60px;
+    font-size: 20px;
+    border: 2px solid #fff;
+    border-radius: 0px;
+    background: rgba(255, 255, 255, 0);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4cffffff', endColorstr='#4cffffff');
+    color: #fff;
+}
+
+.main-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: #000;
+}
+
+.cv-swedish-btn-row,
+.cv-english-btn-row {
+    margin: 10px;
+}
+
+.cv-english-btn-row div a#btn-resume-english {
+    margin: 0 !important;
+}
+
+#btn-resume-swedish,
+#btn-resume-english {
+    width: 320px;
+}
+
+/* #wrapper-btn-github {
     padding: 0 !important;
     margin: 0 0 10px 0 !important;
 }
@@ -118,46 +164,13 @@ code {
     margin: 0 !important;
 }
 
-#btn-resume,
-#btn-linkedin,
-#btn-github,
-#btn-resume-mobile,
-#btn-resume-english,
-#btn-resume-mobile-english,
-#btn-thesis {
-    width: 300px;
-    height: 60px;
-    font-size: 20px;
-    border: 2px solid #fff;
-    border-radius: 0px;
-    background: rgba(255, 255, 255, 0); /* browsers */
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4cffffff', endColorstr='#4cffffff'); /* IE */
-    color: #fff;
-}
-
-#btn-resume,
-#btn-resume-english {
-    width: 320px;
-}
-
 #btn-resume {
     margin-bottom: 20px;
 }
 
 #btn-resume-mobile {
     margin-bottom: 10px;
-}
-
-#btn-resume:hover,
-#btn-resume-english:hover,
-#btn-linkedin:hover,
-#btn-github:hover,
-#btn-resume-mobile:hover,
-#btn-resume-mobile-english:hover,
-#btn-thesis:hover {
-    background-color: #fff;
-    color: #000;
-}
+} */
 
 /* Caret fix for react sortable tables */
 .caret {
@@ -269,15 +282,19 @@ div.radio-form {
         font-size: 52px !important;
     }
 
-    .jumbotron-full-page {
+    .jumbotron-normal {
         height: 400px;
+    }
+
+    .jumbotron-content {
+        padding-top: 50px;
     }
 }
 
 /* Mobile only */
 @media only screen and (max-width: 350px) {
     #btn-github,
-    #btn-resume-mobile,
+    #btn-resume-mobile-swedish,
     #btn-resume-mobile-english,
     #btn-linkedin,
     #btn-thesis {

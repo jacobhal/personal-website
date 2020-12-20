@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Jumbotron, Container } from 'react-bootstrap'
+import { Jumbotron, Container, Row } from 'react-bootstrap'
 import { NavBar } from './NavBar'
 
 const MainJumbotron = ({
@@ -12,8 +12,6 @@ const MainJumbotron = ({
 }) => {
     return (
         <Jumbotron
-            fluid
-            color="black"
             className={
                 backgroundClass +
                 ' ' +
@@ -21,17 +19,21 @@ const MainJumbotron = ({
             }
         >
             <NavBar />
-            <Container className="has-text-centered jumbotron-content">
-                <h1
-                    className="has-text-centered outline"
-                    size={6}
-                    id="jumbotron-subtitle"
-                >
-                    {subtitle}
-                </h1>
-                <h3 className="has-text-centered outline" id="jumbotron-title">
-                    {title}
-                </h3>
+            <Container className="jumbotron-content h-100">
+                <Row className="justify-content-center align-items-center">
+                    <h1
+                        className="outline text-center"
+                        size={6}
+                        id="jumbotron-subtitle"
+                    >
+                        {subtitle}
+                    </h1>
+                </Row>
+                <Row className="justify-content-center align-items-center">
+                    <h3 className="outline text-center" id="jumbotron-title">
+                        {title}
+                    </h3>
+                </Row>
                 {children}
             </Container>
         </Jumbotron>

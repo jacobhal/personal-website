@@ -5,7 +5,7 @@ import pdf_english from '../../assets/CV_english.pdf'
 
 import MainJumbotron from '../.././components/MainJumbotron'
 
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Container } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
 
 class Resume extends React.Component {
@@ -25,56 +25,46 @@ class Resume extends React.Component {
                     backgroundClass="has-bg-img-escalator"
                     isFullHeight={true}
                 >
-                    <Col className="text-center">
-                        <Row>
-                            <div>
-                                <a
-                                    download="CV_swedish.pdf"
-                                    href={pdf}
-                                    id="btn-resume"
-                                    className="d-none d-md-block button is-link"
-                                >
-                                    DOWNLOAD SWEDISH RESUME
-                                </a>
-                            </div>
-                        </Row>
-                        <Row>
-                            <div>
-                                <a
-                                    download="CV_english.pdf"
-                                    href={pdf_english}
-                                    id="btn-resume-english"
-                                    className="d-none d-md-block button is-link"
-                                >
-                                    DOWNLOAD ENGLISH RESUME
-                                </a>
-                            </div>
-                        </Row>
-                        <Row>
-                            <div>
-                                <a
-                                    download="CV_swedish.pdf"
-                                    href={pdf}
-                                    id="btn-resume-mobile"
-                                    className="d-none d-sm-block d-md-none button is-link"
-                                >
-                                    SWEDISH RESUME
-                                </a>
-                            </div>
-                        </Row>
-                        <Row>
-                            <div>
-                                <a
-                                    download="CV_english.pdf"
-                                    href={pdf_english}
-                                    id="btn-resume-mobile-english"
-                                    className="d-none d-sm-block d-md-none button is-link"
-                                >
-                                    ENGLISH RESUME
-                                </a>
-                            </div>
-                        </Row>
-                    </Col>
+                    <Row className="cv-swedish-btn-row justify-content-center align-items-center">
+                        <a
+                            download="CV_swedish.pdf"
+                            href={pdf}
+                            id="btn-resume-swedish"
+                            className="d-none d-md-block btn btn-light main-button"
+                        >
+                            DOWNLOAD SWEDISH RESUME
+                        </a>
+                    </Row>
+                    <Row className="cv-english-btn-row justify-content-center align-items-center">
+                        <a
+                            download="CV_english.pdf"
+                            href={pdf_english}
+                            id="btn-resume-english"
+                            className="d-none d-md-block btn btn-light main-button"
+                        >
+                            DOWNLOAD ENGLISH RESUME
+                        </a>
+                    </Row>
+                    <Row className="cv-swedish-btn-row justify-content-center align-items-center">
+                        <a
+                            download="CV_swedish.pdf"
+                            href={pdf}
+                            id="btn-resume-mobile-swedish"
+                            className="d-md-none btn btn-light main-button"
+                        >
+                            SWEDISH RESUME
+                        </a>
+                    </Row>
+                    <Row className="cv-english-btn-row justify-content-center align-items-center">
+                        <a
+                            download="CV_english.pdf"
+                            href={pdf_english}
+                            id="btn-resume-mobile-english"
+                            className="d-md-none btn btn-light main-button"
+                        >
+                            ENGLISH RESUME
+                        </a>
+                    </Row>
                 </MainJumbotron>
             </div>
         )
