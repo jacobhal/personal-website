@@ -9,7 +9,7 @@ import './NavBar.css';
 const NavBar = () => {
   const styling = {height: '28px', width: '28px'};
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar expand="lg">
     <Navbar.Brand href="/"> 
               <img
                 src={logo}
@@ -19,7 +19,7 @@ const NavBar = () => {
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav" style={{color: 'white !important'}}>
-      <Nav className="mr-auto">
+      <Nav className="ml-auto" pullRight>
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/resume">Resume</Nav.Link>
         <Nav.Link href="/about">About</Nav.Link>

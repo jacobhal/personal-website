@@ -1,1 +1,8 @@
 
+.navbar.transparent.navbar-inverse .navbar-inner {
+    background: rgba(0,0,0,0.4) !important;
+ }
+
+ .navbar-nav a {
+    color: white !important;
+}

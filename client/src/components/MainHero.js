@@ -6,11 +6,9 @@ import { NavBar } from './NavBar';
 class MainHero extends React.Component {
   render() {
     return (
-        <Jumbotron color="black" className={this.props.background + ' ' + this.props.fullheight}>
+        <Jumbotron fluid color="black" style={{padding: '20px 50px'}} className={this.props.background + ' ' + this.props.fullheight}>
             <NavBar />
             <Container className="has-text-centered">
-              
-              
               {this.props.button}
             </Container>
         </Jumbotron>
