@@ -1,7 +1,6 @@
-
 .navbar.transparent.navbar-inverse .navbar-inner {
-    background: rgba(0,0,0,0.4) !important;
- }
+    background: rgba(0, 0, 0, 0.4) !important;
+}
 
 .navbar-nav a {
     color: white !important;
@@ -23,5 +22,71 @@ div.navbar-nav:hover > a {
 
 div.navbar-nav:hover > a:hover {
     transition: opacity 0.1s ease;
-    opacity: 1.0;
+    opacity: 1;
+}
+
+/* Navbar burger icon animation and styling */
+.navbar-toggler {
+    border: none;
+    background: transparent !important;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    background: transparent !important;
+}
+
+.navbar-toggler .icon-bar {
+    background-color: #fff;
+    transform: rotate(0deg) translate(0px, 0px);
+    transition: ease all 0.2s;
+}
+
+.navbar-toggler .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+}
+
+.navbar-toggler .icon-bar + .icon-bar {
+    margin-top: 4px;
+}
+
+.icon-bar:nth-child(2) {
+    width: 22px;
+    transition: ease all 0.2s;
+}
+
+.navbar-toggler:hover > .icon-bar:nth-child(2) {
+    width: 22px;
+    transition: ease all 0.2s;
+}
+
+.navbar-toggler:active > .icon-bar:nth-child(2) {
+    width: 22px;
+    transition: ease all 0.2s;
+}
+
+.navbar-toggler:not(.collapsed) .icon-bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 4px);
+    transition: ease all 0.2s;
+}
+
+.navbar-toggler:not(.collapsed) .icon-bar:nth-child(2) {
+    opacity: 0;
+    transition: ease all 0.2s;
+}
+
+.navbar-toggler:not(.collapsed) .icon-bar:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -4px);
+    transition: ease all 0.2s;
+}
+
+.sec-accent {
+    background-color: #fafcf5;
+}
+
+.blue {
+    background-color: #9999cc;
 }
