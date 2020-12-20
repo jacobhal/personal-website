@@ -5,7 +5,7 @@ import pdf_english from '../../assets/CV_english.pdf'
 
 import MainJumbotron from '../.././components/MainJumbotron'
 
-import { Row, Col, Container } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
 
 class Resume extends React.Component {
