@@ -3,6 +3,25 @@
     background: rgba(0,0,0,0.4) !important;
  }
 
- .navbar-nav a {
+.navbar-nav a {
     color: white !important;
+}
+
+button.navbar-toggler i {
+    color: #fff !important;
+    font-size: 20px !important;
+}
+
+div.navbar-nav {
+    text-align: center !important;
+}
+
+div.navbar-nav:hover > a {
+    opacity: 0.5;
+    transition: opacity 0.2s linear;
+}
+
+div.navbar-nav:hover > a:hover {
+    transition: opacity 0.1s ease;
+    opacity: 1.0;
 }
