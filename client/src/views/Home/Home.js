@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MainHero from '../.././components/MainHero';
+import MainJumbotron from '../../components/MainJumbotron';
 
 import { Container, Card, Row } from 'react-bootstrap';
 import { Helmet } from "react-helmet";
@@ -14,7 +14,10 @@ const Home = props => {
             Interests include web development, app development, machine learning and learning new things in general.
             This website contains my resume, personal projects, my master's thesis and more." />
         </Helmet>
-        <MainHero title="JACOB HALLMAN" subtitle="I'm always ready for new challenges" background="has-bg-img-keyboard" />
+        <MainJumbotron 
+          title="JACOB HALLMAN" 
+          subtitle="I'm always ready for new challenges" 
+          backgroundClass="has-bg-img-keyboard" />
         <Container>
             <Row>
               <Card className="is-shady card-equal-height">

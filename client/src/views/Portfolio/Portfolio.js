@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MainHero from '../../components/MainHero';
+import MainJumbotron from '../../components/MainJumbotron';
 import Table from './components/ProjectTable';
 
 import { Container } from 'react-bootstrap';
@@ -76,7 +76,10 @@ export default function Portfolio() {
             <meta name="description" content="The personal web portfolio of Jacob Hallman includes various personal projects that I have been working on in my freetime. 
                 The projects ranges from exploring third-party libraries to implementing ideas that are on my mind." />
             </Helmet>
-            <MainHero title="PERSONAL PROJECTS" subtitle="Check out some passion projects of mine" background="has-bg-img-bulb" />
+            <MainJumbotron 
+                title="PERSONAL PROJECTS" 
+                subtitle="Check out some passion projects of mine" 
+                backgroundClass="has-bg-img-bulb" />
             <Container>
                 <h1 className="title">My Udemy Courses</h1>
                 <p>This is a list of Udemy courses that I have either completed or that I am currently taking in my freetime. 

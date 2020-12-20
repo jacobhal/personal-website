@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MainHero from '../.././components/MainHero';
+import MainJumbotron from '../.././components/MainJumbotron';
 
 import { Container, Row, Button } from 'react-bootstrap';
 import { Helmet } from "react-helmet";
@@ -12,9 +12,11 @@ const About = props => {
           <title>Jacob Hallman - About</title>
           <meta name="description" content="This page contains various links to social platforms such as LinkedInand Github as well as a link to my public master's thesis." />
         </Helmet>
-        <MainHero title="DIG A LITTLE DEEPER" subtitle="Visit my social accounts to find out more about my projects"
-        background="has-bg-img-ocean"
-        button={
+        <MainJumbotron 
+          title="DIG A LITTLE DEEPER" 
+          subtitle="Visit my social accounts to find out more about my projects"
+          backgroundClass="has-bg-img-ocean"
+          isFullHeight={true}>
           <Container>
             <Row id='wrapper-btn-github' className='wrapper-btn-github'>
               <a href="https://github.com/jacobhal" target="_blank" rel="noopener noreferrer"><Button id="btn-github">GITHUB</Button></a>
@@ -31,8 +33,7 @@ const About = props => {
               </a>
             </Row>
           </Container>
-        }
-        fullheight="is-fullheight"/>
+        </MainJumbotron>
       </div>
     );
 }

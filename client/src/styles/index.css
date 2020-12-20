@@ -61,9 +61,14 @@ code {
 
 /* JUMBOTRONS */
 
-.jumbotron-full-page {
+.jumbotron-normal {
   padding: 20px 50px;
   height: 500px;
+}
+
+.jumbotron-full-page {
+  padding: 20px 50px;
+  height: 100%;
 }
 
 #jumbotron-title {

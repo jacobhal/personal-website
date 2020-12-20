@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MainHero from '../.././components/MainHero';
+import MainJumbotron from '../.././components/MainJumbotron';
 import { Helmet } from "react-helmet";
 
 import { Button, Section, Container, Spinner, Alert, Form } from 'react-bootstrap';
@@ -129,7 +129,7 @@ const Contact = props => {
           <title>Jacob Hallman - Contact me</title>
           <meta name="description" content="Don't hesitate to reach out to me! This form will send an email to me." />
         </Helmet>
-        <MainHero title="REACH OUT TO ME" subtitle="Let's get in touch" background="has-bg-img-reach"/>
+        <MainJumbotron title="REACH OUT TO ME" subtitle="Let's get in touch" backgroundClass="has-bg-img-reach"/>
         <Container>
           {htmlOutput}
         </Container>
