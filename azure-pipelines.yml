@@ -15,8 +15,10 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-- script: | # Any indented text is considered a multi-line scalar value
-  workingDirectory: client/
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+- script: npm install
+  workingDirectory: client
+  displayName: 'npm install'
+
+- script: npm run build
+  workingDirectory: client
+  displayName: 'npm run build'
