@@ -63,12 +63,14 @@ code {
 
 .jumbotron-normal {
     padding: 20px 50px;
+    margin: 0;
     height: 500px;
 }
 
 .jumbotron-full-page {
     padding: 20px 50px;
-    height: 100%;
+    margin: 0;
+    height: 100vh;
 }
 
 #jumbotron-title {

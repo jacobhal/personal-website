@@ -31,14 +31,14 @@ const Home = () => {
                             </span>
                         </Card.Title>
                         <Card.Body>
-                            <h3 className="text-center">Developer</h3>I have
-                            always been interested in technology and how it
-                            keeps changing our world.
-                            <h5 className="text-center">
+                            <h3 className="text-center mt-3 mb-4">Developer</h3>
+                            I have always been interested in technology and how
+                            it keeps changing our world.
+                            <h5 className="text-center mt-3 mb-4">
                                 Programming languages
                             </h5>
                             Python, C++, Java, C#, Clojure.
-                            <h5 className="text-center">
+                            <h5 className="text-center mt-3 mb-4">
                                 IDEs + machine learning libraries I have used
                             </h5>
                             <ul className="is-unstyled">
@@ -63,14 +63,18 @@ const Home = () => {
                             </span>
                         </Card.Title>
                         <Card.Body>
-                            <h3 className="text-center">Problem solver</h3>I
-                            like to dive into new challenges and problems and
+                            <h3 className="text-center mt-3 mb-4">
+                                Problem solver
+                            </h3>
+                            I like to dive into new challenges and problems and
                             can't get them out of my head until they are solved.
                             Since a few years back I have also been an avid user
                             of Mac OSX.
-                            <h5 className="text-center">Operating Systems</h5>
+                            <h5 className="text-center mt-3 mb-4">
+                                Operating Systems
+                            </h5>
                             Windows, Ubuntu, Mac OSX.
-                            <h5 className="text-center">
+                            <h5 className="text-center mt-3 mb-4">
                                 Useful development tools that I have experience
                                 with
                             </h5>
@@ -90,16 +94,18 @@ const Home = () => {
                             </span>
                         </Card.Title>
                         <Card.Body>
-                            <h3 className="text-center">
+                            <h3 className="text-center mt-3 mb-4">
                                 Full-stack Developer
                             </h3>
                             During my education I have been interested in
                             back-end as well as front-end programming. Below is
                             a list of programming languages and tools of a more
                             web-related nature that I have used.
-                            <h5 className="text-center">Web languages</h5>
+                            <h5 className="text-center mt-3 mb-4">
+                                Web languages
+                            </h5>
                             HTML, CSS, JavaScript/JQuery, PHP, XPath.
-                            <h5 className="text-center">Web tools</h5>
+                            <h5 className="text-center mt-3 mb-4">Web tools</h5>
                             <ul className="is-unstyled">
                                 <li>Vue</li>
                                 <li>React</li>
