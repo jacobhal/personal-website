@@ -2,7 +2,7 @@ import React from 'react'
 
 import MainJumbotron from '../.././components/MainJumbotron'
 
-import { Row, Button } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
 
 const About = (props) => {
