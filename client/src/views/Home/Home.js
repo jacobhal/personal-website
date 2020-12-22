@@ -22,7 +22,7 @@ const Home = () => {
                 subtitle="I'm always ready for new challenges"
                 backgroundClass="has-bg-img-keyboard"
             />
-            <Container fluid className="mb-5">
+            <Container fluid className="pb-3">
                 <CardDeck>
                     <Card className="text-center">
                         <Card.Title className="card-header">

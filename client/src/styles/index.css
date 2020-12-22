@@ -124,6 +124,7 @@ code {
 /* BUTTONS */
 
 .main-button {
+    display: block !important;
     padding-top: 10px;
     width: 300px;
     height: 60px;
@@ -154,23 +155,11 @@ code {
     width: 320px;
 }
 
-/* #wrapper-btn-github {
-    padding: 0 !important;
+.wrapper-btn-github,
+.wrapper-btn-thesis,
+.wrapper-btn-linkedin {
     margin: 0 0 10px 0 !important;
 }
-
-#wrapper-btn-linkedin {
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-#btn-resume {
-    margin-bottom: 20px;
-}
-
-#btn-resume-mobile {
-    margin-bottom: 10px;
-} */
 
 /* Caret fix for react sortable tables */
 .caret {
@@ -276,6 +265,19 @@ div.radio-form {
     }
 }
 
+/* Tablets only */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .jumbotron-content {
+        padding-top: 70px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .jumbotron-content {
+        padding-top: 70px;
+    }
+}
+
 /* Mobile only */
 @media only screen and (max-width: 480px) {
     #jumbotron-title {
@@ -287,7 +289,7 @@ div.radio-form {
     }
 
     .jumbotron-content {
-        padding-top: 50px;
+        padding-top: 20px;
     }
 }
 
