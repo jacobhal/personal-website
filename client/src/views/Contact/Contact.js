@@ -198,10 +198,15 @@ const Contact = () => {
                                 placeholder="Message (required)"
                             />
                         </Form.Group>
-
-                        <Button variant="light" type="submit">
-                            Send
-                        </Button>
+                        <Form.Group className="text-center">
+                            <Button
+                                variant="light"
+                                type="submit"
+                                className="text-center"
+                            >
+                                Send
+                            </Button>
+                        </Form.Group>
                     </Form>
                 )
             }
