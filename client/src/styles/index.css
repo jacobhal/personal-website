@@ -124,7 +124,7 @@ code {
 /* BUTTONS */
 
 .main-button {
-    display: block !important;
+    display: block;
     padding-top: 10px;
     width: 300px;
     height: 60px;
@@ -139,6 +139,10 @@ code {
 .main-button:hover {
     background-color: rgba(255, 255, 255, 1);
     color: #000;
+}
+
+.always-visible {
+    display: block !important;
 }
 
 .cv-swedish-btn-row,

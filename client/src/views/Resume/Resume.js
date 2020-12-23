@@ -30,7 +30,7 @@ class Resume extends React.Component {
                             download="CV_swedish.pdf"
                             href={pdf}
                             id="btn-resume-swedish"
-                            className="d-none d-md-block btn btn-light main-button"
+                            className="d-none d-md-block d-lg-block btn btn-light main-button"
                         >
                             DOWNLOAD SWEDISH RESUME
                         </a>
@@ -40,7 +40,7 @@ class Resume extends React.Component {
                             download="CV_english.pdf"
                             href={pdf_english}
                             id="btn-resume-english"
-                            className="d-none d-md-block btn btn-light main-button"
+                            className="d-none d-md-block d-lg-block btn btn-light main-button"
                         >
                             DOWNLOAD ENGLISH RESUME
                         </a>
@@ -50,7 +50,7 @@ class Resume extends React.Component {
                             download="CV_swedish.pdf"
                             href={pdf}
                             id="btn-resume-mobile-swedish"
-                            className="d-md-none btn btn-light main-button"
+                            className="d-md-none d-lg-none d-xl-none btn btn-light main-button"
                         >
                             SWEDISH RESUME
                         </a>
@@ -60,7 +60,7 @@ class Resume extends React.Component {
                             download="CV_english.pdf"
                             href={pdf_english}
                             id="btn-resume-mobile-english"
-                            className="d-md-none btn btn-light main-button"
+                            className="d-md-none d-lg-none d-xl-none btn btn-light main-button"
                         >
                             ENGLISH RESUME
                         </a>

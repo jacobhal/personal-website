@@ -26,7 +26,7 @@ const About = (props) => {
                         href="https://github.com/jacobhal"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="d-none d-md-block btn btn-light main-button"
+                        className="d-none d-md-block btn btn-light main-button always-visible"
                     >
                         GITHUB
                     </a>
@@ -37,7 +37,7 @@ const About = (props) => {
                         href="https://www.linkedin.com/in/jacob-hallman-603829164/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="d-none d-md-block btn btn-light main-button"
+                        className="d-none d-md-block btn btn-light main-button always-visible"
                     >
                         LINKEDIN
                     </a>
@@ -48,7 +48,7 @@ const About = (props) => {
                         href="http://kth.diva-portal.org/smash/record.jsf?dswid=-8603&pid=diva2%3A1383464&c=1&searchType=SIMPLE&language=sv&query=jacob+hallman&af=%5B%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=false&sf=all"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="d-none d-md-block btn btn-light main-button"
+                        className="d-none d-md-block btn btn-light main-button always-visible"
                     >
                         MASTER THESIS
                     </a>

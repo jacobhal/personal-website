@@ -33,18 +33,20 @@ const Home = () => {
                         <Card.Body>
                             <h3 className="text-center mt-3 mb-4">Developer</h3>
                             I have always been interested in technology and how
-                            it keeps changing our world.
+                            it keeps changing our world. More often than not I
+                            have some side projects or courses that I work on
+                            during my free time.
                             <h5 className="text-center mt-3 mb-4">
                                 Programming languages
                             </h5>
-                            Python, C++, Java, C#, Clojure.
+                            Python, C++, Java, C# (.NET & WPF), Clojure.
                             <h5 className="text-center mt-3 mb-4">
-                                IDEs + machine learning libraries I have used
+                                IDEs + machine learning libraries that I have
+                                used
                             </h5>
                             <ul className="is-unstyled">
-                                <li>Atom</li>
-                                <li>VSCode</li>
-                                <li>Visual Studio</li>
+                                <li>VSCode & Visual Studio (Main editors)</li>
+                                <li>Atom/Sublime</li>
                                 <li>IntellIJ</li>
                                 <li>Android Studio</li>
                                 <li>Pytorch</li>
@@ -53,6 +55,7 @@ const Home = () => {
                                 <li>Skorch</li>
                                 <li>LIME</li>
                                 <li>H2O</li>
+                                <li>SQL Server</li>
                             </ul>
                         </Card.Body>
                     </Card>
@@ -69,21 +72,22 @@ const Home = () => {
                             I like to dive into new challenges and problems and
                             can't get them out of my head until they are solved.
                             Since a few years back I have also been an avid user
-                            of Mac OSX.
+                            of Mac OSX for development on my free time,
+                            especially for web development.
                             <h5 className="text-center mt-3 mb-4">
                                 Operating Systems
                             </h5>
                             Windows, Ubuntu, Mac OSX.
                             <h5 className="text-center mt-3 mb-4">
-                                Useful development tools that I have experience
-                                with
+                                Version control systems and DevOps tools that I
+                                have experience with
                             </h5>
                             <ul className="is-unstyled">
                                 <li>Git + Github</li>
+                                <li>Git Hooks</li>
                                 <li>TFS/Azure DevOps</li>
                                 <li>YAML Pipelines</li>
                                 <li>Octopus Deploy</li>
-                                <li>SQL Server</li>
                             </ul>
                         </Card.Body>
                     </Card>
@@ -104,7 +108,7 @@ const Home = () => {
                             <h5 className="text-center mt-3 mb-4">
                                 Web languages
                             </h5>
-                            HTML, CSS, JavaScript/JQuery, PHP, XPath.
+                            HTML, CSS, JavaScript/JQuery/TypeScript, PHP, XPath.
                             <h5 className="text-center mt-3 mb-4">Web tools</h5>
                             <ul className="is-unstyled">
                                 <li>Vue</li>
@@ -114,7 +118,7 @@ const Home = () => {
                                 <li>Bootstrap</li>
                                 <li>Bulma</li>
                                 <li>Materialize</li>
-                                <li>Typescript</li>
+                                <li>ESLint & Prettier</li>
                             </ul>
                         </Card.Body>
                     </Card>
