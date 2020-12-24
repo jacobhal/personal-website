@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React from 'react'
 
 const StockForm = React.forwardRef((props, ref) => (
     <form id={props.formId} onSubmit={props.handleSubmitFunc}>
@@ -20,10 +19,12 @@ const StockForm = React.forwardRef((props, ref) => (
 
         <div className="field">
             <div className="control">
-                <button className="button" type="submit">{props.buttonValue}</button>
+                <button className="btn btn-primary" type="submit">
+                    {props.buttonValue}
+                </button>
             </div>
         </div>
     </form>
-));
+))
 
-export default StockForm;
+export default StockForm

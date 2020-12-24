@@ -5,7 +5,7 @@ import { Navbar, Nav } from 'react-bootstrap'
 
 import './NavBar.css'
 
-const NavBar = () => {
+const NavBar = ({ noImage }) => {
     const [isBurgerOpen, setIsBurgerOpen] = useState(false)
 
     const handleNavIconToggle = (e) => {
@@ -14,7 +14,7 @@ const NavBar = () => {
 
     const styling = { height: '28px', width: '28px' }
     return (
-        <Navbar expand="lg">
+        <Navbar expand="lg" className={noImage ? 'no-background' : ''}>
             <Navbar.Brand href="/">
                 <img src={logo} alt="Jacob Hallman" style={styling} />
             </Navbar.Brand>

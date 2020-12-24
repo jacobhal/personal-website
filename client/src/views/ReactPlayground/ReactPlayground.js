@@ -42,7 +42,7 @@ const ReactPlayground = () => {
         
         return (
             <div>
-                <button className="button is-primary" onClick={() => setCount(prevCount => prevCount + 1)}>
+                <button className="btn btn-primary mt-2" onClick={() => setCount(prevCount => prevCount + 1)}>
                     Clicked {count} times
                 </button>
             </div>
@@ -58,9 +58,7 @@ const ReactPlayground = () => {
                     content="This is a small playground that can be used to explore new react features. Most of the hooks provided by react are available as well as the basic Bulma CSS classes."
                 />
             </Helmet>
-            <Jumbotron color="black" className="navbar-projects">
-                <NavBar />
-            </Jumbotron>
+            <NavBar noImage={true} />
             <Container>
                 <h1 className="title">React playground</h1>
                 <p style={{ marginBottom: '10px' }}>

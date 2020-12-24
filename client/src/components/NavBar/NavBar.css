@@ -98,3 +98,9 @@ div.navbar-nav:hover > a:hover {
             1px 1px 0 #000 !important;
     }
 }
+
+nav.no-background {
+    background-color: black;
+    margin-bottom: 20px;
+    padding: 20px 50px;
+}
