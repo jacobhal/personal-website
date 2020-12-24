@@ -6,6 +6,14 @@ import ProjectImageGrid from './components/ProjectImageGrid'
 import { Container } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
 
+// Import project images
+import githubImage from './../../assets/images/github.jpg'
+import reactImage from './../../assets/images/react.jpg'
+import coronaImage from './../../assets/images/corona.jpg'
+import webscrapingImage from './../../assets/images/webscraping.png'
+import stockmarketImage from './../../assets/images/stockmarket.jpg'
+import graphicscardImage from './../../assets/images/graphicscard.jpg'
+
 export default function Portfolio() {
     const projectStatus = {
         TODO: 'In development',
@@ -15,23 +23,29 @@ export default function Portfolio() {
     let projects = [
         {
             id: 1,
+            hasCourseWatermark: false,
             title: 'React playground',
             route: '/react-playground',
+            image: reactImage,
             description:
                 'This is a playground for exploring new React features since this entire website is built with React.',
             status: projectStatus.FINISHED,
         },
         {
             id: 2,
+            hasCourseWatermark: false,
             title: 'Corona dashboard',
             route: '/corona-dashboard',
+            image: coronaImage,
             description:
                 'A live update corona dashboard using data from John Hopkins.',
             status: projectStatus.FINISHED,
         },
         {
             id: 3,
+            hasCourseWatermark: false,
             title: 'Restocker (Github)',
+            image: webscrapingImage,
             route: 'https://github.com/jacobhal/restocker-api',
             description:
                 "Find out when your favourite products are back in stock by scraping the seller's website." +
@@ -40,16 +54,20 @@ export default function Portfolio() {
         },
         {
             id: 4,
+            hasCourseWatermark: false,
             title: 'Game review website',
             route: 'http://www.codehalls.com',
+            image: graphicscardImage,
             description:
                 'An old school project built with Laravel and PHP (not responsive).',
             status: projectStatus.FINISHED,
         },
         {
             id: 5,
+            hasCourseWatermark: false,
             title: 'Stock predictor',
             route: '/stockpredictor',
+            image: stockmarketImage,
             description:
                 'Financial market predictor using Machine learning and realtime data Stock API:s. A separate API' +
                 ' was deployed to Heroku using Flask + MySQL which is where the data actual data fetching occurrs. The financial API:s' +
@@ -67,8 +85,10 @@ export default function Portfolio() {
     let courses = [
         {
             id: 1,
-            title: 'Complete Git Guide: Understand and master Git and GitHub',
+            hasCourseWatermark: true,
+            title: 'Complete Git Guide',
             route: 'https://github.com/jacobhal/git-course',
+            image: githubImage,
             description:
                 'A Git course on Udemy. It covers everything from git low-level commands to more advanced featues' +
                 ' such as rebasing and cherry-picking.',
@@ -92,18 +112,19 @@ export default function Portfolio() {
                 subtitle="Check out some passion projects of mine"
                 backgroundClass="has-bg-img-bulb"
             />
-            <Container>
-                {/* <h1 className="title">My Udemy Courses</h1>
-                <p>This is a list of Udemy courses that I have either completed or that I am currently taking in my freetime. 
-                    These courses either contain skills that I use every day at work and want to improve on or things I am
-                    intrigued by and want to learn more about. Click the links to go to the Github repository corresponding
-                    to each course (certificates are shown in the main repository README file).</p>
-                < Table projects={courses} tableFirstColumnTitle="Course"/>
-                <h1 className="title">My Projects</h1>
-                <p>This is a list of some of the projects that I have done or that I am currently working on in my freetime. 
-                    The projects are either things I can use in my daily life or simply technologies that I want to learn more about.</p>
-                < Table projects={projects} tableFirstColumnTitle="Project"/> */}
-                <ProjectImageGrid projects={projects} />
+            <Container className="pb-3 justify-content-center align-items-center text-center">
+                <h1 className="title">My Projects and Courses</h1>
+                <p>
+                    This is a list of some of the projects that I have done or
+                    that I am currently working on in my free time. The projects
+                    are either things I can use in my daily life or simply
+                    technologies that I want to learn more about. The links that
+                    contain a "Udemy" watermark are related to completed courses
+                    at Udemy. Mostly they go directly to my GitHub repository
+                    which contains README files of my notes and various code
+                    examples or finished projects that were part of the course.
+                </p>
+                <ProjectImageGrid projects={[...projects, ...courses]} />
             </Container>
         </div>
     )
