@@ -5,10 +5,6 @@ import { ResponsiveEmbed, Image } from 'react-bootstrap'
 
 import udemyImage from './../../../assets/images/udemy.jpg'
 
-$('.project-image-button').on('mouseover', () => {
-    $('.project-image-content').css('opacity', 0)
-})
-
 const ProjectImage = ({ title, image, route, hasCourseWatermark }) => {
     return (
         <div className="project-image-container justify-content-center align-items-center text-center">
