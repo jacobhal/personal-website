@@ -251,7 +251,7 @@ code {
     height: 100%;
     width: 100%;
     background-color: black;
-    opacity: 0.6;
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1000;
 }
 
@@ -270,7 +270,7 @@ code {
 }
 
 .project-image-button:hover {
-    background-color: gray;
+    background-color: rgba(145, 145, 145, 0.3);
 }
 
 .project-image-container .project-image-hover-content {

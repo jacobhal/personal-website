@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import { NavBar } from '../../components/NavBar'
 import MapChart from './MapChart'
-import { Jumbotron, Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import DefaultLoader from './../../components/DefaultLoader'
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'

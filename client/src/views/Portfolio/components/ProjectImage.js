@@ -1,5 +1,4 @@
 import React from 'react'
-import $ from 'jquery'
 
 import { ResponsiveEmbed, Image } from 'react-bootstrap'
 
@@ -11,7 +10,7 @@ const ProjectImage = ({ title, image, route, hasCourseWatermark }) => {
             <div className="project-image-hover-content justify-content-center text-center">
                 <h4 className="project-image-title text-center">{title}</h4>
                 <a href={route} className="project-image-button btn btn-light">
-                    Visit
+                    View
                 </a>
             </div>
             <ResponsiveEmbed aspectRatio="16by9">

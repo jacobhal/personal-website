@@ -3,7 +3,7 @@ import React from 'react'
 import MainJumbotron from '../../components/MainJumbotron'
 import ProjectImageGrid from './components/ProjectImageGrid'
 
-import { Container } from 'react-bootstrap'
+import { Container, Alert } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
 
 // Import project images
@@ -118,12 +118,12 @@ export default function Portfolio() {
                     This is a list of some of the projects that I have done or
                     that I am currently working on in my free time. The projects
                     are either things I can use in my daily life or simply
-                    technologies that I want to learn more about. The links that
-                    contain a "Udemy" watermark are related to completed courses
-                    at Udemy. Mostly they go directly to my GitHub repository
-                    which contains README files of my notes and various code
-                    examples or finished projects that were part of the course.
+                    technologies that I want to learn more about.
                 </p>
+                <Alert variant="secondary">
+                    The links that contain a <strong>Udemy</strong> watermark
+                    are related to completed courses at Udemy.
+                </Alert>
                 <ProjectImageGrid projects={[...projects, ...courses]} />
             </Container>
         </div>

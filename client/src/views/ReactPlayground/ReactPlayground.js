@@ -10,11 +10,11 @@ import React, {
 
 import { NavBar } from '../../components/NavBar'
 import dracula from 'prism-react-renderer/themes/dracula'
-import nightOwl from 'prism-react-renderer/themes/nightOwl'
+// import nightOwl from 'prism-react-renderer/themes/nightOwl'
 import './../../styles/reactPlayground.css'
 
 import { Helmet } from 'react-helmet'
-import { Jumbotron, Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 
 const scope = {
