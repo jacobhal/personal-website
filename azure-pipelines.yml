@@ -6,9 +6,9 @@
 trigger:
     - master
 
- # main group for variables
+    # main group for variables
 variables:
-  -group: mainGroup
+    -group: mainGroup
 
 pool:
     vmImage: 'ubuntu-latest'
@@ -37,24 +37,24 @@ stages:
       jobs:
           - job:
             steps:
-            # Check out the code and keep the token so we can tag the repository
+                # Check out the code and keep the token so we can tag the repository
                 - checkout: self
                   persistCredentials: true
-                  
+
                 - script: |
-                    sudo apt-get update
-                    sudo apt-get -qq install git-ftp
+                      sudo apt-get update
+                      sudo apt-get -qq install git-ftp
                   displayName: 'Running apt-get to install packages...'
 
                 - script: |
-                    git config git-ftp.production.user $FTP_USERNAME
-                    git config git-ftp.production.url $FTP_HOST
-                    git config git-ftp.production.password $FTP_PASSWORD
-                    git config git-ftp.production.syncroot $(Build.ArtifactStagingDirectory)
-                    git config git-ftp.production.remote-root $FTP_REMOTE_ROOT
+                      git config git-ftp.production.user $FTP_USERNAME
+                      git config git-ftp.production.url $FTP_HOST
+                      git config git-ftp.production.password $FTP_PASSWORD
+                      git config git-ftp.production.syncroot $(Build.ArtifactStagingDirectory)
+                      git config git-ftp.production.remote-root $FTP_REMOTE_ROOT
                   displayName: 'Setting git config values...'
 
                 - script: |
-                    git ftp init
-                    git ftp push -s production --all
+                      git ftp init -s production
+                      git ftp push -s production --all
                   displayName: 'Pushing FTP packages...'
