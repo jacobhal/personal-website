@@ -34,8 +34,8 @@ stages:
           - job:
             steps:
                 - script: |
-                      apt-get update
-                      apt-get -qq install git-ftp
+                    sudo apt-get update
+                    sudo apt-get -qq install git-ftp
 
                 - script:
                     git config git-ftp.production.user $FTP_USERNAME
