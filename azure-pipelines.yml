@@ -54,5 +54,7 @@ stages:
                     git config git-ftp.production.remote-root $FTP_REMOTE_ROOT
                   displayName: 'Setting git config values...'
 
-                - script: git ftp push -s production --all
+                - script: |
+                    git ftp init
+                    git ftp push -s production --all
                   displayName: 'Pushing FTP packages...'
