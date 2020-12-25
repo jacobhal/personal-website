@@ -59,6 +59,7 @@ stages:
 
                 - script: |
                       git status
+                      git reset --hard
                       git ftp catchup -s production
                       git ftp push -s production --all
                   displayName: 'Pushing FTP packages...'
