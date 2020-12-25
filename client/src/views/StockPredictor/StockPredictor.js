@@ -7,7 +7,7 @@ import { NavBar } from '../../components/NavBar'
 import StockForm from './components/StockForm'
 import StockOverview from './components/StockOverview'
 import StockTable from './components/StockTable'
-import { Container } from 'react-bootstrap'
+import { Container, Form } from 'react-bootstrap'
 import DefaultLoader from './../../components/DefaultLoader'
 import Errormessage from './../../components/Errormessage'
 import { Helmet } from 'react-helmet'
@@ -75,31 +75,29 @@ const StockPredictor = () => {
                     company.
                 </p>
 
-                <div className="control radio-form">
-                    <label className="radio">
-                        <input
-                            className="radio-value"
-                            type="radio"
-                            value="Equity"
-                            name="datafetch"
-                            defaultChecked
-                            // onClick={() => equityRef.current.focus()}
-                            onChange={() => setDataFetchOption('Equity')}
-                        />
-                        Equity
-                    </label>
-                    <label className="radio">
-                        <input
-                            className="radio-value"
-                            type="radio"
-                            value="Search"
-                            name="datafetch"
-                            // onClick={() => searchRef.current.focus()}
-                            onChange={() => setDataFetchOption('Search')}
-                        />
-                        Search
-                    </label>
-                </div>
+                <Form>
+                    <Form.Check
+                        className="radio-value"
+                        type="radio"
+                        value="Search"
+                        label="Search"
+                        name="datafetch"
+                        id="search-radio"
+                        // onClick={() => searchRef.current.focus()}
+                        onChange={() => setDataFetchOption('Search')}
+                    />
+                    <Form.Check
+                        className="radio-value"
+                        type="radio"
+                        value="Equity"
+                        name="datafetch"
+                        label="Equity"
+                        id="equity-radio"
+                        defaultChecked
+                        // onClick={() => equityRef.current.focus()}
+                        onChange={() => setDataFetchOption('Equity')}
+                    />
+                </Form>
 
                 {dataFetchOption === 'Equity' && (
                     <div>
@@ -112,21 +110,19 @@ const StockPredictor = () => {
                             // ref={equityRef}
                             handleSubmitFunc={handleSubmit}
                         />
-                        <ul>
-                            {!isLoading && !error ? (
-                                companyInfo !== undefined ? (
-                                    <StockOverview data={companyInfo} />
-                                ) : (
-                                    ''
-                                )
-                            ) : error !== null ? (
-                                <Errormessage title="Error" topMargin="20px">
-                                    Something went wrong!
-                                </Errormessage>
+                        {!isLoading && !error ? (
+                            companyInfo !== undefined ? (
+                                <StockOverview data={companyInfo} />
                             ) : (
-                                <DefaultLoader>Fetching data...</DefaultLoader>
-                            )}
-                        </ul>
+                                ''
+                            )
+                        ) : error !== null ? (
+                            <Errormessage title="Error" topMargin="20px">
+                                Something went wrong!
+                            </Errormessage>
+                        ) : (
+                            <DefaultLoader>Fetching data...</DefaultLoader>
+                        )}
                     </div>
                 )}
 
@@ -141,23 +137,19 @@ const StockPredictor = () => {
                             // ref={searchRef}
                             handleSubmitFunc={handleSubmit}
                         />
-                        <ul>
-                            {!isLoading && !error ? (
-                                searchResult !== undefined ? (
-                                    <StockTable data={searchResult} />
-                                ) : (
-                                    ''
-                                )
-                            ) : error !== null ? (
-                                <Errormessage title="Error" topMargin="20px">
-                                    Something went wrong!
-                                </Errormessage>
+                        {!isLoading && !error ? (
+                            searchResult !== undefined ? (
+                                <StockTable data={searchResult} />
                             ) : (
-                                <DefaultLoader>
-                                    Fetching results...
-                                </DefaultLoader>
-                            )}
-                        </ul>
+                                ''
+                            )
+                        ) : error !== null ? (
+                            <Errormessage title="Error" topMargin="20px">
+                                Something went wrong!
+                            </Errormessage>
+                        ) : (
+                            <DefaultLoader>Fetching results...</DefaultLoader>
+                        )}
                     </div>
                 )}
             </Container>

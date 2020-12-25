@@ -1,7 +1,6 @@
 import React from 'react'
-import { Row } from 'react-bootstrap'
+import { Table, Accordion, Card, Row, Col } from 'react-bootstrap'
 import InfoRow from './InfoRow'
-import Collapsible from 'react-collapsible'
 
 const StockOverview = (props) => {
     /*
@@ -53,7 +52,7 @@ actions, balance_sheet, calendar, cashflow, dividends,
         const bid = info.bid
 
         const recommendations = props.data.DATA.RECOMMENDATIONS
-        var hashMap
+        var hashMap = {}
         Object.values(recommendations['To Grade']).forEach((e, i) => {
             if (e.toUpperCase() in hashMap) {
                 hashMap[e.toUpperCase()] += 1
@@ -89,128 +88,151 @@ actions, balance_sheet, calendar, cashflow, dividends,
                 'If a stock is deemed underweight, the analyst is saying they consider the investor should reduce their holding, so that it should "weigh" less',
         }
         htmlOutput = (
-            <div>
-                <Collapsible trigger="Business summary" className="accordion">
-                    <div>{info['longBusinessSummary']}</div>
-                </Collapsible>
+            <>
+                <Accordion className="mt-4">
+                    <Card>
+                        <Card.Header>
+                            <Accordion.Toggle as={Card.Header} eventKey="0">
+                                Business summary
+                            </Accordion.Toggle>
+                        </Card.Header>
+                        <Accordion.Collapse eventKey="0">
+                            <Card.Body>{info['longBusinessSummary']}</Card.Body>
+                        </Accordion.Collapse>
+                    </Card>
+                </Accordion>
 
-                <div className="level">
-                    <div className="level-item has-text-centered">
+                <Row className="mt-4">
+                    <Col className="text-center">
                         <div>
-                            <p className="heading">Previous close</p>
-                            <p className="title">{previousClose}</p>
+                            <p>Previous close</p>
+                            <h3>{previousClose}</h3>
                         </div>
-                    </div>
-                    <div className="level-item has-text-centered">
+                    </Col>
+                    <Col className="text-center">
                         <div>
-                            <p className="heading">Open</p>
-                            <p className="title">{open}</p>
+                            <p>Open</p>
+                            <h3>{open}</h3>
                         </div>
-                    </div>
-                    <div className="level-item has-text-centered">
+                    </Col>
+                    <Col className="text-center">
                         <div>
-                            <p
-                                className="heading"
-                                data-tip="The price buyers are willing to pay"
-                            >
+                            <p data-tip="The price buyers are willing to pay">
                                 Ask
                             </p>
-                            <p className="title">{ask}</p>
+                            <h3>{ask}</h3>
                         </div>
-                    </div>
-                    <div className="level-item has-text-centered">
+                    </Col>
+                    <Col className="text-center">
                         <div>
-                            <p
-                                className="heading"
-                                data-tip="The price sellers are willing to sell for"
-                            >
+                            <p data-tip="The price sellers are willing to sell for">
                                 Bid
                             </p>
-                            <p className="title">{bid}</p>
+                            <h3>{bid}</h3>
                         </div>
-                    </div>
-                </div>
+                    </Col>
+                </Row>
 
                 {/* <InfoRow label="Previous close" value={previousClose}></InfoRow>
                         <InfoRow label="Open" value={open}></InfoRow>
                         <InfoRow dataTip="The price buyers are willing to pay" label="Ask" value={ask}></InfoRow>
                         <InfoRow dataTip="The price sellers are willing to sell for" label="Bid" value={bid}></InfoRow> */}
-                <Row>
-                    <InfoRow
-                        label={
-                            'Latest recommendation (' +
-                            parseDate(
-                                recommendations.Date[
-                                    Object.keys(recommendations.Date).length - 1
+                <Table striped bordered hover variant="dark" className="mt-4">
+                    <thead>
+                        <tr>
+                            <th className="text-center">Stock metric</th>
+                            <th className="text-center">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <InfoRow
+                            label={
+                                'Latest recommendation (' +
+                                parseDate(
+                                    recommendations.Date[
+                                        Object.keys(recommendations.Date)
+                                            .length - 1
+                                    ]
+                                ) +
+                                ')'
+                            }
+                            value={
+                                recommendations['To Grade'][
+                                    Object.keys(recommendations['To Grade'])
+                                        .length - 1
                                 ]
-                            ) +
-                            ')'
-                        }
-                        value={
-                            recommendations['To Grade'][
-                                Object.keys(recommendations['To Grade'])
-                                    .length - 1
-                            ]
-                        }
-                    ></InfoRow>
-                    <InfoRow
-                        dataTip="Trailing = last 12 months, forward = next 12 months. Higher forward than trailing means decreased expected earnings"
-                        label="Trailing P/E vs Forward P/E"
-                        value={trailingPE + ' / ' + forwardPE}
-                    ></InfoRow>
-                    <InfoRow
-                        dataTip="Higher forward EPS than trailing EPS means earnings per share is expected to increase"
-                        label="Trailing EPS vs Forward EPS"
-                        value={trailingEps + ' / ' + forwardEps}
-                    ></InfoRow>
-                    <InfoRow
-                        dataTip="A stock with a beta of 1 is moving at the same volatility as the market. <br/> A stock with a beta greater than 1 is moving with greater volatility than the average, 
+                            }
+                        ></InfoRow>
+                        <InfoRow
+                            dataTip="Trailing = last 12 months, forward = next 12 months. Higher forward than trailing means decreased expected earnings"
+                            label="Trailing P/E vs Forward P/E"
+                            value={trailingPE + ' / ' + forwardPE}
+                        ></InfoRow>
+                        <InfoRow
+                            dataTip="Higher forward EPS than trailing EPS means earnings per share is expected to increase"
+                            label="Trailing EPS vs Forward EPS"
+                            value={trailingEps + ' / ' + forwardEps}
+                        ></InfoRow>
+                        <InfoRow
+                            dataTip="A stock with a beta of 1 is moving at the same volatility as the market. <br/> A stock with a beta greater than 1 is moving with greater volatility than the average, 
                                 and a stock with a beta less than 1 has less volatility than the average."
-                        label="beta"
-                        value={beta}
-                    ></InfoRow>
-                    <InfoRow
-                        dataTip="The price/earnings to growth ratio (PEG ratio) is a stock's price-to-earnings (P/E) ratio divided by the growth rate of its earnings for a specified time period.
+                            label="beta"
+                            value={beta}
+                        ></InfoRow>
+                        <InfoRow
+                            dataTip="The price/earnings to growth ratio (PEG ratio) is a stock's price-to-earnings (P/E) ratio divided by the growth rate of its earnings for a specified time period.
                                 <br/> The PEG ratio is used to determine a stock's value while also factoring in the company's expected earnings growth, and is thought to provide a more complete picture than the more standard P/E ratio."
-                        label="PEG ratio"
-                        value={pegRatio}
-                    ></InfoRow>
-                    <InfoRow
-                        label="Dividend rate"
-                        value={dividendRate}
-                    ></InfoRow>
-                    <InfoRow
-                        label="Dividend yield (%)"
-                        value={dividendYield * 100 + ' %'}
-                    ></InfoRow>
-                </Row>
-                <Row>
-                    {Object.entries(hashMap)
-                        .sort(([, val1], [, val2]) => val2 - val1)
-                        .map(([recommendation, count]) => {
-                            return (
-                                <InfoRow
-                                    dataTip={hashMapDataTips[recommendation]}
-                                    key={recommendation}
-                                    label={recommendation}
-                                    value={
-                                        count +
-                                        '  (' +
-                                        ((count / hashMapSum) * 100).toFixed(
-                                            2
-                                        ) +
-                                        ' %)'
-                                    }
-                                ></InfoRow>
-                            )
-                        })}
-                </Row>
-            </div>
+                            label="PEG ratio"
+                            value={pegRatio}
+                        ></InfoRow>
+                        <InfoRow
+                            label="Dividend rate"
+                            value={dividendRate}
+                        ></InfoRow>
+                        <InfoRow
+                            label="Dividend yield (%)"
+                            value={dividendYield * 100 + ' %'}
+                        ></InfoRow>
+                    </tbody>
+                </Table>
+                <Table striped bordered hover variant="dark" className="mt-4">
+                    <thead>
+                        <tr>
+                            <th className="text-center">Recommendation</th>
+                            <th className="text-center">Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {Object.entries(hashMap)
+                            .sort(([, val1], [, val2]) => val2 - val1)
+                            .map(([recommendation, count]) => {
+                                return (
+                                    <InfoRow
+                                        dataTip={
+                                            hashMapDataTips[recommendation]
+                                        }
+                                        key={recommendation}
+                                        label={recommendation}
+                                        value={
+                                            count +
+                                            '  (' +
+                                            (
+                                                (count / hashMapSum) *
+                                                100
+                                            ).toFixed(2) +
+                                            ' %)'
+                                        }
+                                    ></InfoRow>
+                                )
+                            })}
+                    </tbody>
+                </Table>
+            </>
         )
     } else if (error !== undefined) {
         htmlOutput = <div></div>
     }
-    return <div>{htmlOutput}</div>
+    return <>{htmlOutput}</>
 }
 
 export default StockOverview

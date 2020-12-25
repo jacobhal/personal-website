@@ -25,7 +25,7 @@ const Home = () => {
             <Container fluid className="pb-3">
                 <CardDeck>
                     <Card className="text-center">
-                        <Card.Title className="card-header">
+                        <Card.Title className="home-card-header">
                             <span className="icon big-icon">
                                 <i className="fa fa-database"></i>
                             </span>

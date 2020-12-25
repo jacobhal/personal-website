@@ -60,7 +60,7 @@ const ReactPlayground = () => {
             </Helmet>
             <NavBar noImage={true} />
             <Container>
-                <h1 className="title">React playground</h1>
+                <h1>React playground</h1>
                 <p style={{ marginBottom: '10px' }}>
                     {
                         'Available hooks - {useState, useEffect, useContext, useMemo, useRef, useReducer, useCallback}. Basic Bulma CSS modifiers are available.'
