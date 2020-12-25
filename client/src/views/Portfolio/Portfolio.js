@@ -2,7 +2,7 @@ import React from 'react'
 
 import MainJumbotron from '../../components/MainJumbotron'
 import ProjectImageGrid from './components/ProjectImageGrid'
-
+import './../../styles/portfolio.css'
 import { Container, Alert } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
 

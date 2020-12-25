@@ -1,0 +1,97 @@
+/* IMAGE GRIDS */
+
+.image-grid-row {
+    padding: 0;
+    margin: 0;
+}
+
+.image-grid {
+    margin: 30px;
+}
+
+.image-icon {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    opacity: 0.75;
+}
+
+.project-image-container {
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 7px;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+}
+
+.project-image {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 7px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.project-image-container:hover {
+    border-radius: 7px;
+}
+
+.project-image-container:hover .project-image,
+.project-image-container:focus .project-image {
+    -ms-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0.5;
+    border-radius: 7px;
+}
+
+/* Image content */
+
+.project-image-hover-content {
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.project-image-title {
+    color: white;
+    padding-top: 10px;
+    z-index: 1000;
+}
+
+.project-image-button {
+    position: absolute;
+    bottom: 10px;
+    z-index: 10000;
+    background-color: white;
+    color: black !important;
+}
+
+.project-image-button:hover {
+    background-color: rgba(145, 145, 145, 0.3);
+}
+
+.project-image-container .project-image-hover-content {
+    -webkit-transition: visibility 0.2s ease-in-out;
+    -moz-transition: visibility 0.2s ease-in-out;
+    -o-transition: visibility 0.2s ease-in-out;
+    transition: visibility 0.2s ease-in-out;
+}
+
+.project-image-container:hover .project-image-hover-content {
+    visibility: visible !important;
+}
