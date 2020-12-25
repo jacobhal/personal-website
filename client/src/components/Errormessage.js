@@ -1,16 +1,14 @@
-import React from 'react';
+import React from 'react'
 
-const Errormessage = ({children, title, topMargin}) => {
+import { Alert } from 'react-bootstrap'
+
+const Errormessage = ({ children, title, topMargin }) => {
     return (
-        <article className="message is-large is-danger" style={{marginTop: topMargin}}>
-            <div className="message-header">
-                <p>{title}</p>
-            </div>
-            <div className="message-body">
-                {children}
-            </div>
-        </article>
-    );
+        <Alert variant="danger">
+            <Alert.Heading>{title}</Alert.Heading>
+            <p>{children}</p>
+        </Alert>
+    )
 }
 
-export default Errormessage;
+export default Errormessage

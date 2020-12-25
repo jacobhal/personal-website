@@ -1,24 +1,27 @@
-import React from 'react';
+import React from 'react'
 
-import { Loader, Heading } from 'react-bulma-components/full';
+import { Spinner } from 'react-bootstrap'
 
-const DefaultLoader = ({props, children}) => {
+const DefaultLoader = () => {
     return (
-        <div>
-            <Heading className="has-text-centered subtitle-style" subtitle>
-            {children}
-            </Heading>
-            <Loader
-            className="loading-spinner"
-            style={{
-                width: 200,
-                height: 200,
-                border: '8px solid grey',
-                borderTopColor: 'transparent',
-                borderRightColor: 'transparent',
-            }} />
+        <div className="text-center justify-content-center align-items-center">
+            <h3 className="pb-3">Loading...</h3>
+            <Spinner
+                as="span"
+                animation="border"
+                size="lg"
+                role="status"
+                aria-hidden="true"
+                style={{
+                    width: 200,
+                    height: 200,
+                    border: '8px solid grey',
+                    borderTopColor: 'transparent',
+                    borderRightColor: 'transparent',
+                }}
+            />
         </div>
-    );
+    )
 }
 
-export default DefaultLoader;
+export default DefaultLoader

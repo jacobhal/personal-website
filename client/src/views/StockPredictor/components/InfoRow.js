@@ -1,18 +1,16 @@
-import React from 'react';
-import ReactTooltip from 'react-tooltip';
+import React from 'react'
+import ReactTooltip from 'react-tooltip'
 
-const InfoRow = ({label, value, dataTip}) => {
+const InfoRow = ({ label, value, dataTip }) => {
     return (
-        <div className="columns info-row">
-            <div className="column has-text-centered">
-                <ReactTooltip html={true}/>
-                <strong data-tip={dataTip}>{label}</strong>
-            </div>
-            <div className="column has-text-centered">
-                {value ? value : "N/A"}
-            </div>
-        </div>
-    );
+        <tr>
+            <td className="text-center">
+                <ReactTooltip html={true} />
+                <p data-tip={dataTip}>{label}</p>
+            </td>
+            <td className="text-center">{value ? value : 'N/A'}</td>
+        </tr>
+    )
 }
 
-export default InfoRow;
+export default InfoRow
