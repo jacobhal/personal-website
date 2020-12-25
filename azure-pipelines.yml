@@ -33,5 +33,7 @@ stages:
       jobs:
           - job:
             steps:
-                - script: git ftp push -s production --all
+                - script: |
+                      git ftp catchup
+                      git ftp push -s production --all
                   displayName: 'Pushing FTP packages...'
