@@ -189,32 +189,8 @@ ul.is-unstyled {
         1px 1px 0 #000 !important;
 }
 
-.box.cta {
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-}
-
-.intro {
-    padding: 5rem 0;
-    text-align: center;
-}
 .sandbox {
     padding: 5rem 0;
-}
-.tile.notification {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-/*adds font awesome stars*/
-footer li:before {
-    content: '\f1b2';
-    font-family: 'FontAwesome';
-    float: left;
-    margin-left: -1.5em;
-    color: #147efb;
 }
 
 /* StockPredictor */

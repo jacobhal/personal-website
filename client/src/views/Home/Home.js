@@ -5,6 +5,9 @@ import MainJumbotron from '../../components/MainJumbotron'
 import { Container, Card, CardDeck } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDatabase, faCogs, faCopy } from '@fortawesome/free-solid-svg-icons'
+
 const Home = () => {
     return (
         <div>
@@ -27,7 +30,7 @@ const Home = () => {
                     <Card className="text-center">
                         <Card.Title className="card-header">
                             <span className="icon big-icon">
-                                <i className="fa fa-database"></i>
+                                <FontAwesomeIcon icon={faDatabase} />
                             </span>
                         </Card.Title>
                         <Card.Body>
@@ -61,7 +64,7 @@ const Home = () => {
                     <Card className="text-center">
                         <Card.Title className="card-header">
                             <span className="icon big-icon">
-                                <i className="fa fa-cogs"></i>
+                                <FontAwesomeIcon icon={faCogs} />
                             </span>
                         </Card.Title>
                         <Card.Body>
@@ -91,7 +94,7 @@ const Home = () => {
                     <Card className="text-center">
                         <Card.Title className="card-header">
                             <span className="icon big-icon">
-                                <i className="fa fa-copy"></i>
+                                <FontAwesomeIcon icon={faCopy} />
                             </span>
                         </Card.Title>
                         <Card.Body>
