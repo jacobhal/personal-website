@@ -44,6 +44,7 @@ stages:
                 - script: |
                     sudo apt-get update
                     sudo apt-get -qq install git-ftp
+                  displayName: 'Running apt-get to install packages...'
 
                 - script: |
                     git config git-ftp.production.user $FTP_USERNAME
@@ -51,6 +52,7 @@ stages:
                     git config git-ftp.production.password $FTP_PASSWORD
                     git config git-ftp.production.syncroot $FTP_SYNC_ROOT
                     git config git-ftp.production.remote-root $FTP_REMOTE_ROOT
+                  displayName: 'Setting git config values...'
 
                 - script: git ftp push -s production --all
                   displayName: 'Pushing FTP packages...'
