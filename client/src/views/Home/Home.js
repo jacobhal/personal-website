@@ -25,7 +25,7 @@ const Home = () => {
             <Container fluid className="pb-3">
                 <CardDeck>
                     <Card className="text-center">
-                        <Card.Title className="home-card-header">
+                        <Card.Title className="card-header">
                             <span className="icon big-icon">
                                 <i className="fa fa-database"></i>
                             </span>
@@ -36,13 +36,12 @@ const Home = () => {
                             it keeps changing our world. More often than not I
                             have some side projects or courses that I work on
                             during my free time.
-                            <h5 className="text-center mt-3 mb-4">
+                            <h5 className="text-center mt-4 mb-4">
                                 Programming languages
                             </h5>
-                            Python, C++, Java, C# (.NET & WPF), Clojure.
-                            <h5 className="text-center mt-3 mb-4">
-                                IDEs + machine learning libraries that I have
-                                used
+                            Python, C++, Java, C# (.NET & WPF), Clojure
+                            <h5 className="text-center mt-4 mb-4">
+                                IDE:s & ML Libraries
                             </h5>
                             <ul className="is-unstyled">
                                 <li>VSCode & Visual Studio (Main editors)</li>
@@ -71,16 +70,14 @@ const Home = () => {
                             </h3>
                             I like to dive into new challenges and problems and
                             can't get them out of my head until they are solved.
-                            Since a few years back I have also been an avid user
-                            of Mac OSX for development on my free time,
-                            especially for web development.
-                            <h5 className="text-center mt-3 mb-4">
+                            I am also an avid user of Mac OSX for development on
+                            my free time, especially web development.
+                            <h5 className="text-center mt-4 mb-4">
                                 Operating Systems
                             </h5>
-                            Windows, Ubuntu, Mac OSX.
-                            <h5 className="text-center mt-3 mb-4">
-                                Version control systems and DevOps tools that I
-                                have experience with
+                            Windows, Ubuntu, Mac OSX
+                            <h5 className="text-center mt-4 mb-4">
+                                Version Control & DevOps Tools
                             </h5>
                             <ul className="is-unstyled">
                                 <li>Git + Github</li>
@@ -105,11 +102,11 @@ const Home = () => {
                             back-end as well as front-end programming. Below is
                             a list of programming languages and tools of a more
                             web-related nature that I have used.
-                            <h5 className="text-center mt-3 mb-4">
+                            <h5 className="text-center mt-4 mb-4">
                                 Web languages
                             </h5>
-                            HTML, CSS, JavaScript/JQuery/TypeScript, PHP, XPath.
-                            <h5 className="text-center mt-3 mb-4">Web tools</h5>
+                            HTML, CSS, JavaScript/JQuery/TypeScript, PHP, XPath
+                            <h5 className="text-center mt-4 mb-4">Web Tools</h5>
                             <ul className="is-unstyled">
                                 <li>Vue</li>
                                 <li>React</li>
