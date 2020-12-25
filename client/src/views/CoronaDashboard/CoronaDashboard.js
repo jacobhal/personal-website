@@ -8,7 +8,7 @@ import { Container } from 'react-bootstrap'
 import DefaultLoader from './../../components/DefaultLoader'
 import { Tab, Tabs } from 'react-bootstrap'
 import BootstrapTable from 'react-bootstrap-table-next'
-import './../../styles/coronaDashboard.css'
+import './../../styles/coronaDashboard.scss'
 // import moment from 'moment';
 import {
     getPercent,

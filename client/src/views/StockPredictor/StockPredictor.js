@@ -11,7 +11,7 @@ import { Container, Form } from 'react-bootstrap'
 import DefaultLoader from './../../components/DefaultLoader'
 import Errormessage from './../../components/Errormessage'
 import { Helmet } from 'react-helmet'
-import './../../styles/stockPredictor.css'
+import './../../styles/stockPredictor.scss'
 // import API from '../../services/API';
 import APIServiceUser from './APIServiceUser'
 

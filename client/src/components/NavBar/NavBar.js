@@ -3,7 +3,7 @@ import logo from '../../assets/images/favicon-256.png'
 
 import { Navbar, Nav } from 'react-bootstrap'
 
-import './NavBar.css'
+import './NavBar.scss'
 
 const NavBar = ({ noImage }) => {
     const [isBurgerOpen, setIsBurgerOpen] = useState(false)
