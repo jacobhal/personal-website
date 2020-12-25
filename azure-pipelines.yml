@@ -48,12 +48,12 @@ stages:
                       sudo apt-get update
                       sudo apt-get -qq install git-ftp
                   displayName: 'Running apt-get to install packages...'
-
+                # $(Build.ArtifactStagingDirectory) instead of syncroot not working
                 - script: |
                       git config git-ftp.production.user $FTP_USERNAME
                       git config git-ftp.production.url $FTP_HOST
                       git config git-ftp.production.password $FTP_PASSWORD
-                      git config git-ftp.production.syncroot $(Build.ArtifactStagingDirectory)$FTP_SYNC_ROOT
+                      git config git-ftp.production.syncroot $FTP_SYNC_ROOT
                       git config git-ftp.production.remote-root $FTP_REMOTE_ROOT
                   displayName: 'Setting git config values...'
 
