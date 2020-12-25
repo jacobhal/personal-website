@@ -53,7 +53,7 @@ stages:
                       git config git-ftp.production.user $FTP_USERNAME
                       git config git-ftp.production.url $FTP_HOST
                       git config git-ftp.production.password $FTP_PASSWORD
-                      git config git-ftp.production.syncroot $(Build.ArtifactStagingDirectory)
+                      git config git-ftp.production.syncroot $(Build.ArtifactStagingDirectory)$FTP_SYNC_ROOT
                       git config git-ftp.production.remote-root $FTP_REMOTE_ROOT
                   displayName: 'Setting git config values...'
 
