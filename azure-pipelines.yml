@@ -55,6 +55,6 @@ stages:
                   displayName: 'Setting git config values...'
 
                 - script: |
-                      git ftp init -s production
+                      git ftp catchup -s production
                       git ftp push -s production --all
                   displayName: 'Pushing FTP packages...'
