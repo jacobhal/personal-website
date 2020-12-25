@@ -95,3 +95,13 @@
 .project-image-container:hover .project-image-hover-content {
     visibility: visible !important;
 }
+
+@media only screen and (max-width: 768px) {
+    .image-grid {
+        margin: 0;
+    }
+
+    .image-grid-col {
+        margin: 10px 0;
+    }
+}
