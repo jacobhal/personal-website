@@ -6,7 +6,7 @@
 }
 
 .image-grid {
-    margin: 30px;
+    margin: 30px 0px;
 }
 
 .image-icon {
@@ -18,7 +18,7 @@
 
 .project-image-container {
     overflow: hidden;
-    cursor: pointer;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
     border-radius: 7px;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
@@ -96,7 +96,7 @@
     visibility: visible !important;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
     .image-grid {
         margin: 0;
     }
