@@ -6,6 +6,10 @@
 trigger:
     - master
 
+ # main group for variables
+variables:
+  -group: mainGroup
+
 pool:
     vmImage: 'ubuntu-latest'
 
@@ -37,7 +41,7 @@ stages:
                     sudo apt-get update
                     sudo apt-get -qq install git-ftp
 
-                - script:
+                - script: |
                     git config git-ftp.production.user $FTP_USERNAME
                     git config git-ftp.production.url $FTP_HOST
                     git config git-ftp.production.password $FTP_PASSWORD
