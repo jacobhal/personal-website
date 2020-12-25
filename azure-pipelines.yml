@@ -14,7 +14,7 @@ pool:
     vmImage: 'ubuntu-latest'
 
 stages:
-    - stage: A
+    - stage: NpmCommands
       jobs:
           - job:
             steps:
@@ -31,15 +31,15 @@ stages:
                   workingDirectory: client
                   displayName: 'npm run build'
 
-    - stage: B
-      dependsOn: A
+    - stage: DeployPackages
+      dependsOn: NpmCommands
       condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
       jobs:
           - job:
             steps:
                 # Check out the code and keep the token so we can tag the repository
-                - checkout: self
-                  persistCredentials: true
+                # - checkout: self
+                #   persistCredentials: true
 
                 - script: |
                       sudo apt-get update
