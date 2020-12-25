@@ -37,6 +37,10 @@ stages:
       jobs:
           - job:
             steps:
+            # Check out the code and keep the token so we can tag the repository
+                - checkout: self
+                  persistCredentials: true
+                  
                 - script: |
                     sudo apt-get update
                     sudo apt-get -qq install git-ftp
