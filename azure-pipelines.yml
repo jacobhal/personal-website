@@ -34,6 +34,15 @@ stages:
           - job:
             steps:
                 - script: |
-                      git ftp catchup
-                      git ftp push -s production --all
+                      apt-get update
+                      apt-get -qq install git-ftp
+
+                - script:
+                  git config git-ftp.production.user $FTP_USERNAME
+                  git config git-ftp.production.url $FTP_HOST
+                  git config git-ftp.production.password $FTP_PASSWORD
+                  git config git-ftp.production.syncroot $FTP_SYNC_ROOT
+                  git config git-ftp.production.remote-root $FTP_REMOTE_ROOT
+
+                - script: git ftp push -s production --all
                   displayName: 'Pushing FTP packages...'
