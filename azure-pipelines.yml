@@ -4,21 +4,36 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-    - main
+    - master
 
 pool:
     vmImage: 'ubuntu-latest'
 
-steps:
-    - task: NodeTool@0
-      inputs:
-          versionSpec: '10.x'
-      displayName: 'Install Node.js'
+stages:
+- stage: A
+  jobs:
+    - job: 
+      steps:
+      - task: NodeTool@0
+        inputs:
+            versionSpec: '10.x'
+        displayName: 'Install Node.js'
 
-    - script: npm install
-      workingDirectory: client
-      displayName: 'npm install'
+      - script: npm install
+        workingDirectory: client
+        displayName: 'npm install'
 
-    - script: npm run build
-      workingDirectory: client
-      displayName: 'npm run build'
+      - script: npm run build
+        workingDirectory: client
+        displayName: 'npm run build' 
+
+
+- stage: B
+  dependsOn: A
+  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
+  jobs:
+    - job: 
+      steps:
+      - script: git ftp push -s production --all
+        workingDirectory: client
+        displayName: 'Pushing FTP packages...'
