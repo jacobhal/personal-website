@@ -10,30 +10,28 @@ pool:
     vmImage: 'ubuntu-latest'
 
 stages:
-- stage: A
-  jobs:
-    - job: 
-      steps:
-      - task: NodeTool@0
-        inputs:
-            versionSpec: '10.x'
-        displayName: 'Install Node.js'
+    - stage: A
+      jobs:
+          - job:
+            steps:
+                - task: NodeTool@0
+                  inputs:
+                      versionSpec: '10.x'
+                  displayName: 'Install Node.js'
 
-      - script: npm install
-        workingDirectory: client
-        displayName: 'npm install'
+                - script: npm install
+                  workingDirectory: client
+                  displayName: 'npm install'
 
-      - script: npm run build
-        workingDirectory: client
-        displayName: 'npm run build' 
+                - script: npm run build
+                  workingDirectory: client
+                  displayName: 'npm run build'
 
-
-- stage: B
-  dependsOn: A
-  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
-  jobs:
-    - job: 
-      steps:
-      - script: git ftp push -s production --all
-        workingDirectory: client
-        displayName: 'Pushing FTP packages...'
+    - stage: B
+      dependsOn: A
+      condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
+      jobs:
+          - job:
+            steps:
+                - script: git ftp push -s production --all
+                  displayName: 'Pushing FTP packages...'
