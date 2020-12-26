@@ -36,6 +36,10 @@ const ReactPlayground = () => {
         const reducerFunc = (accumulator, currentValue) => accumulator + currentValue;
         const numbersReduced = numbers.reduce(reducerFunc) // 15
 
+        useEffect(() => {}) // Called on every render
+        
+        useEffect(() => {}, []) // Only called on page load
+        
         useEffect(() => {
             return function cleanup() {} // We can return a function in order to unsubcribe events
         }, [count]) // Called whenever count is modified because we specified count in the dependency array  
