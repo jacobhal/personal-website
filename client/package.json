@@ -24,9 +24,11 @@
         "react-scripts": "^4.0.1",
         "react-simple-maps": "^2.3.0",
         "react-tooltip": "^4.2.11",
-        "sass-loader": "^9.0.3"
+        "sass-loader": "^9.0.3",
+        "source-map-explorer": "^2.5.1"
     },
     "scripts": {
+        "analyze": "source-map-explorer 'build/static/js/*.js'",
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
