@@ -25,7 +25,7 @@ export default function Portfolio() {
     }
     let projects = [
         {
-            id: 1,
+            id: 'REACTPLAYG',
             hasCourseWatermark: false,
             title: 'React playground',
             route: '/react-playground',
@@ -35,7 +35,7 @@ export default function Portfolio() {
             status: projectStatus.FINISHED,
         },
         {
-            id: 2,
+            id: 'CORDASH',
             hasCourseWatermark: false,
             title: 'Corona dashboard',
             route: '/corona-dashboard',
@@ -45,7 +45,7 @@ export default function Portfolio() {
             status: projectStatus.FINISHED,
         },
         {
-            id: 3,
+            id: 'RESTOCKER',
             hasCourseWatermark: false,
             title: 'Restocker (Github)',
             image: webscrapingImage,
@@ -56,7 +56,7 @@ export default function Portfolio() {
             status: projectStatus.FINISHED,
         },
         {
-            id: 4,
+            id: 'GAMEREV',
             hasCourseWatermark: false,
             title: 'Game review website',
             route: 'http://www.codehalls.com',
@@ -66,7 +66,7 @@ export default function Portfolio() {
             status: projectStatus.FINISHED,
         },
         {
-            id: 5,
+            id: 'STOCKPRED',
             hasCourseWatermark: false,
             title: 'Stock predictor',
             route: '/stockpredictor',
@@ -87,7 +87,7 @@ export default function Portfolio() {
 
     let courses = [
         {
-            id: 1,
+            id: 'GITGUIDE',
             hasCourseWatermark: true,
             title: 'Complete Git Guide',
             route: 'https://github.com/jacobhal/git-course',
