@@ -1,12 +1,12 @@
 import React from 'react'
 // import { chunk } from 'lodash'
 
-import ProjectImage from './ProjectImage'
+import MemoizedProjectImage from './ProjectImage'
 import { Row, Col } from 'react-bootstrap'
 
 const ProjectImageGrid = (props) => {
     const images = props.projects.map((project) => (
-        <ProjectImage
+        <MemoizedProjectImage
             key={project.id}
             hasCourseWatermark={project.hasCourseWatermark}
             title={project.title}

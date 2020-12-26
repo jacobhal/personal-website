@@ -29,4 +29,13 @@ const ProjectImage = ({ title, image, route, hasCourseWatermark }) => {
     )
 }
 
-export default ProjectImage
+// React memo with custom equality checker in order to know when we want to re-render
+// This is unnecessary in this case but very useful if a small component is being forced to re-render by a parent component
+const MemoizedProjectImage = React.memo(
+    ProjectImage,
+    (prevProject, nextProject) =>
+        prevProject.title === nextProject.title &&
+        prevProject.route === nextProject.route
+)
+
+export default MemoizedProjectImage
