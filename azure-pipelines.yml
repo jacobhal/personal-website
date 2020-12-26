@@ -43,7 +43,7 @@ stages:
                 - script: npm run build
                   workingDirectory: client
                   displayName: 'npm run build'
-                  
+
                 - script: |
                       sudo apt-get update
                       sudo apt-get -qq install git-ftp
@@ -58,7 +58,5 @@ stages:
                   displayName: 'Setting git config values...'
 
                 - script: |
-                      git status
-                      git reset --hard
                       git ftp push -s production --all
                   displayName: 'Pushing FTP packages...'
