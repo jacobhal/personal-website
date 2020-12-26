@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 
 import MainJumbotron from '../../components/MainJumbotron'
-import ProjectImageGrid from './components/ProjectImageGrid'
 import './../../styles/portfolio.scss'
 import { Container, Alert } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
+import DefaultLoader from './../../components/DefaultLoader'
 
 // Import project images
 import githubImage from './../../assets/images/github.jpg'
@@ -13,6 +13,9 @@ import coronaImage from './../../assets/images/corona.jpg'
 import webscrapingImage from './../../assets/images/webscraping.png'
 import stockmarketImage from './../../assets/images/stockmarket.jpg'
 import graphicscardImage from './../../assets/images/graphicscard.jpg'
+
+// Lazy load project image grid
+const ProjectImageGrid = lazy(() => import('./components/ProjectImageGrid'))
 
 export default function Portfolio() {
     const projectStatus = {
@@ -124,7 +127,9 @@ export default function Portfolio() {
                     Images marked with <strong>Udemy</strong> are tied to
                     completed courses at Udemy.
                 </Alert>
-                <ProjectImageGrid projects={[...projects, ...courses]} />
+                <Suspense fallback={<DefaultLoader />}>
+                    <ProjectImageGrid projects={[...projects, ...courses]} />
+                </Suspense>
             </Container>
         </div>
     )

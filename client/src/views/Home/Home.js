@@ -1,12 +1,13 @@
-import React from 'react'
-
-import MainJumbotron from '../../components/MainJumbotron'
+import React, { Suspense, lazy } from 'react'
 
 import { Container, Card, CardDeck } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
-
+import DefaultLoader from './../../components/DefaultLoader'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDatabase, faCogs, faCopy } from '@fortawesome/free-solid-svg-icons'
+
+// We can use React.lazy + Suspense to display a fallback component while we are waiting for the main component to render
+const MainJumbotron = lazy(() => import('../../components/MainJumbotron'))
 
 const Home = () => {
     return (
@@ -20,11 +21,13 @@ const Home = () => {
             This website contains my resume, personal projects, my master's thesis and more."
                 />
             </Helmet>
-            <MainJumbotron
-                title="JACOB HALLMAN"
-                subtitle="I'm always ready for new challenges"
-                backgroundClass="has-bg-img-keyboard"
-            />
+            <Suspense fallback={<DefaultLoader />}>
+                <MainJumbotron
+                    title="JACOB HALLMAN"
+                    subtitle="I'm always ready for new challenges"
+                    backgroundClass="has-bg-img-keyboard"
+                />
+            </Suspense>
             <Container fluid className="pb-3">
                 <CardDeck>
                     <Card className="text-center">
