@@ -63,7 +63,7 @@ const ReactPlayground = () => {
                 />
             </Helmet>
             <NavBar noImage={true} />
-            <Container>
+            <Container className="pb-3">
                 <h1>React playground</h1>
                 <p style={{ marginBottom: '10px' }}>
                     {

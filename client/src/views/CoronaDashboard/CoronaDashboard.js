@@ -190,7 +190,7 @@ const CoronaDashboard = () => {
                 />
             </Helmet>
             <NavBar noImage={true} />
-            <Container fluid>
+            <Container fluid className="pb-3">
                 <Tabs
                     defaultActiveKey="map"
                     className="corona-tab"

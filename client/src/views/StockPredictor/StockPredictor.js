@@ -67,7 +67,7 @@ const StockPredictor = () => {
                 />
             </Helmet>
             <NavBar noImage={true} />
-            <Container>
+            <Container className="pb-3">
                 <h1 className="title">Fetch stock data</h1>
                 <p>
                     Search either by keywords to get a list of companies or
