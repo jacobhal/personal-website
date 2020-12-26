@@ -121,8 +121,8 @@ export default function Portfolio() {
                     technologies that I want to learn more about.
                 </p>
                 <Alert variant="secondary">
-                    The links that contain a <strong>Udemy</strong> watermark
-                    are related to completed courses at Udemy.
+                    Images marked with <strong>Udemy</strong> are tied to
+                    completed courses at Udemy.
                 </Alert>
                 <ProjectImageGrid projects={[...projects, ...courses]} />
             </Container>
