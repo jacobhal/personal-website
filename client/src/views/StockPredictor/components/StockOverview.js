@@ -1,4 +1,5 @@
 import React from 'react'
+import $ from 'jquery'
 import { Table, Accordion, Card, Row, Col } from 'react-bootstrap'
 import InfoRow from './InfoRow'
 
@@ -53,13 +54,15 @@ actions, balance_sheet, calendar, cashflow, dividends,
 
         const recommendations = props.data.DATA.RECOMMENDATIONS
         var hashMap = {}
-        Object.values(recommendations['To Grade']).forEach((e, i) => {
-            if (e.toUpperCase() in hashMap) {
-                hashMap[e.toUpperCase()] += 1
-            } else if (e) {
-                hashMap[e.toUpperCase()] = 1
-            }
-        })
+        if (recommendations) {
+            Object.values(recommendations['To Grade']).forEach((e, i) => {
+                if (e.toUpperCase() in hashMap) {
+                    hashMap[e.toUpperCase()] += 1
+                } else if (e) {
+                    hashMap[e.toUpperCase()] = 1
+                }
+            })
+        }
         var hashMapSum = 0
 
         Object.entries(hashMap).forEach(([recommendation, count]) => {
@@ -145,24 +148,26 @@ actions, balance_sheet, calendar, cashflow, dividends,
                         </tr>
                     </thead>
                     <tbody>
-                        <InfoRow
-                            label={
-                                'Latest recommendation (' +
-                                parseDate(
-                                    recommendations.Date[
-                                        Object.keys(recommendations.Date)
+                        {recommendations ? (
+                            <InfoRow
+                                label={
+                                    'Latest recommendation (' +
+                                    parseDate(
+                                        recommendations.Date[
+                                            Object.keys(recommendations.Date)
+                                                .length - 1
+                                        ]
+                                    ) +
+                                    ')'
+                                }
+                                value={
+                                    recommendations['To Grade'][
+                                        Object.keys(recommendations['To Grade'])
                                             .length - 1
                                     ]
-                                ) +
-                                ')'
-                            }
-                            value={
-                                recommendations['To Grade'][
-                                    Object.keys(recommendations['To Grade'])
-                                        .length - 1
-                                ]
-                            }
-                        ></InfoRow>
+                                }
+                            ></InfoRow>
+                        ) : null}
                         <InfoRow
                             dataTip="Trailing = last 12 months, forward = next 12 months. Higher forward than trailing means decreased expected earnings"
                             label="Trailing P/E vs Forward P/E"
@@ -195,38 +200,46 @@ actions, balance_sheet, calendar, cashflow, dividends,
                         ></InfoRow>
                     </tbody>
                 </Table>
-                <Table striped bordered hover variant="dark" className="mt-4">
-                    <thead>
-                        <tr>
-                            <th className="text-center">Recommendation</th>
-                            <th className="text-center">Percentage</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {Object.entries(hashMap)
-                            .sort(([, val1], [, val2]) => val2 - val1)
-                            .map(([recommendation, count]) => {
-                                return (
-                                    <InfoRow
-                                        dataTip={
-                                            hashMapDataTips[recommendation]
-                                        }
-                                        key={recommendation}
-                                        label={recommendation}
-                                        value={
-                                            count +
-                                            '  (' +
-                                            (
-                                                (count / hashMapSum) *
-                                                100
-                                            ).toFixed(2) +
-                                            ' %)'
-                                        }
-                                    ></InfoRow>
-                                )
-                            })}
-                    </tbody>
-                </Table>
+                {!$.isEmptyObject(hashMap) && (
+                    <Table
+                        striped
+                        bordered
+                        hover
+                        variant="dark"
+                        className="mt-4"
+                    >
+                        <thead>
+                            <tr>
+                                <th className="text-center">Recommendation</th>
+                                <th className="text-center">Percentage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {Object.entries(hashMap)
+                                .sort(([, val1], [, val2]) => val2 - val1)
+                                .map(([recommendation, count]) => {
+                                    return (
+                                        <InfoRow
+                                            dataTip={
+                                                hashMapDataTips[recommendation]
+                                            }
+                                            key={recommendation}
+                                            label={recommendation}
+                                            value={
+                                                count +
+                                                '  (' +
+                                                (
+                                                    (count / hashMapSum) *
+                                                    100
+                                                ).toFixed(2) +
+                                                ' %)'
+                                            }
+                                        ></InfoRow>
+                                    )
+                                })}
+                        </tbody>
+                    </Table>
+                )}
             </>
         )
     } else if (error !== undefined) {
