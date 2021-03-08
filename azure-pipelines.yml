@@ -52,6 +52,9 @@ stages:
 
                 - script: git status
                   displayName: 'git status'
+                  
+                - script: git reset --hard HEAD 
+                  displayName: 'git reset --hard HEAD'
 
                 - script: |
                       git config git-ftp.production.user $FTP_USERNAME
