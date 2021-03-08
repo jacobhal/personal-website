@@ -49,6 +49,10 @@ stages:
                       sudo apt-get -qq install git-ftp
                   displayName: 'Running apt-get to install packages...'
                 # $(Build.ArtifactStagingDirectory) instead of syncroot not working
+
+                - script: git status
+                  displayName: 'git status'
+
                 - script: |
                       git config git-ftp.production.user $FTP_USERNAME
                       git config git-ftp.production.url $FTP_HOST
