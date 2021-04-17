@@ -7,7 +7,9 @@ import {
     faClipboard,
     faUtensils,
     faInfo,
+    faPepperHot,
 } from '@fortawesome/free-solid-svg-icons'
+import MobileCookingGrid from './MobileCookingGrid'
 
 interface ICookingNavBarProps {
     menuItem: string
@@ -16,6 +18,7 @@ interface ICookingNavBarProps {
 const CookingNavBar = ({ menuItem }: ICookingNavBarProps) => {
     return (
         <>
+            <MobileCookingGrid />
             <ProSidebar>
                 <Menu>
                     <SubMenu
@@ -31,6 +34,12 @@ const CookingNavBar = ({ menuItem }: ICookingNavBarProps) => {
                         </MenuItem>
                         <MenuItem active={menuItem === 'desserts'}>
                             Desserter <Link to="/desserts" />
+                        </MenuItem>
+                        <MenuItem active={menuItem === 'pastries'}>
+                            Bakverk <Link to="/pastries" />
+                        </MenuItem>
+                        <MenuItem active={menuItem === 'salads'}>
+                            Sallader <Link to="/salads" />
                         </MenuItem>
                         <MenuItem active={menuItem === 'sauces'}>
                             Såser <Link to="/sauces" />
@@ -49,13 +58,19 @@ const CookingNavBar = ({ menuItem }: ICookingNavBarProps) => {
                         icon={<FontAwesomeIcon icon={faUtensils} />}
                         active={menuItem === 'tools'}
                     >
-                        Bra redskap <Link to="/tools" />
+                        Redskap <Link to="/tools" />
                     </MenuItem>
                     <MenuItem
                         icon={<FontAwesomeIcon icon={faInfo} />}
                         active={menuItem === 'cooking-tips'}
                     >
                         Kocktips <Link to="/cooking-tips" />
+                    </MenuItem>
+                    <MenuItem
+                        icon={<FontAwesomeIcon icon={faPepperHot} />}
+                        active={menuItem === 'flavors'}
+                    >
+                        Smaker <Link to="/flavors" />
                     </MenuItem>
                 </Menu>
             </ProSidebar>

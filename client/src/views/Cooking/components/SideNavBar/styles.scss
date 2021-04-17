@@ -1,3 +1,38 @@
 $highlight-color: rgb(255, 255, 255);
 
 @import '~react-pro-sidebar/dist/scss/styles.scss';
+
+div.mobile-cooking-grid-item {
+    border: 2px solid #000;
+}
+
+a.mobile-cooking-grid-item-link {
+    color: #000 !important;
+    text-decoration: none;
+}
+
+div.pro-sidebar {
+    display: inline-block !important;
+    width: 100% !important;
+}
+
+div.cooking-page-container {
+    padding: 0 !important;
+}
+
+@media only screen and (max-device-width: 1024px) {
+    div.pro-sidebar {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-device-width: 1024px) {
+    div.mobile-cooking-grid {
+        display: none !important;
+    }
+}
+
+div.cooking-content {
+    display: inline-block;
+    width: 75%;
+}

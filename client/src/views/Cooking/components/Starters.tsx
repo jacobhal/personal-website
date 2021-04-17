@@ -7,6 +7,7 @@ const Starters = () => {
         <>
             <NavBar noImage={true} noMarginBottom={true} />
             <CookingNavBar menuItem="starters" />
+            Content
         </>
     )
 }

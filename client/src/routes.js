@@ -79,6 +79,16 @@ export const Routes = () => {
                     component={Cooking}
                 />
                 <Route
+                    path={`${process.env.PUBLIC_URL}/pastries`}
+                    exact
+                    component={Cooking}
+                />
+                <Route
+                    path={`${process.env.PUBLIC_URL}/salads`}
+                    exact
+                    component={Cooking}
+                />
+                <Route
                     path={`${process.env.PUBLIC_URL}/sauces`}
                     exact
                     component={Cooking}
@@ -105,6 +115,11 @@ export const Routes = () => {
                 />
                 <Route
                     path={`${process.env.PUBLIC_URL}/cooking-tips`}
+                    exact
+                    component={Cooking}
+                />
+                <Route
+                    path={`${process.env.PUBLIC_URL}/flavors`}
                     exact
                     component={Cooking}
                 />
