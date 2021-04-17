@@ -1,12 +1,12 @@
 import React from 'react'
 import { NavBar } from '../../components/NavBar'
-import CookingNavBar from './components/CookingNavBar'
+import CookingNavBar from './components/SideNavBar/CookingNavBar'
 
 const Cooking = () => {
     return (
         <>
             <NavBar noImage={true} noMarginBottom={true} />
-            <CookingNavBar />
+            <CookingNavBar menuItem="none" />
         </>
     )
 }

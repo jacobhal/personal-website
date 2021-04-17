@@ -8,6 +8,7 @@ import { StockPredictor } from './views/StockPredictor'
 import { ReactPlayground } from './views/ReactPlayground'
 import { CoronaDashboard } from './views/CoronaDashboard'
 import { Cooking } from './views/Cooking'
+import { Starters } from './views/Cooking'
 import { NotFound } from './views/404'
 import { Route, Switch, Redirect } from 'react-router-dom'
 
@@ -58,14 +59,14 @@ export const Routes = () => {
                     component={CoronaDashboard}
                 />
                 <Route
-                    path={`${process.env.PUBLIC_URL}/Cooking`}
+                    path={`${process.env.PUBLIC_URL}/cooking`}
                     exact
                     component={Cooking}
                 />
                 <Route
                     path={`${process.env.PUBLIC_URL}/starters`}
                     exact
-                    component={Cooking}
+                    component={Starters}
                 />
                 <Route
                     path={`${process.env.PUBLIC_URL}/main-courses`}

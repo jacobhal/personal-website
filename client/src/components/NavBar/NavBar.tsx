@@ -6,14 +6,14 @@ import { Navbar, Nav } from 'react-bootstrap'
 import './NavBar.scss'
 
 interface INavBarProps {
-    noImage: boolean;
-    noMarginBottom: boolean;
+    noImage: boolean
+    noMarginBottom: boolean
 }
 
-const NavBar = ({ noImage, noMarginBottom }: INavbarProps) => {
+const NavBar = ({ noImage, noMarginBottom }: INavBarProps) => {
     const [isBurgerOpen, setIsBurgerOpen] = useState(false)
 
-    const handleNavIconToggle = (e) => {
+    const handleNavIconToggle = (e: any) => {
         setIsBurgerOpen(!isBurgerOpen)
     }
 
@@ -33,7 +33,7 @@ const NavBar = ({ noImage, noMarginBottom }: INavbarProps) => {
                 <div
                     id="nav-icon"
                     onClick={handleNavIconToggle}
-                    className={isBurgerOpen ? 'open' : null}
+                    className={isBurgerOpen ? 'open' : ''}
                 >
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
