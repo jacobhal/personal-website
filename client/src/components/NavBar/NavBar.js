@@ -5,7 +5,12 @@ import { Navbar, Nav } from 'react-bootstrap'
 
 import './NavBar.scss'
 
-const NavBar = ({ noImage }) => {
+interface INavBarProps {
+    noImage: boolean;
+    noMarginBottom: boolean;
+}
+
+const NavBar = ({ noImage, noMarginBottom }: INavbarProps) => {
     const [isBurgerOpen, setIsBurgerOpen] = useState(false)
 
     const handleNavIconToggle = (e) => {
@@ -13,8 +18,14 @@ const NavBar = ({ noImage }) => {
     }
 
     const styling = { height: '28px', width: '28px' }
+    const noImageClass = noImage ? 'no-background' : ''
+    const noMarginBottomClass = noMarginBottom ? 'no-margin-bottom' : ''
+
     return (
-        <Navbar expand="lg" className={noImage ? 'no-background' : ''}>
+        <Navbar
+            expand="lg"
+            className={`${noImageClass} ${noMarginBottomClass}`}
+        >
             <Navbar.Brand href="/">
                 <img src={logo} alt="Jacob Hallman" style={styling} />
             </Navbar.Brand>

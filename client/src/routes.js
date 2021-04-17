@@ -7,6 +7,7 @@ import { Portfolio } from './views/Portfolio'
 import { StockPredictor } from './views/StockPredictor'
 import { ReactPlayground } from './views/ReactPlayground'
 import { CoronaDashboard } from './views/CoronaDashboard'
+import { Cooking } from './views/Cooking'
 import { NotFound } from './views/404'
 import { Route, Switch, Redirect } from 'react-router-dom'
 
@@ -55,6 +56,56 @@ export const Routes = () => {
                     path={`${process.env.PUBLIC_URL}/corona-dashboard`}
                     exact
                     component={CoronaDashboard}
+                />
+                <Route
+                    path={`${process.env.PUBLIC_URL}/Cooking`}
+                    exact
+                    component={Cooking}
+                />
+                <Route
+                    path={`${process.env.PUBLIC_URL}/starters`}
+                    exact
+                    component={Cooking}
+                />
+                <Route
+                    path={`${process.env.PUBLIC_URL}/main-courses`}
+                    exact
+                    component={Cooking}
+                />
+                <Route
+                    path={`${process.env.PUBLIC_URL}/desserts`}
+                    exact
+                    component={Cooking}
+                />
+                <Route
+                    path={`${process.env.PUBLIC_URL}/sauces`}
+                    exact
+                    component={Cooking}
+                />
+                <Route
+                    path={`${process.env.PUBLIC_URL}/marinades`}
+                    exact
+                    component={Cooking}
+                />
+                <Route
+                    path={`${process.env.PUBLIC_URL}/base-recipes`}
+                    exact
+                    component={Cooking}
+                />
+                <Route
+                    path={`${process.env.PUBLIC_URL}/drinks`}
+                    exact
+                    component={Cooking}
+                />
+                <Route
+                    path={`${process.env.PUBLIC_URL}/tools`}
+                    exact
+                    component={Cooking}
+                />
+                <Route
+                    path={`${process.env.PUBLIC_URL}/cooking-tips`}
+                    exact
+                    component={Cooking}
                 />
 
                 {/* 404 fallback */}
