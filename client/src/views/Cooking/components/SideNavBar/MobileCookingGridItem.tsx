@@ -20,14 +20,17 @@ const MobileCookingGridItem = ({
             xs={12}
             md={6}
             lg={4}
-            className="mt-2 mb-2 justify-content-center align-items-center text-center mobile-cooking-grid-item"
+            className="p-2 justify-content-center align-items-center text-center mobile-cooking-grid-item"
         >
-            <Link to={`/${route}`} className="mobile-cooking-grid-item-link">
-                <p>
+            <div className="mobile-cooking-grid-item-link-wrapper">
+                <Link
+                    to={`/${route}`}
+                    className="mobile-cooking-grid-item-link"
+                >
                     <FontAwesomeIcon icon={icon} />
-                </p>
-                {linkText}
-            </Link>
+                    {linkText}
+                </Link>
+            </div>
         </Col>
     )
 }

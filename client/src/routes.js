@@ -113,7 +113,7 @@ export const Routes = () => {
                     component={CookingStartPage}
                 />
                 <Route
-                    path={`${process.env.PUBLIC_URL}/CookingStartPage-tips`}
+                    path={`${process.env.PUBLIC_URL}/cooking-tips`}
                     exact
                     component={CookingStartPage}
                 />

@@ -3,12 +3,22 @@ $highlight-color: rgb(255, 255, 255);
 @import '~react-pro-sidebar/dist/scss/styles.scss';
 
 div.mobile-cooking-grid-item {
+    height: 80px;
+}
+
+div.mobile-cooking-grid-item-link-wrapper {
     border: 2px solid #000;
+    width: 100%;
+    height: 100%;
 }
 
 a.mobile-cooking-grid-item-link {
     color: #000 !important;
     text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding-top: 15px;
 }
 
 div.pro-sidebar {
