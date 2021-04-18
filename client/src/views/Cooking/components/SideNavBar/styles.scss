@@ -12,7 +12,10 @@ a.mobile-cooking-grid-item-link {
 }
 
 div.pro-sidebar {
-    display: inline-block !important;
+    // display: inline-block !important;
+    // width: 100% !important;
+    // height: 100%;
+    min-width: 100%;
     width: 100% !important;
 }
 
@@ -20,19 +23,18 @@ div.cooking-page-container {
     padding: 0 !important;
 }
 
-@media only screen and (max-device-width: 1024px) {
-    div.pro-sidebar {
+@media only screen and (max-width: 1024px) {
+    div.cooking-page-desktop-container {
         display: none !important;
     }
 }
 
-@media only screen and (min-device-width: 1024px) {
-    div.mobile-cooking-grid {
+@media only screen and (min-width: 1024px) {
+    div.cooking-page-mobile-container {
         display: none !important;
     }
 }
 
-div.cooking-content {
-    display: inline-block;
-    width: 75%;
-}
+// div.cooking-content {
+//     display: inline-block;
+// }

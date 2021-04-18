@@ -16,9 +16,12 @@ import {
     faBirthdayCake,
 } from '@fortawesome/free-solid-svg-icons'
 
-const MobileCookingGrid = () => {
+const MobileCookingGrid = ({ ...rest }) => {
     return (
-        <Container className="pb-3 justify-content-center align-items-center text-center mobile-cooking-grid">
+        <Container
+            className="pb-3 justify-content-center align-items-center text-center"
+            {...rest}
+        >
             <Row>
                 <MobileCookingGridItem
                     linkText="Förrätter"

@@ -1,2 +1,2 @@
-export { default as Cooking } from './Cooking'
-export { default as Starters } from './components/Starters'
+export { default as CookingStartPage } from './CookingStartPage'
+export { default as Starters } from './Starters'

@@ -1,6 +1,6 @@
 import React from 'react'
-import { NavBar } from './../../../components/NavBar'
-import CookingNavBar from './SideNavBar/CookingNavBar'
+import { NavBar } from '../../components/NavBar'
+import CookingNavBar from './components/SideNavBar/CookingNavBar'
 
 const Starters = () => {
     return (

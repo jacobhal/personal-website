@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar'
 import './styles.scss'
+import './../../../../styles/cookingPage.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faClipboard,
@@ -9,7 +10,6 @@ import {
     faInfo,
     faPepperHot,
 } from '@fortawesome/free-solid-svg-icons'
-import MobileCookingGrid from './MobileCookingGrid'
 
 interface ICookingNavBarProps {
     menuItem: string
@@ -18,7 +18,6 @@ interface ICookingNavBarProps {
 const CookingNavBar = ({ menuItem }: ICookingNavBarProps) => {
     return (
         <>
-            <MobileCookingGrid />
             <ProSidebar>
                 <Menu>
                     <SubMenu
