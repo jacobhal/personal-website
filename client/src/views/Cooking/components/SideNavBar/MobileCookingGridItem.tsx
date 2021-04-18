@@ -27,7 +27,9 @@ const MobileCookingGridItem = ({
                     to={`/${route}`}
                     className="mobile-cooking-grid-item-link"
                 >
-                    <FontAwesomeIcon icon={icon} />
+                    <div>
+                        <FontAwesomeIcon icon={icon} />
+                    </div>
                     {linkText}
                 </Link>
             </div>
