@@ -19,15 +19,9 @@ const MainJumbotron = ({
     }
 
     return (
-        <Jumbotron
-            className={
-                backgroundClass +
-                ' ' +
-                (isFullHeight ? 'jumbotron-full-page' : 'jumbotron-normal')
-            }
-        >
+        <Jumbotron className={backgroundClass + ' jumbotron-full-page'}>
             <NavBar />
-            <Container className="jumbotron-content h-100">
+            <Container className="jumbotron-content">
                 <Row className="justify-content-center align-items-center">
                     <h1
                         className="outline text-center"
