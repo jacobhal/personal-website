@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react'
+import React, { Suspense, lazy, useRef } from 'react'
 
 import { Container, Card } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
@@ -11,6 +11,8 @@ import { faDatabase, faCogs, faCopy } from '@fortawesome/free-solid-svg-icons'
 const CardDeck = lazy(() => import('./../../components/CardDeckRelay'))
 
 const Home = () => {
+    const containerRef = useRef(null)
+
     return (
         <div>
             <Helmet>
@@ -26,8 +28,9 @@ const Home = () => {
                 title="JACOB HALLMAN"
                 subtitle="I'm always ready for new challenges"
                 backgroundClass="has-bg-img-keyboard"
+                scrollRef={containerRef}
             />
-            <Container fluid className="pb-3">
+            <Container fluid className="pb-3" ref={containerRef}>
                 <Suspense fallback={<DefaultLoader />}>
                     <CardDeck>
                         <Card className="text-center">

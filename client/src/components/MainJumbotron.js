@@ -2,6 +2,8 @@ import React from 'react'
 
 import { Jumbotron, Container, Row } from 'react-bootstrap'
 import { NavBar } from './NavBar'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 const MainJumbotron = ({
     title,
@@ -9,7 +11,13 @@ const MainJumbotron = ({
     backgroundClass,
     isFullHeight,
     children,
+    scrollRef,
 }) => {
+    const executeScroll = (e) => {
+        e.preventDefault()
+        scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+
     return (
         <Jumbotron
             className={
@@ -35,6 +43,20 @@ const MainJumbotron = ({
                     </h3>
                 </Row>
                 {children}
+                {!isFullHeight && (
+                    <Row
+                        className="justify-content-center align-items-center"
+                        id="scroll-arrow"
+                    >
+                        {scrollRef && (
+                            <div class="arrow bounce">
+                                <span onClick={executeScroll}>
+                                    <FontAwesomeIcon icon={faArrowDown} />
+                                </span>
+                            </div>
+                        )}
+                    </Row>
+                )}
             </Container>
         </Jumbotron>
     )

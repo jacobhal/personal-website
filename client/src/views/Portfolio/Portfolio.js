@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react'
+import React, { Suspense, lazy, useRef } from 'react'
 
 import MainJumbotron from '../../components/MainJumbotron'
 import './../../styles/portfolio.scss'
@@ -98,6 +98,9 @@ export default function Portfolio() {
             status: courseStatus.FINISHED,
         },
     ]
+
+    const containerRef = useRef(null)
+
     return (
         <div>
             <Helmet>
@@ -114,8 +117,12 @@ export default function Portfolio() {
                 title="PERSONAL PROJECTS"
                 subtitle="Check out some passion projects of mine"
                 backgroundClass="has-bg-img-bulb"
+                scrollRef={containerRef}
             />
-            <Container className="pb-3 justify-content-center align-items-center text-center">
+            <Container
+                className="pb-3 justify-content-center align-items-center text-center"
+                ref={containerRef}
+            >
                 <h1 className="title">My Projects and Courses</h1>
                 <p>
                     This is a list of some of the projects that I have done or

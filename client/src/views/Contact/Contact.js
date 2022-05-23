@@ -20,6 +20,7 @@ const Contact = () => {
         constructor() {
             super()
 
+            this.containerRef = React.createRef()
             this.state = {
                 email: '',
                 name: '',
@@ -223,8 +224,13 @@ const Contact = () => {
                         title="REACH OUT TO ME"
                         subtitle="Let's get in touch"
                         backgroundClass="has-bg-img-reach"
+                        scrollRef={this.containerRef}
                     />
-                    <Container className="pb-3" id="form-container">
+                    <Container
+                        className="pb-3"
+                        id="form-container"
+                        ref={this.containerRef}
+                    >
                         {htmlOutput}
                     </Container>
                 </div>
