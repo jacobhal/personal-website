@@ -12,7 +12,7 @@ const NotFound = () => {
                         We can't seem to find the page you are looking for.
                     </h5>
                     <p className="notfound-content">Error code: 404</p>
-                    <a href="/" class="btn btn-primary btn-lg">
+                    <a href="/" className="btn btn-primary btn-lg">
                         Home Page
                     </a>
                 </Col>

@@ -49,7 +49,7 @@ const MainJumbotron = ({
                         id="scroll-arrow"
                     >
                         {scrollRef && (
-                            <div class="arrow bounce">
+                            <div className="arrow bounce">
                                 <span onClick={executeScroll}>
                                     <FontAwesomeIcon icon={faArrowDown} />
                                 </span>
