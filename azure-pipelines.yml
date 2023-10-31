@@ -39,6 +39,10 @@ stages:
                 - script: npm install -f
                   workingDirectory: client
                   displayName: 'npm install'
+                
+                - script: npm use
+                  workingDirectory: client
+                  displayName: 'Set node version with "nvm use"'
 
                 - script: npm run build
                   workingDirectory: client
