@@ -40,9 +40,10 @@ stages:
                   workingDirectory: client
                   displayName: 'npm install'
                 
-                - script: npm use
-                  workingDirectory: client
-                  displayName: 'Set node version with "nvm use"'
+                - task: NodeTool@0
+                  inputs:
+                    versionSource: 'spec'
+                    versionSpec: 'v14.4.0'
 
                 - script: npm run build
                   workingDirectory: client
