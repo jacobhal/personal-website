@@ -27,12 +27,12 @@ app.post('/api/send', (req, res) => {
     <p>You have a new contact request</p>
     <h3>Contact details</h3>
     <ul style="list-style: none !important;margin: 0 !important;padding: 0 !important;">
-      <li>Name: ${req.body.name}</li>
-      <li>Email: ${req.body.email}</li>
-      <li>Subject: ${req.body.subject}</li>
+      <li>Name: ${req.body.form_name}</li>
+      <li>Email: ${req.body.form_email}</li>
+      <li>Subject: ${req.body.form_subject}</li>
     </ul>
     <h3>Message</h3>
-    <p>${req.body.message}</p>
+    <p>${req.body.form_msg}</p>
   `;
 
   // create reusable transporter object using the default SMTP transport

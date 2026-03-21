@@ -4,42 +4,29 @@
     "private": true,
     "homepage": "https://jacobhal.se",
     "dependencies": {
-        "@fortawesome/fontawesome-svg-core": "^1.2.32",
-        "@fortawesome/free-solid-svg-icons": "^5.15.1",
-        "@fortawesome/react-fontawesome": "^0.1.14",
-        "@types/jest": "^26.0.20",
-        "@types/node": "^14.14.32",
-        "@types/react": "^16.14.2",
-        "@types/react-dom": "^17.0.1",
-        "axios": "^0.18.1",
-        "bootstrap": "^4.5.3",
-        "d3-scale": "^3.2.3",
-        "eslint-config-react-app": "^6.0.0",
-        "jquery": "^3.5.1",
-        "lodash": "^4.17.20",
-        "react": "^17.0.1",
-        "react-bootstrap": "^1.4.0",
-        "react-bootstrap-table-next": "^4.0.3",
-        "react-dom": "^17.0.1",
+        "@emotion/react": "^11.11.3",
+        "@emotion/styled": "^11.11.0",
+        "@fortawesome/fontawesome-svg-core": "^6.5.1",
+        "@fortawesome/free-solid-svg-icons": "^6.5.1",
+        "@fortawesome/react-fontawesome": "^0.2.0",
+        "@mui/icons-material": "^5.15.6",
+        "@mui/material": "^5.15.6",
+        "axios": "^1.6.7",
+        "d3-scale": "^4.0.2",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
         "react-helmet": "^6.1.0",
-        "react-live": "^2.2.3",
-        "react-router-dom": "^5.2.0",
-        "react-scripts": "^4.0.1",
-        "react-simple-maps": "^2.3.0",
-        "react-tooltip": "^4.2.11",
-        "sass-loader": "^9.0.3",
-        "source-map-explorer": "^2.5.1",
-        "typescript": "^4.2.3"
+        "react-live": "^4.1.6",
+        "react-router-dom": "^6.22.0",
+        "react-simple-maps": "^3.0.0",
+        "react-tooltip": "^5.26.3",
+        "typescript": "^5.3.3"
     },
     "scripts": {
-        "analyze": "source-map-explorer 'build/static/js/*.js'",
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
-    },
-    "eslintConfig": {
-        "extends": "react-app"
+        "start": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "test": "vitest"
     },
     "browserslist": [
         ">0.2%",
@@ -48,17 +35,22 @@
         "not op_mini all"
     ],
     "devDependencies": {
-        "@testing-library/jest-dom": "^5.11.6",
-        "@testing-library/react": "^11.2.2",
-        "@testing-library/user-event": "^12.6.0",
-        "husky": "^4.3.6",
-        "lint-staged": "^10.5.3",
-        "prettier": "^2.2.1",
-        "sass": "^1.52.1",
-        "web-vitals": "^1.0.1"
-    },
-    "optionalDependencies": {
-        "fsevents": "^2.0.7"
+        "@testing-library/jest-dom": "^6.4.0",
+        "@testing-library/react": "^14.2.1",
+        "@testing-library/user-event": "^14.5.2",
+        "@types/jest": "^29.5.12",
+        "@types/node": "^20.11.10",
+        "@types/react": "^18.2.48",
+        "@types/react-dom": "^18.2.18",
+        "@types/react-helmet": "^6.1.11",
+        "@vitejs/plugin-react": "^6.0.1",
+        "husky": "^9.0.6",
+        "lint-staged": "^15.2.0",
+        "prettier": "^3.2.4",
+        "sass": "^1.70.0",
+        "source-map-explorer": "^2.5.3",
+        "vite": "^8.0.1",
+        "web-vitals": "^3.5.2"
     },
     "lint-staged": {
         "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
