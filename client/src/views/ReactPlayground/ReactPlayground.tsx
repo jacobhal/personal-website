@@ -1,0 +1,88 @@
+import React, {
+    useState,
+    useEffect,
+    useContext,
+    useMemo,
+    useRef,
+    useReducer,
+    useCallback,
+} from 'react'
+
+import { NavBar } from '../../components/NavBar'
+import { themes } from 'prism-react-renderer'
+import './../../styles/reactPlayground.scss'
+
+import { Helmet } from 'react-helmet'
+import { Container } from '@mui/material'
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
+
+const scope = {
+    useState,
+    useEffect,
+    useContext,
+    useMemo,
+    useRef,
+    useReducer,
+    useCallback,
+}
+
+const ReactPlayground: React.FC = () => {
+    const exampleCode = `() => {
+        const [count, setCount] = useState(0)
+        const numbers = [1, 2, 3, 4, 5]
+        const numbersMapped = numbers.map( (number, i) => <li key={i}>{number * 2}</li> ) // [2, 4, 6, 8, 10]
+        const numbersFiltered = numbers.filter( (number) => number % 2 == 0) // [2, 4]
+        const reducerFunc = (accumulator, currentValue) => accumulator + currentValue;
+        const numbersReduced = numbers.reduce(reducerFunc) // 15
+
+        useEffect(() => {}) // Called on every render
+        
+        useEffect(() => {}, []) // Only called on page load
+        
+        useEffect(() => {
+            return function cleanup() {} // We can return a function in order to unsubcribe events
+        }, [count]) // Called whenever count is modified because we specified count in the dependency array  
+        
+        return (
+            <div>
+                <button className="btn btn-primary mt-2" onClick={() => setCount(prevCount => prevCount + 1)}>
+                    Clicked {count} times
+                </button>
+            </div>
+        )
+}`
+
+    return (
+        <div>
+            <Helmet>
+                <title>Jacob Hallman - React playground</title>
+                <meta
+                    name="description"
+                    content="This is a small playground that can be used to explore new react features. Most of the hooks provided by react are available as well as the basic Bootstrap CSS classes."
+                />
+            </Helmet>
+            <NavBar noImage={true} />
+            <Container className="pb-3">
+                <h1>React playground</h1>
+                <p style={{ marginBottom: '10px' }}>
+                    {
+                        'Available hooks - {useState, useEffect, useContext, useMemo, useRef, useReducer, useCallback}. Basic Bootstrap CSS modifiers are available.'
+                    }
+                </p>
+                <LiveProvider scope={scope} theme={themes.dracula} code={exampleCode}>
+                    <LiveEditor
+                        className="content"
+                        style={{
+                            fontFamily: '"Fira code", "Fira Mono", monospace',
+                            fontSize: 16,
+                        }}
+                    />
+                    <LiveError />
+                    <LivePreview />
+                </LiveProvider>
+            </Container>
+        </div>
+    )
+}
+
+export default ReactPlayground

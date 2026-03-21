@@ -25,19 +25,18 @@ nav.corona-tab {
     border-top-right-radius: 6px;
 }
 
-div.react-bootstrap-table table {
+.MuiTableContainer-root table {
     display: table;
     width: 100%;
 }
 
 @media only screen and (max-width: 768px) {
-    div.react-bootstrap-table table {
-        display: block;
+    .MuiTableContainer-root {
         overflow-x: auto !important;
     }
 
-    div.react-bootstrap-table table th, div.react-bootstrap-table table td {
+    .MuiTableContainer-root table th, .MuiTableContainer-root table td {
         min-width: 170px;
     }
-  }
+}
 
