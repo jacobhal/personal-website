@@ -36,15 +36,16 @@ stages:
                 # Check out the code and keep the token so we can tag the repository
                 # - checkout: self
                 #   persistCredentials: true
+                - task: NodeTool@0
+                  inputs:
+                    versionSource: 'spec'
+                    versionSpec: '20.x'
+                  displayName: 'Install Node.js 20'
+
                 - script: npm install -f
                   workingDirectory: client
                   displayName: 'npm install'
                 
-                - task: NodeTool@0
-                  inputs:
-                    versionSource: 'spec'
-                    versionSpec: 'v14.4.0'
-
                 - script: npm run build
                   workingDirectory: client
                   displayName: 'npm run build'
