@@ -39,20 +39,25 @@ const Contact: React.FC = () => {
         setMailInProgress(true)
 
         try {
-            const res = await axios.post('https://jacobhal.se/mailer.php', {
-                form_name: name,
-                form_email: email,
-                form_subject: subject,
-                form_msg: message,
-            }, { timeout: 10000 })
+            const params = new URLSearchParams()
+            params.append('form_name', name)
+            params.append('form_email', email)
+            params.append('form_subject', subject)
+            params.append('form_msg', message)
+
+            const res = await axios.post('https://jacobhal.se/mailer.php', params, {
+                timeout: 10000,
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            })
             setMailInProgress(false)
             setMailSent(true)
-            setResponse(res.data.message)
-            setStatus(res.data.success)
-        } catch (err) {
+            setResponse(typeof res.data === 'string' ? res.data : 'Message sent!')
+            setStatus(true)
+        } catch (err: any) {
             setMailInProgress(false)
             setMailSent(true)
-            setResponse(err instanceof Error ? err.message : 'Something went wrong. Please try again later.')
+            const serverMsg = err?.response?.data
+            setResponse(typeof serverMsg === 'string' && serverMsg ? serverMsg : 'Something went wrong. Please try again later.')
             setStatus(false)
         }
     }
