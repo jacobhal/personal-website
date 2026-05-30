@@ -1,0 +1,11 @@
+# SPA fallback: serve index.html for any path that is not a real file or
+# directory, so client-side routes (e.g. /skarp/delete-account) load when
+# opened directly or fetched by crawlers.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
