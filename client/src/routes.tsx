@@ -8,6 +8,7 @@ import { StockPredictor } from './views/StockPredictor'
 import { ReactPlayground } from './views/ReactPlayground'
 import { CoronaDashboard } from './views/CoronaDashboard'
 import { Skarp, SkarpDeleteAccount } from './views/Skarp'
+import { Krydda } from './views/Krydda'
 import { NotFound } from './views/404'
 import { Route, Routes as RouterRoutes, Navigate } from 'react-router-dom'
 
@@ -24,6 +25,7 @@ export const Routes: React.FC = () => {
             <Route path="/corona-dashboard" element={<CoronaDashboard />} />
             <Route path="/skarp" element={<Skarp />} />
             <Route path="/skarp/delete-account" element={<SkarpDeleteAccount />} />
+            <Route path="/krydda" element={<Krydda />} />
             <Route path="/404" element={<NotFound />} />
             <Route path="*" element={<Navigate to="/404" replace />} />
         </RouterRoutes>
