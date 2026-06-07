@@ -150,6 +150,20 @@ const Krydda: React.FC = () => {
                             Krydda · by Jacob Hallman
                         </Typography>
                         <Stack direction="row" spacing={3}>
+                            <Link
+                                href="/krydda/privacy"
+                                underline="hover"
+                                sx={{ color: colors.muted, fontSize: 14 }}
+                            >
+                                Privacy
+                            </Link>
+                            <Link
+                                href="/krydda/terms"
+                                underline="hover"
+                                sx={{ color: colors.muted, fontSize: 14 }}
+                            >
+                                Terms
+                            </Link>
                             <Link href="/contact" underline="hover" sx={{ color: colors.muted, fontSize: 14 }}>
                                 Contact
                             </Link>
