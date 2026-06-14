@@ -164,6 +164,13 @@ const Krydda: React.FC = () => {
                             >
                                 Terms
                             </Link>
+                            <Link
+                                href="/krydda/delete-account"
+                                underline="hover"
+                                sx={{ color: colors.muted, fontSize: 14 }}
+                            >
+                                Delete account
+                            </Link>
                             <Link href="/contact" underline="hover" sx={{ color: colors.muted, fontSize: 14 }}>
                                 Contact
                             </Link>

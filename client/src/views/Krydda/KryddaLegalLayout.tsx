@@ -229,6 +229,13 @@ const KryddaLegalLayout: React.FC<Props> = ({
                                 Krydda
                             </Link>
                             <Link
+                                href="/krydda/delete-account"
+                                underline="hover"
+                                sx={{ color: colors.muted, fontSize: 14 }}
+                            >
+                                Delete account
+                            </Link>
+                            <Link
                                 href={`mailto:${EMAIL}`}
                                 underline="hover"
                                 sx={{ color: colors.muted, fontSize: 14 }}
