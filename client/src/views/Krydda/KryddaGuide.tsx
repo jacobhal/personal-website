@@ -27,8 +27,8 @@ type Copy = {
 
 const COPY: Record<'sv' | 'en', Copy> = {
     sv: {
-        docTitle: 'Krydda — Klipp recept från webben',
-        title: 'Klipp recept från webben',
+        docTitle: 'Krydda — Klipp ut recept från webben',
+        title: 'Klipp ut recept från webben',
         subtitle: 'Spara vilket recept som helst — i tre steg.',
         steps: [
             {
@@ -40,11 +40,11 @@ const COPY: Record<'sv' | 'en', Copy> = {
                 body: 'Tryck på själva receptet så att du ser ingredienser och steg på skärmen.',
             },
             {
-                title: 'Tryck på Klipp recept ✂️',
+                title: 'Tryck på Klipp ut recept ✂️',
                 body: 'Krydda läser sidan och fyller i receptet åt dig. Kontrollera och spara — klart!',
             },
         ],
-        buttonNote: 'Knappen Klipp recept sitter längst ner på skärmen medan du surfar.',
+        buttonNote: 'Knappen Klipp ut recept sitter längst ner på skärmen medan du surfar.',
         tipLabel: 'Tips:',
         tip: 'Hittar Krydda inget recept? Se till att du är på själva receptsidan, inte en lista med många recept.',
     },
