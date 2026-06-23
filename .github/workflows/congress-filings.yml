@@ -26,6 +26,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install notifier dependencies
+        run: python3 -m pip install -r notifier/requirements.txt
+
       - name: Check for new filings and push notifications
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}

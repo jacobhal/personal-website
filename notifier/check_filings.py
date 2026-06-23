@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Poll the US House Clerk financial-disclosure index for new PTR filings by the
-people in watchlist.json, push an ntfy notification for each new one, and write
-notifier/filings.json (consumed by the website page).
+people in watchlist.json, parse each new filing's PDF for the actual trades,
+push an ntfy notification, and write notifier/filings.json (consumed by the
+website page).
 
-Stdlib only — runs anywhere Python 3 is available (GitHub Actions, locally).
+Stdlib only for the pure logic; pdfplumber is used at runtime for PDF parsing.
 """
 import datetime as _dt
 import json
@@ -11,11 +12,14 @@ import os
 import urllib.request
 import xml.etree.ElementTree as ET
 
+import ptr_parser
+
 HOUSE_INDEX_URL = "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/{year}FD.xml"
 PTR_PDF_URL = "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/{year}/{doc_id}.pdf"
 OTHER_PDF_URL = "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/{year}/{doc_id}.pdf"
 _UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
        "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
+TRADES_VERSION = 1
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -89,6 +93,41 @@ def full_name(filing):
     return " ".join(p for p in (filing["first"], filing["last"]) if p).strip()
 
 
+def age_days(iso_date):
+    """Whole days between an ISO date and today (UTC). None if unparseable."""
+    try:
+        d = _dt.datetime.strptime(iso_date, "%Y-%m-%d").date()
+        return (_dt.datetime.utcnow().date() - d).days
+    except (ValueError, TypeError):
+        return None
+
+
+def _money(v):
+    if v is None:
+        return "?"
+    def short(value, suffix, divisor):
+        n = "{:.1f}".format(value / divisor).rstrip("0").rstrip(".")
+        return "${}{}".format(n, suffix)
+    if v >= 1_000_000:
+        return short(v, "M", 1_000_000)
+    if v >= 1_000:
+        return short(v, "K", 1_000)
+    return "${}".format(v)
+
+
+def format_trade_line(t):
+    """One human line for a parsed trade, used in the push body."""
+    verb = "BUY" if t["side"] == "buy" else "SELL"
+    sym = t["ticker"] or (t["asset"][:20] if t.get("asset") else "?")
+    opt = " (opt)" if t.get("instrument") == "options" else ""
+    rng = "{}-{}".format(_money(t.get("amount_low")), _money(t.get("amount_high")))
+    age = age_days(t.get("txn_date"))
+    when = "traded {}".format(t.get("txn_date"))
+    if age is not None:
+        when += " ({}d ago)".format(age)
+    return "{} {}{} {} - {}".format(verb, sym, opt, rng, when)
+
+
 # --------------------------------------------------------------------------- #
 # Side-effecting runner
 # --------------------------------------------------------------------------- #
@@ -106,12 +145,35 @@ def _load_json(path, default):
         return default
 
 
-def _send_ntfy(topic, filing):
-    """Push one notification. No-op (logged) when topic is unset."""
+def _cached_trades_valid(cached):
+    return bool(
+        cached
+        and cached.get("trades") is not None
+        and cached.get("trades_version") == TRADES_VERSION
+    )
+
+
+def _trades_for(filing, cache):
+    """Parsed trades for a filing, reused from cache when available."""
+    cached = cache.get(filing["doc_id"])
+    if _cached_trades_valid(cached):
+        return cached["trades"]
+    try:
+        text = ptr_parser.extract_pdf_text(_fetch(pdf_url(filing)))
+        return ptr_parser.parse_ptr_text(text)
+    except Exception as e:  # noqa: BLE001 - a scanned/odd PDF must not crash the job
+        print("  warn: could not parse {}: {}".format(filing["doc_id"], e))
+        return []
+
+
+def _send_ntfy(topic, filing, trades):
     title = "New PTR: " + full_name(filing)
-    body = "Filed {} - tap to open the disclosure".format(to_iso(filing["filing_date"]))
+    if trades:
+        body = "\n".join(format_trade_line(t) for t in trades[:8])
+    else:
+        body = "New filing - tap to open the disclosure"
     if not topic:
-        print("  [dry-run, no NTFY_TOPIC] " + title)
+        print("  [dry-run, no NTFY_TOPIC] " + title + "\n    " + body.replace("\n", "\n    "))
         return
     req = urllib.request.Request(
         "https://ntfy.sh/" + topic, data=body.encode("utf-8"), method="POST")
@@ -126,6 +188,8 @@ def run():
     topic = os.environ.get("NTFY_TOPIC", "").strip()
     watchlist = _load_json(os.path.join(HERE, "watchlist.json"), [])
     seen = set(_load_json(os.path.join(HERE, "seen.json"), []))
+    prev = _load_json(os.path.join(HERE, "filings.json"), {"filings": []})
+    cache = {f["doc_id"]: f for f in prev.get("filings", [])}
 
     # Current + previous year, so the new-year index gap never hides filings.
     this_year = _dt.datetime.utcnow().year
@@ -133,19 +197,19 @@ def run():
     for year in (this_year, this_year - 1):
         try:
             all_filings += parse_filings(_fetch(HOUSE_INDEX_URL.format(year=year)))
-        except Exception as e:  # noqa: BLE001 - a missing/late index must not crash the job
+        except Exception as e:  # noqa: BLE001 - a missing/late index must not crash
             print("  warn: could not fetch {} index: {}".format(year, e))
 
     watched = select_watched(all_filings, watchlist)
+    trades_by_doc = {f["doc_id"]: _trades_for(f, cache) for f in watched}
     fresh = new_filings(watched, seen)
     print("watched PTRs: {} | new: {}".format(len(watched), len(fresh)))
 
     for f in fresh:
-        _send_ntfy(topic, f)
+        _send_ntfy(topic, f, trades_by_doc.get(f["doc_id"], []))
         seen.add(f["doc_id"])
 
-    # Data file for the website page: all watched PTRs, newest first.
-    page_rows = sorted(
+    page_filings = sorted(
         ({
             "name": full_name(f),
             "last": f["last"],
@@ -155,12 +219,14 @@ def run():
             "year": f["year"],
             "doc_id": f["doc_id"],
             "pdf_url": pdf_url(f),
+            "trades": trades_by_doc.get(f["doc_id"], []),
+            "trades_version": TRADES_VERSION,
         } for f in watched),
         key=lambda r: r["filing_date"], reverse=True,
     )
     with open(os.path.join(HERE, "filings.json"), "w") as fh:
         json.dump({"updated": _dt.datetime.utcnow().isoformat() + "Z",
-                   "filings": page_rows}, fh, indent=2)
+                   "filings": page_filings}, fh, indent=2)
     with open(os.path.join(HERE, "seen.json"), "w") as fh:
         json.dump(sorted(seen), fh, indent=2)
 

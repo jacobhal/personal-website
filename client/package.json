@@ -50,6 +50,7 @@
         "sass": "^1.70.0",
         "source-map-explorer": "^2.5.3",
         "vite": "^8.0.1",
+        "vitest": "^4.1.9",
         "web-vitals": "^3.5.2"
     },
     "lint-staged": {

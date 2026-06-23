@@ -85,5 +85,45 @@ class PdfUrl(unittest.TestCase):
         )
 
 
+class TradeFormatting(unittest.TestCase):
+    def test_money_keeps_half_steps_without_false_round_up(self):
+        self.assertEqual(cf._money(1000001), "$1M")
+        self.assertEqual(cf._money(1500000), "$1.5M")
+        self.assertEqual(cf._money(15001), "$15K")
+
+    def test_format_trade_line_uses_ticker_range_and_age(self):
+        trade = {
+            "ticker": "AVGO",
+            "asset": "Broadcom Inc. - Common Stock",
+            "side": "buy",
+            "instrument": "options",
+            "txn_date": "2025-06-20",
+            "amount_low": 1000001,
+            "amount_high": 5000000,
+        }
+
+        line = cf.format_trade_line(trade)
+
+        self.assertIn("BUY AVGO (opt)", line)
+        self.assertIn("$1M-$5M", line)
+        self.assertIn("traded 2025-06-20", line)
+
+
+class TradeCache(unittest.TestCase):
+    def test_cached_trades_require_current_version(self):
+        self.assertFalse(cf._cached_trades_valid(None))
+        self.assertFalse(cf._cached_trades_valid({"trades": []}))
+        self.assertFalse(
+            cf._cached_trades_valid(
+                {"trades": [], "trades_version": cf.TRADES_VERSION - 1}
+            )
+        )
+        self.assertTrue(
+            cf._cached_trades_valid(
+                {"trades": [], "trades_version": cf.TRADES_VERSION}
+            )
+        )
+
+
 if __name__ == "__main__":
     unittest.main()

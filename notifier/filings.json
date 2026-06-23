@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23T19:26:44.519241Z",
+  "updated": "2026-06-23T19:48:27.702379Z",
   "filings": [
     {
       "name": "Nancy Pelosi",
@@ -9,7 +9,130 @@
       "filing_date": "2026-01-23",
       "year": "2026",
       "doc_id": "20033725",
-      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033725.pdf"
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033725.pdf",
+      "trades": [
+        {
+          "owner": "spouse",
+          "asset": "AllianceBernstein Holding L.P. Units",
+          "ticker": "AB",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-01-16",
+          "amount_low": 1000001,
+          "amount_high": 5000000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Alphabet Inc. - Class A Common",
+          "ticker": "GOOGL",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2026-01-16",
+          "amount_low": 500001,
+          "amount_high": 1000000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Alphabet Inc. - Class A Common",
+          "ticker": "GOOGL",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2025-12-30",
+          "amount_low": 250001,
+          "amount_high": 500000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Amazon.com, Inc. - Common Stock",
+          "ticker": "AMZN",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2025-12-30",
+          "amount_low": 100001,
+          "amount_high": 250000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Amazon.com, Inc. - Common Stock",
+          "ticker": "AMZN",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2026-01-16",
+          "amount_low": 500001,
+          "amount_high": 1000000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Apple Inc. - Common Stock (AAPL)",
+          "ticker": "AAPL",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2025-12-30",
+          "amount_low": 250001,
+          "amount_high": 500000
+        },
+        {
+          "owner": "spouse",
+          "asset": "NVIDIA Corporation - Common Stock",
+          "ticker": "NVDA",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2025-12-30",
+          "amount_low": 100001,
+          "amount_high": 250000
+        },
+        {
+          "owner": "spouse",
+          "asset": "NVIDIA Corporation - Common Stock",
+          "ticker": "NVDA",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2026-01-16",
+          "amount_low": 250001,
+          "amount_high": 500000
+        },
+        {
+          "owner": "spouse",
+          "asset": "PayPal Holdings, Inc. - Common",
+          "ticker": "PYPL",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2025-12-30",
+          "amount_low": 250001,
+          "amount_high": 500000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Tempus AI, Inc. - Class A Common",
+          "ticker": "TEM",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2026-01-16",
+          "amount_low": 50001,
+          "amount_high": 100000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Vistra Corp. Common Stock (VST)",
+          "ticker": "VST",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2026-01-16",
+          "amount_low": 100001,
+          "amount_high": 250000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Walt Disney Company (DIS) [ST]",
+          "ticker": "DIS",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2025-12-30",
+          "amount_low": 1000001,
+          "amount_high": 5000000
+        }
+      ],
+      "trades_version": 1
     },
     {
       "name": "Nancy Pelosi",
@@ -19,7 +142,9 @@
       "filing_date": "2025-10-24",
       "year": "2025",
       "doc_id": "20033337",
-      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20033337.pdf"
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20033337.pdf",
+      "trades": [],
+      "trades_version": 1
     },
     {
       "name": "Nancy Pelosi",
@@ -29,7 +154,30 @@
       "filing_date": "2025-07-09",
       "year": "2025",
       "doc_id": "20030630",
-      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20030630.pdf"
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20030630.pdf",
+      "trades": [
+        {
+          "owner": "spouse",
+          "asset": "Broadcom Inc. - Common Stock",
+          "ticker": "AVGO",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2025-06-20",
+          "amount_low": 1000001,
+          "amount_high": 5000000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Matthews International Mutual Fund",
+          "ticker": null,
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2025-06-20",
+          "amount_low": 15001,
+          "amount_high": 50000
+        }
+      ],
+      "trades_version": 1
     },
     {
       "name": "Nancy Pelosi",
@@ -39,7 +187,80 @@
       "filing_date": "2025-01-17",
       "year": "2025",
       "doc_id": "20026590",
-      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20026590.pdf"
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20026590.pdf",
+      "trades": [
+        {
+          "owner": "spouse",
+          "asset": "Alphabet Inc. - Class A Common",
+          "ticker": "GOOGL",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2025-01-14",
+          "amount_low": 250001,
+          "amount_high": 500000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Amazon.com, Inc. - Common Stock",
+          "ticker": "AMZN",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2025-01-14",
+          "amount_low": 250001,
+          "amount_high": 500000
+        },
+        {
+          "owner": "spouse",
+          "asset": "NVIDIA Corporation - Common",
+          "ticker": "NVDA",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2024-12-20",
+          "amount_low": 500001,
+          "amount_high": 1000000
+        },
+        {
+          "owner": "spouse",
+          "asset": "NVIDIA Corporation - Common",
+          "ticker": "NVDA",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2025-01-14",
+          "amount_low": 250001,
+          "amount_high": 500000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Palo Alto Networks, Inc. (PANW)",
+          "ticker": "PANW",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2024-12-20",
+          "amount_low": 1000001,
+          "amount_high": 5000000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Tempus AI, Inc. - Class A Common",
+          "ticker": "TEM",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2025-01-14",
+          "amount_low": 50001,
+          "amount_high": 100000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Vistra Corp. Common Stock (VST)",
+          "ticker": "VST",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2025-01-14",
+          "amount_low": 500001,
+          "amount_high": 1000000
+        }
+      ],
+      "trades_version": 1
     }
   ]
 }
