@@ -2,8 +2,11 @@ name: Congress filing notifier
 
 on:
   schedule:
-    # Daily at 13:00 UTC (House Clerk updates on weekdays; daily is plenty).
-    - cron: "0 13 * * *"
+    # Every 15 minutes. The real latency floor is the House Clerk's own
+    # publication lag (hours-to-days after a member files) plus GitHub's
+    # best-effort scheduling (a run can be delayed/dropped under load), so
+    # polling faster than ~15 min buys almost nothing. Public repo => free.
+    - cron: "*/15 * * * *"
   workflow_dispatch: {}   # lets you run it manually from the Actions tab
 
 permissions:
