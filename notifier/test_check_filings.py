@@ -108,6 +108,44 @@ class TradeFormatting(unittest.TestCase):
         self.assertIn("$1M-$5M", line)
         self.assertIn("traded 2025-06-20", line)
 
+    def test_notification_trade_lines_sort_newest_first(self):
+        trades = [
+            {
+                "ticker": "OLD",
+                "asset": "Older Trade",
+                "side": "buy",
+                "instrument": "shares",
+                "txn_date": "2025-06-01",
+                "amount_low": 1000,
+                "amount_high": 5000,
+            },
+            {
+                "ticker": "NEW",
+                "asset": "Newest Trade",
+                "side": "sell",
+                "instrument": "shares",
+                "txn_date": "2025-06-20",
+                "amount_low": 1000,
+                "amount_high": 5000,
+            },
+            {
+                "ticker": "MID",
+                "asset": "Middle Trade",
+                "side": "buy",
+                "instrument": "shares",
+                "txn_date": "2025-06-10",
+                "amount_low": 1000,
+                "amount_high": 5000,
+            },
+        ]
+
+        lines = cf.notification_trade_lines(trades)
+
+        self.assertEqual(len(lines), 3)
+        self.assertIn("SELL NEW", lines[0])
+        self.assertIn("BUY MID", lines[1])
+        self.assertIn("BUY OLD", lines[2])
+
 
 class TradeCache(unittest.TestCase):
     def test_cached_trades_require_current_version(self):

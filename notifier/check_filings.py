@@ -128,6 +128,18 @@ def format_trade_line(t):
     return "{} {}{} {} - {}".format(verb, sym, opt, rng, when)
 
 
+def notification_trade_lines(trades, limit=8):
+    def sort_key(trade):
+        return (
+            trade.get("txn_date") or "",
+            trade.get("ticker") or "",
+            trade.get("asset") or "",
+        )
+
+    ordered = sorted(trades, key=sort_key, reverse=True)
+    return [format_trade_line(trade) for trade in ordered[:limit]]
+
+
 # --------------------------------------------------------------------------- #
 # Side-effecting runner
 # --------------------------------------------------------------------------- #
@@ -169,7 +181,7 @@ def _trades_for(filing, cache):
 def _send_ntfy(topic, filing, trades):
     title = "New PTR: " + full_name(filing)
     if trades:
-        body = "\n".join(format_trade_line(t) for t in trades[:8])
+        body = "\n".join(notification_trade_lines(trades))
     else:
         body = "New filing - tap to open the disclosure"
     if not topic:
