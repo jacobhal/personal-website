@@ -1,0 +1,45 @@
+{
+  "updated": "2026-06-23T19:17:10.719368Z",
+  "filings": [
+    {
+      "name": "Nancy Pelosi",
+      "last": "Pelosi",
+      "first": "Nancy",
+      "filing_type": "P",
+      "filing_date": "2026-01-23",
+      "year": "2026",
+      "doc_id": "20033725",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033725.pdf"
+    },
+    {
+      "name": "Nancy Pelosi",
+      "last": "Pelosi",
+      "first": "Nancy",
+      "filing_type": "P",
+      "filing_date": "2025-10-24",
+      "year": "2025",
+      "doc_id": "20033337",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20033337.pdf"
+    },
+    {
+      "name": "Nancy Pelosi",
+      "last": "Pelosi",
+      "first": "Nancy",
+      "filing_type": "P",
+      "filing_date": "2025-07-09",
+      "year": "2025",
+      "doc_id": "20030630",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20030630.pdf"
+    },
+    {
+      "name": "Nancy Pelosi",
+      "last": "Pelosi",
+      "first": "Nancy",
+      "filing_type": "P",
+      "filing_date": "2025-01-17",
+      "year": "2025",
+      "doc_id": "20026590",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20026590.pdf"
+    }
+  ]
+}

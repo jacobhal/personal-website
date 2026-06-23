@@ -7,6 +7,7 @@ import { Portfolio } from './views/Portfolio'
 import { StockPredictor } from './views/StockPredictor'
 import { ReactPlayground } from './views/ReactPlayground'
 import { CoronaDashboard } from './views/CoronaDashboard'
+import { CongressFilings } from './views/CongressFilings'
 import { Skarp, SkarpDeleteAccount } from './views/Skarp'
 import { Krydda, KryddaGuide, KryddaPrivacy, KryddaTerms, KryddaDeleteAccount } from './views/Krydda'
 import { NotFound } from './views/404'
@@ -23,6 +24,7 @@ export const Routes: React.FC = () => {
             <Route path="/stockpredictor" element={<StockPredictor />} />
             <Route path="/react-playground" element={<ReactPlayground />} />
             <Route path="/corona-dashboard" element={<CoronaDashboard />} />
+            <Route path="/congress" element={<CongressFilings />} />
             <Route path="/skarp" element={<Skarp />} />
             <Route path="/skarp/delete-account" element={<SkarpDeleteAccount />} />
             <Route path="/krydda" element={<Krydda />} />

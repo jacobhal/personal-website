@@ -40,13 +40,13 @@ const COPY: Record<'sv' | 'en', Copy> = {
                 body: 'Tryck på själva receptet så att du ser ingredienser och steg på skärmen.',
             },
             {
-                title: 'Tryck på Klipp ut recept ✂️',
-                body: 'Krydda läser sidan och fyller i receptet åt dig. Kontrollera och spara — klart!',
+                title: 'Klipp ut receptet ✂️',
+                body: 'Tryck på knappen "Klipp ut recept" längst ner. Krydda fyller i receptet åt dig — kontrollera och tryck på Spara.',
             },
         ],
-        buttonNote: 'Knappen Klipp ut recept sitter längst ner på skärmen medan du surfar.',
+        buttonNote: 'Knappen "Klipp ut recept" sitter längst ner på skärmen medan du surfar.',
         tipLabel: 'Tips:',
-        tip: 'Hittar Krydda inget recept? Se till att du är på själva receptsidan, inte en lista med många recept.',
+        tip: 'Hittar Krydda inget recept att klippa ut? Se till att du är på själva receptsidan, inte en lista med många recept.',
     },
     en: {
         docTitle: 'Krydda — Clip recipes from the web',
@@ -62,13 +62,13 @@ const COPY: Record<'sv' | 'en', Copy> = {
                 body: 'Tap the recipe itself so you can see the ingredients and steps on screen.',
             },
             {
-                title: 'Tap Clip recipe ✂️',
-                body: 'Krydda reads the page and fills in the recipe for you. Check it and save — done!',
+                title: 'Clip the recipe ✂️',
+                body: 'Tap the "Clip recipe" button at the bottom. Krydda fills in the recipe for you — check it and tap Save.',
             },
         ],
-        buttonNote: 'The Clip recipe button sits at the bottom of the screen while you browse.',
+        buttonNote: 'The "Clip recipe" button sits at the bottom of the screen while you browse.',
         tipLabel: 'Tip:',
-        tip: "Krydda didn't find a recipe? Make sure you're on the recipe page itself, not a list of many recipes.",
+        tip: "Krydda didn't find a recipe to clip? Make sure you're on the recipe page itself, not a list of many recipes.",
     },
 }
 

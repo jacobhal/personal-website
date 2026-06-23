@@ -1,0 +1,42 @@
+name: Congress filing notifier
+
+on:
+  schedule:
+    # Daily at 13:00 UTC (House Clerk updates on weekdays; daily is plenty).
+    - cron: "0 13 * * *"
+  workflow_dispatch: {}   # lets you run it manually from the Actions tab
+
+permissions:
+  contents: write          # to commit updated seen.json / filings.json
+
+concurrency:
+  group: congress-filings
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check for new filings and push notifications
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: python3 notifier/check_filings.py
+
+      - name: Commit updated state
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add notifier/seen.json notifier/filings.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            # ***NO_CI*** stops the Azure Pipelines deploy from running on data-only updates.
+            git commit -m "data: update congress filings ***NO_CI***"
+            git push
+          fi
