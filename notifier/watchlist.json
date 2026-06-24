@@ -1,8 +1,17 @@
 [
-  { "last": "Pelosi", "first": "Nancy" },
+  { "last": "Pelosi", "first": "Nancy", "proven": true },
   { "last": "Gottheimer", "first": "Josh" },
   { "last": "Greene", "first": "Marjorie Taylor" },
   { "last": "Khanna", "first": "Rohit" },
   { "last": "McCaul", "first": "Michael T." },
-  { "last": "Crenshaw", "first": "Daniel" }
+  { "last": "DelBene", "first": "Suzan K." },
+  { "last": "Peters", "first": "Scott H." },
+  { "last": "Hern", "first": "Kevin" },
+  { "last": "Bresnahan", "first": "Rob" },
+  { "last": "Kelly", "first": "Mike" },
+  { "last": "Donalds", "first": "Byron" },
+  { "last": "McClain", "first": "Lisa", "proven": true },
+  { "last": "Sewell", "first": "Terri A.", "proven": true },
+  { "last": "Davidson", "first": "Warren", "proven": true },
+  { "last": "Rouzer", "first": "David", "proven": true }
 ]

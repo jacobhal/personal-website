@@ -37,6 +37,7 @@ interface Filing {
     year: string
     doc_id: string
     pdf_url: string
+    proven?: boolean
     trades?: FilingTrade[]
 }
 
@@ -67,6 +68,7 @@ interface StockRow {
 interface FilingsFile {
     updated: string
     window_days?: number
+    proven_members?: string[]
     filings: Filing[]
     consensus?: ConsensusRow[]
     leaderboard?: LeaderboardRow[]
@@ -114,6 +116,8 @@ const CongressFilings: React.FC = () => {
     }, [data, stockQuery])
 
     const windowDays = data?.window_days ?? 365
+    const provenSet = useMemo(() => new Set(data?.proven_members ?? []), [data])
+    const memberLabel = (name: string): string => (provenSet.has(name) ? `⭐ ${name}` : name)
 
     return (
         <div>
@@ -135,6 +139,11 @@ const CongressFilings: React.FC = () => {
                     it&apos;s <strong>conviction</strong>: which names multiple members keep
                     buying.
                     {data ? ` Updated ${new Date(data.updated).toLocaleDateString()}.` : ''}
+                </Typography>
+                <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 3 }}>
+                    ⭐ = cited top-return performer (Unusual Whales / Quiver annual rankings). Pelosi
+                    is the consistent multi-year name; others reflect a strong single year, so weight
+                    accordingly.
                 </Typography>
 
                 {isLoading && <DefaultLoader />}
@@ -181,7 +190,7 @@ const CongressFilings: React.FC = () => {
                                                     <Chip size="small" color="success" label={c.ticker} />
                                                 </TableCell>
                                                 <TableCell align="center">{c.member_count}</TableCell>
-                                                <TableCell>{c.members.join(', ')}</TableCell>
+                                                <TableCell>{c.members.map(memberLabel).join(', ')}</TableCell>
                                                 <TableCell>{c.last_txn_date}</TableCell>
                                             </TableRow>
                                         ))}
@@ -240,7 +249,7 @@ const CongressFilings: React.FC = () => {
                                             const summary = summarizeTrades(f.trades ?? [])
                                             return (
                                                 <TableRow key={f.doc_id} hover>
-                                                    <TableCell>{f.name}</TableCell>
+                                                    <TableCell>{memberLabel(f.name)}</TableCell>
                                                     <TableCell>{f.filing_date}</TableCell>
                                                     <TableCell>
                                                         {summary.lines.length > 0 ? (
@@ -299,7 +308,7 @@ const CongressFilings: React.FC = () => {
                                         {filteredStocks.slice(0, 200).map((s) => (
                                             <TableRow key={s.ticker} hover>
                                                 <TableCell>
-                                                    <Tooltip title={s.members.join(', ')}>
+                                                    <Tooltip title={s.members.map(memberLabel).join(', ')}>
                                                         <span>{s.ticker}</span>
                                                     </Tooltip>
                                                 </TableCell>

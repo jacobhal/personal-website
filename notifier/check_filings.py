@@ -23,6 +23,9 @@ RECENT_DAYS = 7
 # leaderboard's "what's being accumulated lately" reads better over ~6 months.
 CONSENSUS_WINDOW_DAYS = 365
 LEADERBOARD_WINDOW_DAYS = 180
+# The page shows every 2+ member overlap; only 3+ member overlaps are loud
+# enough to ping the phone, so a larger roster doesn't bury the signal.
+CONSENSUS_ALERT_MIN_MEMBERS = 3
 
 HOUSE_INDEX_URL = "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/{year}FD.xml"
 PTR_PDF_URL = "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/{year}/{doc_id}.pdf"
@@ -231,6 +234,11 @@ def run():
     topic = os.environ.get("NTFY_TOPIC", "").strip()
     consensus_topic = os.environ.get("NTFY_CONSENSUS_TOPIC", "").strip()
     watchlist = _load_json(os.path.join(HERE, "watchlist.json"), [])
+    proven_keys = {((w.get("last") or "").lower(), (w.get("first") or "").lower())
+                   for w in watchlist if w.get("proven")}
+    proven_members = sorted(
+        "{} {}".format(w.get("first", ""), w.get("last", "")).strip()
+        for w in watchlist if w.get("proven"))
     seen = set(_load_json(os.path.join(HERE, "seen.json"), []))
     seen_consensus = set(_load_json(os.path.join(HERE, "seen_consensus.json"), []))
     prev = _load_json(os.path.join(HERE, "filings.json"), {"filings": []})
@@ -266,6 +274,7 @@ def run():
             "year": f["year"],
             "doc_id": f["doc_id"],
             "pdf_url": pdf_url(f),
+            "proven": (f["last"].lower(), f["first"].lower()) in proven_keys,
             "trades": trades_by_doc.get(f["doc_id"], []),
             "trades_version": TRADES_VERSION,
         } for f in watched),
@@ -281,6 +290,8 @@ def run():
 
     # High-signal consensus alerts (deduped per ticker+member-count).
     for row in consensus:
+        if row["member_count"] < CONSENSUS_ALERT_MIN_MEMBERS:
+            continue
         sig = aggregate.consensus_signature(row)
         if sig not in seen_consensus:
             _send_consensus_ntfy(consensus_topic, row)
@@ -292,6 +303,7 @@ def run():
     with open(os.path.join(HERE, "filings.json"), "w") as fh:
         json.dump({"updated": _dt.datetime.utcnow().isoformat() + "Z",
                    "window_days": CONSENSUS_WINDOW_DAYS,
+                   "proven_members": proven_members,
                    "filings": page_filings,
                    "consensus": consensus,
                    "leaderboard": leaderboard,
