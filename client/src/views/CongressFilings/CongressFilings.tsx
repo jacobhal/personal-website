@@ -14,6 +14,7 @@ import {
     TableContainer,
     TableHead,
     TableRow,
+    TableSortLabel,
     Tabs,
     TextField,
     Tooltip,
@@ -87,6 +88,49 @@ const TabPanel: React.FC<{ value: number; index: number; children: React.ReactNo
     children,
 }) => (value === index ? <Box sx={{ pt: 3 }}>{children}</Box> : null)
 
+type Order = 'asc' | 'desc'
+interface Sort {
+    key: string
+    order: Order
+}
+
+// Generic column sort: numbers compared numerically, everything else as strings.
+function applySort<T>(rows: T[], { key, order }: Sort): T[] {
+    return [...rows].sort((a, b) => {
+        const av = (a as Record<string, unknown>)[key]
+        const bv = (b as Record<string, unknown>)[key]
+        const cmp =
+            typeof av === 'number' && typeof bv === 'number'
+                ? av - bv
+                : String(av ?? '').localeCompare(String(bv ?? ''))
+        return order === 'asc' ? cmp : -cmp
+    })
+}
+
+// A clickable, sortable header cell. First click sorts descending ("most" first).
+const SortCell: React.FC<{
+    label: string
+    col: string
+    sort: Sort
+    setSort: (s: Sort) => void
+    align?: 'left' | 'center' | 'right'
+}> = ({ label, col, sort, setSort, align }) => (
+    <TableCell align={align} sortDirection={sort.key === col ? sort.order : false}>
+        <TableSortLabel
+            active={sort.key === col}
+            direction={sort.key === col ? sort.order : 'desc'}
+            onClick={() =>
+                setSort({
+                    key: col,
+                    order: sort.key === col && sort.order === 'desc' ? 'asc' : 'desc',
+                })
+            }
+        >
+            {label}
+        </TableSortLabel>
+    </TableCell>
+)
+
 const CongressFilings: React.FC = () => {
     const [data, setData] = useState<FilingsFile | null>(null)
     const [isLoading, setIsLoading] = useState(true)
@@ -102,18 +146,25 @@ const CongressFilings: React.FC = () => {
             .finally(() => setIsLoading(false))
     }, [])
 
+    const [consensusSort, setConsensusSort] = useState<Sort>({ key: 'member_count', order: 'desc' })
+    const [leaderSort, setLeaderSort] = useState<Sort>({ key: 'member_count', order: 'desc' })
+    const [stockSort, setStockSort] = useState<Sort>({ key: 'member_count', order: 'desc' })
+    const [filingSort, setFilingSort] = useState<Sort>({ key: 'filing_date', order: 'desc' })
+
     const filteredStocks = useMemo(() => {
         const stocks = data?.stocks ?? []
         const q = stockQuery.trim().toUpperCase()
-        const matched = q
-            ? stocks.filter((s) => s.ticker.toUpperCase().includes(q))
-            : stocks
-        return [...matched].sort(
-            (a, b) =>
-                b.member_count - a.member_count ||
-                b.last_txn_date.localeCompare(a.last_txn_date)
-        )
+        return q ? stocks.filter((s) => s.ticker.toUpperCase().includes(q)) : stocks
     }, [data, stockQuery])
+
+    const sortedConsensus = useMemo(
+        () => applySort(data?.consensus ?? [], consensusSort), [data, consensusSort])
+    const sortedLeaderboard = useMemo(
+        () => applySort(data?.leaderboard ?? [], leaderSort), [data, leaderSort])
+    const sortedStocks = useMemo(
+        () => applySort(filteredStocks, stockSort), [filteredStocks, stockSort])
+    const sortedFilings = useMemo(
+        () => applySort(data?.filings ?? [], filingSort), [data, filingSort])
 
     const windowDays = data?.window_days ?? 365
     const provenSet = useMemo(() => new Set(data?.proven_members ?? []), [data])
@@ -177,14 +228,14 @@ const CongressFilings: React.FC = () => {
                                 <Table size="small">
                                     <TableHead>
                                         <TableRow>
-                                            <TableCell>Ticker</TableCell>
-                                            <TableCell align="center">Members</TableCell>
+                                            <SortCell label="Ticker" col="ticker" sort={consensusSort} setSort={setConsensusSort} />
+                                            <SortCell label="Members" col="member_count" sort={consensusSort} setSort={setConsensusSort} align="center" />
                                             <TableCell>Who</TableCell>
-                                            <TableCell>Latest buy</TableCell>
+                                            <SortCell label="Latest buy" col="last_txn_date" sort={consensusSort} setSort={setConsensusSort} />
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
-                                        {(data.consensus ?? []).map((c) => (
+                                        {sortedConsensus.map((c) => (
                                             <TableRow key={c.ticker} hover>
                                                 <TableCell>
                                                     <Chip size="small" color="success" label={c.ticker} />
@@ -212,14 +263,14 @@ const CongressFilings: React.FC = () => {
                                 <Table size="small">
                                     <TableHead>
                                         <TableRow>
-                                            <TableCell>Ticker</TableCell>
-                                            <TableCell align="center">Members</TableCell>
-                                            <TableCell align="center">Buys</TableCell>
-                                            <TableCell align="right">Approx $</TableCell>
+                                            <SortCell label="Ticker" col="ticker" sort={leaderSort} setSort={setLeaderSort} />
+                                            <SortCell label="Members" col="member_count" sort={leaderSort} setSort={setLeaderSort} align="center" />
+                                            <SortCell label="Buys" col="trade_count" sort={leaderSort} setSort={setLeaderSort} align="center" />
+                                            <SortCell label="Approx $" col="approx_dollars" sort={leaderSort} setSort={setLeaderSort} align="right" />
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
-                                        {(data.leaderboard ?? []).map((r) => (
+                                        {sortedLeaderboard.map((r) => (
                                             <TableRow key={r.ticker} hover>
                                                 <TableCell>{r.ticker}</TableCell>
                                                 <TableCell align="center">{r.member_count}</TableCell>
@@ -238,14 +289,14 @@ const CongressFilings: React.FC = () => {
                                 <Table>
                                     <TableHead>
                                         <TableRow>
-                                            <TableCell>Member</TableCell>
-                                            <TableCell>Filed</TableCell>
+                                            <SortCell label="Member" col="name" sort={filingSort} setSort={setFilingSort} />
+                                            <SortCell label="Filed" col="filing_date" sort={filingSort} setSort={setFilingSort} />
                                             <TableCell>Trades</TableCell>
                                             <TableCell>Disclosure</TableCell>
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
-                                        {data.filings.map((f) => {
+                                        {sortedFilings.map((f) => {
                                             const summary = summarizeTrades(f.trades ?? [])
                                             return (
                                                 <TableRow key={f.doc_id} hover>
@@ -297,15 +348,15 @@ const CongressFilings: React.FC = () => {
                                 <Table size="small">
                                     <TableHead>
                                         <TableRow>
-                                            <TableCell>Ticker</TableCell>
-                                            <TableCell align="center">Members</TableCell>
-                                            <TableCell align="center">Buys</TableCell>
-                                            <TableCell align="center">Sells</TableCell>
-                                            <TableCell>Last activity</TableCell>
+                                            <SortCell label="Ticker" col="ticker" sort={stockSort} setSort={setStockSort} />
+                                            <SortCell label="Members" col="member_count" sort={stockSort} setSort={setStockSort} align="center" />
+                                            <SortCell label="Buys" col="buys" sort={stockSort} setSort={setStockSort} align="center" />
+                                            <SortCell label="Sells" col="sells" sort={stockSort} setSort={setStockSort} align="center" />
+                                            <SortCell label="Last activity" col="last_txn_date" sort={stockSort} setSort={setStockSort} />
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
-                                        {filteredStocks.slice(0, 200).map((s) => (
+                                        {sortedStocks.slice(0, 200).map((s) => (
                                             <TableRow key={s.ticker} hover>
                                                 <TableCell>
                                                     <Tooltip title={s.members.map(memberLabel).join(', ')}>
