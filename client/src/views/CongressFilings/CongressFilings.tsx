@@ -6,6 +6,7 @@ import {
     Chip,
     Container,
     Link as MuiLink,
+    MenuItem,
     Paper,
     Tab,
     Table,
@@ -82,6 +83,35 @@ const money = (v: number): string => {
     return `$${v}`
 }
 
+// A ticker rendered as a link to its TradingView chart (opens in a new tab).
+const chartUrl = (ticker: string): string =>
+    `https://www.tradingview.com/symbols/${encodeURIComponent(ticker)}/`
+
+const TickerLink: React.FC<{ ticker: string }> = ({ ticker }) => (
+    <MuiLink href={chartUrl(ticker)} target="_blank" rel="noopener noreferrer">
+        {ticker}
+    </MuiLink>
+)
+
+const daysAgo = (iso: string): number | null => {
+    const d = new Date(iso)
+    if (Number.isNaN(d.getTime())) return null
+    return Math.floor((Date.now() - d.getTime()) / 86_400_000)
+}
+
+interface BuyIdea {
+    member: string
+    ticker: string
+    instrument: string
+    txn_date: string
+    amount_low: number | null
+    amount_high: number | null
+    pct_since?: number | null
+    price_then?: number | null
+    price_now?: number | null
+    pdf_url: string
+}
+
 const TabPanel: React.FC<{ value: number; index: number; children: React.ReactNode }> = ({
     value,
     index,
@@ -150,6 +180,7 @@ const CongressFilings: React.FC = () => {
     const [leaderSort, setLeaderSort] = useState<Sort>({ key: 'member_count', order: 'desc' })
     const [stockSort, setStockSort] = useState<Sort>({ key: 'member_count', order: 'desc' })
     const [filingSort, setFilingSort] = useState<Sort>({ key: 'filing_date', order: 'desc' })
+    const [memberFilter, setMemberFilter] = useState('')
 
     const filteredStocks = useMemo(() => {
         const stocks = data?.stocks ?? []
@@ -165,6 +196,37 @@ const CongressFilings: React.FC = () => {
         () => applySort(filteredStocks, stockSort), [filteredStocks, stockSort])
     const sortedFilings = useMemo(
         () => applySort(data?.filings ?? [], filingSort), [data, filingSort])
+
+    const allMembers = useMemo(
+        () => Array.from(new Set((data?.filings ?? []).map((f) => f.name))).sort(),
+        [data])
+
+    const visibleFilings = useMemo(
+        () => (memberFilter ? sortedFilings.filter((f) => f.name === memberFilter) : sortedFilings),
+        [sortedFilings, memberFilter])
+
+    // Flattened recent BUYS, newest trade first — a ready action list.
+    const buyIdeas = useMemo<BuyIdea[]>(() => {
+        const out: BuyIdea[] = []
+        for (const f of data?.filings ?? []) {
+            for (const t of f.trades ?? []) {
+                if (t.side !== 'buy' || !t.ticker) continue
+                out.push({
+                    member: f.name,
+                    ticker: t.ticker,
+                    instrument: t.instrument,
+                    txn_date: t.txn_date,
+                    amount_low: t.amount_low,
+                    amount_high: t.amount_high,
+                    pct_since: t.pct_since,
+                    price_then: t.price_then,
+                    price_now: t.price_now,
+                    pdf_url: f.pdf_url,
+                })
+            }
+        }
+        return out.sort((a, b) => b.txn_date.localeCompare(a.txn_date))
+    }, [data])
 
     const windowDays = data?.window_days ?? 365
     const provenSet = useMemo(() => new Set(data?.proven_members ?? []), [data])
@@ -212,6 +274,7 @@ const CongressFilings: React.FC = () => {
                             sx={{ borderBottom: 1, borderColor: 'divider' }}
                         >
                             <Tab label="Patterns" />
+                            <Tab label="Buy ideas" />
                             <Tab label="Filings" />
                             <Tab label="Stocks" />
                         </Tabs>
@@ -238,7 +301,9 @@ const CongressFilings: React.FC = () => {
                                         {sortedConsensus.map((c) => (
                                             <TableRow key={c.ticker} hover>
                                                 <TableCell>
-                                                    <Chip size="small" color="success" label={c.ticker} />
+                                                    <MuiLink href={chartUrl(c.ticker)} target="_blank" rel="noopener noreferrer" underline="none">
+                                                        <Chip size="small" color="success" label={c.ticker} clickable />
+                                                    </MuiLink>
                                                 </TableCell>
                                                 <TableCell align="center">{c.member_count}</TableCell>
                                                 <TableCell>{c.members.map(memberLabel).join(', ')}</TableCell>
@@ -272,7 +337,7 @@ const CongressFilings: React.FC = () => {
                                     <TableBody>
                                         {sortedLeaderboard.map((r) => (
                                             <TableRow key={r.ticker} hover>
-                                                <TableCell>{r.ticker}</TableCell>
+                                                <TableCell><TickerLink ticker={r.ticker} /></TableCell>
                                                 <TableCell align="center">{r.member_count}</TableCell>
                                                 <TableCell align="center">{r.trade_count}</TableCell>
                                                 <TableCell align="right">{money(r.approx_dollars)}</TableCell>
@@ -283,8 +348,104 @@ const CongressFilings: React.FC = () => {
                             </TableContainer>
                         </TabPanel>
 
-                        {/* FILINGS */}
+                        {/* BUY IDEAS */}
                         <TabPanel value={tab} index={1}>
+                            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                                Every disclosed BUY, newest trade first. Tap a ticker for its chart.
+                                &ldquo;Since trade&rdquo; is the price move since they bought &mdash;{' '}
+                                <Box component="span" sx={{ color: 'success.main' }}>green</Box> means
+                                it&apos;s at or below the trade price (your buy zone). Prices fill in
+                                over a few runs and show &ldquo;&mdash;&rdquo; until then.
+                            </Typography>
+                            <TableContainer component={Paper}>
+                                <Table size="small">
+                                    <TableHead>
+                                        <TableRow>
+                                            <TableCell>Member</TableCell>
+                                            <TableCell>Ticker</TableCell>
+                                            <TableCell>Amount</TableCell>
+                                            <TableCell>Traded</TableCell>
+                                            <TableCell>Since trade</TableCell>
+                                            <TableCell>Filing</TableCell>
+                                        </TableRow>
+                                    </TableHead>
+                                    <TableBody>
+                                        {buyIdeas.slice(0, 300).map((b, i) => {
+                                            const age = daysAgo(b.txn_date)
+                                            return (
+                                                <TableRow key={`${b.ticker}-${b.txn_date}-${i}`} hover>
+                                                    <TableCell>{memberLabel(b.member)}</TableCell>
+                                                    <TableCell>
+                                                        <TickerLink ticker={b.ticker} />
+                                                        {b.instrument === 'options' ? ' (opt)' : ''}
+                                                    </TableCell>
+                                                    <TableCell>
+                                                        {b.amount_low != null ? money(b.amount_low) : '?'}
+                                                        {b.amount_high != null ? `–${money(b.amount_high)}` : ''}
+                                                    </TableCell>
+                                                    <TableCell>
+                                                        {b.txn_date}
+                                                        {age != null ? ` (${age}d ago)` : ''}
+                                                    </TableCell>
+                                                    <TableCell>
+                                                        {b.pct_since != null ? (
+                                                            <Tooltip
+                                                                title={
+                                                                    b.price_then != null && b.price_now != null
+                                                                        ? `$${b.price_then} → $${b.price_now}`
+                                                                        : ''
+                                                                }
+                                                            >
+                                                                <Typography
+                                                                    variant="body2"
+                                                                    component="span"
+                                                                    sx={{
+                                                                        color:
+                                                                            b.pct_since <= 0
+                                                                                ? 'success.main'
+                                                                                : 'error.main',
+                                                                    }}
+                                                                >
+                                                                    {b.pct_since > 0 ? '+' : ''}
+                                                                    {b.pct_since}%
+                                                                </Typography>
+                                                            </Tooltip>
+                                                        ) : (
+                                                            <Typography variant="caption" color="text.secondary">
+                                                                —
+                                                            </Typography>
+                                                        )}
+                                                    </TableCell>
+                                                    <TableCell>
+                                                        <MuiLink href={b.pdf_url} target="_blank" rel="noopener noreferrer">
+                                                            PDF
+                                                        </MuiLink>
+                                                    </TableCell>
+                                                </TableRow>
+                                            )
+                                        })}
+                                    </TableBody>
+                                </Table>
+                            </TableContainer>
+                        </TabPanel>
+
+                        {/* FILINGS */}
+                        <TabPanel value={tab} index={2}>
+                            <TextField
+                                select
+                                size="small"
+                                label="Member"
+                                value={memberFilter}
+                                onChange={(e) => setMemberFilter(e.target.value)}
+                                sx={{ mb: 2, minWidth: 220 }}
+                            >
+                                <MenuItem value="">All members</MenuItem>
+                                {allMembers.map((m) => (
+                                    <MenuItem key={m} value={m}>
+                                        {memberLabel(m)}
+                                    </MenuItem>
+                                ))}
+                            </TextField>
                             <TableContainer component={Paper}>
                                 <Table>
                                     <TableHead>
@@ -296,7 +457,7 @@ const CongressFilings: React.FC = () => {
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
-                                        {sortedFilings.map((f) => {
+                                        {visibleFilings.map((f) => {
                                             const summary = summarizeTrades(f.trades ?? [])
                                             return (
                                                 <TableRow key={f.doc_id} hover>
@@ -336,7 +497,7 @@ const CongressFilings: React.FC = () => {
                         </TabPanel>
 
                         {/* STOCKS */}
-                        <TabPanel value={tab} index={2}>
+                        <TabPanel value={tab} index={3}>
                             <TextField
                                 size="small"
                                 label="Filter ticker"
@@ -360,7 +521,7 @@ const CongressFilings: React.FC = () => {
                                             <TableRow key={s.ticker} hover>
                                                 <TableCell>
                                                     <Tooltip title={s.members.map(memberLabel).join(', ')}>
-                                                        <span>{s.ticker}</span>
+                                                        <span><TickerLink ticker={s.ticker} /></span>
                                                     </Tooltip>
                                                 </TableCell>
                                                 <TableCell align="center">{s.member_count}</TableCell>

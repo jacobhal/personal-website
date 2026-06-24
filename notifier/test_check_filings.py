@@ -105,8 +105,16 @@ class TradeFormatting(unittest.TestCase):
         line = cf.format_trade_line(trade)
 
         self.assertIn("BUY AVGO (opt)", line)
-        self.assertIn("$1M-$5M", line)
-        self.assertIn("traded 2025-06-20", line)
+        self.assertIn("$1M–$5M", line)
+        self.assertIn("d ago", line)
+
+    def test_format_trade_line_includes_pct_since_when_present(self):
+        trade = {
+            "ticker": "UBER", "asset": "Uber", "side": "buy", "instrument": "shares",
+            "txn_date": "2026-02-04", "amount_low": 1001, "amount_high": 15000,
+            "pct_since": -5.0,
+        }
+        self.assertIn("-5.0% since", cf.format_trade_line(trade))
 
     def test_notification_trade_lines_sort_newest_first(self):
         trades = [

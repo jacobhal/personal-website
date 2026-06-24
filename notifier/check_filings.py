@@ -13,6 +13,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 
 import aggregate
+import prices
 import ptr_parser
 
 # Only push a per-filing alert when the filing is at most this many days old, so
@@ -26,6 +27,10 @@ LEADERBOARD_WINDOW_DAYS = 180
 # The page shows every 2+ member overlap; only 3+ member overlaps are loud
 # enough to ping the phone, so a larger roster doesn't bury the signal.
 CONSENSUS_ALERT_MIN_MEMBERS = 3
+# Price "% since the trade" context (Twelve Data). Only recent buys are priced,
+# and at most a few tickers are fetched per run to respect the free 8/min limit.
+PRICE_LOOKBACK_DAYS = 200
+MAX_PRICE_FETCH = 8
 
 HOUSE_INDEX_URL = "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/{year}FD.xml"
 PTR_PDF_URL = "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/{year}/{doc_id}.pdf"
@@ -129,16 +134,22 @@ def _money(v):
 
 
 def format_trade_line(t):
-    """One human line for a parsed trade, used in the push body."""
+    """One scannable line for a parsed trade, used in the push body."""
+    mark = "🟢" if t["side"] == "buy" else "🔴"
     verb = "BUY" if t["side"] == "buy" else "SELL"
-    sym = t["ticker"] or (t["asset"][:20] if t.get("asset") else "?")
+    sym = t["ticker"] or (t["asset"][:18] if t.get("asset") else "?")
     opt = " (opt)" if t.get("instrument") == "options" else ""
-    rng = "{}-{}".format(_money(t.get("amount_low")), _money(t.get("amount_high")))
+    parts = [
+        "{} {} {}{}".format(mark, verb, sym, opt),
+        "{}–{}".format(_money(t.get("amount_low")), _money(t.get("amount_high"))),
+    ]
     age = age_days(t.get("txn_date"))
-    when = "traded {}".format(t.get("txn_date"))
     if age is not None:
-        when += " ({}d ago)".format(age)
-    return "{} {}{} {} - {}".format(verb, sym, opt, rng, when)
+        parts.append("{}d ago".format(age))
+    pct = t.get("pct_since")
+    if pct is not None:
+        parts.append("{}{}% since".format("+" if pct >= 0 else "", pct))
+    return " · ".join(parts)
 
 
 def notification_trade_lines(trades, limit=8):
@@ -191,12 +202,17 @@ def _trades_for(filing, cache):
         return []
 
 
-def _send_ntfy(topic, filing, trades):
-    title = "New PTR: " + full_name(filing)
+def _send_ntfy(topic, filing, trades, proven=False):
+    who = full_name(filing)
     if trades:
+        n = len(trades)
+        title = "{} · {} new trade{}".format(who, n, "" if n == 1 else "s")
         body = "\n".join(notification_trade_lines(trades))
     else:
-        body = "New filing - tap to open the disclosure"
+        title = who + " · new filing"
+        body = "Tap to open the disclosure PDF."
+    # Tags render as emoji before the title; "star" flags a proven performer.
+    tags = "star,classical_building" if proven else "classical_building"
     if not topic:
         print("  [dry-run, no NTFY_TOPIC] " + title + "\n    " + body.replace("\n", "\n    "))
         return
@@ -204,7 +220,7 @@ def _send_ntfy(topic, filing, trades):
         "https://ntfy.sh/" + topic, data=body.encode("utf-8"), method="POST")
     req.add_header("Title", title)
     req.add_header("Click", pdf_url(filing))
-    req.add_header("Tags", "classical_building")
+    req.add_header("Tags", tags)
     urllib.request.urlopen(req, timeout=20)
     print("  pushed: " + title)
 
@@ -215,8 +231,8 @@ def _is_recent_filing(filing):
 
 
 def _send_consensus_ntfy(topic, row):
-    title = "Consensus buy: " + row["ticker"]
-    body = "{} tracked members bought {} (last {}):\n{}".format(
+    title = "Consensus buy: {} ({} members)".format(row["ticker"], row["member_count"])
+    body = "{} tracked members bought {} — latest {}\n{}".format(
         row["member_count"], row["ticker"], row["last_txn_date"],
         ", ".join(row["members"]))
     if not topic:
@@ -225,9 +241,52 @@ def _send_consensus_ntfy(topic, row):
     req = urllib.request.Request(
         "https://ntfy.sh/" + topic, data=body.encode("utf-8"), method="POST")
     req.add_header("Title", title)
+    req.add_header("Click", "https://www.tradingview.com/symbols/{}/".format(row["ticker"]))
     req.add_header("Tags", "chart_with_upwards_trend")
     urllib.request.urlopen(req, timeout=20)
     print("  pushed consensus: " + title)
+
+
+def _enrich_prices(watched, trades_by_doc, td_key, cache, today_iso):
+    """Attach price_then/price_now/pct_since to recent BUY trades (in place).
+
+    `cache` maps ticker -> {"asof", "current"}; historical closes are not cached
+    (price_then is immutable, so it is stored on the trade itself once filled)."""
+    if not td_key:
+        return
+
+    recent_tickers = []
+    for f in watched:
+        for t in trades_by_doc.get(f["doc_id"], []):
+            age = age_days(t.get("txn_date"))
+            if (t.get("side") == "buy" and t.get("ticker")
+                    and age is not None and age <= PRICE_LOOKBACK_DAYS):
+                if t["ticker"] not in recent_tickers:
+                    recent_tickers.append(t["ticker"])
+
+    # Refresh at most MAX_PRICE_FETCH stale tickers this run (free-tier friendly).
+    stale = [tk for tk in recent_tickers if cache.get(tk, {}).get("asof") != today_iso]
+    fetched_closes = {}
+    for tk in stale[:MAX_PRICE_FETCH]:
+        try:
+            closes, current = prices.fetch_series(tk, td_key)
+            if current is not None:
+                cache[tk] = {"asof": today_iso, "current": current}
+            if closes:
+                fetched_closes[tk] = closes
+        except Exception as e:  # noqa: BLE001 - a price hiccup must not crash the job
+            print("  warn: price fetch failed for {}: {}".format(tk, e))
+
+    for f in watched:
+        for t in trades_by_doc.get(f["doc_id"], []):
+            tk = t.get("ticker")
+            if not tk or t.get("side") != "buy" or tk not in recent_tickers:
+                continue
+            if t.get("price_then") is None and tk in fetched_closes:
+                t["price_then"] = prices.close_on_or_before(fetched_closes[tk], t.get("txn_date"))
+            now = cache.get(tk, {}).get("current")
+            t["price_now"] = now
+            t["pct_since"] = prices.pct_change(t.get("price_then"), now)
 
 
 def run():
@@ -243,6 +302,9 @@ def run():
     seen_consensus = set(_load_json(os.path.join(HERE, "seen_consensus.json"), []))
     prev = _load_json(os.path.join(HERE, "filings.json"), {"filings": []})
     cache = {f["doc_id"]: f for f in prev.get("filings", [])}
+    td_key = os.environ.get("TWELVE_DATA_KEY", "").strip()
+    prices_cache = _load_json(os.path.join(HERE, "prices.json"), {})
+    today_iso = _dt.datetime.utcnow().date().isoformat()
 
     # Current + previous year, so the new-year index gap never hides filings.
     this_year = _dt.datetime.utcnow().year
@@ -255,13 +317,15 @@ def run():
 
     watched = select_watched(all_filings, watchlist)
     trades_by_doc = {f["doc_id"]: _trades_for(f, cache) for f in watched}
+    _enrich_prices(watched, trades_by_doc, td_key, prices_cache, today_iso)
     fresh = new_filings(watched, seen)
     print("watched PTRs: {} | new: {}".format(len(watched), len(fresh)))
 
     # Per-filing alerts: only for genuinely fresh filings (avoids backlog floods).
     for f in fresh:
         if _is_recent_filing(f):
-            _send_ntfy(topic, f, trades_by_doc.get(f["doc_id"], []))
+            is_pv = (f["last"].lower(), f["first"].lower()) in proven_keys
+            _send_ntfy(topic, f, trades_by_doc.get(f["doc_id"], []), proven=is_pv)
         seen.add(f["doc_id"])
 
     page_filings = sorted(
@@ -275,13 +339,13 @@ def run():
             "doc_id": f["doc_id"],
             "pdf_url": pdf_url(f),
             "proven": (f["last"].lower(), f["first"].lower()) in proven_keys,
-            "trades": trades_by_doc.get(f["doc_id"], []),
+            "trades": sorted(trades_by_doc.get(f["doc_id"], []),
+                             key=lambda t: t.get("txn_date") or "", reverse=True),
             "trades_version": TRADES_VERSION,
         } for f in watched),
         key=lambda r: r["filing_date"], reverse=True,
     )
 
-    today_iso = _dt.datetime.utcnow().date().isoformat()
     consensus = aggregate.compute_consensus(page_filings, today_iso, CONSENSUS_WINDOW_DAYS)
     leaderboard = aggregate.compute_leaderboard(page_filings, today_iso, LEADERBOARD_WINDOW_DAYS)
     stocks = aggregate.compute_ticker_activity(page_filings)
@@ -312,6 +376,8 @@ def run():
         json.dump(sorted(seen), fh, indent=2)
     with open(os.path.join(HERE, "seen_consensus.json"), "w") as fh:
         json.dump(sorted(seen_consensus), fh, indent=2)
+    with open(os.path.join(HERE, "prices.json"), "w") as fh:
+        json.dump(prices_cache, fh, indent=2)
 
 
 if __name__ == "__main__":

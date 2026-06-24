@@ -33,13 +33,14 @@ jobs:
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           NTFY_CONSENSUS_TOPIC: ${{ secrets.NTFY_CONSENSUS_TOPIC }}
+          TWELVE_DATA_KEY: ${{ secrets.TWELVE_DATA_KEY }}
         run: python3 notifier/check_filings.py
 
       - name: Commit updated state
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add notifier/seen.json notifier/seen_consensus.json notifier/filings.json
+          git add notifier/seen.json notifier/seen_consensus.json notifier/filings.json notifier/prices.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else

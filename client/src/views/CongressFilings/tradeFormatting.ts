@@ -7,6 +7,9 @@ export interface FilingTrade {
     txn_date: string
     amount_low: number | null
     amount_high: number | null
+    price_then?: number | null
+    price_now?: number | null
+    pct_since?: number | null
 }
 
 const shortMoney = (value: number | null): string => {
