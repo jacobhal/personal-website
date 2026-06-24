@@ -9,6 +9,7 @@ Stdlib only for the pure logic; pdfplumber is used at runtime for PDF parsing.
 import datetime as _dt
 import json
 import os
+import time
 import urllib.request
 import xml.etree.ElementTree as ET
 
@@ -30,7 +31,10 @@ CONSENSUS_ALERT_MIN_MEMBERS = 3
 # Price "% since the trade" context (Twelve Data). Only recent buys are priced,
 # and at most a few tickers are fetched per run to respect the free 8/min limit.
 PRICE_LOOKBACK_DAYS = 200
-MAX_PRICE_FETCH = 8
+# Twelve Data free tier: 8 requests/min, 800/day. Fetch newest-buy tickers first
+# and pace requests so we can do more per run without tripping the rate limit.
+MAX_PRICE_FETCH = 24
+PRICE_SLEEP_SECONDS = 8
 
 HOUSE_INDEX_URL = "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/{year}FD.xml"
 PTR_PDF_URL = "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/{year}/{doc_id}.pdf"
@@ -255,19 +259,26 @@ def _enrich_prices(watched, trades_by_doc, td_key, cache, today_iso):
     if not td_key:
         return
 
-    recent_tickers = []
+    # Track each recent-buy ticker's most recent buy date, newest first, so the
+    # tickers at the top of the Buy-ideas list get priced first.
+    latest = {}
     for f in watched:
         for t in trades_by_doc.get(f["doc_id"], []):
             age = age_days(t.get("txn_date"))
             if (t.get("side") == "buy" and t.get("ticker")
                     and age is not None and age <= PRICE_LOOKBACK_DAYS):
-                if t["ticker"] not in recent_tickers:
-                    recent_tickers.append(t["ticker"])
+                day = t.get("txn_date") or ""
+                if day > latest.get(t["ticker"], ""):
+                    latest[t["ticker"]] = day
+    recent_tickers = sorted(latest, key=lambda tk: latest[tk], reverse=True)
 
-    # Refresh at most MAX_PRICE_FETCH stale tickers this run (free-tier friendly).
+    # Refresh up to MAX_PRICE_FETCH stale tickers this run, paced to respect the
+    # 8 requests/minute free limit.
     stale = [tk for tk in recent_tickers if cache.get(tk, {}).get("asof") != today_iso]
     fetched_closes = {}
-    for tk in stale[:MAX_PRICE_FETCH]:
+    for i, tk in enumerate(stale[:MAX_PRICE_FETCH]):
+        if i > 0:
+            time.sleep(PRICE_SLEEP_SECONDS)
         try:
             closes, current = prices.fetch_series(tk, td_key)
             if current is not None:
