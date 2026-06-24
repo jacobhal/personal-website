@@ -12,7 +12,17 @@ import os
 import urllib.request
 import xml.etree.ElementTree as ET
 
+import aggregate
 import ptr_parser
+
+# Only push a per-filing alert when the filing is at most this many days old, so
+# adding members to the watchlist backfills history without a notification flood.
+RECENT_DAYS = 7
+# Disclosure lag (trades surface up to ~45 days late, in batches) means a
+# year-long view is the right grain for "conviction names", while the
+# leaderboard's "what's being accumulated lately" reads better over ~6 months.
+CONSENSUS_WINDOW_DAYS = 365
+LEADERBOARD_WINDOW_DAYS = 180
 
 HOUSE_INDEX_URL = "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/{year}FD.xml"
 PTR_PDF_URL = "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/{year}/{doc_id}.pdf"
@@ -196,10 +206,33 @@ def _send_ntfy(topic, filing, trades):
     print("  pushed: " + title)
 
 
+def _is_recent_filing(filing):
+    age = age_days(to_iso(filing["filing_date"]))
+    return age is not None and age <= RECENT_DAYS
+
+
+def _send_consensus_ntfy(topic, row):
+    title = "Consensus buy: " + row["ticker"]
+    body = "{} tracked members bought {} (last {}):\n{}".format(
+        row["member_count"], row["ticker"], row["last_txn_date"],
+        ", ".join(row["members"]))
+    if not topic:
+        print("  [dry-run, no NTFY_CONSENSUS_TOPIC] " + title + " -> " + ", ".join(row["members"]))
+        return
+    req = urllib.request.Request(
+        "https://ntfy.sh/" + topic, data=body.encode("utf-8"), method="POST")
+    req.add_header("Title", title)
+    req.add_header("Tags", "chart_with_upwards_trend")
+    urllib.request.urlopen(req, timeout=20)
+    print("  pushed consensus: " + title)
+
+
 def run():
     topic = os.environ.get("NTFY_TOPIC", "").strip()
+    consensus_topic = os.environ.get("NTFY_CONSENSUS_TOPIC", "").strip()
     watchlist = _load_json(os.path.join(HERE, "watchlist.json"), [])
     seen = set(_load_json(os.path.join(HERE, "seen.json"), []))
+    seen_consensus = set(_load_json(os.path.join(HERE, "seen_consensus.json"), []))
     prev = _load_json(os.path.join(HERE, "filings.json"), {"filings": []})
     cache = {f["doc_id"]: f for f in prev.get("filings", [])}
 
@@ -217,8 +250,10 @@ def run():
     fresh = new_filings(watched, seen)
     print("watched PTRs: {} | new: {}".format(len(watched), len(fresh)))
 
+    # Per-filing alerts: only for genuinely fresh filings (avoids backlog floods).
     for f in fresh:
-        _send_ntfy(topic, f, trades_by_doc.get(f["doc_id"], []))
+        if _is_recent_filing(f):
+            _send_ntfy(topic, f, trades_by_doc.get(f["doc_id"], []))
         seen.add(f["doc_id"])
 
     page_filings = sorted(
@@ -236,11 +271,35 @@ def run():
         } for f in watched),
         key=lambda r: r["filing_date"], reverse=True,
     )
+
+    today_iso = _dt.datetime.utcnow().date().isoformat()
+    consensus = aggregate.compute_consensus(page_filings, today_iso, CONSENSUS_WINDOW_DAYS)
+    leaderboard = aggregate.compute_leaderboard(page_filings, today_iso, LEADERBOARD_WINDOW_DAYS)
+    stocks = aggregate.compute_ticker_activity(page_filings)
+    print("consensus tickers: {} | leaderboard: {} | stocks: {}".format(
+        len(consensus), len(leaderboard), len(stocks)))
+
+    # High-signal consensus alerts (deduped per ticker+member-count).
+    for row in consensus:
+        sig = aggregate.consensus_signature(row)
+        if sig not in seen_consensus:
+            _send_consensus_ntfy(consensus_topic, row)
+            # Only burn the signature once a topic exists, so the first alerts
+            # still fire after you subscribe and set NTFY_CONSENSUS_TOPIC.
+            if consensus_topic:
+                seen_consensus.add(sig)
+
     with open(os.path.join(HERE, "filings.json"), "w") as fh:
         json.dump({"updated": _dt.datetime.utcnow().isoformat() + "Z",
-                   "filings": page_filings}, fh, indent=2)
+                   "window_days": CONSENSUS_WINDOW_DAYS,
+                   "filings": page_filings,
+                   "consensus": consensus,
+                   "leaderboard": leaderboard,
+                   "stocks": stocks}, fh, indent=2)
     with open(os.path.join(HERE, "seen.json"), "w") as fh:
         json.dump(sorted(seen), fh, indent=2)
+    with open(os.path.join(HERE, "seen_consensus.json"), "w") as fh:
+        json.dump(sorted(seen_consensus), fh, indent=2)
 
 
 if __name__ == "__main__":
