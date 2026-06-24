@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-24T12:17:20.180935Z",
+  "updated": "2026-06-24T13:16:22.601974Z",
   "window_days": 365,
   "proven_members": [
     "David Rouzer",
@@ -9,6 +9,40 @@
     "Warren Davidson"
   ],
   "filings": [
+    {
+      "name": "Nancy Pelosi",
+      "last": "Pelosi",
+      "first": "Nancy",
+      "filing_type": "P",
+      "filing_date": "2026-06-23",
+      "year": "2026",
+      "doc_id": "20034836",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034836.pdf",
+      "proven": true,
+      "trades": [
+        {
+          "owner": "spouse",
+          "asset": "Intel Corporation - Common Stock",
+          "ticker": "INTC",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2026-05-29",
+          "amount_low": 1000001,
+          "amount_high": 5000000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Uber Technologies, Inc. Common",
+          "ticker": "UBER",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2026-05-29",
+          "amount_low": 500001,
+          "amount_high": 1000000
+        }
+      ],
+      "trades_version": 1
+    },
     {
       "name": "Scott H. Peters",
       "last": "Peters",
@@ -32351,6 +32385,15 @@
       "last_txn_date": "2026-01-16"
     },
     {
+      "ticker": "UBER",
+      "member_count": 2,
+      "members": [
+        "Lisa McClain",
+        "Nancy Pelosi"
+      ],
+      "last_txn_date": "2026-05-29"
+    },
+    {
       "ticker": "MU",
       "member_count": 2,
       "members": [
@@ -32732,6 +32775,15 @@
       "approx_dollars": 24000
     },
     {
+      "ticker": "INTC",
+      "member_count": 1,
+      "members": [
+        "Nancy Pelosi"
+      ],
+      "trade_count": 1,
+      "approx_dollars": 3000000
+    },
+    {
       "ticker": "AB",
       "member_count": 1,
       "members": [
@@ -32766,6 +32818,15 @@
       ],
       "trade_count": 2,
       "approx_dollars": 925000
+    },
+    {
+      "ticker": "UBER",
+      "member_count": 1,
+      "members": [
+        "Nancy Pelosi"
+      ],
+      "trade_count": 1,
+      "approx_dollars": 750000
     },
     {
       "ticker": "NVDA",
@@ -32838,27 +32899,223 @@
       ],
       "trade_count": 2,
       "approx_dollars": 16000
-    },
-    {
-      "ticker": "LLY",
-      "member_count": 1,
-      "members": [
-        "Byron Donalds"
-      ],
-      "trade_count": 2,
-      "approx_dollars": 16000
-    },
-    {
-      "ticker": "MRVL",
-      "member_count": 1,
-      "members": [
-        "Byron Donalds"
-      ],
-      "trade_count": 2,
-      "approx_dollars": 16000
     }
   ],
   "stocks": [
+    {
+      "ticker": "INTC",
+      "buys": 13,
+      "sells": 2,
+      "member_count": 4,
+      "members": [
+        "Kevin Hern",
+        "Marjorie Taylor Greene",
+        "Nancy Pelosi",
+        "Rob Bresnahan"
+      ],
+      "last_txn_date": "2026-05-29",
+      "events": [
+        {
+          "member": "Nancy Pelosi",
+          "side": "buy",
+          "txn_date": "2026-05-29",
+          "instrument": "options",
+          "amount_low": 1000001,
+          "amount_high": 5000000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "sell",
+          "txn_date": "2025-06-11",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-05-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-03-13",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-03-03",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-02-26",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-02-20",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-02-14",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-02-12",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-02-03",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-02-03",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-02-03",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-01-08",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-01-08",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2024-12-31",
+          "instrument": "shares",
+          "amount_low": 50001,
+          "amount_high": 100000
+        }
+      ]
+    },
+    {
+      "ticker": "UBER",
+      "buys": 5,
+      "sells": 3,
+      "member_count": 4,
+      "members": [
+        "Josh Gottheimer",
+        "Lisa McClain",
+        "Nancy Pelosi",
+        "Rob Bresnahan"
+      ],
+      "last_txn_date": "2026-05-29",
+      "events": [
+        {
+          "member": "Nancy Pelosi",
+          "side": "buy",
+          "txn_date": "2026-05-29",
+          "instrument": "options",
+          "amount_low": 500001,
+          "amount_high": 1000000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-10-31",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-10-30",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-10-30",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2025-05-15",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-03-10",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "sell",
+          "txn_date": "2025-02-25",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-02-21",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
     {
       "ticker": "LITE",
       "buys": 1,
@@ -42431,76 +42688,6 @@
           "member": "Lisa McClain",
           "side": "buy",
           "txn_date": "2024-12-11",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
-      "ticker": "UBER",
-      "buys": 4,
-      "sells": 3,
-      "member_count": 3,
-      "members": [
-        "Josh Gottheimer",
-        "Lisa McClain",
-        "Rob Bresnahan"
-      ],
-      "last_txn_date": "2025-10-31",
-      "events": [
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-10-31",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-10-30",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-10-30",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Josh Gottheimer",
-          "side": "buy",
-          "txn_date": "2025-05-15",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-03-10",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "sell",
-          "txn_date": "2025-02-25",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-02-21",
           "instrument": "shares",
           "amount_low": 1001,
           "amount_high": 15000
@@ -57074,132 +57261,6 @@
           "instrument": "shares",
           "amount_low": 1001,
           "amount_high": 15000
-        }
-      ]
-    },
-    {
-      "ticker": "INTC",
-      "buys": 12,
-      "sells": 2,
-      "member_count": 3,
-      "members": [
-        "Kevin Hern",
-        "Marjorie Taylor Greene",
-        "Rob Bresnahan"
-      ],
-      "last_txn_date": "2025-06-11",
-      "events": [
-        {
-          "member": "Rob Bresnahan",
-          "side": "sell",
-          "txn_date": "2025-06-11",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-05-05",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-03-13",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-03-03",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-02-26",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-02-20",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-02-14",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-02-12",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-02-03",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-02-03",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-02-03",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-01-08",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-01-08",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Kevin Hern",
-          "side": "sell",
-          "txn_date": "2024-12-31",
-          "instrument": "shares",
-          "amount_low": 50001,
-          "amount_high": 100000
         }
       ]
     },
