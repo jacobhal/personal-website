@@ -9,3 +9,29 @@
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
 </IfModule>
+
+# Cache policy. Without this the host served index.html with no Cache-Control,
+# so browsers (Safari especially) kept a stale HTML that still referenced the
+# OLD hashed JS bundle — a fresh deploy looked invisible even after a hard
+# reload. The entry HTML must always be revalidated; the content-hashed assets
+# under /assets/ are immutable and safe to cache for a year.
+<IfModule mod_headers.c>
+  # Never cache the HTML entry point or the web manifest.
+  <FilesMatch "(^index\.html$|\.html$|manifest\.json$|service-worker\.js$|sw\.js$)">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+
+  # Content-hashed build assets (e.g. index-Zf_HRMkA.js) never change for a
+  # given hash, so cache them aggressively.
+  <FilesMatch "\.(?:js|css|woff2?|ttf|eot|png|jpe?g|gif|svg|webp|avif|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Re-assert no-store for index.html in case the asset rule above matched it
+  # via the rewrite (the rewritten request still serves index.html).
+  <FilesMatch "^index\.html$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+</IfModule>
