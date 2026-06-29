@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28T23:50:44.313678Z",
+  "updated": "2026-06-29T00:37:54.817421Z",
   "window_days": 365,
   "proven_members": [
     "David Rouzer",
@@ -33613,24 +33613,6 @@
       "approx_dollars": 1950000
     },
     {
-      "ticker": "GOOGL",
-      "member_count": 1,
-      "members": [
-        "Nancy Pelosi"
-      ],
-      "trade_count": 2,
-      "approx_dollars": 1125000
-    },
-    {
-      "ticker": "AMZN",
-      "member_count": 1,
-      "members": [
-        "Nancy Pelosi"
-      ],
-      "trade_count": 2,
-      "approx_dollars": 925000
-    },
-    {
       "ticker": "UBER",
       "member_count": 1,
       "members": [
@@ -33640,16 +33622,25 @@
       "approx_dollars": 750000
     },
     {
-      "ticker": "NVDA",
+      "ticker": "GOOGL",
       "member_count": 1,
       "members": [
         "Nancy Pelosi"
       ],
-      "trade_count": 2,
-      "approx_dollars": 550000
+      "trade_count": 1,
+      "approx_dollars": 750000
     },
     {
-      "ticker": "AAPL",
+      "ticker": "AMZN",
+      "member_count": 1,
+      "members": [
+        "Nancy Pelosi"
+      ],
+      "trade_count": 1,
+      "approx_dollars": 750000
+    },
+    {
+      "ticker": "NVDA",
       "member_count": 1,
       "members": [
         "Nancy Pelosi"
@@ -33707,6 +33698,15 @@
       "member_count": 1,
       "members": [
         "Josh Gottheimer"
+      ],
+      "trade_count": 2,
+      "approx_dollars": 16000
+    },
+    {
+      "ticker": "LLY",
+      "member_count": 1,
+      "members": [
+        "Byron Donalds"
       ],
       "trade_count": 2,
       "approx_dollars": 16000
