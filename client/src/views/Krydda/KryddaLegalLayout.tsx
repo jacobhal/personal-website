@@ -228,6 +228,12 @@ const KryddaLegalLayout: React.FC<Props> = ({
                             <Link href="/krydda" underline="hover" sx={{ color: colors.muted, fontSize: 14 }}>
                                 Krydda
                             </Link>
+                            <Link href="/krydda/privacy" underline="hover" sx={{ color: colors.muted, fontSize: 14 }}>
+                                Privacy
+                            </Link>
+                            <Link href="/krydda/terms" underline="hover" sx={{ color: colors.muted, fontSize: 14 }}>
+                                Terms
+                            </Link>
                             <Link
                                 href="/krydda/delete-account"
                                 underline="hover"

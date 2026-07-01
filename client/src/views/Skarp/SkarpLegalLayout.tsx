@@ -228,6 +228,12 @@ const SkarpLegalLayout: React.FC<Props> = ({
                             <Link href="/skarp" underline="hover" sx={{ color: colors.muted, fontSize: 14 }}>
                                 Skarp
                             </Link>
+                            <Link href="/skarp/privacy" underline="hover" sx={{ color: colors.muted, fontSize: 14 }}>
+                                Privacy
+                            </Link>
+                            <Link href="/skarp/terms" underline="hover" sx={{ color: colors.muted, fontSize: 14 }}>
+                                Terms
+                            </Link>
                             <Link
                                 href="/skarp/delete-account"
                                 underline="hover"

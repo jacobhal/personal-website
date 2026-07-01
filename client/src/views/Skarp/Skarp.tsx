@@ -150,6 +150,12 @@ const Skarp: React.FC = () => {
                             Skarp · by Jacob Hallman
                         </Typography>
                         <Stack direction="row" spacing={3}>
+                            <Link href="/skarp/privacy" underline="hover" sx={{ color: colors.muted, fontSize: 14 }}>
+                                Privacy
+                            </Link>
+                            <Link href="/skarp/terms" underline="hover" sx={{ color: colors.muted, fontSize: 14 }}>
+                                Terms
+                            </Link>
                             <Link href="/skarp/delete-account" underline="hover" sx={{ color: colors.muted, fontSize: 14 }}>
                                 Delete account
                             </Link>
