@@ -33,9 +33,8 @@ const features = [
     },
 ]
 
-// TODO: replace with the live store URLs once the listings are public.
-const APP_STORE_URL = '#'
-const PLAY_STORE_URL = '#'
+const APP_STORE_URL = 'https://apps.apple.com/se/app/skarp-quiz-trivia/id6763050250?l=en-GB'
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=se.jacobhallman.quizapp&hl=en'
 
 const Skarp: React.FC = () => {
     return (
