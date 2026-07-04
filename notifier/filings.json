@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T23:49:12.141827Z",
+  "updated": "2026-07-04T00:31:21.004610Z",
   "window_days": 365,
   "proven_members": [
     "David Rouzer",
@@ -745,8 +745,8 @@
           "txn_date": "2026-04-13",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 86.35,
-          "pct_since": 68.7,
+          "price_now": 86.18,
+          "pct_since": 68.4,
           "price_then": 51.19
         },
         {
@@ -758,8 +758,8 @@
           "txn_date": "2026-04-13",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 27.39,
-          "pct_since": 29.7,
+          "price_now": 24.96,
+          "pct_since": 18.2,
           "price_then": 21.11
         },
         {
@@ -2154,8 +2154,8 @@
           "txn_date": "2026-02-27",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 86.35,
-          "pct_since": 59.8,
+          "price_now": 86.18,
+          "pct_since": 59.5,
           "price_then": 54.02
         },
         {
