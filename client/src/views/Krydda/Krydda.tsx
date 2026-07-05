@@ -33,9 +33,10 @@ const features = [
     },
 ]
 
-// TODO: replace with the live store URLs once the listings are public.
-const APP_STORE_URL = '#'
-const PLAY_STORE_URL = '#'
+const APP_STORE_URL =
+    'https://apps.apple.com/se/app/krydda-recipes-meal-plan/id6777108071?l=en-GB'
+const PLAY_STORE_URL =
+    'https://play.google.com/store/apps/details?id=se.jacobhallman.krydda'
 
 const Krydda: React.FC = () => {
     return (
@@ -83,6 +84,8 @@ const Krydda: React.FC = () => {
                                 variant="contained"
                                 size="large"
                                 href={APP_STORE_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 sx={{
                                     backgroundColor: colors.accent,
                                     textTransform: 'none',
@@ -97,6 +100,8 @@ const Krydda: React.FC = () => {
                                 variant="outlined"
                                 size="large"
                                 href={PLAY_STORE_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 sx={{
                                     color: colors.text,
                                     borderColor: colors.border,
