@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-09T11:50:29.697094Z",
+  "updated": "2026-07-09T13:40:02.069220Z",
   "window_days": 365,
   "proven_members": [
     "David Rouzer",
@@ -9,6 +9,30 @@
     "Warren Davidson"
   ],
   "filings": [
+    {
+      "name": "Mike Kelly",
+      "last": "Kelly",
+      "first": "Mike",
+      "filing_type": "P",
+      "filing_date": "2026-07-08",
+      "year": "2026",
+      "doc_id": "20034947",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034947.pdf",
+      "proven": false,
+      "trades": [
+        {
+          "owner": "spouse",
+          "asset": "California St Go Call 12/1/27 4% due",
+          "ticker": null,
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-06-01",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ],
+      "trades_version": 1
+    },
     {
       "name": "Josh Gottheimer",
       "last": "Gottheimer",
