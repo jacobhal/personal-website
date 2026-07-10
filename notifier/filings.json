@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10T12:59:42.461085Z",
+  "updated": "2026-07-10T13:44:18.519023Z",
   "window_days": 365,
   "proven_members": [
     "David Rouzer",
@@ -9,6 +9,130 @@
     "Warren Davidson"
   ],
   "filings": [
+    {
+      "name": "Scott H. Peters",
+      "last": "Peters",
+      "first": "Scott H.",
+      "filing_type": "P",
+      "filing_date": "2026-07-10",
+      "year": "2026",
+      "doc_id": "20034911",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034911.pdf",
+      "proven": false,
+      "trades": [
+        {
+          "owner": "spouse",
+          "asset": "Charlotte-Meckle HLTH [GS]",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-06-26",
+          "amount_low": 250001,
+          "amount_high": 500000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Form Energy [OL]",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-06-26",
+          "amount_low": 250001,
+          "amount_high": 500000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Allocate Alpha Fund II LP [OT]",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-06-24",
+          "amount_low": 15001,
+          "amount_high": 50000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Allocate Premier Access Fund [OT]",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-06-24",
+          "amount_low": 15001,
+          "amount_high": 50000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Dublin CA UNIF SCH DIST [GS]",
+          "ticker": null,
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-06-24",
+          "amount_low": 100001,
+          "amount_high": 250000
+        },
+        {
+          "owner": "spouse",
+          "asset": "San Juan CA UNI GO UTX [GS]",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-06-24",
+          "amount_low": 50001,
+          "amount_high": 100000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Smash Capital Fund II LP [OT]",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-06-18",
+          "amount_low": 100001,
+          "amount_high": 250000
+        },
+        {
+          "owner": "spouse",
+          "asset": "New York, NY City COMB TX [GS]",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-06-11",
+          "amount_low": 500001,
+          "amount_high": 1000000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Grapevine-Colleyville TX GO UTX",
+          "ticker": null,
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-06-04",
+          "amount_low": 50001,
+          "amount_high": 100000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Southwestern Community Coll Educ",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-06-03",
+          "amount_low": 500001,
+          "amount_high": 1000000
+        },
+        {
+          "owner": "spouse",
+          "asset": "U.S. Treasury Bills [GS]",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-06-01",
+          "amount_low": 250001,
+          "amount_high": 500000
+        }
+      ],
+      "trades_version": 1
+    },
     {
       "name": "Mike Kelly",
       "last": "Kelly",
