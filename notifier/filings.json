@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-12T00:27:59.744780Z",
+  "updated": "2026-07-12T01:04:35.864671Z",
   "window_days": 365,
   "proven_members": [
     "David Rouzer",
@@ -1967,7 +1967,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 299.53,
-          "pct_since": null
+          "pct_since": 8.4,
+          "price_then": 276.35001
         },
         {
           "owner": "joint",
@@ -2392,7 +2393,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 115.23,
-          "pct_since": null
+          "pct_since": -2.0,
+          "price_then": 117.63
         },
         {
           "owner": "joint",
@@ -2404,7 +2406,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 675.95001,
-          "pct_since": null
+          "pct_since": 25.0,
+          "price_then": 540.65002
         },
         {
           "owner": "joint",
@@ -2416,7 +2419,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 1091.56995,
-          "pct_since": null
+          "pct_since": 48.0,
+          "price_then": 737.53003
         },
         {
           "owner": "joint",
@@ -2428,7 +2432,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 424.62,
-          "pct_since": null
+          "pct_since": 58.1,
+          "price_then": 268.54999
         },
         {
           "owner": "joint",
@@ -2450,7 +2455,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 138.88,
-          "pct_since": null
+          "pct_since": -5.9,
+          "price_then": 147.59
         },
         {
           "owner": "joint",
@@ -2472,7 +2478,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 123.54,
-          "pct_since": null
+          "pct_since": 4.4,
+          "price_then": 118.33
         },
         {
           "owner": "joint",
@@ -2484,7 +2491,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 138.88,
-          "pct_since": null
+          "pct_since": 0.3,
+          "price_then": 138.39999
         },
         {
           "owner": "joint",
@@ -2496,7 +2504,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 97.39,
-          "pct_since": null
+          "pct_since": 20.1,
+          "price_then": 81.099998
         }
       ],
       "trades_version": 1
@@ -2682,7 +2691,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 19.53,
-          "pct_since": null
+          "pct_since": -30.6,
+          "price_then": 28.13
         },
         {
           "owner": "self",
@@ -2694,7 +2704,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 19.53,
-          "pct_since": null
+          "pct_since": -30.6,
+          "price_then": 28.13
         }
       ],
       "trades_version": 1
@@ -2733,7 +2744,8 @@
           "amount_low": 15001,
           "amount_high": 50000,
           "price_now": 3.27,
-          "pct_since": null
+          "pct_since": -30.7,
+          "price_then": 4.72
         },
         {
           "owner": "spouse",
@@ -2745,7 +2757,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 3.27,
-          "pct_since": null
+          "pct_since": -27.3,
+          "price_then": 4.5
         }
       ],
       "trades_version": 1
@@ -2781,7 +2794,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 129.83,
-          "pct_since": null
+          "pct_since": -7.9,
+          "price_then": 140.97
         },
         {
           "owner": "joint",
@@ -2793,7 +2807,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 135.25999,
-          "pct_since": null
+          "pct_since": -22.8,
+          "price_then": 175.10001
         },
         {
           "owner": "joint",
@@ -2931,7 +2946,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 270.85001,
-          "pct_since": null
+          "pct_since": 29.0,
+          "price_then": 210.020004
         },
         {
           "owner": "self",
@@ -3085,7 +3101,8 @@
           "amount_low": 1000001,
           "amount_high": 5000000,
           "price_now": 37.16,
-          "pct_since": null
+          "pct_since": -7.5,
+          "price_then": 40.17
         },
         {
           "owner": "spouse",
@@ -3097,7 +3114,8 @@
           "amount_low": 500001,
           "amount_high": 1000000,
           "price_now": 357.17999,
-          "pct_since": null
+          "pct_since": 8.2,
+          "price_then": 330.0
         },
         {
           "owner": "spouse",
@@ -3109,7 +3127,8 @@
           "amount_low": 500001,
           "amount_high": 1000000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 2.6,
+          "price_then": 239.12
         },
         {
           "owner": "spouse",
@@ -3121,7 +3140,8 @@
           "amount_low": 250001,
           "amount_high": 500000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 13.3,
+          "price_then": 186.23
         },
         {
           "owner": "spouse",
@@ -3133,7 +3153,8 @@
           "amount_low": 50001,
           "amount_high": 100000,
           "price_now": 58.23,
-          "pct_since": null
+          "pct_since": -17.2,
+          "price_then": 70.33
         },
         {
           "owner": "spouse",
@@ -3145,7 +3166,8 @@
           "amount_low": 100001,
           "amount_high": 250000,
           "price_now": 158.86,
-          "pct_since": null
+          "pct_since": -4.6,
+          "price_then": 166.60001
         },
         {
           "owner": "spouse",
@@ -3157,7 +3179,8 @@
           "amount_low": 250001,
           "amount_high": 500000,
           "price_now": 357.17999,
-          "pct_since": null
+          "pct_since": 13.8,
+          "price_then": 313.85001
         },
         {
           "owner": "spouse",
@@ -3169,7 +3192,8 @@
           "amount_low": 100001,
           "amount_high": 250000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 5.5,
+          "price_then": 232.53
         },
         {
           "owner": "spouse",
@@ -3181,7 +3205,8 @@
           "amount_low": 250001,
           "amount_high": 500000,
           "price_now": 315.32001,
-          "pct_since": null
+          "pct_since": 15.5,
+          "price_then": 273.079987
         },
         {
           "owner": "spouse",
@@ -3193,7 +3218,8 @@
           "amount_low": 100001,
           "amount_high": 250000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 12.5,
+          "price_then": 187.53999
         },
         {
           "owner": "spouse",
@@ -5701,7 +5727,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 357.17999,
-          "pct_since": null
+          "pct_since": 26.9,
+          "price_then": 281.48001
         },
         {
           "owner": "spouse",
@@ -5803,7 +5830,8 @@
           "amount_low": 15001,
           "amount_high": 50000,
           "price_now": 315.32001,
-          "pct_since": null
+          "pct_since": 16.2,
+          "price_then": 271.39999
         },
         {
           "owner": "spouse",
@@ -6325,7 +6353,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 675.95001,
-          "pct_since": null
+          "pct_since": 54.3,
+          "price_then": 438.089996
         },
         {
           "owner": "spouse",
@@ -6687,7 +6716,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 138.88,
-          "pct_since": null
+          "pct_since": 21.1,
+          "price_then": 114.69
         },
         {
           "owner": "spouse",
@@ -6975,7 +7005,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 270.85001,
-          "pct_since": null
+          "pct_since": 34.2,
+          "price_then": 201.77
         },
         {
           "owner": "spouse",
@@ -7503,7 +7534,8 @@
           "amount_low": 15001,
           "amount_high": 50000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 4.0,
+          "price_then": 202.89
         },
         {
           "owner": "spouse",
@@ -8401,7 +8433,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 424.62,
-          "pct_since": null
+          "pct_since": 23.2,
+          "price_then": 344.75
         },
         {
           "owner": "spouse",
@@ -8523,7 +8556,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 158.86,
-          "pct_since": null
+          "pct_since": -16.3,
+          "price_then": 189.71001
         },
         {
           "owner": "spouse",
@@ -8933,7 +8967,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 19.53,
-          "pct_since": null
+          "pct_since": -63.9,
+          "price_then": 54.09
         },
         {
           "owner": "spouse",
@@ -8945,7 +8980,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 19.53,
-          "pct_since": null
+          "pct_since": -63.9,
+          "price_then": 54.09
         },
         {
           "owner": "spouse",
@@ -9332,7 +9368,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 9.4,
+          "price_then": 224.21001
         },
         {
           "owner": "self",
@@ -9996,7 +10033,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 6.7,
+          "price_then": 229.95
         },
         {
           "owner": "spouse",
@@ -10008,7 +10046,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 315.32001,
-          "pct_since": null
+          "pct_since": 37.1,
+          "price_then": 230.029999
         },
         {
           "owner": "spouse",
@@ -10454,7 +10493,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 13.8,
+          "price_then": 215.57001
         },
         {
           "owner": "self",
@@ -10516,7 +10556,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 7.7,
+          "price_then": 227.74001
         },
         {
           "owner": "self",
@@ -11846,7 +11887,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 424.62,
-          "pct_since": null
+          "pct_since": 56.2,
+          "price_then": 271.81
         },
         {
           "owner": "spouse",
@@ -11898,7 +11940,8 @@
           "amount_low": 15001,
           "amount_high": 50000,
           "price_now": 3.27,
-          "pct_since": null
+          "pct_since": -50.5,
+          "price_then": 6.61
         },
         {
           "owner": "spouse",
@@ -11910,7 +11953,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 299.53,
-          "pct_since": null
+          "pct_since": 4.2,
+          "price_then": 287.48001
         },
         {
           "owner": "spouse",
@@ -12954,7 +12998,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 123.54,
-          "pct_since": null
+          "pct_since": 48.5,
+          "price_then": 83.21
         },
         {
           "owner": "self",
@@ -13026,7 +13071,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 424.62,
-          "pct_since": null
+          "pct_since": 40.5,
+          "price_then": 302.29001
         },
         {
           "owner": "self",
@@ -13140,7 +13186,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 424.62,
-          "pct_since": null
+          "pct_since": 76.2,
+          "price_then": 240.98
         },
         {
           "owner": "self",
@@ -13390,7 +13437,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 138.88,
-          "pct_since": null
+          "pct_since": 28.0,
+          "price_then": 108.54
         },
         {
           "owner": "spouse",
@@ -14897,7 +14945,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 357.17999,
-          "pct_since": null
+          "pct_since": 114.2,
+          "price_then": 166.77
         },
         {
           "owner": "spouse",
@@ -15069,7 +15118,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 675.95001,
-          "pct_since": null
+          "pct_since": 108.7,
+          "price_then": 323.85001
         },
         {
           "owner": "spouse",
@@ -15161,7 +15211,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 138.88,
-          "pct_since": null
+          "pct_since": 28.2,
+          "price_then": 108.34
         },
         {
           "owner": "spouse",
@@ -15373,7 +15424,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 123.54,
-          "pct_since": null
+          "pct_since": 53.8,
+          "price_then": 80.32
         },
         {
           "owner": "spouse",
@@ -15748,7 +15800,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 14.2,
+          "price_then": 214.82001
         },
         {
           "owner": "spouse",
@@ -15780,7 +15833,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 315.32001,
-          "pct_since": null
+          "pct_since": 61.2,
+          "price_then": 195.64
         },
         {
           "owner": "spouse",
@@ -16752,7 +16806,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 97.39,
-          "pct_since": null
+          "pct_since": 55.1,
+          "price_then": 62.78
         },
         {
           "owner": "spouse",
@@ -16854,7 +16909,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 46.4,
+          "price_then": 144.12
         },
         {
           "owner": "spouse",
@@ -17312,7 +17368,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 424.62,
-          "pct_since": null
+          "pct_since": 37.5,
+          "price_then": 308.87
         },
         {
           "owner": "spouse",
@@ -17364,7 +17421,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 158.86,
-          "pct_since": null
+          "pct_since": -10.6,
+          "price_then": 177.75
         },
         {
           "owner": "spouse",
@@ -18049,7 +18107,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 47.7,
+          "price_then": 142.83
         },
         {
           "owner": "spouse",
@@ -18361,7 +18420,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 13.1,
+          "price_then": 216.98
         },
         {
           "owner": "spouse",
@@ -18403,7 +18463,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 315.32001,
-          "pct_since": null
+          "pct_since": 56.5,
+          "price_then": 201.45
         },
         {
           "owner": "spouse",
@@ -18668,7 +18729,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 47.9,
+          "price_then": 142.63
         },
         {
           "owner": "spouse",
@@ -18980,7 +19042,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 19.53,
-          "pct_since": null
+          "pct_since": -65.0,
+          "price_then": 55.85
         },
         {
           "owner": "spouse",
@@ -19358,7 +19421,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 357.17999,
-          "pct_since": null
+          "pct_since": 82.8,
+          "price_then": 195.39999
         },
         {
           "owner": "spouse",
@@ -19370,7 +19434,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 6.5,
+          "price_then": 230.25999
         },
         {
           "owner": "spouse",
@@ -19382,7 +19447,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 315.32001,
-          "pct_since": null
+          "pct_since": 27.9,
+          "price_then": 246.49001
         },
         {
           "owner": "spouse",
@@ -19520,7 +19586,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 270.85001,
-          "pct_since": null
+          "pct_since": 133.3,
+          "price_then": 116.080002
         },
         {
           "owner": "spouse",
@@ -19608,7 +19675,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 51.4,
+          "price_then": 139.31
         },
         {
           "owner": "spouse",
@@ -19716,7 +19784,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 19.53,
-          "pct_since": null
+          "pct_since": -85.4,
+          "price_then": 134.10001
         },
         {
           "owner": "spouse",
@@ -19798,7 +19867,8 @@
           "amount_low": 100001,
           "amount_high": 250000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": null,
+          "price_then": null
         },
         {
           "owner": "spouse",
@@ -19873,7 +19943,8 @@
           "amount_low": 50001,
           "amount_high": 100000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": null,
+          "price_then": null
         },
         {
           "owner": "spouse",
@@ -19928,7 +19999,8 @@
           "amount_low": 15001,
           "amount_high": 50000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": null,
+          "price_then": null
         },
         {
           "owner": "spouse",
@@ -20234,7 +20306,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 42.6,
+          "price_then": 147.89999
         },
         {
           "owner": "joint",
@@ -20816,7 +20889,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 51.6,
+          "price_then": 139.19
         },
         {
           "owner": "self",
@@ -20888,7 +20962,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 60.7,
+          "price_then": 131.28999
         },
         {
           "owner": "self",
@@ -21052,7 +21127,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 129.83,
-          "pct_since": null
+          "pct_since": 15.4,
+          "price_then": 112.46
         },
         {
           "owner": "self",
@@ -21366,7 +21442,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 55.8,
+          "price_then": 135.39999
         },
         {
           "owner": "self",
@@ -21408,7 +21485,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 299.53,
-          "pct_since": null
+          "pct_since": 9.2,
+          "price_then": 274.42001
         },
         {
           "owner": "self",
@@ -21800,7 +21878,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 62.4,
+          "price_then": 129.92999
         },
         {
           "owner": "self",
@@ -21822,7 +21901,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 71.5,
+          "price_then": 123.0
         },
         {
           "owner": "self",
@@ -21887,7 +21967,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 58.23,
-          "pct_since": null
+          "pct_since": -5.1,
+          "price_then": 61.37
         },
         {
           "owner": "self",
@@ -21899,7 +21980,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 19.53,
-          "pct_since": null
+          "pct_since": -72.5,
+          "price_then": 71.040001
         }
       ],
       "trades_version": 1
@@ -22345,7 +22427,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 80.8,
+          "price_then": 116.65
         },
         {
           "owner": "self",
@@ -22535,7 +22618,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 424.62,
-          "pct_since": null
+          "pct_since": 45.5,
+          "price_then": 291.91
         },
         {
           "owner": "self",
@@ -22706,7 +22790,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 55.9,
+          "price_then": 135.34
         },
         {
           "owner": "self",
@@ -22751,7 +22836,8 @@
           "amount_low": 15001,
           "amount_high": 50000,
           "price_now": 424.62,
-          "pct_since": null
+          "pct_since": 37.9,
+          "price_then": 308.01001
         }
       ],
       "trades_version": 1
@@ -23252,7 +23338,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 315.32001,
-          "pct_since": null
+          "pct_since": 65.6,
+          "price_then": 190.42
         },
         {
           "owner": "self",
@@ -23264,7 +23351,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 96.1,
+          "price_then": 107.57
         }
       ],
       "trades_version": 1
@@ -23320,7 +23408,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 90.2,
+          "price_then": 110.93
         },
         {
           "owner": "self",
@@ -23416,7 +23505,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 43.8,
+          "price_then": 170.66
         },
         {
           "owner": "self",
@@ -23861,7 +23951,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 138.88,
-          "pct_since": null
+          "pct_since": 37.8,
+          "price_then": 100.77
         },
         {
           "owner": "self",
@@ -24073,7 +24164,8 @@
           "amount_low": 15001,
           "amount_high": 50000,
           "price_now": 123.54,
-          "pct_since": null
+          "pct_since": 56.5,
+          "price_then": 78.95
         },
         {
           "owner": "self",
@@ -24524,7 +24616,8 @@
           "amount_low": 15001,
           "amount_high": 50000,
           "price_now": 424.62,
-          "pct_since": null
+          "pct_since": -23.2,
+          "price_then": 553.080017
         },
         {
           "owner": "self",
@@ -24717,7 +24810,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 31.7,
+          "price_then": 186.35001
         },
         {
           "owner": "self",
@@ -24749,7 +24843,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 315.32001,
-          "pct_since": null
+          "pct_since": 58.5,
+          "price_then": 198.89
         },
         {
           "owner": "self",
@@ -24891,7 +24986,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 675.95001,
-          "pct_since": null
+          "pct_since": 123.6,
+          "price_then": 302.29999
         },
         {
           "owner": "self",
@@ -24976,7 +25072,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 129.83,
-          "pct_since": null
+          "pct_since": 26.3,
+          "price_then": 102.81
         },
         {
           "owner": "self",
@@ -24988,7 +25085,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 129.83,
-          "pct_since": null
+          "pct_since": 26.3,
+          "price_then": 102.81
         },
         {
           "owner": "self",
@@ -25086,7 +25184,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 123.54,
-          "pct_since": null
+          "pct_since": 49.1,
+          "price_then": 82.84
         },
         {
           "owner": "self",
@@ -25161,7 +25260,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 85.3,
+          "price_then": 113.82
         },
         {
           "owner": "self",
@@ -26155,7 +26255,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 25.8,
+          "price_then": 194.95
         },
         {
           "owner": "self",
@@ -26167,7 +26268,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 25.8,
+          "price_then": 194.95
         },
         {
           "owner": "self",
@@ -26625,7 +26727,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 19.53,
-          "pct_since": null
+          "pct_since": -69.9,
+          "price_then": 64.98
         },
         {
           "owner": "spouse",
@@ -26637,7 +26740,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 19.53,
-          "pct_since": null
+          "pct_since": -69.9,
+          "price_then": 64.98
         }
       ],
       "trades_version": 1
@@ -26686,7 +26790,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 315.32001,
-          "pct_since": null
+          "pct_since": 58.6,
+          "price_then": 198.85001
         },
         {
           "owner": "self",
@@ -26718,7 +26823,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 675.95001,
-          "pct_since": null
+          "pct_since": 127.9,
+          "price_then": 296.54999
         },
         {
           "owner": "self",
@@ -26740,7 +26846,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 123.54,
-          "pct_since": null
+          "pct_since": 50.8,
+          "price_then": 81.91
         },
         {
           "owner": "self",
@@ -26752,7 +26859,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 84.5,
+          "price_then": 114.33
         },
         {
           "owner": "self",
@@ -26787,7 +26895,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 43.8,
+          "price_then": 170.66
         },
         {
           "owner": "self",
@@ -27157,7 +27266,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 129.83,
-          "pct_since": null
+          "pct_since": 10.6,
+          "price_then": 117.41
         },
         {
           "owner": "joint",
@@ -27229,7 +27339,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 135.25999,
-          "pct_since": null
+          "pct_since": null,
+          "price_then": null
         }
       ],
       "trades_version": 1
@@ -27444,7 +27555,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 43.5,
+          "price_then": 171.0
         },
         {
           "owner": "self",
@@ -27596,7 +27708,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 315.32001,
-          "pct_since": null
+          "pct_since": 55.2,
+          "price_then": 203.19
         },
         {
           "owner": "self",
@@ -27864,7 +27977,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 60.7,
+          "price_then": 131.28
         },
         {
           "owner": "self",
@@ -27896,7 +28010,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 19.53,
-          "pct_since": null
+          "pct_since": -73.0,
+          "price_then": 72.43
         },
         {
           "owner": "self",
@@ -29011,7 +29126,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 315.32001,
-          "pct_since": null
+          "pct_since": 47.3,
+          "price_then": 214.0
         },
         {
           "owner": "self",
@@ -29093,7 +29209,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 76.5,
+          "price_then": 119.53
         },
         {
           "owner": "self",
@@ -29884,7 +30001,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 315.32001,
-          "pct_since": null
+          "pct_since": 33.1,
+          "price_then": 236.87
         },
         {
           "owner": "self",
@@ -32010,7 +32128,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 6.3,
+          "price_then": 230.71001
         },
         {
           "owner": "self",
@@ -32095,7 +32214,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 49.8,
+          "price_then": 140.83
         },
         {
           "owner": "self",
@@ -32242,7 +32362,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 10.4,
+          "price_then": 222.13
         },
         {
           "owner": "self",
@@ -32254,7 +32375,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 10.4,
+          "price_then": 222.13
         },
         {
           "owner": "self",
@@ -32266,7 +32388,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 10.4,
+          "price_then": 222.13
         },
         {
           "owner": "self",
@@ -32278,7 +32401,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 10.4,
+          "price_then": 222.13
         },
         {
           "owner": "self",
@@ -32476,7 +32600,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 50.6,
+          "price_then": 140.11
         },
         {
           "owner": "self",
@@ -32618,7 +32743,8 @@
           "amount_low": 250001,
           "amount_high": 500000,
           "price_now": 357.17999,
-          "pct_since": null
+          "pct_since": 88.3,
+          "price_then": 189.66
         },
         {
           "owner": "spouse",
@@ -32630,7 +32756,8 @@
           "amount_low": 250001,
           "amount_high": 500000,
           "price_now": 245.34,
-          "pct_since": null
+          "pct_since": 12.7,
+          "price_then": 217.75999
         },
         {
           "owner": "spouse",
@@ -32642,7 +32769,8 @@
           "amount_low": 250001,
           "amount_high": 500000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 60.1,
+          "price_then": 131.75999
         },
         {
           "owner": "spouse",
@@ -32654,7 +32782,8 @@
           "amount_low": 50001,
           "amount_high": 100000,
           "price_now": 58.23,
-          "pct_since": null
+          "pct_since": 82.9,
+          "price_then": 31.83
         },
         {
           "owner": "spouse",
@@ -32666,7 +32795,8 @@
           "amount_low": 500001,
           "amount_high": 1000000,
           "price_now": 158.86,
-          "pct_since": null
+          "pct_since": -6.8,
+          "price_then": 170.50999
         },
         {
           "owner": "spouse",
@@ -32678,7 +32808,8 @@
           "amount_low": 500001,
           "amount_high": 1000000,
           "price_now": 210.96001,
-          "pct_since": null
+          "pct_since": 56.6,
+          "price_then": 134.7
         },
         {
           "owner": "spouse",
@@ -32777,7 +32908,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 138.88,
-          "pct_since": null
+          "pct_since": 23.3,
+          "price_then": 112.67
         },
         {
           "owner": "joint",
@@ -33042,7 +33174,8 @@
           "amount_low": 1001,
           "amount_high": 15000,
           "price_now": 315.32001,
-          "pct_since": null
+          "pct_since": 26.2,
+          "price_then": 249.78999
         },
         {
           "owner": "joint",
