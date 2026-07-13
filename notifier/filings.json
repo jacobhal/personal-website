@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-13T12:36:22.419980Z",
+  "updated": "2026-07-13T13:29:54.418008Z",
   "window_days": 365,
   "proven_members": [
     "David Rouzer",
@@ -155,6 +155,19 @@
           "amount_high": 15000
         }
       ],
+      "trades_version": 1
+    },
+    {
+      "name": "Michael T. McCaul",
+      "last": "McCaul",
+      "first": "Michael T.",
+      "filing_type": "P",
+      "filing_date": "2026-07-08",
+      "year": "2026",
+      "doc_id": "9116211",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9116211.pdf",
+      "proven": false,
+      "trades": [],
       "trades_version": 1
     },
     {
