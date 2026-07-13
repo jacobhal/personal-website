@@ -1,143 +1,132 @@
-import React, { Suspense, lazy, useRef } from 'react'
-
-import MainJumbotron from '../../components/MainJumbotron'
-import './../../styles/portfolio.scss'
-import { Alert, Container } from '@mui/material'
+import React from 'react'
 import { Helmet } from 'react-helmet'
-import DefaultLoader from './../../components/DefaultLoader'
+import { Box, Container, Link, Stack, Typography } from '@mui/material'
 
-// Import project images
-import githubImage from './../../assets/images/github.jpg'
-import reactImage from './../../assets/images/react.jpg'
-import coronaImage from './../../assets/images/corona.jpg'
-import webscrapingImage from './../../assets/images/webscraping.png'
-import stockmarketImage from './../../assets/images/stockmarket.jpg'
-import graphicscardImage from './../../assets/images/graphicscard.jpg'
+import { NavBar } from '../../components/NavBar'
+import ProjectCard from './components/ProjectCard'
+import { portfolioProjects } from './portfolioData'
 
-// Lazy load project image grid
-const ProjectImageGrid = lazy(() => import('./components/ProjectImageGrid'))
+import '../../styles/portfolio.scss'
 
-export default function Portfolio() {
-    const projectStatus = {
-        TODO: 'In development',
-        FINISHED: 'Finished',
-        ABANDONED: 'Abandoned',
-    }
-    let projects = [
-        {
-            id: 'REACTPLAYG',
-            hasCourseWatermark: false,
-            title: 'React playground',
-            route: '/react-playground',
-            image: reactImage,
-            description:
-                'This is a playground for exploring new React features since this entire website is built with React.',
-            status: projectStatus.FINISHED,
-        },
-        {
-            id: 'CORDASH',
-            hasCourseWatermark: false,
-            title: 'Corona dashboard',
-            route: '/corona-dashboard',
-            image: coronaImage,
-            description:
-                'A live update corona dashboard using data from John Hopkins.',
-            status: projectStatus.FINISHED,
-        },
-        {
-            id: 'RESTOCKER',
-            hasCourseWatermark: false,
-            title: 'Restocker (Github)',
-            image: webscrapingImage,
-            route: 'https://github.com/jacobhal/restocker-api',
-            description:
-                "Find out when your favourite products are back in stock by scraping the seller's website." +
-                ' The project uses Selenium + Python + Beautifulsoup to scrape websites and is scheduled to run every hour.',
-            status: projectStatus.FINISHED,
-        },
-        {
-            id: 'GAMEREV',
-            hasCourseWatermark: false,
-            title: 'Game review website',
-            route: 'http://www.codehalls.com',
-            image: graphicscardImage,
-            description:
-                'An old school project built with Laravel and PHP (not responsive).',
-            status: projectStatus.FINISHED,
-        },
-        {
-            id: 'STOCKPRED',
-            hasCourseWatermark: false,
-            title: 'Stock predictor',
-            route: '/stockpredictor',
-            image: stockmarketImage,
-            description:
-                'Financial market predictor using Machine learning and realtime data Stock API:s. A separate API' +
-                ' was deployed to Heroku using Flask + MySQL which is where the data actual data fetching occurrs. The financial API:s' +
-                ' being used are free versions of Yahoo Finance and Alphavantage.',
-            status: projectStatus.TODO,
-        },
-    ]
-
-    const courseStatus = {
-        TODO: 'In progress',
-        FINISHED: 'Finished',
-        ABANDONED: 'Abandoned',
-    }
-
-    let courses = [
-        {
-            id: 'GITGUIDE',
-            hasCourseWatermark: true,
-            title: 'Complete Git Guide',
-            route: 'https://github.com/jacobhal/git-course',
-            image: githubImage,
-            description:
-                'A Git course on Udemy. It covers everything from git low-level commands to more advanced featues' +
-                ' such as rebasing and cherry-picking.',
-            status: courseStatus.FINISHED,
-        },
-    ]
-
-    const containerRef = useRef<HTMLDivElement>(null)
-
+const Portfolio: React.FC = () => {
     return (
-        <div>
+        <Box className="portfolio-page">
             <Helmet>
-                <title>
-                    Jacob Hallman - Portfolio of personal web projects
-                </title>
+                <title>Jacob Hallman — Selected work</title>
                 <meta
                     name="description"
-                    content="The personal web portfolio of Jacob Hallman includes various personal projects that I have been working on in my freetime. 
-                The projects ranges from exploring third-party libraries to implementing ideas that are on my mind."
+                    content="A selection of apps, web products, experiments, and open-source projects by Jacob Hallman."
                 />
             </Helmet>
-            <MainJumbotron
-                title="PERSONAL PROJECTS"
-                subtitle="Check out some passion projects of mine"
-                backgroundClass="has-bg-img-bulb"
-                scrollRef={containerRef}
-            />
-            <Container
-                sx={{ pb: 3, textAlign: 'center' }}
-                ref={containerRef}
-            >
-                <h1 className="title">My Projects and Courses</h1>
-                <p>
-                    This is a list of some of the projects that I have done or
-                    that I am currently working on in my free time. The projects
-                    are either things I can use in my daily life or simply
-                    technologies that I want to learn more about.
-                </p>
-                <Alert severity="info" sx={{ mb: 2 }}>
-                    Images marked with <strong>Udemy</strong> are tied to
-                    completed courses at Udemy.
-                </Alert>
-                <Suspense fallback={<DefaultLoader />}>
-                    <ProjectImageGrid projects={[...projects, ...courses]} />
-                </Suspense>
-            </Container>
-        </div>
+            <NavBar noImage />
+
+            <main>
+                <Box component="section" className="portfolio-hero">
+                    <Container maxWidth="lg">
+                        <Box className="portfolio-hero-grid">
+                            <Box className="portfolio-hero-copy">
+                                <Typography component="p" className="portfolio-eyebrow">
+                                    Independent builder · Stockholm
+                                </Typography>
+                                <Typography component="h1" className="portfolio-hero-title">
+                                    Things I’ve built
+                                    <em> and kept around.</em>
+                                </Typography>
+                                <Typography component="p" className="portfolio-hero-description">
+                                    I build apps and web tools for small problems I keep running
+                                    into, from daily words and music games to data interfaces and
+                                    simple automations.
+                                </Typography>
+                                <Stack direction="row" spacing={3} className="portfolio-hero-links">
+                                    <Link href="#selected-work" className="portfolio-hero-link">
+                                        ↓ Explore the work
+                                    </Link>
+                                    <Link href="/contact" className="portfolio-hero-link portfolio-hero-link-muted">
+                                        Start a conversation ↗
+                                    </Link>
+                                </Stack>
+                            </Box>
+                            <Box className="portfolio-hero-index" aria-label="Portfolio summary">
+                                <Box className="portfolio-hero-index-orbit" aria-hidden="true" />
+                                <Typography component="p" className="portfolio-index-label">
+                                    Selected / 2026
+                                </Typography>
+                                <Typography component="p" className="portfolio-index-count">
+                                    {String(portfolioProjects.length).padStart(2, '0')}
+                                </Typography>
+                                <Typography component="p" className="portfolio-index-caption">
+                                    projects worth a closer look
+                                </Typography>
+                                <Box className="portfolio-index-rule" />
+                                <Typography component="p" className="portfolio-index-note">
+                                    Apps · data · experiments
+                                </Typography>
+                            </Box>
+                        </Box>
+                    </Container>
+                </Box>
+
+                <Box
+                    component="section"
+                    className="portfolio-showcase"
+                    id="selected-work"
+                    aria-labelledby="selected-work-heading"
+                >
+                    <Container maxWidth="lg">
+                        <Box className="portfolio-section-heading">
+                            <Box>
+                                <Typography component="p" className="portfolio-kicker">
+                                    Selected work
+                                </Typography>
+                                <Typography component="h2" id="selected-work-heading">
+                                    Built to be useful.
+                                </Typography>
+                            </Box>
+                            <Typography component="p" className="portfolio-section-description">
+                                A current snapshot of the products and side projects I’m most
+                                interested in right now.
+                            </Typography>
+                        </Box>
+                        <Box className="portfolio-grid">
+                            {portfolioProjects.map((project, index) => (
+                                <ProjectCard
+                                    key={project.id}
+                                    project={project}
+                                    index={index}
+                                />
+                            ))}
+                        </Box>
+                    </Container>
+                </Box>
+            </main>
+
+            <Box component="footer" className="portfolio-footer">
+                <Container maxWidth="lg">
+                    <Stack
+                        direction={{ xs: 'column', sm: 'row' }}
+                        justifyContent="space-between"
+                        alignItems={{ xs: 'flex-start', sm: 'center' }}
+                        spacing={2}
+                    >
+                        <Typography component="p" className="portfolio-footer-copy">
+                            Jacob Hallman · selected work and experiments
+                        </Typography>
+                        <Stack direction="row" spacing={3}>
+                            <Link href="/about" className="portfolio-footer-link">
+                                About
+                            </Link>
+                            <Link href="/resume" className="portfolio-footer-link">
+                                Resume
+                            </Link>
+                            <Link href="/contact" className="portfolio-footer-link">
+                                Contact
+                            </Link>
+                        </Stack>
+                    </Stack>
+                </Container>
+            </Box>
+        </Box>
     )
 }
+
+export default Portfolio

@@ -10,6 +10,8 @@ import { CoronaDashboard } from './views/CoronaDashboard'
 import { CongressFilings } from './views/CongressFilings'
 import { Skarp, SkarpDeleteAccount, SkarpPrivacy, SkarpTerms } from './views/Skarp'
 import { Krydda, KryddaGuide, KryddaPrivacy, KryddaTerms, KryddaDeleteAccount } from './views/Krydda'
+import { HitQuiz } from './views/HitQuiz'
+import { DagensOrd } from './views/DagensOrd'
 import { NotFound } from './views/404'
 import { Route, Routes as RouterRoutes, Navigate } from 'react-router-dom'
 
@@ -26,6 +28,8 @@ export const Routes: React.FC = () => {
             <Route path="/corona-dashboard" element={<CoronaDashboard />} />
             <Route path="/congress" element={<CongressFilings />} />
             <Route path="/skarp" element={<Skarp />} />
+            <Route path="/hitquiz" element={<HitQuiz />} />
+            <Route path="/dagens-ord" element={<DagensOrd />} />
             <Route path="/skarp/delete-account" element={<SkarpDeleteAccount />} />
             <Route path="/skarp/privacy" element={<SkarpPrivacy />} />
             <Route path="/skarp/terms" element={<SkarpTerms />} />
