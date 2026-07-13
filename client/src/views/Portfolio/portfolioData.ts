@@ -61,7 +61,7 @@ export const portfolioProjects: PortfolioProject[] = [
     {
         id: 'KRYDDA',
         title: 'Krydda',
-        kind: 'Product · iOS',
+        kind: 'Product · iOS & Android',
         description:
             'A calm recipe companion for collecting, organizing, and actually cooking the food you save.',
         route: '/krydda',
