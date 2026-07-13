@@ -33,6 +33,7 @@ const NavBar: React.FC<NavBarProps> = ({ noImage }) => {
 
     return (
         <AppBar
+            className="site-navbar"
             position={noImage ? 'static' : 'absolute'}
             elevation={0}
             sx={{
@@ -40,8 +41,8 @@ const NavBar: React.FC<NavBarProps> = ({ noImage }) => {
                 zIndex: 10,
             }}
         >
-            <Toolbar>
-                <Link href="/" sx={{ flexGrow: 0 }}>
+            <Toolbar className="site-navbar-toolbar">
+                <Link href="/" className="site-navbar-logo" aria-label="Jacob Hallman home">
                     <img
                         src={logo}
                         alt="Jacob Hallman"
@@ -55,6 +56,7 @@ const NavBar: React.FC<NavBarProps> = ({ noImage }) => {
                             key={link.href}
                             href={link.href}
                             underline="none"
+                            className="site-navbar-link"
                             sx={{
                                 px: 1.5,
                                 py: 0.5,
@@ -73,6 +75,7 @@ const NavBar: React.FC<NavBarProps> = ({ noImage }) => {
                     ))}
                 </Box>
                 <IconButton
+                    aria-label="Open navigation menu"
                     sx={{ display: { xs: 'flex', lg: 'none' } }}
                     color="inherit"
                     onClick={() => setDrawerOpen(true)}
@@ -84,12 +87,13 @@ const NavBar: React.FC<NavBarProps> = ({ noImage }) => {
                     open={drawerOpen}
                     onClose={() => setDrawerOpen(false)}
                 >
-                    <List sx={{ width: 250 }}>
+                    <List sx={{ width: 250 }} aria-label="Main navigation">
                         {navLinks.map((link) => (
                             <ListItem key={link.href} disablePadding>
                                 <ListItemButton
                                     component="a"
                                     href={link.href}
+                                    onClick={() => setDrawerOpen(false)}
                                 >
                                     <ListItemText primary={link.label} />
                                 </ListItemButton>

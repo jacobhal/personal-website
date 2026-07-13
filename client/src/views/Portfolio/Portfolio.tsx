@@ -12,10 +12,10 @@ const Portfolio: React.FC = () => {
     return (
         <Box className="portfolio-page">
             <Helmet>
-                <title>Jacob Hallman — Selected work</title>
+                <title>Jacob Hallman — Personal projects</title>
                 <meta
                     name="description"
-                    content="A selection of apps, web products, experiments, and open-source projects by Jacob Hallman."
+                    content="A selection of personal apps, web tools, experiments, and open-source projects by Jacob Hallman."
                 />
             </Helmet>
             <NavBar noImage />
@@ -26,23 +26,23 @@ const Portfolio: React.FC = () => {
                         <Box className="portfolio-hero-grid">
                             <Box className="portfolio-hero-copy">
                                 <Typography component="p" className="portfolio-eyebrow">
-                                    Independent builder · Stockholm
+                                    Personal projects · Stockholm
                                 </Typography>
                                 <Typography component="h1" className="portfolio-hero-title">
                                     Things I’ve built
                                     <em> and kept around.</em>
                                 </Typography>
                                 <Typography component="p" className="portfolio-hero-description">
-                                    I build apps and web tools for small problems I keep running
-                                    into, from daily words and music games to data interfaces and
-                                    simple automations.
+                                    Most of these started as something I wanted for myself. The
+                                    rest are experiments I kept working on because they were fun
+                                    or useful.
                                 </Typography>
                                 <Stack direction="row" spacing={3} className="portfolio-hero-links">
                                     <Link href="#selected-work" className="portfolio-hero-link">
                                         ↓ Explore the work
                                     </Link>
-                                    <Link href="/contact" className="portfolio-hero-link portfolio-hero-link-muted">
-                                        Start a conversation ↗
+                                    <Link href="/about" className="portfolio-hero-link portfolio-hero-link-muted">
+                                        About the projects ↗
                                     </Link>
                                 </Stack>
                             </Box>
@@ -76,15 +76,15 @@ const Portfolio: React.FC = () => {
                         <Box className="portfolio-section-heading">
                             <Box>
                                 <Typography component="p" className="portfolio-kicker">
-                                    Selected work
+                                    A few projects
                                 </Typography>
                                 <Typography component="h2" id="selected-work-heading">
-                                    Built to be useful.
+                                    Made for me first.
                                 </Typography>
                             </Box>
                             <Typography component="p" className="portfolio-section-description">
-                                A current snapshot of the products and side projects I’m most
-                                interested in right now.
+                                A snapshot of the apps, tools, and experiments I’m most interested
+                                in right now.
                             </Typography>
                         </Box>
                         <Box className="portfolio-grid">

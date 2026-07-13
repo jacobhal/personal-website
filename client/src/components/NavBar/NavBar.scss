@@ -104,3 +104,35 @@ nav.no-background {
     margin-bottom: 20px;
     padding: 20px 50px;
 }
+
+.site-navbar {
+    .site-navbar-toolbar {
+        min-height: 68px;
+    }
+
+    .site-navbar-logo {
+        display: inline-flex;
+        border-radius: 8px;
+    }
+
+    .site-navbar-logo:focus-visible,
+    .site-navbar-link:focus-visible,
+    .MuiIconButton-root:focus-visible {
+        outline: 2px solid #c7f36b;
+        outline-offset: 4px;
+    }
+
+    .site-navbar-link {
+        transition: color 180ms ease, background-color 180ms ease !important;
+    }
+
+    .site-navbar-link:hover {
+        background-color: rgba(199, 243, 107, 0.08);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-navbar .site-navbar-link {
+        transition: none !important;
+    }
+}
