@@ -11,6 +11,7 @@
         "@fortawesome/react-fontawesome": "^0.2.0",
         "@mui/icons-material": "^5.15.6",
         "@mui/material": "^5.15.6",
+        "@sentry/react": "^10.65.0",
         "axios": "^1.6.7",
         "d3-scale": "^4.0.2",
         "react": "^18.2.0",
@@ -35,6 +36,7 @@
         "not op_mini all"
     ],
     "devDependencies": {
+        "@sentry/vite-plugin": "^5.4.0",
         "@testing-library/jest-dom": "^6.4.0",
         "@testing-library/react": "^14.2.1",
         "@testing-library/user-event": "^14.5.2",

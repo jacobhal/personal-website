@@ -1,11 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { Box, Button, Container, Stack, Typography } from '@mui/material'
 import { useParams } from 'react-router-dom'
 
 import { NavBar } from './NavBar'
+import {
+    captureAcquisitionFailure,
+    recordAcquisitionBreadcrumb,
+    setAcquisitionApp,
+    type AcquisitionApp,
+    type AcquisitionStore,
+} from '../services/acquisitionTelemetry'
 
 export interface AppInviteConfig {
+    app: AcquisitionApp
     appName: string
     appIcon: string
     appStoreUrl: string
@@ -29,10 +37,30 @@ export const normalizeReferralCode = (value: string | undefined) => {
     return REFERRAL_CODE.test(normalized) ? normalized : null
 }
 
-const playStoreUrlWithReferrer = (url: string, code: string) => {
-    const storeUrl = new URL(url)
-    storeUrl.searchParams.set('referrer', `referral_code=${code}`)
-    return storeUrl.toString()
+interface StoreDestination {
+    href: string | null
+    error: unknown | null
+}
+
+const storeDestination = (
+    url: string,
+    referralCode?: string
+): StoreDestination => {
+    try {
+        const storeUrl = new URL(url)
+        if (storeUrl.protocol !== 'https:') {
+            throw new TypeError('Store destination must use HTTPS')
+        }
+        if (referralCode !== undefined) {
+            storeUrl.searchParams.set(
+                'referrer',
+                `referral_code=${referralCode}`
+            )
+        }
+        return { href: storeUrl.toString(), error: null }
+    } catch (error) {
+        return { href: null, error }
+    }
 }
 
 interface AppInvitePageProps {
@@ -43,20 +71,100 @@ const AppInvitePage: React.FC<AppInvitePageProps> = ({ config }) => {
     const { code: rawCode } = useParams<{ code: string }>()
     const code = normalizeReferralCode(rawCode)
     const [copyStatus, setCopyStatus] = useState<string | null>(null)
+    const appStore = useMemo(
+        () => storeDestination(config.appStoreUrl),
+        [config.appStoreUrl]
+    )
+    const playStore = useMemo(
+        () =>
+            code === null
+                ? { href: null, error: null }
+                : storeDestination(config.playStoreUrl, code),
+        [code, config.playStoreUrl]
+    )
+
+    useEffect(() => {
+        setAcquisitionApp(config.app)
+        recordAcquisitionBreadcrumb({
+            app: config.app,
+            stage: 'landing',
+            outcome: code === null ? 'invalid' : 'valid',
+        })
+    }, [code, config.app])
+
+    useEffect(() => {
+        const failures: Array<{
+            destination: StoreDestination
+            store: AcquisitionStore
+        }> = [
+            { destination: appStore, store: 'app_store' },
+            { destination: playStore, store: 'google_play' },
+        ]
+        for (const { destination, store } of failures) {
+            if (destination.error === null) continue
+            recordAcquisitionBreadcrumb({
+                app: config.app,
+                stage: 'store_navigation',
+                outcome: 'failed',
+                store,
+            })
+            captureAcquisitionFailure(destination.error, {
+                app: config.app,
+                stage: 'store_navigation',
+                store,
+            })
+        }
+    }, [appStore, config.app, playStore])
 
     const copyCode = async () => {
         if (!code) return
 
+        recordAcquisitionBreadcrumb({
+            app: config.app,
+            stage: 'clipboard',
+            outcome: 'started',
+        })
         try {
             if (!navigator.clipboard?.writeText)
                 throw new Error('Clipboard unavailable')
             await navigator.clipboard.writeText(code)
             setCopyStatus('Code copied')
-        } catch {
+            recordAcquisitionBreadcrumb({
+                app: config.app,
+                stage: 'clipboard',
+                outcome: 'succeeded',
+            })
+        } catch (error) {
             setCopyStatus(
                 'Could not copy automatically. Select the code and copy it manually.'
             )
+            recordAcquisitionBreadcrumb({
+                app: config.app,
+                stage: 'clipboard',
+                outcome: 'failed',
+            })
+            captureAcquisitionFailure(error, {
+                app: config.app,
+                stage: 'clipboard',
+            })
         }
+    }
+
+    const startStoreNavigation = (
+        event: React.MouseEvent<HTMLAnchorElement>,
+        store: AcquisitionStore,
+        destination: StoreDestination
+    ) => {
+        if (destination.href === null) {
+            event.preventDefault()
+            return
+        }
+        recordAcquisitionBreadcrumb({
+            app: config.app,
+            stage: 'store_navigation',
+            outcome: 'started',
+            store,
+        })
     }
 
     const pageStyle = {
@@ -191,7 +299,15 @@ const AppInvitePage: React.FC<AppInvitePageProps> = ({ config }) => {
                     >
                         <Button
                             component="a"
-                            href={config.appStoreUrl}
+                            href={appStore.href ?? '#'}
+                            aria-disabled={appStore.href === null}
+                            onClick={(event) =>
+                                startStoreNavigation(
+                                    event,
+                                    'app_store',
+                                    appStore
+                                )
+                            }
                             target="_blank"
                             rel="noopener noreferrer"
                             variant="contained"
@@ -201,10 +317,15 @@ const AppInvitePage: React.FC<AppInvitePageProps> = ({ config }) => {
                         </Button>
                         <Button
                             component="a"
-                            href={playStoreUrlWithReferrer(
-                                config.playStoreUrl,
-                                code
-                            )}
+                            href={playStore.href ?? '#'}
+                            aria-disabled={playStore.href === null}
+                            onClick={(event) =>
+                                startStoreNavigation(
+                                    event,
+                                    'google_play',
+                                    playStore
+                                )
+                            }
                             target="_blank"
                             rel="noopener noreferrer"
                             variant="outlined"

@@ -11,6 +11,7 @@ import icon from '../../assets/images/krydda_icon.png'
 const KryddaInvite: React.FC = () => (
     <AppInvitePage
         config={{
+            app: 'krydda',
             appName: 'Krydda',
             appIcon: icon,
             appStoreUrl: KRYDDA_APP_STORE_URL,

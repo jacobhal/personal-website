@@ -11,6 +11,7 @@ import owl from '../../assets/images/skarp_owl.png'
 const SkarpInvite: React.FC = () => (
     <AppInvitePage
         config={{
+            app: 'skarp',
             appName: 'Skarp',
             appIcon: owl,
             appStoreUrl: SKARP_APP_STORE_URL,
