@@ -1,5 +1,6 @@
 # Personal Website Portfolio Overhaul Implementation Plan
 
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Replace the stale portfolio gallery with a polished responsive 3×3 product grid and add accurate branded landing pages for HitQuiz and Dagens Ord.
