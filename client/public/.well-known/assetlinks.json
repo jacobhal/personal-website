@@ -1,0 +1,22 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "se.jacobhallman.quizapp",
+      "sha256_cert_fingerprints": [
+        "86:4A:25:AC:D4:46:D2:66:D7:DF:C9:C4:F5:77:FF:E4:6A:3E:D3:5A:75:A7:52:DF:41:8E:A0:00:59:7C:A3:37"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "se.jacobhallman.krydda",
+      "sha256_cert_fingerprints": [
+        "57:91:66:94:16:BE:CA:F6:2E:07:32:B6:97:03:69:BE:44:B1:C2:67:F3:87:D0:EE:8E:C4:54:FC:55:61:C5:29"
+      ]
+    }
+  }
+]

@@ -1,0 +1,96 @@
+.app-invite-page {
+    min-height: 100vh;
+    color: var(--invite-text);
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            color-mix(in srgb, var(--invite-accent) 26%, transparent),
+            transparent 28rem
+        ),
+        var(--invite-background);
+}
+
+.app-invite-container {
+    padding-top: clamp(6rem, 12vw, 9rem);
+    padding-bottom: 5rem;
+}
+
+.app-invite-icon {
+    width: clamp(92px, 20vw, 132px);
+    border-radius: 24%;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+}
+
+.app-invite-eyebrow,
+.app-invite-code-label {
+    margin: 0 !important;
+    color: var(--invite-accent);
+    font-family: 'IBM Plex Mono', monospace !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase;
+}
+
+.app-invite-title {
+    margin: 0 !important;
+    color: var(--invite-text);
+    font-size: clamp(2.35rem, 7vw, 4rem) !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.05em !important;
+    line-height: 1 !important;
+}
+
+.app-invite-description {
+    max-width: 520px;
+    margin: 0 !important;
+    color: var(--invite-muted);
+    font-size: 1.05rem !important;
+    line-height: 1.65 !important;
+}
+
+.app-invite-code-card {
+    display: grid;
+    width: min(100%, 420px);
+    padding: 1.5rem;
+    gap: 1rem;
+    border: 1px solid color-mix(in srgb, var(--invite-accent) 42%, transparent);
+    border-radius: 20px;
+    background: var(--invite-surface);
+}
+
+.app-invite-code {
+    color: var(--invite-text);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: clamp(1.3rem, 6vw, 2rem);
+    font-weight: 800;
+    letter-spacing: clamp(0.04em, 0.5vw, 0.1em);
+    white-space: nowrap;
+    user-select: all;
+}
+
+.app-invite-copy-button {
+    border-color: var(--invite-accent) !important;
+    color: var(--invite-text) !important;
+    text-transform: none !important;
+}
+
+.app-invite-copy-status {
+    margin: 0 !important;
+    color: var(--invite-muted);
+    font-size: 0.82rem !important;
+}
+
+.app-invite-store-button {
+    min-height: 50px;
+    flex: 1;
+    border-color: var(--invite-accent) !important;
+    color: var(--invite-text) !important;
+    font-weight: 700 !important;
+    text-transform: none !important;
+}
+
+.app-invite-store-button-primary {
+    color: var(--invite-background) !important;
+    background: var(--invite-accent) !important;
+}

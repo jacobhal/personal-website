@@ -10,6 +10,11 @@
   RewriteRule . /index.html [L]
 </IfModule>
 
+# Apple requires this extensionless file to be served as JSON.
+<Files "apple-app-site-association">
+  ForceType application/json
+</Files>
+
 # Cache policy. Without this the host served index.html with no Cache-Control,
 # so browsers (Safari especially) kept a stale HTML that still referenced the
 # OLD hashed JS bundle — a fresh deploy looked invisible even after a hard

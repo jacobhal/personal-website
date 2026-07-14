@@ -1,8 +1,20 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { Box, Button, Container, Grid, Link, Stack, Typography } from '@mui/material'
+import {
+    Box,
+    Button,
+    Container,
+    Grid,
+    Link,
+    Stack,
+    Typography,
+} from '@mui/material'
 import { NavBar } from '../../components/NavBar'
 import icon from '../../assets/images/krydda_icon.png'
+import {
+    KRYDDA_APP_STORE_URL,
+    KRYDDA_PLAY_STORE_URL,
+} from '../../config/appStores'
 
 const colors = {
     bg: '#14110E',
@@ -33,14 +45,15 @@ const features = [
     },
 ]
 
-const APP_STORE_URL =
-    'https://apps.apple.com/se/app/krydda-recipes-meal-plan/id6777108071?l=en-GB'
-const PLAY_STORE_URL =
-    'https://play.google.com/store/apps/details?id=se.jacobhallman.krydda'
-
 const Krydda: React.FC = () => {
     return (
-        <Box sx={{ backgroundColor: colors.bg, minHeight: '100vh', color: colors.text }}>
+        <Box
+            sx={{
+                backgroundColor: colors.bg,
+                minHeight: '100vh',
+                color: colors.text,
+            }}
+        >
             <Helmet>
                 <title>Krydda — Your recipes, beautifully organized</title>
                 <meta
@@ -71,19 +84,31 @@ const Krydda: React.FC = () => {
                                 boxShadow: '0 12px 40px rgba(0,0,0,0.6)',
                             }}
                         />
-                        <Typography variant="h2" fontWeight={900} sx={{ fontSize: { xs: 36, md: 56 } }}>
+                        <Typography
+                            variant="h2"
+                            fontWeight={900}
+                            sx={{ fontSize: { xs: 36, md: 56 } }}
+                        >
                             Krydda
                         </Typography>
-                        <Typography variant="h6" sx={{ color: colors.muted, maxWidth: 580 }}>
-                            A fast, modern recipe keeper. Import your whole collection, cook from a
-                            smart shopping list, and generate new ideas with AI — offline-first, in
+                        <Typography
+                            variant="h6"
+                            sx={{ color: colors.muted, maxWidth: 580 }}
+                        >
+                            A fast, modern recipe keeper. Import your whole
+                            collection, cook from a smart shopping list, and
+                            generate new ideas with AI — offline-first, in
                             Swedish and English.
                         </Typography>
-                        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ pt: 1 }}>
+                        <Stack
+                            direction={{ xs: 'column', sm: 'row' }}
+                            spacing={2}
+                            sx={{ pt: 1 }}
+                        >
                             <Button
                                 variant="contained"
                                 size="large"
-                                href={APP_STORE_URL}
+                                href={KRYDDA_APP_STORE_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 sx={{
@@ -99,7 +124,7 @@ const Krydda: React.FC = () => {
                             <Button
                                 variant="outlined"
                                 size="large"
-                                href={PLAY_STORE_URL}
+                                href={KRYDDA_PLAY_STORE_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 sx={{
@@ -132,10 +157,16 @@ const Krydda: React.FC = () => {
                                     p: { xs: 3, md: 4 },
                                 }}
                             >
-                                <Typography variant="h6" fontWeight={800} sx={{ mb: 1, color: colors.gold }}>
+                                <Typography
+                                    variant="h6"
+                                    fontWeight={800}
+                                    sx={{ mb: 1, color: colors.gold }}
+                                >
                                     {f.title}
                                 </Typography>
-                                <Typography sx={{ color: colors.muted }}>{f.body}</Typography>
+                                <Typography sx={{ color: colors.muted }}>
+                                    {f.body}
+                                </Typography>
                             </Box>
                         </Grid>
                     ))}
@@ -176,7 +207,11 @@ const Krydda: React.FC = () => {
                             >
                                 Delete account
                             </Link>
-                            <Link href="/contact" underline="hover" sx={{ color: colors.muted, fontSize: 14 }}>
+                            <Link
+                                href="/contact"
+                                underline="hover"
+                                sx={{ color: colors.muted, fontSize: 14 }}
+                            >
                                 Contact
                             </Link>
                         </Stack>

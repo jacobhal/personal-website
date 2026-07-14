@@ -1,8 +1,20 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { Box, Button, Container, Grid, Link, Stack, Typography } from '@mui/material'
+import {
+    Box,
+    Button,
+    Container,
+    Grid,
+    Link,
+    Stack,
+    Typography,
+} from '@mui/material'
 import { NavBar } from '../../components/NavBar'
 import owl from '../../assets/images/skarp_owl.png'
+import {
+    SKARP_APP_STORE_URL,
+    SKARP_PLAY_STORE_URL,
+} from '../../config/appStores'
 
 const colors = {
     bg: '#0E0E14',
@@ -33,12 +45,15 @@ const features = [
     },
 ]
 
-const APP_STORE_URL = 'https://apps.apple.com/se/app/skarp-quiz-trivia/id6763050250?l=en-GB'
-const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=se.jacobhallman.quizapp&hl=en'
-
 const Skarp: React.FC = () => {
     return (
-        <Box sx={{ backgroundColor: colors.bg, minHeight: '100vh', color: colors.text }}>
+        <Box
+            sx={{
+                backgroundColor: colors.bg,
+                minHeight: '100vh',
+                color: colors.text,
+            }}
+        >
             <Helmet>
                 <title>Skarp — Learn through play</title>
                 <meta
@@ -69,19 +84,30 @@ const Skarp: React.FC = () => {
                                 boxShadow: '0 12px 40px rgba(0,0,0,0.6)',
                             }}
                         />
-                        <Typography variant="h2" fontWeight={900} sx={{ fontSize: { xs: 36, md: 56 } }}>
+                        <Typography
+                            variant="h2"
+                            fontWeight={900}
+                            sx={{ fontSize: { xs: 36, md: 56 } }}
+                        >
                             Skarp
                         </Typography>
-                        <Typography variant="h6" sx={{ color: colors.muted, maxWidth: 560 }}>
-                            The educational trivia quiz that makes you sharper. Challenge friends,
-                            climb the leaderboard, and learn the topics worth knowing — in Swedish
-                            and English.
+                        <Typography
+                            variant="h6"
+                            sx={{ color: colors.muted, maxWidth: 560 }}
+                        >
+                            The educational trivia quiz that makes you sharper.
+                            Challenge friends, climb the leaderboard, and learn
+                            the topics worth knowing — in Swedish and English.
                         </Typography>
-                        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ pt: 1 }}>
+                        <Stack
+                            direction={{ xs: 'column', sm: 'row' }}
+                            spacing={2}
+                            sx={{ pt: 1 }}
+                        >
                             <Button
                                 variant="contained"
                                 size="large"
-                                href={APP_STORE_URL}
+                                href={SKARP_APP_STORE_URL}
                                 sx={{
                                     backgroundColor: colors.accent,
                                     textTransform: 'none',
@@ -95,7 +121,7 @@ const Skarp: React.FC = () => {
                             <Button
                                 variant="outlined"
                                 size="large"
-                                href={PLAY_STORE_URL}
+                                href={SKARP_PLAY_STORE_URL}
                                 sx={{
                                     color: colors.text,
                                     borderColor: colors.border,
@@ -126,10 +152,16 @@ const Skarp: React.FC = () => {
                                     p: { xs: 3, md: 4 },
                                 }}
                             >
-                                <Typography variant="h6" fontWeight={800} sx={{ mb: 1, color: colors.gold }}>
+                                <Typography
+                                    variant="h6"
+                                    fontWeight={800}
+                                    sx={{ mb: 1, color: colors.gold }}
+                                >
                                     {f.title}
                                 </Typography>
-                                <Typography sx={{ color: colors.muted }}>{f.body}</Typography>
+                                <Typography sx={{ color: colors.muted }}>
+                                    {f.body}
+                                </Typography>
                             </Box>
                         </Grid>
                     ))}
@@ -149,16 +181,32 @@ const Skarp: React.FC = () => {
                             Skarp · by Jacob Hallman
                         </Typography>
                         <Stack direction="row" spacing={3}>
-                            <Link href="/skarp/privacy" underline="hover" sx={{ color: colors.muted, fontSize: 14 }}>
+                            <Link
+                                href="/skarp/privacy"
+                                underline="hover"
+                                sx={{ color: colors.muted, fontSize: 14 }}
+                            >
                                 Privacy
                             </Link>
-                            <Link href="/skarp/terms" underline="hover" sx={{ color: colors.muted, fontSize: 14 }}>
+                            <Link
+                                href="/skarp/terms"
+                                underline="hover"
+                                sx={{ color: colors.muted, fontSize: 14 }}
+                            >
                                 Terms
                             </Link>
-                            <Link href="/skarp/delete-account" underline="hover" sx={{ color: colors.muted, fontSize: 14 }}>
+                            <Link
+                                href="/skarp/delete-account"
+                                underline="hover"
+                                sx={{ color: colors.muted, fontSize: 14 }}
+                            >
                                 Delete account
                             </Link>
-                            <Link href="/contact" underline="hover" sx={{ color: colors.muted, fontSize: 14 }}>
+                            <Link
+                                href="/contact"
+                                underline="hover"
+                                sx={{ color: colors.muted, fontSize: 14 }}
+                            >
                                 Contact
                             </Link>
                         </Stack>

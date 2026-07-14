@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "9423J75LZV.se.jacobhallman.quizapp",
+        "paths": ["/skarp/invite/*"]
+      },
+      {
+        "appID": "9423J75LZV.se.jacobhallman.krydda",
+        "paths": ["/krydda/invite/*"]
+      }
+    ]
+  }
+}

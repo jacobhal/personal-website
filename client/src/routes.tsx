@@ -8,8 +8,21 @@ import { StockPredictor } from './views/StockPredictor'
 import { ReactPlayground } from './views/ReactPlayground'
 import { CoronaDashboard } from './views/CoronaDashboard'
 import { CongressFilings } from './views/CongressFilings'
-import { Skarp, SkarpDeleteAccount, SkarpPrivacy, SkarpTerms } from './views/Skarp'
-import { Krydda, KryddaGuide, KryddaPrivacy, KryddaTerms, KryddaDeleteAccount } from './views/Krydda'
+import {
+    Skarp,
+    SkarpDeleteAccount,
+    SkarpInvite,
+    SkarpPrivacy,
+    SkarpTerms,
+} from './views/Skarp'
+import {
+    Krydda,
+    KryddaGuide,
+    KryddaInvite,
+    KryddaPrivacy,
+    KryddaTerms,
+    KryddaDeleteAccount,
+} from './views/Krydda'
 import { HitQuiz } from './views/HitQuiz'
 import { DagensOrd } from './views/DagensOrd'
 import ScrollRestoration from './components/ScrollRestoration'
@@ -31,16 +44,24 @@ export const Routes: React.FC = () => {
                 <Route path="/corona-dashboard" element={<CoronaDashboard />} />
                 <Route path="/congress" element={<CongressFilings />} />
                 <Route path="/skarp" element={<Skarp />} />
+                <Route path="/skarp/invite/:code" element={<SkarpInvite />} />
                 <Route path="/hitquiz" element={<HitQuiz />} />
                 <Route path="/dagens-ord" element={<DagensOrd />} />
-                <Route path="/skarp/delete-account" element={<SkarpDeleteAccount />} />
+                <Route
+                    path="/skarp/delete-account"
+                    element={<SkarpDeleteAccount />}
+                />
                 <Route path="/skarp/privacy" element={<SkarpPrivacy />} />
                 <Route path="/skarp/terms" element={<SkarpTerms />} />
                 <Route path="/krydda" element={<Krydda />} />
+                <Route path="/krydda/invite/:code" element={<KryddaInvite />} />
                 <Route path="/krydda/guide" element={<KryddaGuide />} />
                 <Route path="/krydda/privacy" element={<KryddaPrivacy />} />
                 <Route path="/krydda/terms" element={<KryddaTerms />} />
-                <Route path="/krydda/delete-account" element={<KryddaDeleteAccount />} />
+                <Route
+                    path="/krydda/delete-account"
+                    element={<KryddaDeleteAccount />}
+                />
                 <Route path="/404" element={<NotFound />} />
                 <Route path="*" element={<Navigate to="/404" replace />} />
             </RouterRoutes>
