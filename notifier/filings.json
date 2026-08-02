@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T23:46:47.944589Z",
+  "updated": "2026-08-02T00:29:20.768082Z",
   "window_days": 365,
   "proven_members": [
     "David Rouzer",
@@ -1026,8 +1026,8 @@
           "txn_date": "2026-04-13",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 71.38,
-          "pct_since": 39.4,
+          "price_now": 71.23,
+          "pct_since": 39.1,
           "price_then": 51.19
         },
         {
@@ -2435,8 +2435,8 @@
           "txn_date": "2026-02-27",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 71.38,
-          "pct_since": 32.1,
+          "price_now": 71.23,
+          "pct_since": 31.9,
           "price_then": 54.02
         },
         {
@@ -33851,15 +33851,6 @@
       "approx_dollars": 16000
     },
     {
-      "ticker": "XOM",
-      "member_count": 1,
-      "members": [
-        "Josh Gottheimer"
-      ],
-      "trade_count": 2,
-      "approx_dollars": 16000
-    },
-    {
       "ticker": "TTD",
       "member_count": 1,
       "members": [
@@ -33867,6 +33858,15 @@
       ],
       "trade_count": 2,
       "approx_dollars": 16000
+    },
+    {
+      "ticker": "LITE",
+      "member_count": 1,
+      "members": [
+        "Josh Gottheimer"
+      ],
+      "trade_count": 1,
+      "approx_dollars": 8000
     }
   ],
   "stocks": [
