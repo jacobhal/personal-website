@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06T00:52:12.830959Z",
+  "updated": "2026-08-06T04:00:33.222233Z",
   "window_days": 365,
   "proven_members": [
     "David Rouzer",
@@ -2019,8 +2019,8 @@
           "txn_date": "2026-03-06",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 118.14,
-          "pct_since": -5.0,
+          "price_now": 117.22,
+          "pct_since": -5.7,
           "price_then": 124.34
         },
         {
@@ -2032,8 +2032,8 @@
           "txn_date": "2026-03-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 294.70999,
-          "pct_since": 6.6,
+          "price_now": 295.089996,
+          "pct_since": 6.8,
           "price_then": 276.35001
         },
         {
@@ -2458,8 +2458,8 @@
           "txn_date": "2026-02-26",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 132.50999,
-          "pct_since": 12.6,
+          "price_now": 130.17999,
+          "pct_since": 10.7,
           "price_then": 117.63
         },
         {
@@ -2471,8 +2471,8 @@
           "txn_date": "2026-02-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 635.96002,
-          "pct_since": 17.6,
+          "price_now": 650.25,
+          "pct_since": 20.3,
           "price_then": 540.65002
         },
         {
@@ -2484,8 +2484,8 @@
           "txn_date": "2026-02-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 1018.53003,
-          "pct_since": 38.1,
+          "price_now": 1017.96002,
+          "pct_since": 38.0,
           "price_then": 737.53003
         },
         {
@@ -2497,8 +2497,8 @@
           "txn_date": "2026-02-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 407.54999,
-          "pct_since": 51.8,
+          "price_now": 412.75,
+          "pct_since": 53.7,
           "price_then": 268.54999
         },
         {
@@ -2520,8 +2520,8 @@
           "txn_date": "2026-02-04",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 153.96001,
-          "pct_since": 4.3,
+          "price_now": 151.63,
+          "pct_since": 2.7,
           "price_then": 147.59
         },
         {
@@ -2543,8 +2543,8 @@
           "txn_date": "2026-02-04",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 128.0,
-          "pct_since": 8.2,
+          "price_now": 128.33,
+          "pct_since": 8.5,
           "price_then": 118.33
         },
         {
@@ -2556,8 +2556,8 @@
           "txn_date": "2026-02-02",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 153.96001,
-          "pct_since": 11.2,
+          "price_now": 151.63,
+          "pct_since": 9.6,
           "price_then": 138.39999
         },
         {
@@ -2569,8 +2569,8 @@
           "txn_date": "2026-02-02",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 94.18,
-          "pct_since": 16.1,
+          "price_now": 94.46,
+          "pct_since": 16.5,
           "price_then": 81.099998
         }
       ],
@@ -2730,8 +2730,8 @@
           "txn_date": "2026-02-10",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 118.14,
-          "pct_since": 11.0,
+          "price_now": 117.22,
+          "pct_since": 10.1,
           "price_then": 106.48
         },
         {
@@ -2743,8 +2743,8 @@
           "txn_date": "2026-02-10",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 118.14,
-          "pct_since": 11.0,
+          "price_now": 117.22,
+          "pct_since": 10.1,
           "price_then": 106.48
         },
         {
@@ -2756,8 +2756,8 @@
           "txn_date": "2026-02-10",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 19.34,
-          "pct_since": -31.2,
+          "price_now": 18.96,
+          "pct_since": -32.6,
           "price_then": 28.13
         },
         {
@@ -2769,8 +2769,8 @@
           "txn_date": "2026-02-10",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 19.34,
-          "pct_since": -31.2,
+          "price_now": 18.96,
+          "pct_since": -32.6,
           "price_then": 28.13
         }
       ],
@@ -2809,8 +2809,8 @@
           "txn_date": "2026-02-06",
           "amount_low": 15001,
           "amount_high": 50000,
-          "price_now": 3.15,
-          "pct_since": -33.3,
+          "price_now": 3.03,
+          "pct_since": -35.8,
           "price_then": 4.72
         },
         {
@@ -2822,8 +2822,8 @@
           "txn_date": "2026-02-04",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 3.15,
-          "pct_since": -30.0,
+          "price_now": 3.03,
+          "pct_since": -32.7,
           "price_then": 4.5
         }
       ],
@@ -2859,8 +2859,8 @@
           "txn_date": "2026-01-27",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 135.25,
-          "pct_since": -4.1,
+          "price_now": 131.75999,
+          "pct_since": -6.5,
           "price_then": 140.97
         },
         {
@@ -2872,8 +2872,8 @@
           "txn_date": "2026-01-26",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 149.2,
-          "pct_since": -14.8,
+          "price_now": 149.84,
+          "pct_since": -14.4,
           "price_then": 175.10001
         },
         {
@@ -6409,8 +6409,8 @@
           "txn_date": "2025-10-30",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 635.96002,
-          "pct_since": 45.2,
+          "price_now": 650.25,
+          "pct_since": 48.4,
           "price_then": 438.089996
         },
         {
@@ -6772,8 +6772,8 @@
           "txn_date": "2025-10-30",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 153.96001,
-          "pct_since": 34.2,
+          "price_now": 151.63,
+          "pct_since": 32.2,
           "price_then": 114.69
         },
         {
@@ -8486,8 +8486,8 @@
           "txn_date": "2025-10-30",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 407.54999,
-          "pct_since": 18.2,
+          "price_now": 412.75,
+          "pct_since": 19.7,
           "price_then": 344.75
         },
         {
@@ -9020,8 +9020,8 @@
           "txn_date": "2025-10-09",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 19.34,
-          "pct_since": -64.2,
+          "price_now": 18.96,
+          "pct_since": -64.9,
           "price_then": 54.09
         },
         {
@@ -9033,8 +9033,8 @@
           "txn_date": "2025-10-09",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 19.34,
-          "pct_since": -64.2,
+          "price_now": 18.96,
+          "pct_since": -64.9,
           "price_then": 54.09
         },
         {
@@ -11937,8 +11937,8 @@
           "txn_date": "2025-08-13",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 407.54999,
-          "pct_since": 49.9,
+          "price_now": 412.75,
+          "pct_since": 51.9,
           "price_then": 271.81
         },
         {
@@ -11990,8 +11990,8 @@
           "txn_date": "2025-08-07",
           "amount_low": 15001,
           "amount_high": 50000,
-          "price_now": 3.15,
-          "pct_since": -52.3,
+          "price_now": 3.03,
+          "pct_since": -54.2,
           "price_then": 6.61
         },
         {
@@ -12003,8 +12003,8 @@
           "txn_date": "2025-08-04",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 294.70999,
-          "pct_since": 2.5,
+          "price_now": 295.089996,
+          "pct_since": 2.6,
           "price_then": 287.48001
         },
         {
@@ -12689,8 +12689,8 @@
           "txn_date": "2025-08-04",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 118.14,
-          "pct_since": -36.0,
+          "price_now": 117.22,
+          "pct_since": -36.5,
           "price_then": 184.60001
         },
         {
@@ -13048,8 +13048,8 @@
           "txn_date": "2025-08-28",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 128.0,
-          "pct_since": 53.8,
+          "price_now": 128.33,
+          "pct_since": 54.2,
           "price_then": 83.21
         },
         {
@@ -13121,8 +13121,8 @@
           "txn_date": "2025-08-28",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 407.54999,
-          "pct_since": 34.8,
+          "price_now": 412.75,
+          "pct_since": 36.5,
           "price_then": 302.29001
         },
         {
@@ -13236,8 +13236,8 @@
           "txn_date": "2025-08-04",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 407.54999,
-          "pct_since": 69.1,
+          "price_now": 412.75,
+          "pct_since": 71.3,
           "price_then": 240.98
         },
         {
@@ -13487,8 +13487,8 @@
           "txn_date": "2025-07-22",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 153.96001,
-          "pct_since": 41.8,
+          "price_now": 151.63,
+          "pct_since": 39.7,
           "price_then": 108.54
         },
         {
@@ -15171,8 +15171,8 @@
           "txn_date": "2025-06-24",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 635.96002,
-          "pct_since": 96.4,
+          "price_now": 650.25,
+          "pct_since": 100.8,
           "price_then": 323.85001
         },
         {
@@ -15264,8 +15264,8 @@
           "txn_date": "2025-06-24",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 153.96001,
-          "pct_since": 42.1,
+          "price_now": 151.63,
+          "pct_since": 40.0,
           "price_then": 108.34
         },
         {
@@ -15477,8 +15477,8 @@
           "txn_date": "2025-06-24",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 128.0,
-          "pct_since": 59.4,
+          "price_now": 128.33,
+          "pct_since": 59.8,
           "price_then": 80.32
         },
         {
@@ -16856,8 +16856,8 @@
           "txn_date": "2025-06-17",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 94.18,
-          "pct_since": 50.0,
+          "price_now": 94.46,
+          "pct_since": 50.5,
           "price_then": 62.78
         },
         {
@@ -17175,8 +17175,8 @@
           "txn_date": "2025-06-17",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 118.14,
-          "pct_since": -41.2,
+          "price_now": 117.22,
+          "pct_since": -41.7,
           "price_then": 200.98199
         },
         {
@@ -17418,8 +17418,8 @@
           "txn_date": "2025-06-17",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 407.54999,
-          "pct_since": 31.9,
+          "price_now": 412.75,
+          "pct_since": 33.6,
           "price_then": 308.87
         },
         {
@@ -19089,8 +19089,8 @@
           "txn_date": "2025-03-28",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 19.34,
-          "pct_since": -65.4,
+          "price_now": 18.96,
+          "pct_since": -66.1,
           "price_then": 55.85
         },
         {
@@ -19202,8 +19202,8 @@
           "txn_date": "2025-03-12",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 118.14,
-          "pct_since": -29.9,
+          "price_now": 117.22,
+          "pct_since": -30.5,
           "price_then": 168.62801
         },
         {
@@ -19782,7 +19782,7 @@
           "txn_date": "2024-12-11",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 118.14,
+          "price_now": 117.22,
           "pct_since": null,
           "price_then": null
         },
@@ -19825,7 +19825,7 @@
           "txn_date": "2024-12-11",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 19.34,
+          "price_now": 18.96,
           "pct_since": null,
           "price_then": null
         },
@@ -21171,8 +21171,8 @@
           "txn_date": "2025-06-06",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 135.25,
-          "pct_since": 20.3,
+          "price_now": 131.75999,
+          "pct_since": 17.2,
           "price_then": 112.46
         },
         {
@@ -21207,8 +21207,8 @@
           "txn_date": "2025-06-06",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 118.14,
-          "pct_since": -42.7,
+          "price_now": 117.22,
+          "pct_since": -43.1,
           "price_then": 206.042007
         },
         {
@@ -21529,8 +21529,8 @@
           "txn_date": "2025-05-15",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 294.70999,
-          "pct_since": 7.4,
+          "price_now": 295.089996,
+          "pct_since": 7.5,
           "price_then": 274.42001
         },
         {
@@ -22024,8 +22024,8 @@
           "txn_date": "2025-05-09",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 19.34,
-          "pct_since": -72.8,
+          "price_now": 18.96,
+          "pct_since": -73.3,
           "price_then": 71.040001
         }
       ],
@@ -22665,8 +22665,8 @@
           "txn_date": "2025-05-16",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 407.54999,
-          "pct_since": 39.6,
+          "price_now": 412.75,
+          "pct_since": 41.4,
           "price_then": 291.91
         },
         {
@@ -22850,8 +22850,8 @@
           "txn_date": "2025-05-14",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 118.14,
-          "pct_since": -42.5,
+          "price_now": 117.22,
+          "pct_since": -42.9,
           "price_then": 205.364
         },
         {
@@ -22883,8 +22883,8 @@
           "txn_date": "2025-05-14",
           "amount_low": 15001,
           "amount_high": 50000,
-          "price_now": 407.54999,
-          "pct_since": 32.3,
+          "price_now": 412.75,
+          "pct_since": 34.0,
           "price_then": 308.01001
         }
       ],
@@ -23995,8 +23995,8 @@
           "txn_date": "2025-04-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 153.96001,
-          "pct_since": 52.8,
+          "price_now": 151.63,
+          "pct_since": 50.5,
           "price_then": 100.77
         },
         {
@@ -24208,8 +24208,8 @@
           "txn_date": "2025-04-08",
           "amount_low": 15001,
           "amount_high": 50000,
-          "price_now": 128.0,
-          "pct_since": 62.1,
+          "price_now": 128.33,
+          "pct_since": 62.5,
           "price_then": 78.95
         },
         {
@@ -24660,8 +24660,8 @@
           "txn_date": "2025-04-08",
           "amount_low": 15001,
           "amount_high": 50000,
-          "price_now": 407.54999,
-          "pct_since": -26.3,
+          "price_now": 412.75,
+          "pct_since": -25.4,
           "price_then": 553.080017
         },
         {
@@ -25027,8 +25027,8 @@
           "txn_date": "2025-05-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 635.96002,
-          "pct_since": 110.4,
+          "price_now": 650.25,
+          "pct_since": 115.1,
           "price_then": 302.29999
         },
         {
@@ -25113,8 +25113,8 @@
           "txn_date": "2025-05-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 135.25,
-          "pct_since": 31.6,
+          "price_now": 131.75999,
+          "pct_since": 28.2,
           "price_then": 102.81
         },
         {
@@ -25126,8 +25126,8 @@
           "txn_date": "2025-05-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 135.25,
-          "pct_since": 31.6,
+          "price_now": 131.75999,
+          "pct_since": 28.2,
           "price_then": 102.81
         },
         {
@@ -25225,8 +25225,8 @@
           "txn_date": "2025-05-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 128.0,
-          "pct_since": 54.5,
+          "price_now": 128.33,
+          "pct_since": 54.9,
           "price_then": 82.84
         },
         {
@@ -25377,8 +25377,8 @@
           "txn_date": "2025-05-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 118.14,
-          "pct_since": -39.6,
+          "price_now": 117.22,
+          "pct_since": -40.1,
           "price_then": 195.61
         },
         {
@@ -26768,8 +26768,8 @@
           "txn_date": "2025-03-06",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 19.34,
-          "pct_since": -70.2,
+          "price_now": 18.96,
+          "pct_since": -70.8,
           "price_then": 64.98
         },
         {
@@ -26781,8 +26781,8 @@
           "txn_date": "2025-03-06",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 19.34,
-          "pct_since": -70.2,
+          "price_now": 18.96,
+          "pct_since": -70.8,
           "price_then": 64.98
         }
       ],
@@ -26861,8 +26861,8 @@
           "txn_date": "2025-04-09",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 635.96002,
-          "pct_since": 114.5,
+          "price_now": 650.25,
+          "pct_since": 119.3,
           "price_then": 296.54999
         },
         {
@@ -26884,8 +26884,8 @@
           "txn_date": "2025-04-09",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 128.0,
-          "pct_since": 56.3,
+          "price_now": 128.33,
+          "pct_since": 56.7,
           "price_then": 81.91
         },
         {
@@ -27304,8 +27304,8 @@
           "txn_date": "2025-03-07",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 135.25,
-          "pct_since": 15.2,
+          "price_now": 131.75999,
+          "pct_since": 12.2,
           "price_then": 117.41
         },
         {
@@ -27377,7 +27377,7 @@
           "txn_date": "2024-03-18",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 149.2,
+          "price_now": 149.84,
           "pct_since": null,
           "price_then": null
         }
@@ -27440,8 +27440,8 @@
           "txn_date": "2025-03-13",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 118.14,
-          "pct_since": -27.2,
+          "price_now": 117.22,
+          "pct_since": -27.8,
           "price_then": 162.32401
         },
         {
@@ -28045,8 +28045,8 @@
           "txn_date": "2025-02-26",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 19.34,
-          "pct_since": -73.3,
+          "price_now": 18.96,
+          "pct_since": -73.8,
           "price_then": 72.43
         },
         {
@@ -30253,8 +30253,8 @@
           "txn_date": "2025-02-03",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 118.14,
-          "pct_since": -42.1,
+          "price_now": 117.22,
+          "pct_since": -42.6,
           "price_then": 204.188
         },
         {
@@ -30266,8 +30266,8 @@
           "txn_date": "2025-02-03",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 118.14,
-          "pct_since": -42.1,
+          "price_now": 117.22,
+          "pct_since": -42.6,
           "price_then": 204.188
         },
         {
@@ -32937,7 +32937,7 @@
           "txn_date": "2024-12-10",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 153.96001,
+          "price_now": 151.63,
           "pct_since": null,
           "price_then": null
         },
