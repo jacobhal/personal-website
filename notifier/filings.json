@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06T11:40:39.670589Z",
+  "updated": "2026-08-06T13:17:56.644976Z",
   "window_days": 365,
   "proven_members": [
     "David Rouzer",
@@ -9,6 +9,30 @@
     "Warren Davidson"
   ],
   "filings": [
+    {
+      "name": "Lisa McClain",
+      "last": "McClain",
+      "first": "Lisa",
+      "filing_type": "P",
+      "filing_date": "2026-08-05",
+      "year": "2026",
+      "doc_id": "20035131",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035131.pdf",
+      "proven": true,
+      "trades": [
+        {
+          "owner": "spouse",
+          "asset": "Saronic Technologies [PS]",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-15",
+          "amount_low": 50001,
+          "amount_high": 100000
+        }
+      ],
+      "trades_version": 1
+    },
     {
       "name": "Kevin Hern",
       "last": "Hern",
