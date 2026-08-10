@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T23:56:08.670396Z",
+  "updated": "2026-08-10T01:17:31.841608Z",
   "window_days": 365,
   "proven_members": [
     "David Rouzer",
@@ -33711,16 +33711,6 @@
   ],
   "leaderboard": [
     {
-      "ticker": "NOW",
-      "member_count": 2,
-      "members": [
-        "Byron Donalds",
-        "Josh Gottheimer"
-      ],
-      "trade_count": 3,
-      "approx_dollars": 24000
-    },
-    {
       "ticker": "INTC",
       "member_count": 1,
       "members": [
@@ -33820,15 +33810,6 @@
       "approx_dollars": 16000
     },
     {
-      "ticker": "TTD",
-      "member_count": 1,
-      "members": [
-        "Byron Donalds"
-      ],
-      "trade_count": 2,
-      "approx_dollars": 16000
-    },
-    {
       "ticker": "LITE",
       "member_count": 1,
       "members": [
@@ -33839,6 +33820,24 @@
     },
     {
       "ticker": "MU",
+      "member_count": 1,
+      "members": [
+        "Josh Gottheimer"
+      ],
+      "trade_count": 1,
+      "approx_dollars": 8000
+    },
+    {
+      "ticker": "ADI",
+      "member_count": 1,
+      "members": [
+        "Josh Gottheimer"
+      ],
+      "trade_count": 1,
+      "approx_dollars": 8000
+    },
+    {
+      "ticker": "PANW",
       "member_count": 1,
       "members": [
         "Josh Gottheimer"
