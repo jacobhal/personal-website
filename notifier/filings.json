@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-11T12:08:36.751567Z",
+  "updated": "2026-08-11T13:40:11.564391Z",
   "window_days": 365,
   "proven_members": [
     "David Rouzer",
@@ -9,6 +9,316 @@
     "Warren Davidson"
   ],
   "filings": [
+    {
+      "name": "Josh Gottheimer",
+      "last": "Gottheimer",
+      "first": "Josh",
+      "filing_type": "P",
+      "filing_date": "2026-08-10",
+      "year": "2026",
+      "doc_id": "20035186",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035186.pdf",
+      "proven": false,
+      "trades": [
+        {
+          "owner": "joint",
+          "asset": "Alphabet Inc. - Depositary Shares",
+          "ticker": "GOOGM",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-24",
+          "amount_low": 1001,
+          "amount_high": 15000,
+          "price_then": 46.81,
+          "price_now": 50.64,
+          "pct_since": 8.2
+        },
+        {
+          "owner": "joint",
+          "asset": "Alphabet Inc. - Depositary Shares",
+          "ticker": "GOOGN",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-24",
+          "amount_low": 1001,
+          "amount_high": 15000,
+          "price_then": 46.74,
+          "price_now": 50.35,
+          "pct_since": 7.7
+        },
+        {
+          "owner": "joint",
+          "asset": "Alphabet Inc. - Depositary Shares",
+          "ticker": "GOOGN",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-23",
+          "amount_low": 1001,
+          "amount_high": 15000,
+          "price_then": 46.81,
+          "price_now": 50.35,
+          "pct_since": 7.6
+        },
+        {
+          "owner": "joint",
+          "asset": "Crown Castle Inc. Common Stock",
+          "ticker": "CCI",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-07-23",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "joint",
+          "asset": "NICE Ltd - American Depositary",
+          "ticker": "NICE",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-20",
+          "amount_low": 1001,
+          "amount_high": 15000,
+          "price_then": 101.34,
+          "price_now": 101.31,
+          "pct_since": -0.0
+        },
+        {
+          "owner": "joint",
+          "asset": "SailPoint Technologies Holdings, Inc.",
+          "ticker": "SAIL",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-20",
+          "amount_low": 1001,
+          "amount_high": 15000,
+          "price_then": 15.22,
+          "price_now": 18.585,
+          "pct_since": 22.1
+        },
+        {
+          "owner": "joint",
+          "asset": "Chart Industries, Inc. (GTLS) [ST]",
+          "ticker": "GTLS",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-07-17",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "joint",
+          "asset": "Monster Beverage Corporation -",
+          "ticker": "MNST",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-17",
+          "amount_low": 1001,
+          "amount_high": 15000,
+          "price_now": 91.43,
+          "pct_since": null
+        },
+        {
+          "owner": "joint",
+          "asset": "International Business Machines",
+          "ticker": "IBM",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-07-16",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "joint",
+          "asset": "Palo Alto Networks, Inc. (PANW)",
+          "ticker": "PANW",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-16",
+          "amount_low": 1001,
+          "amount_high": 15000,
+          "price_now": 385.040009,
+          "pct_since": null
+        },
+        {
+          "owner": "joint",
+          "asset": "CrowdStrike Holdings, Inc. - Class A",
+          "ticker": "CRWD",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-15",
+          "amount_low": 1001,
+          "amount_high": 15000,
+          "price_then": 206.77,
+          "price_now": 220.86,
+          "pct_since": 6.8
+        },
+        {
+          "owner": "joint",
+          "asset": "Fabrinet Ordinary Shares (FN) [ST]",
+          "ticker": "FN",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-07-14",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ],
+      "trades_version": 1
+    },
+    {
+      "name": "Kevin Hern",
+      "last": "Hern",
+      "first": "Kevin",
+      "filing_type": "P",
+      "filing_date": "2026-08-10",
+      "year": "2026",
+      "doc_id": "20035134",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035134.pdf",
+      "proven": false,
+      "trades": [
+        {
+          "owner": "joint",
+          "asset": "Comcast Corporation - Class A",
+          "ticker": "CMCSA",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-05",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "joint",
+          "asset": "Diageo plc Common Stock (DEO) [ST]",
+          "ticker": "DEO",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-05",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "joint",
+          "asset": "Estee Lauder Companies, Inc. (EL)",
+          "ticker": "EL",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-05",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "joint",
+          "asset": "Kenvue Inc. Common Stock (KVUE)",
+          "ticker": "KVUE",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-05",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "joint",
+          "asset": "Mondelez International, Inc. - Class A",
+          "ticker": "MDLZ",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-05",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "joint",
+          "asset": "Organon & Co. Common Stock (OGN)",
+          "ticker": "OGN",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-05",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "joint",
+          "asset": "Versant Media Group, Inc. - Class A",
+          "ticker": "VSNT",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-05",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "joint",
+          "asset": "CADDO CNTY OKLA",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-24",
+          "amount_low": 50001,
+          "amount_high": 100000
+        },
+        {
+          "owner": "joint",
+          "asset": "TULSA CNTY OKLA INDPT SCH",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-24",
+          "amount_low": 100001,
+          "amount_high": 250000
+        },
+        {
+          "owner": "joint",
+          "asset": "GRAND RIVER DAM AUTH OKLA",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-20",
+          "amount_low": 15001,
+          "amount_high": 50000
+        },
+        {
+          "owner": "joint",
+          "asset": "KINGFISHER CNTY OKLA EDL",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-20",
+          "amount_low": 100001,
+          "amount_high": 250000
+        },
+        {
+          "owner": "joint",
+          "asset": "LAWTON OKLA GO BDS SER. 2019",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-17",
+          "amount_low": 15001,
+          "amount_high": 50000
+        },
+        {
+          "owner": "joint",
+          "asset": "OKLAHOMA CNTY OKLA FIN AUTH",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-17",
+          "amount_low": 15001,
+          "amount_high": 50000
+        },
+        {
+          "owner": "joint",
+          "asset": "EDMOND OKLA PUB WKS AUTH",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-16",
+          "amount_low": 15001,
+          "amount_high": 50000
+        }
+      ],
+      "trades_version": 1
+    },
     {
       "name": "Lisa McClain",
       "last": "McClain",
@@ -9116,7 +9426,10 @@
           "instrument": "shares",
           "txn_date": "2025-10-17",
           "amount_low": 1001,
-          "amount_high": 15000
+          "amount_high": 15000,
+          "price_then": 129.88,
+          "price_now": 101.31,
+          "pct_since": -22.0
         },
         {
           "owner": "joint",
@@ -11323,7 +11636,10 @@
           "instrument": "shares",
           "txn_date": "2025-09-11",
           "amount_low": 1001,
-          "amount_high": 15000
+          "amount_high": 15000,
+          "price_then": 108.345,
+          "price_now": 220.86,
+          "pct_since": 103.8
         },
         {
           "owner": "self",
@@ -14032,7 +14348,10 @@
           "instrument": "shares",
           "txn_date": "2025-07-16",
           "amount_low": 1001,
-          "amount_high": 15000
+          "amount_high": 15000,
+          "price_then": 117.6125,
+          "price_now": 220.86,
+          "pct_since": 87.8
         },
         {
           "owner": "spouse",
@@ -29435,7 +29754,10 @@
           "instrument": "shares",
           "txn_date": "2025-03-07",
           "amount_low": 1001,
-          "amount_high": 15000
+          "amount_high": 15000,
+          "price_then": 83.375,
+          "price_now": 220.86,
+          "pct_since": 164.9
         },
         {
           "owner": "self",
@@ -30562,7 +30884,10 @@
           "instrument": "shares",
           "txn_date": "2025-01-28",
           "amount_low": 1001,
-          "amount_high": 15000
+          "amount_high": 15000,
+          "price_then": 102.17,
+          "price_now": 220.86,
+          "pct_since": 116.2
         },
         {
           "owner": "self",
@@ -30572,7 +30897,10 @@
           "instrument": "shares",
           "txn_date": "2025-01-28",
           "amount_low": 1001,
-          "amount_high": 15000
+          "amount_high": 15000,
+          "price_then": 102.17,
+          "price_now": 220.86,
+          "pct_since": 116.2
         },
         {
           "owner": "self",
@@ -30582,7 +30910,10 @@
           "instrument": "shares",
           "txn_date": "2025-01-28",
           "amount_low": 1001,
-          "amount_high": 15000
+          "amount_high": 15000,
+          "price_then": 102.17,
+          "price_now": 220.86,
+          "pct_since": 116.2
         },
         {
           "owner": "self",
@@ -33448,6 +33779,24 @@
       "last_txn_date": "2026-01-16"
     },
     {
+      "ticker": "PANW",
+      "member_count": 2,
+      "members": [
+        "Josh Gottheimer",
+        "Marjorie Taylor Greene"
+      ],
+      "last_txn_date": "2026-07-16"
+    },
+    {
+      "ticker": "CRWD",
+      "member_count": 2,
+      "members": [
+        "Josh Gottheimer",
+        "Marjorie Taylor Greene"
+      ],
+      "last_txn_date": "2026-07-15"
+    },
+    {
       "ticker": "UBER",
       "member_count": 2,
       "members": [
@@ -33455,15 +33804,6 @@
         "Nancy Pelosi"
       ],
       "last_txn_date": "2026-05-29"
-    },
-    {
-      "ticker": "PANW",
-      "member_count": 2,
-      "members": [
-        "Josh Gottheimer",
-        "Marjorie Taylor Greene"
-      ],
-      "last_txn_date": "2026-05-14"
     },
     {
       "ticker": "SNDK",
@@ -33747,6 +34087,24 @@
       "approx_dollars": 24000
     },
     {
+      "ticker": "GOOGN",
+      "member_count": 1,
+      "members": [
+        "Josh Gottheimer"
+      ],
+      "trade_count": 2,
+      "approx_dollars": 16000
+    },
+    {
+      "ticker": "PANW",
+      "member_count": 1,
+      "members": [
+        "Josh Gottheimer"
+      ],
+      "trade_count": 2,
+      "approx_dollars": 16000
+    },
+    {
       "ticker": "ZTS",
       "member_count": 1,
       "members": [
@@ -33810,7 +34168,7 @@
       "approx_dollars": 16000
     },
     {
-      "ticker": "LITE",
+      "ticker": "GOOGM",
       "member_count": 1,
       "members": [
         "Josh Gottheimer"
@@ -33819,25 +34177,7 @@
       "approx_dollars": 8000
     },
     {
-      "ticker": "MU",
-      "member_count": 1,
-      "members": [
-        "Josh Gottheimer"
-      ],
-      "trade_count": 1,
-      "approx_dollars": 8000
-    },
-    {
-      "ticker": "ADI",
-      "member_count": 1,
-      "members": [
-        "Josh Gottheimer"
-      ],
-      "trade_count": 1,
-      "approx_dollars": 8000
-    },
-    {
-      "ticker": "PANW",
+      "ticker": "NICE",
       "member_count": 1,
       "members": [
         "Josh Gottheimer"
@@ -33847,6 +34187,808 @@
     }
   ],
   "stocks": [
+    {
+      "ticker": "DEO",
+      "buys": 2,
+      "sells": 4,
+      "member_count": 3,
+      "members": [
+        "Josh Gottheimer",
+        "Kevin Hern",
+        "Lisa McClain"
+      ],
+      "last_txn_date": "2026-08-05",
+      "events": [
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-08-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-09-25",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "sell",
+          "txn_date": "2025-09-22",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-09-11",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-08-04",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-06-24",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "KVUE",
+      "buys": 2,
+      "sells": 4,
+      "member_count": 2,
+      "members": [
+        "Kevin Hern",
+        "Lisa McClain"
+      ],
+      "last_txn_date": "2026-08-05",
+      "events": [
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-08-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-03-17",
+          "instrument": "shares",
+          "amount_low": 15001,
+          "amount_high": 50000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-10-31",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-10-30",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-10-30",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-09-25",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "CMCSA",
+      "buys": 1,
+      "sells": 4,
+      "member_count": 3,
+      "members": [
+        "Kevin Hern",
+        "Mike Kelly",
+        "Rob Bresnahan"
+      ],
+      "last_txn_date": "2026-08-05",
+      "events": [
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-08-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Mike Kelly",
+          "side": "sell",
+          "txn_date": "2026-05-07",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-03-17",
+          "instrument": "shares",
+          "amount_low": 15001,
+          "amount_high": 50000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-04-08",
+          "instrument": "shares",
+          "amount_low": 15001,
+          "amount_high": 50000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "sell",
+          "txn_date": "2025-02-25",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "MDLZ",
+      "buys": 1,
+      "sells": 1,
+      "member_count": 2,
+      "members": [
+        "Kevin Hern",
+        "Rob Bresnahan"
+      ],
+      "last_txn_date": "2026-08-05",
+      "events": [
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-08-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-02-25",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "EL",
+      "buys": 0,
+      "sells": 2,
+      "member_count": 1,
+      "members": [
+        "Kevin Hern"
+      ],
+      "last_txn_date": "2026-08-05",
+      "events": [
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-08-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2024-12-31",
+          "instrument": "shares",
+          "amount_low": 15001,
+          "amount_high": 50000
+        }
+      ]
+    },
+    {
+      "ticker": "OGN",
+      "buys": 0,
+      "sells": 1,
+      "member_count": 1,
+      "members": [
+        "Kevin Hern"
+      ],
+      "last_txn_date": "2026-08-05",
+      "events": [
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-08-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "VSNT",
+      "buys": 0,
+      "sells": 1,
+      "member_count": 1,
+      "members": [
+        "Kevin Hern"
+      ],
+      "last_txn_date": "2026-08-05",
+      "events": [
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-08-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "GOOGN",
+      "buys": 2,
+      "sells": 0,
+      "member_count": 1,
+      "members": [
+        "Josh Gottheimer"
+      ],
+      "last_txn_date": "2026-07-24",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-07-24",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-07-23",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "GOOGM",
+      "buys": 1,
+      "sells": 0,
+      "member_count": 1,
+      "members": [
+        "Josh Gottheimer"
+      ],
+      "last_txn_date": "2026-07-24",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-07-24",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "CCI",
+      "buys": 0,
+      "sells": 1,
+      "member_count": 1,
+      "members": [
+        "Josh Gottheimer"
+      ],
+      "last_txn_date": "2026-07-23",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "sell",
+          "txn_date": "2026-07-23",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "NICE",
+      "buys": 2,
+      "sells": 1,
+      "member_count": 2,
+      "members": [
+        "Josh Gottheimer",
+        "Lisa McClain"
+      ],
+      "last_txn_date": "2026-07-20",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-07-20",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2025-10-17",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-07-16",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "SAIL",
+      "buys": 1,
+      "sells": 0,
+      "member_count": 1,
+      "members": [
+        "Josh Gottheimer"
+      ],
+      "last_txn_date": "2026-07-20",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-07-20",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "MNST",
+      "buys": 3,
+      "sells": 1,
+      "member_count": 2,
+      "members": [
+        "Josh Gottheimer",
+        "Lisa McClain"
+      ],
+      "last_txn_date": "2026-07-17",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-07-17",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-02-02",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-07-10",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-06-17",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "GTLS",
+      "buys": 0,
+      "sells": 1,
+      "member_count": 1,
+      "members": [
+        "Josh Gottheimer"
+      ],
+      "last_txn_date": "2026-07-17",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "sell",
+          "txn_date": "2026-07-17",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "PANW",
+      "buys": 10,
+      "sells": 3,
+      "member_count": 5,
+      "members": [
+        "Josh Gottheimer",
+        "Lisa McClain",
+        "Marjorie Taylor Greene",
+        "Nancy Pelosi",
+        "Rob Bresnahan"
+      ],
+      "last_txn_date": "2026-07-16",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-07-16",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-05-14",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "sell",
+          "txn_date": "2026-02-27",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-10-24",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-07-16",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-07-10",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-05-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-01-21",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "sell",
+          "txn_date": "2025-01-13",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-01-08",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-01-08",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Nancy Pelosi",
+          "side": "buy",
+          "txn_date": "2024-12-20",
+          "instrument": "options",
+          "amount_low": 1000001,
+          "amount_high": 5000000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2024-12-11",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "IBM",
+      "buys": 5,
+      "sells": 2,
+      "member_count": 3,
+      "members": [
+        "Josh Gottheimer",
+        "Lisa McClain",
+        "Rob Bresnahan"
+      ],
+      "last_txn_date": "2026-07-16",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "sell",
+          "txn_date": "2026-07-16",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-07-16",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-06-17",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-03-26",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-03-11",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2025-03-10",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-03-10",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "CRWD",
+      "buys": 7,
+      "sells": 2,
+      "member_count": 4,
+      "members": [
+        "Josh Gottheimer",
+        "Lisa McClain",
+        "Marjorie Taylor Greene",
+        "Rob Bresnahan"
+      ],
+      "last_txn_date": "2026-07-15",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-07-15",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-09-11",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-08-04",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-07-16",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-03-07",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-01-28",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-01-28",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-01-28",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "sell",
+          "txn_date": "2025-01-13",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "FN",
+      "buys": 3,
+      "sells": 3,
+      "member_count": 2,
+      "members": [
+        "Josh Gottheimer",
+        "Lisa McClain"
+      ],
+      "last_txn_date": "2026-07-14",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "sell",
+          "txn_date": "2026-07-14",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-05-01",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-03-24",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-10-31",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-10-30",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-10-30",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
     {
       "ticker": "ZTS",
       "buys": 5,
@@ -34913,118 +36055,6 @@
       ]
     },
     {
-      "ticker": "PANW",
-      "buys": 9,
-      "sells": 3,
-      "member_count": 5,
-      "members": [
-        "Josh Gottheimer",
-        "Lisa McClain",
-        "Marjorie Taylor Greene",
-        "Nancy Pelosi",
-        "Rob Bresnahan"
-      ],
-      "last_txn_date": "2026-05-14",
-      "events": [
-        {
-          "member": "Josh Gottheimer",
-          "side": "buy",
-          "txn_date": "2026-05-14",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Josh Gottheimer",
-          "side": "sell",
-          "txn_date": "2026-02-27",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-10-24",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-07-16",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-07-10",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-05-05",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-01-21",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "sell",
-          "txn_date": "2025-01-13",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-01-08",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-01-08",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Nancy Pelosi",
-          "side": "buy",
-          "txn_date": "2024-12-20",
-          "instrument": "options",
-          "amount_low": 1000001,
-          "amount_high": 5000000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2024-12-11",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
       "ticker": "SNDK",
       "buys": 2,
       "sells": 4,
@@ -35080,52 +36110,6 @@
           "member": "Rob Bresnahan",
           "side": "sell",
           "txn_date": "2025-04-04",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
-      "ticker": "CMCSA",
-      "buys": 1,
-      "sells": 3,
-      "member_count": 3,
-      "members": [
-        "Kevin Hern",
-        "Mike Kelly",
-        "Rob Bresnahan"
-      ],
-      "last_txn_date": "2026-05-07",
-      "events": [
-        {
-          "member": "Mike Kelly",
-          "side": "sell",
-          "txn_date": "2026-05-07",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Kevin Hern",
-          "side": "sell",
-          "txn_date": "2026-03-17",
-          "instrument": "shares",
-          "amount_low": 15001,
-          "amount_high": 50000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-04-08",
-          "instrument": "shares",
-          "amount_low": 15001,
-          "amount_high": 50000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "sell",
-          "txn_date": "2025-02-25",
           "instrument": "shares",
           "amount_low": 1001,
           "amount_high": 15000
@@ -35541,59 +36525,6 @@
           "member": "Josh Gottheimer",
           "side": "buy",
           "txn_date": "2025-01-31",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
-      "ticker": "FN",
-      "buys": 3,
-      "sells": 2,
-      "member_count": 2,
-      "members": [
-        "Josh Gottheimer",
-        "Lisa McClain"
-      ],
-      "last_txn_date": "2026-05-01",
-      "events": [
-        {
-          "member": "Josh Gottheimer",
-          "side": "buy",
-          "txn_date": "2026-05-01",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Josh Gottheimer",
-          "side": "buy",
-          "txn_date": "2026-03-24",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-10-31",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-10-30",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-10-30",
           "instrument": "shares",
           "amount_low": 1001,
           "amount_high": 15000
@@ -37600,59 +38531,6 @@
       ]
     },
     {
-      "ticker": "KVUE",
-      "buys": 2,
-      "sells": 3,
-      "member_count": 2,
-      "members": [
-        "Kevin Hern",
-        "Lisa McClain"
-      ],
-      "last_txn_date": "2026-03-17",
-      "events": [
-        {
-          "member": "Kevin Hern",
-          "side": "sell",
-          "txn_date": "2026-03-17",
-          "instrument": "shares",
-          "amount_low": 15001,
-          "amount_high": 50000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-10-31",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-10-30",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-10-30",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-09-25",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
       "ticker": "CTSH",
       "buys": 1,
       "sells": 2,
@@ -38900,43 +39778,6 @@
           "member": "Josh Gottheimer",
           "side": "sell",
           "txn_date": "2026-02-04",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
-      "ticker": "MNST",
-      "buys": 2,
-      "sells": 1,
-      "member_count": 2,
-      "members": [
-        "Josh Gottheimer",
-        "Lisa McClain"
-      ],
-      "last_txn_date": "2026-02-02",
-      "events": [
-        {
-          "member": "Josh Gottheimer",
-          "side": "buy",
-          "txn_date": "2026-02-02",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-07-10",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-06-17",
           "instrument": "shares",
           "amount_low": 1001,
           "amount_high": 15000
@@ -49356,35 +50197,6 @@
       ]
     },
     {
-      "ticker": "NICE",
-      "buys": 1,
-      "sells": 1,
-      "member_count": 2,
-      "members": [
-        "Josh Gottheimer",
-        "Lisa McClain"
-      ],
-      "last_txn_date": "2025-10-17",
-      "events": [
-        {
-          "member": "Josh Gottheimer",
-          "side": "buy",
-          "txn_date": "2025-10-17",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-07-16",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
       "ticker": "ADBE",
       "buys": 8,
       "sells": 3,
@@ -50471,59 +51283,6 @@
       ]
     },
     {
-      "ticker": "DEO",
-      "buys": 2,
-      "sells": 3,
-      "member_count": 2,
-      "members": [
-        "Josh Gottheimer",
-        "Lisa McClain"
-      ],
-      "last_txn_date": "2025-09-25",
-      "events": [
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-09-25",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Josh Gottheimer",
-          "side": "sell",
-          "txn_date": "2025-09-22",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-09-11",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-08-04",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-06-24",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
       "ticker": "DLB",
       "buys": 2,
       "sells": 2,
@@ -51097,84 +51856,6 @@
           "member": "Josh Gottheimer",
           "side": "sell",
           "txn_date": "2025-03-19",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
-      "ticker": "CRWD",
-      "buys": 6,
-      "sells": 2,
-      "member_count": 3,
-      "members": [
-        "Lisa McClain",
-        "Marjorie Taylor Greene",
-        "Rob Bresnahan"
-      ],
-      "last_txn_date": "2025-09-11",
-      "events": [
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-09-11",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-08-04",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-07-16",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-03-07",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-01-28",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-01-28",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-01-28",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "sell",
-          "txn_date": "2025-01-13",
           "instrument": "shares",
           "amount_low": 1001,
           "amount_high": 15000
@@ -54719,68 +55400,6 @@
           "member": "Lisa McClain",
           "side": "buy",
           "txn_date": "2025-07-16",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
-      "ticker": "IBM",
-      "buys": 5,
-      "sells": 1,
-      "member_count": 3,
-      "members": [
-        "Josh Gottheimer",
-        "Lisa McClain",
-        "Rob Bresnahan"
-      ],
-      "last_txn_date": "2025-07-16",
-      "events": [
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-07-16",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-06-17",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-03-26",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-03-11",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Josh Gottheimer",
-          "side": "buy",
-          "txn_date": "2025-03-10",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-03-10",
           "instrument": "shares",
           "amount_low": 1001,
           "amount_high": 15000
@@ -63290,26 +63909,6 @@
       ]
     },
     {
-      "ticker": "MDLZ",
-      "buys": 1,
-      "sells": 0,
-      "member_count": 1,
-      "members": [
-        "Rob Bresnahan"
-      ],
-      "last_txn_date": "2025-02-25",
-      "events": [
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-02-25",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
       "ticker": "STE",
       "buys": 1,
       "sells": 0,
@@ -64162,26 +64761,6 @@
           "instrument": "shares",
           "amount_low": 1001,
           "amount_high": 15000
-        }
-      ]
-    },
-    {
-      "ticker": "EL",
-      "buys": 0,
-      "sells": 1,
-      "member_count": 1,
-      "members": [
-        "Kevin Hern"
-      ],
-      "last_txn_date": "2024-12-31",
-      "events": [
-        {
-          "member": "Kevin Hern",
-          "side": "sell",
-          "txn_date": "2024-12-31",
-          "instrument": "shares",
-          "amount_low": 15001,
-          "amount_high": 50000
         }
       ]
     },
