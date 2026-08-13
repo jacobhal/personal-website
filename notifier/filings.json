@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T12:08:48.655865Z",
+  "updated": "2026-08-13T13:43:31.533767Z",
   "window_days": 365,
   "proven_members": [
     "David Rouzer",
@@ -9,6 +9,64 @@
     "Warren Davidson"
   ],
   "filings": [
+    {
+      "name": "Rob Bresnahan",
+      "last": "Bresnahan",
+      "first": "Rob",
+      "filing_type": "P",
+      "filing_date": "2026-08-12",
+      "year": "2026",
+      "doc_id": "20035216",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035216.pdf",
+      "proven": false,
+      "trades": [
+        {
+          "owner": "self",
+          "asset": "US Treasury Note 06/30/27 [GS]",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-01",
+          "amount_low": 15001,
+          "amount_high": 50000
+        }
+      ],
+      "trades_version": 1
+    },
+    {
+      "name": "Kevin Hern",
+      "last": "Hern",
+      "first": "Kevin",
+      "filing_type": "P",
+      "filing_date": "2026-08-12",
+      "year": "2026",
+      "doc_id": "20035196",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035196.pdf",
+      "proven": false,
+      "trades": [
+        {
+          "owner": "self",
+          "asset": "2000166537 JT Organon & Co. Common Stock",
+          "ticker": "OGN",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-05",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "self",
+          "asset": "2000166538 JT Versant Media Group, Inc. - Class",
+          "ticker": "VSNT",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-05",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ],
+      "trades_version": 1
+    },
     {
       "name": "Mike Kelly",
       "last": "Kelly",
@@ -57,6 +115,30 @@
           "side": "buy",
           "instrument": "shares",
           "txn_date": "2025-07-17",
+          "amount_low": 50001,
+          "amount_high": 100000
+        }
+      ],
+      "trades_version": 1
+    },
+    {
+      "name": "Mike Kelly",
+      "last": "Kelly",
+      "first": "Mike",
+      "filing_type": "P",
+      "filing_date": "2026-08-12",
+      "year": "2026",
+      "doc_id": "20035209",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035209.pdf",
+      "proven": false,
+      "trades": [
+        {
+          "owner": "self",
+          "asset": "2000166568 SP California Cmnty Choice Fing &",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-17",
           "amount_low": 50001,
           "amount_high": 100000
         }
@@ -34487,6 +34569,62 @@
       ]
     },
     {
+      "ticker": "OGN",
+      "buys": 0,
+      "sells": 2,
+      "member_count": 1,
+      "members": [
+        "Kevin Hern"
+      ],
+      "last_txn_date": "2026-08-05",
+      "events": [
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-08-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-08-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "VSNT",
+      "buys": 0,
+      "sells": 2,
+      "member_count": 1,
+      "members": [
+        "Kevin Hern"
+      ],
+      "last_txn_date": "2026-08-05",
+      "events": [
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-08-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-08-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
       "ticker": "EL",
       "buys": 0,
       "sells": 2,
@@ -34511,46 +34649,6 @@
           "instrument": "shares",
           "amount_low": 15001,
           "amount_high": 50000
-        }
-      ]
-    },
-    {
-      "ticker": "OGN",
-      "buys": 0,
-      "sells": 1,
-      "member_count": 1,
-      "members": [
-        "Kevin Hern"
-      ],
-      "last_txn_date": "2026-08-05",
-      "events": [
-        {
-          "member": "Kevin Hern",
-          "side": "sell",
-          "txn_date": "2026-08-05",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
-      "ticker": "VSNT",
-      "buys": 0,
-      "sells": 1,
-      "member_count": 1,
-      "members": [
-        "Kevin Hern"
-      ],
-      "last_txn_date": "2026-08-05",
-      "events": [
-        {
-          "member": "Kevin Hern",
-          "side": "sell",
-          "txn_date": "2026-08-05",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
         }
       ]
     },
