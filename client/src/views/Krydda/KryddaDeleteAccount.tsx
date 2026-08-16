@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
+import { PageFavicon } from '../../components/PageFavicon'
 import {
     Box,
     Chip,
@@ -127,6 +128,7 @@ const KryddaDeleteAccount: React.FC = () => {
 
     return (
         <Box sx={{ backgroundColor: colors.bg, minHeight: '100vh', color: colors.text }}>
+            <PageFavicon icon32="/app-icons/krydda-32.png" icon180="/app-icons/krydda-180.png" />
             <Helmet>
                 <html lang={lang} />
                 <title>{t.title} — Krydda</title>

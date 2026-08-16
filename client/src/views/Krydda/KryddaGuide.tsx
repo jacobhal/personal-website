@@ -1,5 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import { PageFavicon } from '../../components/PageFavicon'
 import { Box, Container, Stack, Typography } from '@mui/material'
 import icon from '../../assets/images/krydda_icon.png'
 
@@ -95,6 +96,7 @@ const KryddaGuide: React.FC = () => {
                 py: { xs: 5, sm: 7 },
             }}
         >
+            <PageFavicon icon32="/app-icons/krydda-32.png" icon180="/app-icons/krydda-180.png" />
             <Helmet>
                 <title>{copy.docTitle}</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import { PageFavicon } from '../../components/PageFavicon'
 import {
     Box,
     Button,
@@ -53,15 +54,15 @@ const showcases: Showcase[] = [
         eyebrow: 'Save from anywhere',
         title: 'Any recipe page.\nOne tap.',
         body: 'Open a recipe in Krydda’s own browser and tap once. Ingredients, steps, times and the photo come across — no AI, no copying, no retyping. Tested against the biggest recipe sites in Sweden and abroad.',
-        image: '/krydda/web-import-poster.jpg',
-        video: '/krydda/web-import.mp4',
+        image: '/krydda-media/web-import-poster.jpg',
+        video: '/krydda-media/web-import.mp4',
         alt: 'Saving a recipe from a website inside Krydda',
     },
     {
         eyebrow: 'Instagram and TikTok',
         title: 'Share a post.\nGet a real recipe.',
         body: 'Found dinner in a Reel? Share the post to Krydda and its caption becomes a proper recipe with an ingredient list you can take to the shop — and a link back to the creator.',
-        image: '/krydda/social.jpg',
+        image: '/krydda-media/social.jpg',
         alt: 'Sharing an Instagram post into Krydda',
         reverse: true,
     },
@@ -69,14 +70,14 @@ const showcases: Showcase[] = [
         eyebrow: 'Weekly planning',
         title: 'A week of dinners,\nplanned in seconds.',
         body: 'Tell Krydda what you like and it builds a full week from your own recipes — then turns the whole plan into one shopping list, sorted and de-duplicated.',
-        image: '/krydda/weekly.jpg',
+        image: '/krydda-media/weekly.jpg',
         alt: 'Krydda generating a weekly meal plan',
     },
     {
         eyebrow: 'Cooking, not admin',
         title: 'One list for\nthe whole week.',
         body: 'Every ingredient from every planned meal, combined into a single list. Check things off as you shop, keep a pantry, and share the list with the household.',
-        image: '/krydda/groceries.jpg',
+        image: '/krydda-media/groceries.jpg',
         alt: 'Krydda shopping list',
         reverse: true,
     },
@@ -110,6 +111,7 @@ const Krydda: React.FC = () => {
                 color: colors.text,
             }}
         >
+            <PageFavicon icon32="/app-icons/krydda-32.png" icon180="/app-icons/krydda-180.png" />
             <Helmet>
                 <title>
                     Krydda — every recipe you love, in one place
@@ -136,7 +138,7 @@ const Krydda: React.FC = () => {
                 />
                 <meta
                     property="og:image"
-                    content="https://jacobhal.se/krydda/og-image.jpg"
+                    content="https://jacobhal.se/krydda-media/og-image.jpg"
                 />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta
@@ -149,7 +151,7 @@ const Krydda: React.FC = () => {
                 />
                 <meta
                     name="twitter:image"
-                    content="https://jacobhal.se/krydda/og-image.jpg"
+                    content="https://jacobhal.se/krydda-media/og-image.jpg"
                 />
                 <link rel="canonical" href="https://jacobhal.se/krydda" />
             </Helmet>
