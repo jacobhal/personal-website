@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-14T15:04:44.009808Z",
+  "updated": "2026-08-16T10:45:55.775306Z",
   "window_days": 365,
   "proven_members": [
     "David Rouzer",
@@ -9,6 +9,568 @@
     "Warren Davidson"
   ],
   "filings": [
+    {
+      "name": "Rob Bresnahan",
+      "last": "Bresnahan",
+      "first": "Rob",
+      "filing_type": "P",
+      "filing_date": "2026-08-12",
+      "year": "2026",
+      "doc_id": "20035216",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035216.pdf",
+      "proven": false,
+      "trades": [
+        {
+          "owner": "self",
+          "asset": "US Treasury Note 06/30/27 [GS]",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-01",
+          "amount_low": 15001,
+          "amount_high": 50000
+        }
+      ],
+      "trades_version": 1
+    },
+    {
+      "name": "Kevin Hern",
+      "last": "Hern",
+      "first": "Kevin",
+      "filing_type": "P",
+      "filing_date": "2026-08-12",
+      "year": "2026",
+      "doc_id": "20035196",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035196.pdf",
+      "proven": false,
+      "trades": [
+        {
+          "owner": "self",
+          "asset": "2000166537 JT Organon & Co. Common Stock",
+          "ticker": "OGN",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-05",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "self",
+          "asset": "2000166538 JT Versant Media Group, Inc. - Class",
+          "ticker": "VSNT",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-05",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ],
+      "trades_version": 1
+    },
+    {
+      "name": "Mike Kelly",
+      "last": "Kelly",
+      "first": "Mike",
+      "filing_type": "P",
+      "filing_date": "2026-08-12",
+      "year": "2026",
+      "doc_id": "20035203",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035203.pdf",
+      "proven": false,
+      "trades": [
+        {
+          "owner": "spouse",
+          "asset": "Abbott Laboratories Common Stock",
+          "ticker": "ABT",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-07-17",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Pepsico, Inc. (PEP) [ST]",
+          "ticker": "PEP",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-07-17",
+          "amount_low": 15001,
+          "amount_high": 50000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Walt Disney Company (DIS) [ST]",
+          "ticker": "DIS",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-07-17",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "spouse",
+          "asset": "California Cmnty Choice Fing & Clean",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2025-07-17",
+          "amount_low": 50001,
+          "amount_high": 100000
+        }
+      ],
+      "trades_version": 1
+    },
+    {
+      "name": "Mike Kelly",
+      "last": "Kelly",
+      "first": "Mike",
+      "filing_type": "P",
+      "filing_date": "2026-08-12",
+      "year": "2026",
+      "doc_id": "20035209",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035209.pdf",
+      "proven": false,
+      "trades": [
+        {
+          "owner": "self",
+          "asset": "2000166568 SP California Cmnty Choice Fing &",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-17",
+          "amount_low": 50001,
+          "amount_high": 100000
+        }
+      ],
+      "trades_version": 1
+    },
+    {
+      "name": "Suzan K. DelBene",
+      "last": "DelBene",
+      "first": "Suzan K.",
+      "filing_type": "P",
+      "filing_date": "2026-08-11",
+      "year": "2026",
+      "doc_id": "20035175",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035175.pdf",
+      "proven": false,
+      "trades": [
+        {
+          "owner": "joint",
+          "asset": "Fort Bend Tex Indpt SCH Dist",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-23",
+          "amount_low": 250001,
+          "amount_high": 500000
+        }
+      ],
+      "trades_version": 1
+    },
+    {
+      "name": "Josh Gottheimer",
+      "last": "Gottheimer",
+      "first": "Josh",
+      "filing_type": "P",
+      "filing_date": "2026-08-10",
+      "year": "2026",
+      "doc_id": "20035186",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035186.pdf",
+      "proven": false,
+      "trades": [
+        {
+          "owner": "joint",
+          "asset": "Alphabet Inc. - Depositary Shares",
+          "ticker": "GOOGM",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-24",
+          "amount_low": 1001,
+          "amount_high": 15000,
+          "price_then": 46.81,
+          "price_now": 49.29,
+          "pct_since": 5.3
+        },
+        {
+          "owner": "joint",
+          "asset": "Alphabet Inc. - Depositary Shares",
+          "ticker": "GOOGN",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-24",
+          "amount_low": 1001,
+          "amount_high": 15000,
+          "price_then": 46.74,
+          "price_now": 48.97,
+          "pct_since": 4.8
+        },
+        {
+          "owner": "joint",
+          "asset": "Alphabet Inc. - Depositary Shares",
+          "ticker": "GOOGN",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-23",
+          "amount_low": 1001,
+          "amount_high": 15000,
+          "price_then": 46.81,
+          "price_now": 48.97,
+          "pct_since": 4.6
+        },
+        {
+          "owner": "joint",
+          "asset": "Crown Castle Inc. Common Stock",
+          "ticker": "CCI",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-07-23",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "joint",
+          "asset": "NICE Ltd - American Depositary",
+          "ticker": "NICE",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-20",
+          "amount_low": 1001,
+          "amount_high": 15000,
+          "price_then": 101.34,
+          "price_now": 102.26,
+          "pct_since": 0.9
+        },
+        {
+          "owner": "joint",
+          "asset": "SailPoint Technologies Holdings, Inc.",
+          "ticker": "SAIL",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-20",
+          "amount_low": 1001,
+          "amount_high": 15000,
+          "price_then": 15.22,
+          "price_now": 19.53,
+          "pct_since": 28.3
+        },
+        {
+          "owner": "joint",
+          "asset": "Chart Industries, Inc. (GTLS) [ST]",
+          "ticker": "GTLS",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-07-17",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "joint",
+          "asset": "Monster Beverage Corporation -",
+          "ticker": "MNST",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-17",
+          "amount_low": 1001,
+          "amount_high": 15000,
+          "price_now": 46.82,
+          "pct_since": -4.0,
+          "price_then": 48.75
+        },
+        {
+          "owner": "joint",
+          "asset": "International Business Machines",
+          "ticker": "IBM",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-07-16",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "joint",
+          "asset": "Palo Alto Networks, Inc. (PANW)",
+          "ticker": "PANW",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-16",
+          "amount_low": 1001,
+          "amount_high": 15000,
+          "price_now": 384.26999,
+          "pct_since": 8.6,
+          "price_then": 353.98999
+        },
+        {
+          "owner": "joint",
+          "asset": "CrowdStrike Holdings, Inc. - Class A",
+          "ticker": "CRWD",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-15",
+          "amount_low": 1001,
+          "amount_high": 15000,
+          "price_then": 206.77,
+          "price_now": 216.95,
+          "pct_since": 4.9
+        },
+        {
+          "owner": "joint",
+          "asset": "Fabrinet Ordinary Shares (FN) [ST]",
+          "ticker": "FN",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-07-14",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ],
+      "trades_version": 1
+    },
+    {
+      "name": "Kevin Hern",
+      "last": "Hern",
+      "first": "Kevin",
+      "filing_type": "P",
+      "filing_date": "2026-08-10",
+      "year": "2026",
+      "doc_id": "20035134",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035134.pdf",
+      "proven": false,
+      "trades": [
+        {
+          "owner": "joint",
+          "asset": "Comcast Corporation - Class A",
+          "ticker": "CMCSA",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-05",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "joint",
+          "asset": "Diageo plc Common Stock (DEO) [ST]",
+          "ticker": "DEO",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-05",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "joint",
+          "asset": "Estee Lauder Companies, Inc. (EL)",
+          "ticker": "EL",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-05",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "joint",
+          "asset": "Kenvue Inc. Common Stock (KVUE)",
+          "ticker": "KVUE",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-05",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "joint",
+          "asset": "Mondelez International, Inc. - Class A",
+          "ticker": "MDLZ",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-05",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "joint",
+          "asset": "Organon & Co. Common Stock (OGN)",
+          "ticker": "OGN",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-05",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "joint",
+          "asset": "Versant Media Group, Inc. - Class A",
+          "ticker": "VSNT",
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-05",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "owner": "joint",
+          "asset": "CADDO CNTY OKLA",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-24",
+          "amount_low": 50001,
+          "amount_high": 100000
+        },
+        {
+          "owner": "joint",
+          "asset": "TULSA CNTY OKLA INDPT SCH",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-24",
+          "amount_low": 100001,
+          "amount_high": 250000
+        },
+        {
+          "owner": "joint",
+          "asset": "GRAND RIVER DAM AUTH OKLA",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-20",
+          "amount_low": 15001,
+          "amount_high": 50000
+        },
+        {
+          "owner": "joint",
+          "asset": "KINGFISHER CNTY OKLA EDL",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-20",
+          "amount_low": 100001,
+          "amount_high": 250000
+        },
+        {
+          "owner": "joint",
+          "asset": "LAWTON OKLA GO BDS SER. 2019",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-17",
+          "amount_low": 15001,
+          "amount_high": 50000
+        },
+        {
+          "owner": "joint",
+          "asset": "OKLAHOMA CNTY OKLA FIN AUTH",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-17",
+          "amount_low": 15001,
+          "amount_high": 50000
+        },
+        {
+          "owner": "joint",
+          "asset": "EDMOND OKLA PUB WKS AUTH",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-16",
+          "amount_low": 15001,
+          "amount_high": 50000
+        }
+      ],
+      "trades_version": 1
+    },
+    {
+      "name": "Rohit Khanna",
+      "last": "Khanna",
+      "first": "Rohit",
+      "filing_type": "P",
+      "filing_date": "2026-08-07",
+      "year": "2026",
+      "doc_id": "9116267",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9116267.pdf",
+      "proven": false,
+      "trades": [],
+      "trades_version": 1
+    },
+    {
+      "name": "Lisa McClain",
+      "last": "McClain",
+      "first": "Lisa",
+      "filing_type": "P",
+      "filing_date": "2026-08-05",
+      "year": "2026",
+      "doc_id": "20035131",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035131.pdf",
+      "proven": true,
+      "trades": [
+        {
+          "owner": "spouse",
+          "asset": "Saronic Technologies [PS]",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-15",
+          "amount_low": 50001,
+          "amount_high": 100000
+        }
+      ],
+      "trades_version": 1
+    },
+    {
+      "name": "Kevin Hern",
+      "last": "Hern",
+      "first": "Kevin",
+      "filing_type": "P",
+      "filing_date": "2026-07-16",
+      "year": "2026",
+      "doc_id": "20035013",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035013.pdf",
+      "proven": false,
+      "trades": [],
+      "trades_version": 1
+    },
+    {
+      "name": "Byron Donalds",
+      "last": "Donalds",
+      "first": "Byron",
+      "filing_type": "P",
+      "filing_date": "2026-07-15",
+      "year": "2026",
+      "doc_id": "20034968",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034968.pdf",
+      "proven": false,
+      "trades": [
+        {
+          "owner": "self",
+          "asset": "Zoetis Inc. Class A Common Stock",
+          "ticker": "ZTS",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-06-09",
+          "amount_low": 1001,
+          "amount_high": 15000,
+          "price_now": 73.79,
+          "pct_since": -10.2,
+          "price_then": 82.2
+        },
+        {
+          "owner": "spouse",
+          "asset": "Zoetis Inc. Class A Common Stock",
+          "ticker": "ZTS",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-06-09",
+          "amount_low": 1001,
+          "amount_high": 15000,
+          "price_now": 73.79,
+          "pct_since": -10.2,
+          "price_then": 82.2
+        }
+      ],
+      "trades_version": 1
+    },
     {
       "name": "Scott H. Peters",
       "last": "Peters",
@@ -257,8 +819,8 @@
           "txn_date": "2026-05-29",
           "amount_low": 1000001,
           "amount_high": 5000000,
-          "price_now": 103.12,
-          "pct_since": -10.1,
+          "price_now": 102.5,
+          "pct_since": -10.6,
           "price_then": 114.68
         },
         {
@@ -270,8 +832,8 @@
           "txn_date": "2026-05-29",
           "amount_low": 500001,
           "amount_high": 1000000,
-          "price_now": 74.26,
-          "pct_since": 5.5,
+          "price_now": 75.95,
+          "pct_since": 7.9,
           "price_then": 70.4
         }
       ],
@@ -645,8 +1207,8 @@
           "txn_date": "2026-05-22",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 768.15002,
-          "pct_since": -18.9,
+          "price_now": 926.14001,
+          "pct_since": -2.2,
           "price_then": 946.90002
         },
         {
@@ -658,8 +1220,8 @@
           "txn_date": "2026-05-21",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 937.0,
-          "pct_since": 22.9,
+          "price_now": 971.65997,
+          "pct_since": 27.5,
           "price_then": 762.099976
         },
         {
@@ -671,8 +1233,8 @@
           "txn_date": "2026-05-19",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 386.01001,
-          "pct_since": -6.8,
+          "price_now": 389.39001,
+          "pct_since": -6.0,
           "price_then": 414.31
         },
         {
@@ -704,8 +1266,8 @@
           "txn_date": "2026-05-19",
           "amount_low": 250001,
           "amount_high": 500000,
-          "price_now": 390.98999,
-          "pct_since": -6.3,
+          "price_now": 495.39999,
+          "pct_since": 18.7,
           "price_then": 417.42001
         },
         {
@@ -717,8 +1279,8 @@
           "txn_date": "2026-05-19",
           "amount_low": 500001,
           "amount_high": 1000000,
-          "price_now": 390.98999,
-          "pct_since": -6.3,
+          "price_now": 495.39999,
+          "pct_since": 18.7,
           "price_then": 417.42001
         },
         {
@@ -740,8 +1302,8 @@
           "txn_date": "2026-05-14",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 330.29999,
-          "pct_since": 38.7,
+          "price_now": 384.26999,
+          "pct_since": 61.3,
           "price_then": 238.21001
         },
         {
@@ -753,8 +1315,8 @@
           "txn_date": "2026-05-07",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 1673.96997,
-          "pct_since": 24.9,
+          "price_now": 1641.10999,
+          "pct_since": 22.5,
           "price_then": 1339.95996
         },
         {
@@ -776,8 +1338,8 @@
           "txn_date": "2026-05-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 534.39001,
-          "pct_since": 50.4,
+          "price_now": 514.39001,
+          "pct_since": 44.8,
           "price_then": 355.26001
         },
         {
@@ -789,8 +1351,8 @@
           "txn_date": "2026-05-04",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 218.24001,
-          "pct_since": 15.1,
+          "price_now": 238.2,
+          "pct_since": 25.6,
           "price_then": 189.67
         },
         {
@@ -802,8 +1364,8 @@
           "txn_date": "2026-05-01",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 474.64001,
-          "pct_since": -32.8,
+          "price_now": 570.21997,
+          "pct_since": -19.3,
           "price_then": 706.53003
         }
       ],
@@ -911,8 +1473,8 @@
           "txn_date": "2026-04-27",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 534.39001,
-          "pct_since": 59.7,
+          "price_now": 514.39001,
+          "pct_since": 53.7,
           "price_then": 334.63
         },
         {
@@ -934,8 +1496,8 @@
           "txn_date": "2026-04-23",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 534.39001,
-          "pct_since": 75.0,
+          "price_now": 514.39001,
+          "pct_since": 68.5,
           "price_then": 305.32999
         },
         {
@@ -947,8 +1509,8 @@
           "txn_date": "2026-04-16",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 1045.91003,
-          "pct_since": 16.2,
+          "price_now": 1039.42004,
+          "pct_since": 15.5,
           "price_then": 900.0
         },
         {
@@ -960,8 +1522,8 @@
           "txn_date": "2026-04-15",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 59.97,
-          "pct_since": -12.7,
+          "price_now": 66.49,
+          "pct_since": -3.2,
           "price_then": 68.7
         },
         {
@@ -973,8 +1535,8 @@
           "txn_date": "2026-04-13",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 78.91,
-          "pct_since": 54.2,
+          "price_now": 71.68,
+          "pct_since": 40.0,
           "price_then": 51.19
         },
         {
@@ -986,8 +1548,8 @@
           "txn_date": "2026-04-13",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 28.56,
-          "pct_since": 35.3,
+          "price_now": 40.11,
+          "pct_since": 90.0,
           "price_then": 21.11
         },
         {
@@ -1129,8 +1691,8 @@
           "txn_date": "2026-04-06",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 40.47,
-          "pct_since": 43.1,
+          "price_now": 54.46,
+          "pct_since": 92.6,
           "price_then": 28.28
         },
         {
@@ -1142,8 +1704,8 @@
           "txn_date": "2026-04-06",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 12.2,
-          "pct_since": 7.4,
+          "price_now": 12.72,
+          "pct_since": 12.0,
           "price_then": 11.36
         },
         {
@@ -1155,8 +1717,8 @@
           "txn_date": "2026-04-06",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 131.42999,
-          "pct_since": 16.7,
+          "price_now": 125.12,
+          "pct_since": 11.1,
           "price_then": 112.63
         }
       ],
@@ -1486,8 +2048,8 @@
           "txn_date": "2026-04-02",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 1181.87,
-          "pct_since": 26.3,
+          "price_now": 1180.16003,
+          "pct_since": 26.1,
           "price_then": 935.58002
         },
         {
@@ -1499,8 +2061,8 @@
           "txn_date": "2026-04-02",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 1181.87,
-          "pct_since": 26.3,
+          "price_now": 1180.16003,
+          "pct_since": 26.1,
           "price_then": 935.58002
         },
         {
@@ -1532,8 +2094,8 @@
           "txn_date": "2026-04-02",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 217.53,
-          "pct_since": 103.1,
+          "price_now": 222.020004,
+          "pct_since": 107.3,
           "price_then": 107.11
         },
         {
@@ -1545,8 +2107,8 @@
           "txn_date": "2026-04-02",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 217.53,
-          "pct_since": 103.1,
+          "price_now": 222.020004,
+          "pct_since": 107.3,
           "price_then": 107.11
         }
       ],
@@ -1788,8 +2350,8 @@
           "txn_date": "2026-03-20",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 73.83,
-          "pct_since": -19.6,
+          "price_now": 78.16,
+          "pct_since": -14.9,
           "price_then": 91.82
         },
         {
@@ -1801,8 +2363,8 @@
           "txn_date": "2026-03-20",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 73.83,
-          "pct_since": -19.6,
+          "price_now": 78.16,
+          "pct_since": -14.9,
           "price_then": 91.82
         },
         {
@@ -1834,8 +2396,8 @@
           "txn_date": "2026-03-13",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 47.65,
-          "pct_since": 6.1,
+          "price_now": 61.66,
+          "pct_since": 37.3,
           "price_then": 44.9
         },
         {
@@ -1847,8 +2409,8 @@
           "txn_date": "2026-03-13",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 47.65,
-          "pct_since": 6.1,
+          "price_now": 61.66,
+          "pct_since": 37.3,
           "price_then": 44.9
         }
       ],
@@ -1874,8 +2436,8 @@
           "txn_date": "2026-03-25",
           "amount_low": 50001,
           "amount_high": 100000,
-          "price_now": 390.98999,
-          "pct_since": 5.4,
+          "price_now": 495.39999,
+          "pct_since": 33.5,
           "price_then": 371.040009
         },
         {
@@ -1887,8 +2449,8 @@
           "txn_date": "2026-03-25",
           "amount_low": 500001,
           "amount_high": 1000000,
-          "price_now": 390.98999,
-          "pct_since": 5.4,
+          "price_now": 495.39999,
+          "pct_since": 33.5,
           "price_then": 371.040009
         },
         {
@@ -1900,8 +2462,8 @@
           "txn_date": "2026-03-24",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 474.64001,
-          "pct_since": -21.0,
+          "price_now": 570.21997,
+          "pct_since": -5.1,
           "price_then": 600.90997
         },
         {
@@ -1953,8 +2515,8 @@
           "txn_date": "2026-03-10",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 110.66,
-          "pct_since": 24.1,
+          "price_now": 121.94,
+          "pct_since": 36.8,
           "price_then": 89.17
         },
         {
@@ -1966,8 +2528,8 @@
           "txn_date": "2026-03-06",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 111.26,
-          "pct_since": -10.5,
+          "price_now": 124.0,
+          "pct_since": -0.3,
           "price_then": 124.34
         },
         {
@@ -1979,8 +2541,8 @@
           "txn_date": "2026-03-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 301.95999,
-          "pct_since": 9.3,
+          "price_now": 308.97,
+          "pct_since": 11.8,
           "price_then": 276.35001
         },
         {
@@ -2382,8 +2944,8 @@
           "txn_date": "2026-02-27",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 78.91,
-          "pct_since": 46.1,
+          "price_now": 71.68,
+          "pct_since": 32.7,
           "price_then": 54.02
         },
         {
@@ -2405,8 +2967,8 @@
           "txn_date": "2026-02-26",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 116.94,
-          "pct_since": -0.6,
+          "price_now": 125.85,
+          "pct_since": 7.0,
           "price_then": 117.63
         },
         {
@@ -2418,8 +2980,8 @@
           "txn_date": "2026-02-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 664.39001,
-          "pct_since": 22.9,
+          "price_now": 631.26001,
+          "pct_since": 16.8,
           "price_then": 540.65002
         },
         {
@@ -2431,8 +2993,8 @@
           "txn_date": "2026-02-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 1042.59998,
-          "pct_since": 41.4,
+          "price_now": 1063.25,
+          "pct_since": 44.2,
           "price_then": 737.53003
         },
         {
@@ -2444,8 +3006,8 @@
           "txn_date": "2026-02-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 429.089996,
-          "pct_since": 59.8,
+          "price_now": 401.73001,
+          "pct_since": 49.6,
           "price_then": 268.54999
         },
         {
@@ -2467,8 +3029,8 @@
           "txn_date": "2026-02-04",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 144.50999,
-          "pct_since": -2.1,
+          "price_now": 160.10001,
+          "pct_since": 8.5,
           "price_then": 147.59
         },
         {
@@ -2490,8 +3052,8 @@
           "txn_date": "2026-02-04",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 124.029999,
-          "pct_since": 4.8,
+          "price_now": 135.84,
+          "pct_since": 14.8,
           "price_then": 118.33
         },
         {
@@ -2503,8 +3065,8 @@
           "txn_date": "2026-02-02",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 144.50999,
-          "pct_since": 4.4,
+          "price_now": 160.10001,
+          "pct_since": 15.7,
           "price_then": 138.39999
         },
         {
@@ -2516,8 +3078,8 @@
           "txn_date": "2026-02-02",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 97.07,
-          "pct_since": 19.7,
+          "price_now": 46.82,
+          "pct_since": -42.3,
           "price_then": 81.099998
         }
       ],
@@ -2677,8 +3239,8 @@
           "txn_date": "2026-02-10",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 111.26,
-          "pct_since": 4.5,
+          "price_now": 124.0,
+          "pct_since": 16.5,
           "price_then": 106.48
         },
         {
@@ -2690,8 +3252,8 @@
           "txn_date": "2026-02-10",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 111.26,
-          "pct_since": 4.5,
+          "price_now": 124.0,
+          "pct_since": 16.5,
           "price_then": 106.48
         },
         {
@@ -2703,8 +3265,8 @@
           "txn_date": "2026-02-10",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 19.79,
-          "pct_since": -29.6,
+          "price_now": 14.14,
+          "pct_since": -49.7,
           "price_then": 28.13
         },
         {
@@ -2716,8 +3278,8 @@
           "txn_date": "2026-02-10",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 19.79,
-          "pct_since": -29.6,
+          "price_now": 14.14,
+          "pct_since": -49.7,
           "price_then": 28.13
         }
       ],
@@ -2756,8 +3318,8 @@
           "txn_date": "2026-02-06",
           "amount_low": 15001,
           "amount_high": 50000,
-          "price_now": 3.09,
-          "pct_since": -34.5,
+          "price_now": 3.27,
+          "pct_since": -30.7,
           "price_then": 4.72
         },
         {
@@ -2769,8 +3331,8 @@
           "txn_date": "2026-02-04",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 3.09,
-          "pct_since": -31.3,
+          "price_now": 3.27,
+          "pct_since": -27.3,
           "price_then": 4.5
         }
       ],
@@ -2806,8 +3368,8 @@
           "txn_date": "2026-01-27",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 131.39999,
-          "pct_since": -6.8,
+          "price_now": 138.36,
+          "pct_since": -1.9,
           "price_then": 140.97
         },
         {
@@ -2819,8 +3381,8 @@
           "txn_date": "2026-01-26",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 137.67,
-          "pct_since": -21.4,
+          "price_now": 155.24001,
+          "pct_since": -11.3,
           "price_then": 175.10001
         },
         {
@@ -2957,10 +3519,7 @@
           "instrument": "shares",
           "txn_date": "2026-01-08",
           "amount_low": 1001,
-          "amount_high": 15000,
-          "price_now": 271.28,
-          "pct_since": 29.2,
-          "price_then": 210.020004
+          "amount_high": 15000
         },
         {
           "owner": "self",
@@ -3113,8 +3672,8 @@
           "txn_date": "2026-01-16",
           "amount_low": 1000001,
           "amount_high": 5000000,
-          "price_now": 37.35,
-          "pct_since": -7.0,
+          "price_now": 36.99,
+          "pct_since": -7.9,
           "price_then": 40.17
         },
         {
@@ -3126,8 +3685,8 @@
           "txn_date": "2026-01-16",
           "amount_low": 500001,
           "amount_high": 1000000,
-          "price_now": 352.51001,
-          "pct_since": 6.8,
+          "price_now": 373.51001,
+          "pct_since": 13.2,
           "price_then": 330.0
         },
         {
@@ -3139,8 +3698,8 @@
           "txn_date": "2026-01-16",
           "amount_low": 500001,
           "amount_high": 1000000,
-          "price_now": 247.31,
-          "pct_since": 3.4,
+          "price_now": 284.019989,
+          "pct_since": 18.8,
           "price_then": 239.12
         },
         {
@@ -3152,8 +3711,8 @@
           "txn_date": "2026-01-16",
           "amount_low": 250001,
           "amount_high": 500000,
-          "price_now": 203.53,
-          "pct_since": 9.3,
+          "price_now": 206.64,
+          "pct_since": 11.0,
           "price_then": 186.23
         },
         {
@@ -3165,8 +3724,8 @@
           "txn_date": "2026-01-16",
           "amount_low": 50001,
           "amount_high": 100000,
-          "price_now": 55.93,
-          "pct_since": -20.5,
+          "price_now": 46.049999,
+          "pct_since": -34.5,
           "price_then": 70.33
         },
         {
@@ -3178,8 +3737,8 @@
           "txn_date": "2026-01-16",
           "amount_low": 100001,
           "amount_high": 250000,
-          "price_now": 158.12,
-          "pct_since": -5.1,
+          "price_now": 155.94,
+          "pct_since": -6.4,
           "price_then": 166.60001
         },
         {
@@ -3191,8 +3750,8 @@
           "txn_date": "2025-12-30",
           "amount_low": 250001,
           "amount_high": 500000,
-          "price_now": 352.51001,
-          "pct_since": 12.3,
+          "price_now": 373.51001,
+          "pct_since": 19.0,
           "price_then": 313.85001
         },
         {
@@ -3204,8 +3763,8 @@
           "txn_date": "2025-12-30",
           "amount_low": 100001,
           "amount_high": 250000,
-          "price_now": 247.31,
-          "pct_since": 6.4,
+          "price_now": 284.019989,
+          "pct_since": 22.1,
           "price_then": 232.53
         },
         {
@@ -3216,10 +3775,7 @@
           "instrument": "options",
           "txn_date": "2025-12-30",
           "amount_low": 250001,
-          "amount_high": 500000,
-          "price_now": 317.31,
-          "pct_since": 16.2,
-          "price_then": 273.079987
+          "amount_high": 500000
         },
         {
           "owner": "spouse",
@@ -3230,8 +3786,8 @@
           "txn_date": "2025-12-30",
           "amount_low": 100001,
           "amount_high": 250000,
-          "price_now": 203.53,
-          "pct_since": 8.5,
+          "price_now": 206.64,
+          "pct_since": 10.2,
           "price_then": 187.53999
         },
         {
@@ -5646,8 +6202,8 @@
           "txn_date": "2025-10-30",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 534.39001,
-          "pct_since": 109.7,
+          "price_now": 514.39001,
+          "pct_since": 101.8,
           "price_then": 254.84
         },
         {
@@ -5739,8 +6295,8 @@
           "txn_date": "2025-10-30",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 352.51001,
-          "pct_since": 25.2,
+          "price_now": 373.51001,
+          "pct_since": 32.7,
           "price_then": 281.48001
         },
         {
@@ -5841,10 +6397,7 @@
           "instrument": "shares",
           "txn_date": "2025-10-30",
           "amount_low": 15001,
-          "amount_high": 50000,
-          "price_now": 317.31,
-          "pct_since": 16.9,
-          "price_then": 271.39999
+          "amount_high": 50000
         },
         {
           "owner": "spouse",
@@ -6365,8 +6918,8 @@
           "txn_date": "2025-10-30",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 664.39001,
-          "pct_since": 51.7,
+          "price_now": 631.26001,
+          "pct_since": 44.1,
           "price_then": 438.089996
         },
         {
@@ -6728,8 +7281,8 @@
           "txn_date": "2025-10-30",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 144.50999,
-          "pct_since": 26.0,
+          "price_now": 160.10001,
+          "pct_since": 39.6,
           "price_then": 114.69
         },
         {
@@ -6761,8 +7314,8 @@
           "txn_date": "2025-10-30",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 474.64001,
-          "pct_since": 8.4,
+          "price_now": 570.21997,
+          "pct_since": 30.2,
           "price_then": 438.0
         },
         {
@@ -6884,8 +7437,8 @@
           "txn_date": "2025-10-30",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 1045.91003,
-          "pct_since": 32.4,
+          "price_now": 1039.42004,
+          "pct_since": 31.5,
           "price_then": 790.15997
         },
         {
@@ -7016,10 +7569,7 @@
           "instrument": "shares",
           "txn_date": "2025-10-30",
           "amount_low": 1001,
-          "amount_high": 15000,
-          "price_now": 271.28,
-          "pct_since": 34.5,
-          "price_then": 201.77
+          "amount_high": 15000
         },
         {
           "owner": "spouse",
@@ -7400,8 +7950,8 @@
           "txn_date": "2025-10-30",
           "amount_low": 15001,
           "amount_high": 50000,
-          "price_now": 390.98999,
-          "pct_since": -25.6,
+          "price_now": 495.39999,
+          "pct_since": -5.8,
           "price_then": 525.76001
         },
         {
@@ -7453,8 +8003,8 @@
           "txn_date": "2025-10-30",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 73.83,
-          "pct_since": -32.2,
+          "price_now": 78.16,
+          "pct_since": -28.2,
           "price_then": 108.9
         },
         {
@@ -7546,8 +8096,8 @@
           "txn_date": "2025-10-30",
           "amount_low": 15001,
           "amount_high": 50000,
-          "price_now": 203.53,
-          "pct_since": 0.3,
+          "price_now": 206.64,
+          "pct_since": 1.8,
           "price_then": 202.89
         },
         {
@@ -7959,8 +8509,8 @@
           "txn_date": "2025-10-30",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 1673.96997,
-          "pct_since": 754.9,
+          "price_now": 1641.10999,
+          "pct_since": 738.1,
           "price_then": 195.82001
         },
         {
@@ -8402,8 +8952,8 @@
           "txn_date": "2025-10-30",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 74.26,
-          "pct_since": -23.0,
+          "price_now": 75.95,
+          "pct_since": -21.3,
           "price_then": 96.49
         },
         {
@@ -8445,8 +8995,8 @@
           "txn_date": "2025-10-30",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 429.089996,
-          "pct_since": 24.5,
+          "price_now": 401.73001,
+          "pct_since": 16.5,
           "price_then": 344.75
         },
         {
@@ -8568,8 +9118,8 @@
           "txn_date": "2025-10-30",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 158.12,
-          "pct_since": -16.7,
+          "price_now": 155.94,
+          "pct_since": -17.8,
           "price_then": 189.71001
         },
         {
@@ -8979,8 +9529,8 @@
           "txn_date": "2025-10-09",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 19.79,
-          "pct_since": -63.4,
+          "price_now": 14.14,
+          "pct_since": -73.9,
           "price_then": 54.09
         },
         {
@@ -8992,8 +9542,8 @@
           "txn_date": "2025-10-09",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 19.79,
-          "pct_since": -63.4,
+          "price_now": 14.14,
+          "pct_since": -73.9,
           "price_then": 54.09
         },
         {
@@ -9039,8 +9589,8 @@
           "txn_date": "2025-10-17",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 131.42999,
-          "pct_since": -11.3,
+          "price_now": 125.12,
+          "pct_since": -15.6,
           "price_then": 148.21001
         },
         {
@@ -9051,7 +9601,10 @@
           "instrument": "shares",
           "txn_date": "2025-10-17",
           "amount_low": 1001,
-          "amount_high": 15000
+          "amount_high": 15000,
+          "price_then": 129.88,
+          "price_now": 102.26,
+          "pct_since": -21.3
         },
         {
           "owner": "joint",
@@ -9380,8 +9933,8 @@
           "txn_date": "2025-10-24",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 247.31,
-          "pct_since": 10.3,
+          "price_now": 284.019989,
+          "pct_since": 26.7,
           "price_then": 224.21001
         },
         {
@@ -9483,8 +10036,8 @@
           "txn_date": "2025-10-24",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 390.98999,
-          "pct_since": -25.3,
+          "price_now": 495.39999,
+          "pct_since": -5.4,
           "price_then": 523.60999
         },
         {
@@ -9496,8 +10049,8 @@
           "txn_date": "2025-10-24",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 73.83,
-          "pct_since": -32.6,
+          "price_now": 78.16,
+          "pct_since": -28.6,
           "price_then": 109.469
         },
         {
@@ -9519,8 +10072,8 @@
           "txn_date": "2025-10-24",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 330.29999,
-          "pct_since": 52.1,
+          "price_now": 384.26999,
+          "pct_since": 77.0,
           "price_then": 217.11
         }
       ],
@@ -9902,8 +10455,8 @@
           "txn_date": "2025-09-25",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 131.42999,
-          "pct_since": -12.9,
+          "price_now": 125.12,
+          "pct_since": -17.1,
           "price_then": 150.89
         },
         {
@@ -10045,8 +10598,8 @@
           "txn_date": "2025-09-11",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 247.31,
-          "pct_since": 7.5,
+          "price_now": 284.019989,
+          "pct_since": 23.5,
           "price_then": 229.95
         },
         {
@@ -10057,10 +10610,7 @@
           "instrument": "shares",
           "txn_date": "2025-09-11",
           "amount_low": 1001,
-          "amount_high": 15000,
-          "price_now": 317.31,
-          "pct_since": 37.9,
-          "price_then": 230.029999
+          "amount_high": 15000
         },
         {
           "owner": "spouse",
@@ -10505,8 +11055,8 @@
           "txn_date": "2025-10-15",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 247.31,
-          "pct_since": 14.7,
+          "price_now": 284.019989,
+          "pct_since": 31.8,
           "price_then": 215.57001
         },
         {
@@ -10568,8 +11118,8 @@
           "txn_date": "2025-10-09",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 247.31,
-          "pct_since": 8.6,
+          "price_now": 284.019989,
+          "pct_since": 24.7,
           "price_then": 227.74001
         },
         {
@@ -11261,7 +11811,10 @@
           "instrument": "shares",
           "txn_date": "2025-09-11",
           "amount_low": 1001,
-          "amount_high": 15000
+          "amount_high": 15000,
+          "price_then": 108.345,
+          "price_now": 216.95,
+          "pct_since": 100.2
         },
         {
           "owner": "self",
@@ -11292,8 +11845,8 @@
           "txn_date": "2025-09-11",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 1045.91003,
-          "pct_since": 33.3,
+          "price_now": 1039.42004,
+          "pct_since": 32.5,
           "price_then": 784.72998
         },
         {
@@ -11646,8 +12199,8 @@
           "txn_date": "2025-08-13",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 59.97,
-          "pct_since": 40.3,
+          "price_now": 66.49,
+          "pct_since": 55.6,
           "price_then": 42.74
         },
         {
@@ -11899,8 +12452,8 @@
           "txn_date": "2025-08-13",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 429.089996,
-          "pct_since": 57.9,
+          "price_now": 401.73001,
+          "pct_since": 47.8,
           "price_then": 271.81
         },
         {
@@ -11952,8 +12505,8 @@
           "txn_date": "2025-08-07",
           "amount_low": 15001,
           "amount_high": 50000,
-          "price_now": 3.09,
-          "pct_since": -53.3,
+          "price_now": 3.27,
+          "pct_since": -50.5,
           "price_then": 6.61
         },
         {
@@ -11965,8 +12518,8 @@
           "txn_date": "2025-08-04",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 301.95999,
-          "pct_since": 5.0,
+          "price_now": 308.97,
+          "pct_since": 7.5,
           "price_then": 287.48001
         },
         {
@@ -12548,8 +13101,8 @@
           "txn_date": "2025-08-04",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 47.65,
-          "pct_since": -29.9,
+          "price_now": 61.66,
+          "pct_since": -9.3,
           "price_then": 68.010002
         },
         {
@@ -12651,8 +13204,8 @@
           "txn_date": "2025-08-04",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 111.26,
-          "pct_since": -39.7,
+          "price_now": 124.0,
+          "pct_since": -32.8,
           "price_then": 184.60001
         },
         {
@@ -13010,8 +13563,8 @@
           "txn_date": "2025-08-28",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 124.029999,
-          "pct_since": 49.1,
+          "price_now": 135.84,
+          "pct_since": 63.2,
           "price_then": 83.21
         },
         {
@@ -13083,8 +13636,8 @@
           "txn_date": "2025-08-28",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 429.089996,
-          "pct_since": 41.9,
+          "price_now": 401.73001,
+          "pct_since": 32.9,
           "price_then": 302.29001
         },
         {
@@ -13198,8 +13751,8 @@
           "txn_date": "2025-08-04",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 429.089996,
-          "pct_since": 78.1,
+          "price_now": 401.73001,
+          "pct_since": 66.7,
           "price_then": 240.98
         },
         {
@@ -13449,8 +14002,8 @@
           "txn_date": "2025-07-22",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 144.50999,
-          "pct_since": 33.1,
+          "price_now": 160.10001,
+          "pct_since": 47.5,
           "price_then": 108.54
         },
         {
@@ -13582,8 +14135,8 @@
           "txn_date": "2025-07-22",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 937.0,
-          "pct_since": 757.9,
+          "price_now": 971.65997,
+          "pct_since": 789.6,
           "price_then": 109.22
         },
         {
@@ -13605,8 +14158,8 @@
           "txn_date": "2025-07-22",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 131.42999,
-          "pct_since": -5.8,
+          "price_now": 125.12,
+          "pct_since": -10.3,
           "price_then": 139.49001
         },
         {
@@ -13837,7 +14390,10 @@
           "instrument": "shares",
           "txn_date": "2025-07-22",
           "amount_low": 1001,
-          "amount_high": 15000
+          "amount_high": 15000,
+          "price_now": 73.79,
+          "pct_since": -51.2,
+          "price_then": 151.19
         },
         {
           "owner": "spouse",
@@ -13967,7 +14523,10 @@
           "instrument": "shares",
           "txn_date": "2025-07-16",
           "amount_low": 1001,
-          "amount_high": 15000
+          "amount_high": 15000,
+          "price_then": 117.6125,
+          "price_now": 216.95,
+          "pct_since": 84.5
         },
         {
           "owner": "spouse",
@@ -14168,8 +14727,8 @@
           "txn_date": "2025-07-16",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 390.98999,
-          "pct_since": -22.7,
+          "price_now": 495.39999,
+          "pct_since": -2.0,
           "price_then": 505.62
         },
         {
@@ -14611,8 +15170,8 @@
           "txn_date": "2025-07-10",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 1181.87,
-          "pct_since": 49.5,
+          "price_now": 1180.16003,
+          "pct_since": 49.3,
           "price_then": 790.65002
         },
         {
@@ -14784,8 +15343,8 @@
           "txn_date": "2025-07-10",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 330.29999,
-          "pct_since": 72.0,
+          "price_now": 384.26999,
+          "pct_since": 100.1,
           "price_then": 192.070007
         },
         {
@@ -14957,8 +15516,8 @@
           "txn_date": "2025-06-24",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 352.51001,
-          "pct_since": 111.4,
+          "price_now": 373.51001,
+          "pct_since": 124.0,
           "price_then": 166.77
         },
         {
@@ -15130,8 +15689,8 @@
           "txn_date": "2025-06-24",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 664.39001,
-          "pct_since": 105.2,
+          "price_now": 631.26001,
+          "pct_since": 94.9,
           "price_then": 323.85001
         },
         {
@@ -15223,8 +15782,8 @@
           "txn_date": "2025-06-24",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 144.50999,
-          "pct_since": 33.4,
+          "price_now": 160.10001,
+          "pct_since": 47.8,
           "price_then": 108.34
         },
         {
@@ -15436,8 +15995,8 @@
           "txn_date": "2025-06-24",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 124.029999,
-          "pct_since": 54.4,
+          "price_now": 135.84,
+          "pct_since": 69.1,
           "price_then": 80.32
         },
         {
@@ -15759,8 +16318,8 @@
           "txn_date": "2025-06-17",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 534.39001,
-          "pct_since": 320.4,
+          "price_now": 514.39001,
+          "pct_since": 304.7,
           "price_then": 127.099998
         },
         {
@@ -15812,8 +16371,8 @@
           "txn_date": "2025-06-17",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 247.31,
-          "pct_since": 15.1,
+          "price_now": 284.019989,
+          "pct_since": 32.2,
           "price_then": 214.82001
         },
         {
@@ -15844,10 +16403,7 @@
           "instrument": "shares",
           "txn_date": "2025-06-17",
           "amount_low": 1001,
-          "amount_high": 15000,
-          "price_now": 317.31,
-          "pct_since": 62.2,
-          "price_then": 195.64
+          "amount_high": 15000
         },
         {
           "owner": "spouse",
@@ -16818,8 +17374,8 @@
           "txn_date": "2025-06-17",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 97.07,
-          "pct_since": 54.6,
+          "price_now": 46.82,
+          "pct_since": -25.4,
           "price_then": 62.78
         },
         {
@@ -16921,8 +17477,8 @@
           "txn_date": "2025-06-17",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 203.53,
-          "pct_since": 41.2,
+          "price_now": 206.64,
+          "pct_since": 43.4,
           "price_then": 144.12
         },
         {
@@ -17094,8 +17650,8 @@
           "txn_date": "2025-06-17",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 110.66,
-          "pct_since": -29.6,
+          "price_now": 121.94,
+          "pct_since": -22.5,
           "price_then": 157.27
         },
         {
@@ -17137,8 +17693,8 @@
           "txn_date": "2025-06-17",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 111.26,
-          "pct_since": -44.6,
+          "price_now": 124.0,
+          "pct_since": -38.3,
           "price_then": 200.98199
         },
         {
@@ -17380,8 +17936,8 @@
           "txn_date": "2025-06-17",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 429.089996,
-          "pct_since": 38.9,
+          "price_now": 401.73001,
+          "pct_since": 30.1,
           "price_then": 308.87
         },
         {
@@ -17433,8 +17989,8 @@
           "txn_date": "2025-06-17",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 158.12,
-          "pct_since": -11.0,
+          "price_now": 155.94,
+          "pct_since": -12.3,
           "price_then": 177.75
         },
         {
@@ -18066,8 +18622,8 @@
           "txn_date": "2025-06-11",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 131.42999,
-          "pct_since": -1.2,
+          "price_now": 125.12,
+          "pct_since": -5.9,
           "price_then": 132.97
         },
         {
@@ -18119,8 +18675,8 @@
           "txn_date": "2025-06-11",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 203.53,
-          "pct_since": 42.5,
+          "price_now": 206.64,
+          "pct_since": 44.7,
           "price_then": 142.83
         },
         {
@@ -18432,8 +18988,8 @@
           "txn_date": "2025-06-09",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 247.31,
-          "pct_since": 14.0,
+          "price_now": 284.019989,
+          "pct_since": 30.9,
           "price_then": 216.98
         },
         {
@@ -18474,10 +19030,7 @@
           "instrument": "shares",
           "txn_date": "2025-06-09",
           "amount_low": 1001,
-          "amount_high": 15000,
-          "price_now": 317.31,
-          "pct_since": 57.5,
-          "price_then": 201.45
+          "amount_high": 15000
         },
         {
           "owner": "spouse",
@@ -18688,8 +19241,8 @@
           "txn_date": "2025-06-09",
           "amount_low": 15001,
           "amount_high": 50000,
-          "price_now": 390.98999,
-          "pct_since": -17.3,
+          "price_now": 495.39999,
+          "pct_since": 4.8,
           "price_then": 472.75
         },
         {
@@ -18741,8 +19294,8 @@
           "txn_date": "2025-06-09",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 203.53,
-          "pct_since": 42.7,
+          "price_now": 206.64,
+          "pct_since": 44.9,
           "price_then": 142.63
         },
         {
@@ -19054,8 +19607,8 @@
           "txn_date": "2025-03-28",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 19.79,
-          "pct_since": -64.6,
+          "price_now": 14.14,
+          "pct_since": -74.7,
           "price_then": 55.85
         },
         {
@@ -19167,8 +19720,8 @@
           "txn_date": "2025-03-12",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 111.26,
-          "pct_since": -34.0,
+          "price_now": 124.0,
+          "pct_since": -26.5,
           "price_then": 168.62801
         },
         {
@@ -19220,8 +19773,8 @@
           "txn_date": "2025-02-21",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 74.26,
-          "pct_since": -5.9,
+          "price_now": 75.95,
+          "pct_since": -3.7,
           "price_then": 78.89
         },
         {
@@ -19433,9 +19986,9 @@
           "txn_date": "2024-12-11",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 352.51001,
-          "pct_since": 80.4,
-          "price_then": 195.39999
+          "price_now": 373.51001,
+          "pct_since": null,
+          "price_then": null
         },
         {
           "owner": "spouse",
@@ -19446,9 +19999,9 @@
           "txn_date": "2024-12-11",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 247.31,
-          "pct_since": 7.4,
-          "price_then": 230.25999
+          "price_now": 284.019989,
+          "pct_since": null,
+          "price_then": null
         },
         {
           "owner": "spouse",
@@ -19458,10 +20011,7 @@
           "instrument": "shares",
           "txn_date": "2024-12-11",
           "amount_low": 1001,
-          "amount_high": 15000,
-          "price_now": 317.31,
-          "pct_since": 28.7,
-          "price_then": 246.49001
+          "amount_high": 15000
         },
         {
           "owner": "spouse",
@@ -19562,9 +20112,9 @@
           "txn_date": "2024-12-11",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 1181.87,
-          "pct_since": 48.5,
-          "price_then": 796.030029
+          "price_now": 1180.16003,
+          "pct_since": null,
+          "price_then": null
         },
         {
           "owner": "spouse",
@@ -19575,9 +20125,9 @@
           "txn_date": "2024-12-11",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 1045.91003,
-          "pct_since": 76.5,
-          "price_then": 592.56
+          "price_now": 1039.42004,
+          "pct_since": null,
+          "price_then": null
         },
         {
           "owner": "spouse",
@@ -19597,10 +20147,7 @@
           "instrument": "shares",
           "txn_date": "2024-12-11",
           "amount_low": 1001,
-          "amount_high": 15000,
-          "price_now": 271.28,
-          "pct_since": 133.7,
-          "price_then": 116.080002
+          "amount_high": 15000
         },
         {
           "owner": "spouse",
@@ -19651,9 +20198,9 @@
           "txn_date": "2024-12-11",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 390.98999,
-          "pct_since": -12.9,
-          "price_then": 448.98999
+          "price_now": 495.39999,
+          "pct_since": null,
+          "price_then": null
         },
         {
           "owner": "spouse",
@@ -19674,9 +20221,9 @@
           "txn_date": "2024-12-11",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 73.83,
-          "pct_since": -21.2,
-          "price_then": 93.656
+          "price_now": 78.16,
+          "pct_since": null,
+          "price_then": null
         },
         {
           "owner": "spouse",
@@ -19687,9 +20234,9 @@
           "txn_date": "2024-12-11",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 203.53,
-          "pct_since": 46.1,
-          "price_then": 139.31
+          "price_now": 206.64,
+          "pct_since": null,
+          "price_then": null
         },
         {
           "owner": "spouse",
@@ -19720,9 +20267,9 @@
           "txn_date": "2024-12-11",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 330.29999,
-          "pct_since": 65.8,
-          "price_then": 199.21001
+          "price_now": 384.26999,
+          "pct_since": null,
+          "price_then": null
         },
         {
           "owner": "spouse",
@@ -19753,9 +20300,9 @@
           "txn_date": "2024-12-11",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 111.26,
-          "pct_since": -51.5,
-          "price_then": 229.436
+          "price_now": 124.0,
+          "pct_since": null,
+          "price_then": null
         },
         {
           "owner": "spouse",
@@ -19796,9 +20343,9 @@
           "txn_date": "2024-12-11",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 19.79,
-          "pct_since": -85.2,
-          "price_then": 134.10001
+          "price_now": 14.14,
+          "pct_since": null,
+          "price_then": null
         },
         {
           "owner": "spouse",
@@ -19848,7 +20395,10 @@
           "instrument": "shares",
           "txn_date": "2024-12-11",
           "amount_low": 1001,
-          "amount_high": 15000
+          "amount_high": 15000,
+          "price_now": 73.79,
+          "pct_since": null,
+          "price_then": null
         },
         {
           "owner": "spouse",
@@ -19879,7 +20429,7 @@
           "txn_date": "2024-11-07",
           "amount_low": 100001,
           "amount_high": 250000,
-          "price_now": 203.53,
+          "price_now": 206.64,
           "pct_since": null,
           "price_then": null
         },
@@ -19942,7 +20492,7 @@
           "txn_date": "2024-06-06",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 534.39001,
+          "price_now": 514.39001,
           "pct_since": null,
           "price_then": null
         },
@@ -19955,7 +20505,7 @@
           "txn_date": "2024-06-06",
           "amount_low": 50001,
           "amount_high": 100000,
-          "price_now": 203.53,
+          "price_now": 206.64,
           "pct_since": null,
           "price_then": null
         },
@@ -19998,7 +20548,7 @@
           "txn_date": "2024-03-11",
           "amount_low": 15001,
           "amount_high": 50000,
-          "price_now": 534.39001,
+          "price_now": 514.39001,
           "pct_since": null,
           "price_then": null
         },
@@ -20011,7 +20561,7 @@
           "txn_date": "2024-03-11",
           "amount_low": 15001,
           "amount_high": 50000,
-          "price_now": 203.53,
+          "price_now": 206.64,
           "pct_since": null,
           "price_then": null
         },
@@ -20318,8 +20868,8 @@
           "txn_date": "2025-06-24",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 203.53,
-          "pct_since": 37.6,
+          "price_now": 206.64,
+          "pct_since": 39.7,
           "price_then": 147.89999
         },
         {
@@ -20901,8 +21451,8 @@
           "txn_date": "2025-05-29",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 203.53,
-          "pct_since": 46.2,
+          "price_now": 206.64,
+          "pct_since": 48.5,
           "price_then": 139.19
         },
         {
@@ -20974,8 +21524,8 @@
           "txn_date": "2025-05-23",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 203.53,
-          "pct_since": 55.0,
+          "price_now": 206.64,
+          "pct_since": 57.4,
           "price_then": 131.28999
         },
         {
@@ -21139,8 +21689,8 @@
           "txn_date": "2025-06-06",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 131.39999,
-          "pct_since": 16.8,
+          "price_now": 138.36,
+          "pct_since": 23.0,
           "price_then": 112.46
         },
         {
@@ -21152,8 +21702,8 @@
           "txn_date": "2025-06-06",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 73.83,
-          "pct_since": -40.5,
+          "price_now": 78.16,
+          "pct_since": -37.0,
           "price_then": 124.147
         },
         {
@@ -21175,8 +21725,8 @@
           "txn_date": "2025-06-06",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 111.26,
-          "pct_since": -46.0,
+          "price_now": 124.0,
+          "pct_since": -39.8,
           "price_then": 206.042007
         },
         {
@@ -21252,8 +21802,8 @@
           "txn_date": "2025-05-23",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 110.66,
-          "pct_since": -32.5,
+          "price_now": 121.94,
+          "pct_since": -25.7,
           "price_then": 164.059998
         },
         {
@@ -21305,8 +21855,8 @@
           "txn_date": "2025-05-22",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 390.98999,
-          "pct_since": -14.0,
+          "price_now": 495.39999,
+          "pct_since": 8.9,
           "price_then": 454.85999
         },
         {
@@ -21338,8 +21888,8 @@
           "txn_date": "2025-05-21",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 390.98999,
-          "pct_since": -13.6,
+          "price_now": 495.39999,
+          "pct_since": 9.5,
           "price_then": 452.57001
         },
         {
@@ -21371,8 +21921,8 @@
           "txn_date": "2025-05-15",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 74.26,
-          "pct_since": -17.6,
+          "price_now": 75.95,
+          "pct_since": -15.8,
           "price_then": 90.16
         },
         {
@@ -21414,8 +21964,8 @@
           "txn_date": "2025-05-01",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 1181.87,
-          "pct_since": 48.8,
+          "price_now": 1180.16003,
+          "pct_since": 48.6,
           "price_then": 794.099976
         }
       ],
@@ -21454,8 +22004,8 @@
           "txn_date": "2025-05-16",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 203.53,
-          "pct_since": 50.3,
+          "price_now": 206.64,
+          "pct_since": 52.6,
           "price_then": 135.39999
         },
         {
@@ -21497,8 +22047,8 @@
           "txn_date": "2025-05-15",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 301.95999,
-          "pct_since": 10.0,
+          "price_now": 308.97,
+          "pct_since": 12.6,
           "price_then": 274.42001
         },
         {
@@ -21890,8 +22440,8 @@
           "txn_date": "2025-05-13",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 203.53,
-          "pct_since": 56.6,
+          "price_now": 206.64,
+          "pct_since": 59.0,
           "price_then": 129.92999
         },
         {
@@ -21913,8 +22463,8 @@
           "txn_date": "2025-05-12",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 203.53,
-          "pct_since": 65.5,
+          "price_now": 206.64,
+          "pct_since": 68.0,
           "price_then": 123.0
         },
         {
@@ -21956,8 +22506,8 @@
           "txn_date": "2025-05-09",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 390.98999,
-          "pct_since": -10.9,
+          "price_now": 495.39999,
+          "pct_since": 12.9,
           "price_then": 438.73001
         },
         {
@@ -21979,8 +22529,8 @@
           "txn_date": "2025-05-09",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 55.93,
-          "pct_since": -8.9,
+          "price_now": 46.049999,
+          "pct_since": -25.0,
           "price_then": 61.37
         },
         {
@@ -21992,8 +22542,8 @@
           "txn_date": "2025-05-09",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 19.79,
-          "pct_since": -72.1,
+          "price_now": 14.14,
+          "pct_since": -80.1,
           "price_then": 71.040001
         }
       ],
@@ -22076,8 +22626,8 @@
           "txn_date": "2025-05-15",
           "amount_low": 15001,
           "amount_high": 50000,
-          "price_now": 534.39001,
-          "pct_since": 364.7,
+          "price_now": 514.39001,
+          "pct_since": 347.3,
           "price_then": 114.99
         },
         {
@@ -22428,7 +22978,10 @@
           "instrument": "shares",
           "txn_date": "2025-05-15",
           "amount_low": 1001,
-          "amount_high": 15000
+          "amount_high": 15000,
+          "price_now": 73.79,
+          "pct_since": -54.0,
+          "price_then": 160.35001
         },
         {
           "owner": "self",
@@ -22439,8 +22992,8 @@
           "txn_date": "2025-05-09",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 203.53,
-          "pct_since": 74.5,
+          "price_now": 206.64,
+          "pct_since": 77.1,
           "price_then": 116.65
         },
         {
@@ -22630,8 +23183,8 @@
           "txn_date": "2025-05-16",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 429.089996,
-          "pct_since": 47.0,
+          "price_now": 401.73001,
+          "pct_since": 37.6,
           "price_then": 291.91
         },
         {
@@ -22653,8 +23206,8 @@
           "txn_date": "2025-05-14",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 534.39001,
-          "pct_since": 354.0,
+          "price_now": 514.39001,
+          "pct_since": 337.0,
           "price_then": 117.72
         },
         {
@@ -22736,8 +23289,8 @@
           "txn_date": "2025-05-14",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 1181.87,
-          "pct_since": 65.2,
+          "price_now": 1180.16003,
+          "pct_since": 64.9,
           "price_then": 715.56
         },
         {
@@ -22789,8 +23342,8 @@
           "txn_date": "2025-05-14",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 73.83,
-          "pct_since": -35.9,
+          "price_now": 78.16,
+          "pct_since": -32.1,
           "price_then": 115.098999
         },
         {
@@ -22802,8 +23355,8 @@
           "txn_date": "2025-05-14",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 203.53,
-          "pct_since": 50.4,
+          "price_now": 206.64,
+          "pct_since": 52.7,
           "price_then": 135.34
         },
         {
@@ -22815,8 +23368,8 @@
           "txn_date": "2025-05-14",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 111.26,
-          "pct_since": -45.8,
+          "price_now": 124.0,
+          "pct_since": -39.6,
           "price_then": 205.364
         },
         {
@@ -22848,8 +23401,8 @@
           "txn_date": "2025-05-14",
           "amount_low": 15001,
           "amount_high": 50000,
-          "price_now": 429.089996,
-          "pct_since": 39.3,
+          "price_now": 401.73001,
+          "pct_since": 30.4,
           "price_then": 308.01001
         }
       ],
@@ -23199,8 +23752,8 @@
           "txn_date": "2025-04-04",
           "amount_low": 50001,
           "amount_high": 100000,
-          "price_now": 390.98999,
-          "pct_since": 8.7,
+          "price_now": 495.39999,
+          "pct_since": 37.7,
           "price_then": 359.84
         },
         {
@@ -23349,10 +23902,7 @@
           "instrument": "shares",
           "txn_date": "2025-04-10",
           "amount_low": 1001,
-          "amount_high": 15000,
-          "price_now": 317.31,
-          "pct_since": 66.6,
-          "price_then": 190.42
+          "amount_high": 15000
         },
         {
           "owner": "self",
@@ -23363,8 +23913,8 @@
           "txn_date": "2025-04-10",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 203.53,
-          "pct_since": 89.2,
+          "price_now": 206.64,
+          "pct_since": 92.1,
           "price_then": 107.57
         }
       ],
@@ -23420,8 +23970,8 @@
           "txn_date": "2025-04-11",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 203.53,
-          "pct_since": 83.5,
+          "price_now": 206.64,
+          "pct_since": 86.3,
           "price_then": 110.93
         },
         {
@@ -23517,8 +24067,8 @@
           "txn_date": "2025-04-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 247.31,
-          "pct_since": 44.9,
+          "price_now": 284.019989,
+          "pct_since": 66.4,
           "price_then": 170.66
         },
         {
@@ -23580,8 +24130,8 @@
           "txn_date": "2025-04-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 386.01001,
-          "pct_since": 132.4,
+          "price_now": 389.39001,
+          "pct_since": 134.4,
           "price_then": 166.089996
         },
         {
@@ -23963,8 +24513,8 @@
           "txn_date": "2025-04-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 144.50999,
-          "pct_since": 43.4,
+          "price_now": 160.10001,
+          "pct_since": 58.9,
           "price_then": 100.77
         },
         {
@@ -24176,8 +24726,8 @@
           "txn_date": "2025-04-08",
           "amount_low": 15001,
           "amount_high": 50000,
-          "price_now": 124.029999,
-          "pct_since": 57.1,
+          "price_now": 135.84,
+          "pct_since": 72.1,
           "price_then": 78.95
         },
         {
@@ -24209,8 +24759,8 @@
           "txn_date": "2025-04-08",
           "amount_low": 15001,
           "amount_high": 50000,
-          "price_now": 390.98999,
-          "pct_since": 10.3,
+          "price_now": 495.39999,
+          "pct_since": 39.7,
           "price_then": 354.56
         },
         {
@@ -24222,8 +24772,8 @@
           "txn_date": "2025-04-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 390.98999,
-          "pct_since": 10.3,
+          "price_now": 495.39999,
+          "pct_since": 39.7,
           "price_then": 354.56
         },
         {
@@ -24385,8 +24935,8 @@
           "txn_date": "2025-04-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 47.65,
-          "pct_since": -17.0,
+          "price_now": 61.66,
+          "pct_since": 7.4,
           "price_then": 57.41
         },
         {
@@ -24628,8 +25178,8 @@
           "txn_date": "2025-04-08",
           "amount_low": 15001,
           "amount_high": 50000,
-          "price_now": 429.089996,
-          "pct_since": -22.4,
+          "price_now": 401.73001,
+          "pct_since": -27.4,
           "price_then": 553.080017
         },
         {
@@ -24799,8 +25349,8 @@
           "txn_date": "2025-05-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 534.39001,
-          "pct_since": 431.3,
+          "price_now": 514.39001,
+          "pct_since": 411.4,
           "price_then": 100.59
         },
         {
@@ -24822,8 +25372,8 @@
           "txn_date": "2025-05-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 247.31,
-          "pct_since": 32.7,
+          "price_now": 284.019989,
+          "pct_since": 52.4,
           "price_then": 186.35001
         },
         {
@@ -24854,10 +25404,7 @@
           "instrument": "shares",
           "txn_date": "2025-05-05",
           "amount_low": 1001,
-          "amount_high": 15000,
-          "price_now": 317.31,
-          "pct_since": 59.5,
-          "price_then": 198.89
+          "amount_high": 15000
         },
         {
           "owner": "self",
@@ -24998,8 +25545,8 @@
           "txn_date": "2025-05-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 664.39001,
-          "pct_since": 119.8,
+          "price_now": 631.26001,
+          "pct_since": 108.8,
           "price_then": 302.29999
         },
         {
@@ -25051,8 +25598,8 @@
           "txn_date": "2025-05-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 1181.87,
-          "pct_since": 43.9,
+          "price_now": 1180.16003,
+          "pct_since": 43.7,
           "price_then": 821.46002
         },
         {
@@ -25084,8 +25631,8 @@
           "txn_date": "2025-05-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 131.39999,
-          "pct_since": 27.8,
+          "price_now": 138.36,
+          "pct_since": 34.6,
           "price_then": 102.81
         },
         {
@@ -25097,8 +25644,8 @@
           "txn_date": "2025-05-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 131.39999,
-          "pct_since": 27.8,
+          "price_now": 138.36,
+          "pct_since": 34.6,
           "price_then": 102.81
         },
         {
@@ -25110,8 +25657,8 @@
           "txn_date": "2025-05-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 1045.91003,
-          "pct_since": 86.9,
+          "price_now": 1039.42004,
+          "pct_since": 85.8,
           "price_then": 559.56
         },
         {
@@ -25143,8 +25690,8 @@
           "txn_date": "2025-05-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 103.12,
-          "pct_since": 408.7,
+          "price_now": 102.5,
+          "pct_since": 405.7,
           "price_then": 20.27
         },
         {
@@ -25196,8 +25743,8 @@
           "txn_date": "2025-05-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 124.029999,
-          "pct_since": 49.7,
+          "price_now": 135.84,
+          "pct_since": 64.0,
           "price_then": 82.84
         },
         {
@@ -25219,8 +25766,8 @@
           "txn_date": "2025-05-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 390.98999,
-          "pct_since": -10.4,
+          "price_now": 495.39999,
+          "pct_since": 13.6,
           "price_then": 436.17001
         },
         {
@@ -25272,8 +25819,8 @@
           "txn_date": "2025-05-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 203.53,
-          "pct_since": 78.8,
+          "price_now": 206.64,
+          "pct_since": 81.5,
           "price_then": 113.82
         },
         {
@@ -25315,8 +25862,8 @@
           "txn_date": "2025-05-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 330.29999,
-          "pct_since": 75.6,
+          "price_now": 384.26999,
+          "pct_since": 104.3,
           "price_then": 188.13
         },
         {
@@ -25348,8 +25895,8 @@
           "txn_date": "2025-05-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 111.26,
-          "pct_since": -43.1,
+          "price_now": 124.0,
+          "pct_since": -36.6,
           "price_then": 195.61
         },
         {
@@ -26043,8 +26590,8 @@
           "txn_date": "2025-04-03",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 390.98999,
-          "pct_since": 4.8,
+          "price_now": 495.39999,
+          "pct_since": 32.8,
           "price_then": 373.10999
         },
         {
@@ -26267,8 +26814,8 @@
           "txn_date": "2025-03-20",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 247.31,
-          "pct_since": 26.9,
+          "price_now": 284.019989,
+          "pct_since": 45.7,
           "price_then": 194.95
         },
         {
@@ -26280,8 +26827,8 @@
           "txn_date": "2025-03-20",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 247.31,
-          "pct_since": 26.9,
+          "price_now": 284.019989,
+          "pct_since": 45.7,
           "price_then": 194.95
         },
         {
@@ -26573,8 +27120,8 @@
           "txn_date": "2025-03-20",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 47.65,
-          "pct_since": -31.6,
+          "price_now": 61.66,
+          "pct_since": -11.5,
           "price_then": 69.67
         },
         {
@@ -26586,8 +27133,8 @@
           "txn_date": "2025-03-20",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 47.65,
-          "pct_since": -31.6,
+          "price_now": 61.66,
+          "pct_since": -11.5,
           "price_then": 69.67
         },
         {
@@ -26739,8 +27286,8 @@
           "txn_date": "2025-03-06",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 19.79,
-          "pct_since": -69.5,
+          "price_now": 14.14,
+          "pct_since": -78.2,
           "price_then": 64.98
         },
         {
@@ -26752,8 +27299,8 @@
           "txn_date": "2025-03-06",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 19.79,
-          "pct_since": -69.5,
+          "price_now": 14.14,
+          "pct_since": -78.2,
           "price_then": 64.98
         }
       ],
@@ -26789,8 +27336,8 @@
           "txn_date": "2025-04-09",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 534.39001,
-          "pct_since": 451.8,
+          "price_now": 514.39001,
+          "pct_since": 431.2,
           "price_then": 96.84
         },
         {
@@ -26801,10 +27348,7 @@
           "instrument": "shares",
           "txn_date": "2025-04-09",
           "amount_low": 1001,
-          "amount_high": 15000,
-          "price_now": 317.31,
-          "pct_since": 59.6,
-          "price_then": 198.85001
+          "amount_high": 15000
         },
         {
           "owner": "self",
@@ -26835,8 +27379,8 @@
           "txn_date": "2025-04-09",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 664.39001,
-          "pct_since": 124.0,
+          "price_now": 631.26001,
+          "pct_since": 112.9,
           "price_then": 296.54999
         },
         {
@@ -26858,8 +27402,8 @@
           "txn_date": "2025-04-09",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 124.029999,
-          "pct_since": 51.4,
+          "price_now": 135.84,
+          "pct_since": 65.8,
           "price_then": 81.91
         },
         {
@@ -26871,8 +27415,8 @@
           "txn_date": "2025-04-09",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 203.53,
-          "pct_since": 78.0,
+          "price_now": 206.64,
+          "pct_since": 80.7,
           "price_then": 114.33
         },
         {
@@ -26894,8 +27438,8 @@
           "txn_date": "2025-04-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 534.39001,
-          "pct_since": 583.3,
+          "price_now": 514.39001,
+          "pct_since": 557.7,
           "price_then": 78.21
         },
         {
@@ -26907,8 +27451,8 @@
           "txn_date": "2025-04-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 247.31,
-          "pct_since": 44.9,
+          "price_now": 284.019989,
+          "pct_since": 66.4,
           "price_then": 170.66
         },
         {
@@ -27278,8 +27822,8 @@
           "txn_date": "2025-03-07",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 131.39999,
-          "pct_since": 11.9,
+          "price_now": 138.36,
+          "pct_since": 17.8,
           "price_then": 117.41
         },
         {
@@ -27351,7 +27895,7 @@
           "txn_date": "2024-03-18",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 137.67,
+          "price_now": 155.24001,
           "pct_since": null,
           "price_then": null
         }
@@ -27401,8 +27945,8 @@
           "txn_date": "2025-03-13",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 103.12,
-          "pct_since": 335.1,
+          "price_now": 102.5,
+          "pct_since": 332.5,
           "price_then": 23.7
         },
         {
@@ -27414,8 +27958,8 @@
           "txn_date": "2025-03-13",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 111.26,
-          "pct_since": -31.5,
+          "price_now": 124.0,
+          "pct_since": -23.6,
           "price_then": 162.32401
         },
         {
@@ -27487,8 +28031,8 @@
           "txn_date": "2025-03-11",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 110.66,
-          "pct_since": -13.4,
+          "price_now": 121.94,
+          "pct_since": -4.5,
           "price_then": 127.71
         },
         {
@@ -27540,8 +28084,8 @@
           "txn_date": "2025-03-10",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 74.26,
-          "pct_since": 1.6,
+          "price_now": 75.95,
+          "pct_since": 4.0,
           "price_then": 73.059998
         }
       ],
@@ -27567,8 +28111,8 @@
           "txn_date": "2025-04-04",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 247.31,
-          "pct_since": 44.6,
+          "price_now": 284.019989,
+          "pct_since": 66.1,
           "price_then": 171.0
         },
         {
@@ -27719,10 +28263,7 @@
           "instrument": "shares",
           "txn_date": "2025-04-03",
           "amount_low": 1001,
-          "amount_high": 15000,
-          "price_now": 317.31,
-          "pct_since": 56.2,
-          "price_then": 203.19
+          "amount_high": 15000
         },
         {
           "owner": "self",
@@ -27807,8 +28348,8 @@
           "txn_date": "2025-03-05",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 110.66,
-          "pct_since": -24.4,
+          "price_now": 121.94,
+          "pct_since": -16.7,
           "price_then": 146.31
         },
         {
@@ -27850,8 +28391,8 @@
           "txn_date": "2025-03-04",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 218.24001,
-          "pct_since": 90.1,
+          "price_now": 238.2,
+          "pct_since": 107.5,
           "price_then": 114.78
         },
         {
@@ -27883,8 +28424,8 @@
           "txn_date": "2025-03-03",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 103.12,
-          "pct_since": 353.5,
+          "price_now": 102.5,
+          "pct_since": 350.7,
           "price_then": 22.74
         },
         {
@@ -27976,8 +28517,8 @@
           "txn_date": "2025-02-26",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 103.12,
-          "pct_since": 338.4,
+          "price_now": 102.5,
+          "pct_since": 335.8,
           "price_then": 23.52
         },
         {
@@ -27989,8 +28530,8 @@
           "txn_date": "2025-02-26",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 203.53,
-          "pct_since": 55.0,
+          "price_now": 206.64,
+          "pct_since": 57.4,
           "price_then": 131.28
         },
         {
@@ -28022,8 +28563,8 @@
           "txn_date": "2025-02-26",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 19.79,
-          "pct_since": -72.7,
+          "price_now": 14.14,
+          "pct_since": -80.5,
           "price_then": 72.43
         },
         {
@@ -28805,8 +29346,8 @@
           "txn_date": "2025-02-25",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 218.24001,
-          "pct_since": 89.3,
+          "price_now": 238.2,
+          "pct_since": 106.6,
           "price_then": 115.27
         },
         {
@@ -29137,10 +29678,7 @@
           "instrument": "shares",
           "txn_date": "2025-03-17",
           "amount_low": 1001,
-          "amount_high": 15000,
-          "price_now": 317.31,
-          "pct_since": 48.3,
-          "price_then": 214.0
+          "amount_high": 15000
         },
         {
           "owner": "self",
@@ -29221,8 +29759,8 @@
           "txn_date": "2025-03-17",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 203.53,
-          "pct_since": 70.3,
+          "price_now": 206.64,
+          "pct_since": 72.9,
           "price_then": 119.53
         },
         {
@@ -29302,8 +29840,8 @@
           "txn_date": "2025-02-20",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 103.12,
-          "pct_since": 295.2,
+          "price_now": 102.5,
+          "pct_since": 292.9,
           "price_then": 26.09
         },
         {
@@ -29345,8 +29883,8 @@
           "txn_date": "2025-02-14",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 103.12,
-          "pct_since": 336.9,
+          "price_now": 102.5,
+          "pct_since": 334.3,
           "price_then": 23.6
         },
         {
@@ -29391,7 +29929,10 @@
           "instrument": "shares",
           "txn_date": "2025-03-07",
           "amount_low": 1001,
-          "amount_high": 15000
+          "amount_high": 15000,
+          "price_then": 83.375,
+          "price_now": 216.95,
+          "pct_since": 160.2
         },
         {
           "owner": "self",
@@ -29412,8 +29953,8 @@
           "txn_date": "2025-03-07",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 1045.91003,
-          "pct_since": 86.9,
+          "price_now": 1039.42004,
+          "pct_since": 85.7,
           "price_then": 559.66998
         },
         {
@@ -29683,8 +30224,8 @@
           "txn_date": "2025-02-14",
           "amount_low": 1000001,
           "amount_high": 5000000,
-          "price_now": 390.98999,
-          "pct_since": -4.3,
+          "price_now": 495.39999,
+          "pct_since": 21.3,
           "price_then": 408.42999
         },
         {
@@ -29696,8 +30237,8 @@
           "txn_date": "2025-02-14",
           "amount_low": 500001,
           "amount_high": 1000000,
-          "price_now": 390.98999,
-          "pct_since": -4.3,
+          "price_now": 495.39999,
+          "pct_since": 21.3,
           "price_then": 408.42999
         },
         {
@@ -29709,8 +30250,8 @@
           "txn_date": "2025-02-14",
           "amount_low": 1000001,
           "amount_high": 5000000,
-          "price_now": 390.98999,
-          "pct_since": -4.3,
+          "price_now": 495.39999,
+          "pct_since": 21.3,
           "price_then": 408.42999
         },
         {
@@ -29722,8 +30263,8 @@
           "txn_date": "2025-02-14",
           "amount_low": 1000001,
           "amount_high": 5000000,
-          "price_now": 390.98999,
-          "pct_since": -4.3,
+          "price_now": 495.39999,
+          "pct_since": 21.3,
           "price_then": 408.42999
         },
         {
@@ -29845,8 +30386,8 @@
           "txn_date": "2025-02-06",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 218.24001,
-          "pct_since": 48.0,
+          "price_now": 238.2,
+          "pct_since": 61.6,
           "price_then": 147.42999
         },
         {
@@ -30012,10 +30553,7 @@
           "instrument": "shares",
           "txn_date": "2025-02-12",
           "amount_low": 1001,
-          "amount_high": 15000,
-          "price_now": 317.31,
-          "pct_since": 34.0,
-          "price_then": 236.87
+          "amount_high": 15000
         },
         {
           "owner": "self",
@@ -30036,8 +30574,8 @@
           "txn_date": "2025-02-12",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 1045.91003,
-          "pct_since": 61.2,
+          "price_now": 1039.42004,
+          "pct_since": 60.2,
           "price_then": 649.0
         },
         {
@@ -30049,8 +30587,8 @@
           "txn_date": "2025-02-12",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 103.12,
-          "pct_since": 358.7,
+          "price_now": 102.5,
+          "pct_since": 356.0,
           "price_then": 22.48
         },
         {
@@ -30072,8 +30610,8 @@
           "txn_date": "2025-02-12",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 390.98999,
-          "pct_since": -4.4,
+          "price_now": 495.39999,
+          "pct_since": 21.1,
           "price_then": 409.040009
         },
         {
@@ -30197,8 +30735,8 @@
           "txn_date": "2025-02-03",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 103.12,
-          "pct_since": 432.1,
+          "price_now": 102.5,
+          "pct_since": 428.9,
           "price_then": 19.38
         },
         {
@@ -30210,8 +30748,8 @@
           "txn_date": "2025-02-03",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 103.12,
-          "pct_since": 432.1,
+          "price_now": 102.5,
+          "pct_since": 428.9,
           "price_then": 19.38
         },
         {
@@ -30223,8 +30761,8 @@
           "txn_date": "2025-02-03",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 103.12,
-          "pct_since": 432.1,
+          "price_now": 102.5,
+          "pct_since": 428.9,
           "price_then": 19.38
         },
         {
@@ -30236,8 +30774,8 @@
           "txn_date": "2025-02-03",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 111.26,
-          "pct_since": -45.5,
+          "price_now": 124.0,
+          "pct_since": -39.3,
           "price_then": 204.188
         },
         {
@@ -30249,8 +30787,8 @@
           "txn_date": "2025-02-03",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 111.26,
-          "pct_since": -45.5,
+          "price_now": 124.0,
+          "pct_since": -39.3,
           "price_then": 204.188
         },
         {
@@ -30521,7 +31059,10 @@
           "instrument": "shares",
           "txn_date": "2025-01-28",
           "amount_low": 1001,
-          "amount_high": 15000
+          "amount_high": 15000,
+          "price_then": 102.17,
+          "price_now": 216.95,
+          "pct_since": 112.3
         },
         {
           "owner": "self",
@@ -30531,7 +31072,10 @@
           "instrument": "shares",
           "txn_date": "2025-01-28",
           "amount_low": 1001,
-          "amount_high": 15000
+          "amount_high": 15000,
+          "price_then": 102.17,
+          "price_now": 216.95,
+          "pct_since": 112.3
         },
         {
           "owner": "self",
@@ -30541,7 +31085,10 @@
           "instrument": "shares",
           "txn_date": "2025-01-28",
           "amount_low": 1001,
-          "amount_high": 15000
+          "amount_high": 15000,
+          "price_then": 102.17,
+          "price_now": 216.95,
+          "pct_since": 112.3
         },
         {
           "owner": "self",
@@ -31673,8 +32220,8 @@
           "txn_date": "2025-01-31",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 218.24001,
-          "pct_since": 48.9,
+          "price_now": 238.2,
+          "pct_since": 62.5,
           "price_then": 146.58
         },
         {
@@ -32127,8 +32674,8 @@
           "txn_date": "2025-01-21",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 534.39001,
-          "pct_since": 337.0,
+          "price_now": 514.39001,
+          "pct_since": 320.7,
           "price_then": 122.28
         },
         {
@@ -32140,8 +32687,8 @@
           "txn_date": "2025-01-21",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 247.31,
-          "pct_since": 7.2,
+          "price_now": 284.019989,
+          "pct_since": 23.1,
           "price_then": 230.71001
         },
         {
@@ -32173,8 +32720,8 @@
           "txn_date": "2025-01-21",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 1181.87,
-          "pct_since": 59.2,
+          "price_now": 1180.16003,
+          "pct_since": 59.0,
           "price_then": 742.34998
         },
         {
@@ -32226,8 +32773,8 @@
           "txn_date": "2025-01-21",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 203.53,
-          "pct_since": 44.5,
+          "price_now": 206.64,
+          "pct_since": 46.7,
           "price_then": 140.83
         },
         {
@@ -32259,8 +32806,8 @@
           "txn_date": "2025-01-21",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 330.29999,
-          "pct_since": 80.0,
+          "price_now": 384.26999,
+          "pct_since": 109.4,
           "price_then": 183.50999
         },
         {
@@ -32292,8 +32839,8 @@
           "txn_date": "2025-01-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 534.39001,
-          "pct_since": 338.6,
+          "price_now": 514.39001,
+          "pct_since": 322.2,
           "price_then": 121.84
         },
         {
@@ -32305,8 +32852,8 @@
           "txn_date": "2025-01-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 534.39001,
-          "pct_since": 338.6,
+          "price_now": 514.39001,
+          "pct_since": 322.2,
           "price_then": 121.84
         },
         {
@@ -32318,8 +32865,8 @@
           "txn_date": "2025-01-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 534.39001,
-          "pct_since": 338.6,
+          "price_now": 514.39001,
+          "pct_since": 322.2,
           "price_then": 121.84
         },
         {
@@ -32331,8 +32878,8 @@
           "txn_date": "2025-01-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 534.39001,
-          "pct_since": 338.6,
+          "price_now": 514.39001,
+          "pct_since": 322.2,
           "price_then": 121.84
         },
         {
@@ -32374,8 +32921,8 @@
           "txn_date": "2025-01-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 247.31,
-          "pct_since": 11.3,
+          "price_now": 284.019989,
+          "pct_since": 27.9,
           "price_then": 222.13
         },
         {
@@ -32387,8 +32934,8 @@
           "txn_date": "2025-01-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 247.31,
-          "pct_since": 11.3,
+          "price_now": 284.019989,
+          "pct_since": 27.9,
           "price_then": 222.13
         },
         {
@@ -32400,8 +32947,8 @@
           "txn_date": "2025-01-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 247.31,
-          "pct_since": 11.3,
+          "price_now": 284.019989,
+          "pct_since": 27.9,
           "price_then": 222.13
         },
         {
@@ -32413,8 +32960,8 @@
           "txn_date": "2025-01-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 247.31,
-          "pct_since": 11.3,
+          "price_now": 284.019989,
+          "pct_since": 27.9,
           "price_then": 222.13
         },
         {
@@ -32506,8 +33053,8 @@
           "txn_date": "2025-01-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 103.12,
-          "pct_since": 418.7,
+          "price_now": 102.5,
+          "pct_since": 415.6,
           "price_then": 19.88
         },
         {
@@ -32519,8 +33066,8 @@
           "txn_date": "2025-01-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 103.12,
-          "pct_since": 418.7,
+          "price_now": 102.5,
+          "pct_since": 415.6,
           "price_then": 19.88
         },
         {
@@ -32612,8 +33159,8 @@
           "txn_date": "2025-01-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 203.53,
-          "pct_since": 45.3,
+          "price_now": 206.64,
+          "pct_since": 47.5,
           "price_then": 140.11
         },
         {
@@ -32625,8 +33172,8 @@
           "txn_date": "2025-01-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 330.29999,
-          "pct_since": 91.1,
+          "price_now": 384.26999,
+          "pct_since": 122.3,
           "price_then": 172.83
         },
         {
@@ -32638,8 +33185,8 @@
           "txn_date": "2025-01-08",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 330.29999,
-          "pct_since": 91.1,
+          "price_now": 384.26999,
+          "pct_since": 122.3,
           "price_then": 172.83
         },
         {
@@ -32755,8 +33302,8 @@
           "txn_date": "2025-01-14",
           "amount_low": 250001,
           "amount_high": 500000,
-          "price_now": 352.51001,
-          "pct_since": 85.9,
+          "price_now": 373.51001,
+          "pct_since": 96.9,
           "price_then": 189.66
         },
         {
@@ -32768,8 +33315,8 @@
           "txn_date": "2025-01-14",
           "amount_low": 250001,
           "amount_high": 500000,
-          "price_now": 247.31,
-          "pct_since": 13.6,
+          "price_now": 284.019989,
+          "pct_since": 30.4,
           "price_then": 217.75999
         },
         {
@@ -32781,8 +33328,8 @@
           "txn_date": "2025-01-14",
           "amount_low": 250001,
           "amount_high": 500000,
-          "price_now": 203.53,
-          "pct_since": 54.5,
+          "price_now": 206.64,
+          "pct_since": 56.8,
           "price_then": 131.75999
         },
         {
@@ -32794,8 +33341,8 @@
           "txn_date": "2025-01-14",
           "amount_low": 50001,
           "amount_high": 100000,
-          "price_now": 55.93,
-          "pct_since": 75.7,
+          "price_now": 46.049999,
+          "pct_since": 44.7,
           "price_then": 31.83
         },
         {
@@ -32807,8 +33354,8 @@
           "txn_date": "2025-01-14",
           "amount_low": 500001,
           "amount_high": 1000000,
-          "price_now": 158.12,
-          "pct_since": -7.3,
+          "price_now": 155.94,
+          "pct_since": -8.5,
           "price_then": 170.50999
         },
         {
@@ -32820,9 +33367,9 @@
           "txn_date": "2024-12-20",
           "amount_low": 500001,
           "amount_high": 1000000,
-          "price_now": 203.53,
-          "pct_since": 51.1,
-          "price_then": 134.7
+          "price_now": 206.64,
+          "pct_since": null,
+          "price_then": null
         },
         {
           "owner": "spouse",
@@ -32833,9 +33380,9 @@
           "txn_date": "2024-12-20",
           "amount_low": 1000001,
           "amount_high": 5000000,
-          "price_now": 330.29999,
-          "pct_since": 76.8,
-          "price_then": 186.78
+          "price_now": 384.26999,
+          "pct_since": null,
+          "price_then": null
         }
       ],
       "trades_version": 1
@@ -32920,9 +33467,9 @@
           "txn_date": "2024-12-10",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 144.50999,
-          "pct_since": 28.3,
-          "price_then": 112.67
+          "price_now": 160.10001,
+          "pct_since": null,
+          "price_then": null
         },
         {
           "owner": "joint",
@@ -33041,8 +33588,8 @@
           "txn_date": "2024-12-30",
           "amount_low": 1001,
           "amount_high": 15000,
-          "price_now": 1045.91003,
-          "pct_since": 82.4,
+          "price_now": 1039.42004,
+          "pct_since": 81.2,
           "price_then": 573.54999
         },
         {
@@ -33124,9 +33671,9 @@
           "txn_date": "2024-12-20",
           "amount_low": 1000001,
           "amount_high": 5000000,
-          "price_now": 390.98999,
-          "pct_since": -10.4,
-          "price_then": 436.60001
+          "price_now": 495.39999,
+          "pct_since": null,
+          "price_then": null
         },
         {
           "owner": "joint",
@@ -33137,9 +33684,9 @@
           "txn_date": "2024-12-20",
           "amount_low": 1000001,
           "amount_high": 5000000,
-          "price_now": 390.98999,
-          "pct_since": -10.4,
-          "price_then": 436.60001
+          "price_now": 495.39999,
+          "pct_since": null,
+          "price_then": null
         },
         {
           "owner": "joint",
@@ -33150,9 +33697,9 @@
           "txn_date": "2024-12-20",
           "amount_low": 1000001,
           "amount_high": 5000000,
-          "price_now": 390.98999,
-          "pct_since": -10.4,
-          "price_then": 436.60001
+          "price_now": 495.39999,
+          "pct_since": null,
+          "price_then": null
         },
         {
           "owner": "joint",
@@ -33163,9 +33710,9 @@
           "txn_date": "2024-12-20",
           "amount_low": 1000001,
           "amount_high": 5000000,
-          "price_now": 390.98999,
-          "pct_since": -10.4,
-          "price_then": 436.60001
+          "price_now": 495.39999,
+          "pct_since": null,
+          "price_then": null
         },
         {
           "owner": "joint",
@@ -33185,10 +33732,7 @@
           "instrument": "shares",
           "txn_date": "2024-12-19",
           "amount_low": 1001,
-          "amount_high": 15000,
-          "price_now": 317.31,
-          "pct_since": 27.0,
-          "price_then": 249.78999
+          "amount_high": 15000
         },
         {
           "owner": "joint",
@@ -33390,16 +33934,6 @@
       "last_txn_date": "2026-03-20"
     },
     {
-      "ticker": "NOW",
-      "member_count": 3,
-      "members": [
-        "Byron Donalds",
-        "Josh Gottheimer",
-        "Lisa McClain"
-      ],
-      "last_txn_date": "2026-03-06"
-    },
-    {
       "ticker": "UNH",
       "member_count": 3,
       "members": [
@@ -33420,6 +33954,24 @@
       "last_txn_date": "2026-01-16"
     },
     {
+      "ticker": "PANW",
+      "member_count": 2,
+      "members": [
+        "Josh Gottheimer",
+        "Marjorie Taylor Greene"
+      ],
+      "last_txn_date": "2026-07-16"
+    },
+    {
+      "ticker": "CRWD",
+      "member_count": 2,
+      "members": [
+        "Josh Gottheimer",
+        "Marjorie Taylor Greene"
+      ],
+      "last_txn_date": "2026-07-15"
+    },
+    {
       "ticker": "UBER",
       "member_count": 2,
       "members": [
@@ -33427,24 +33979,6 @@
         "Nancy Pelosi"
       ],
       "last_txn_date": "2026-05-29"
-    },
-    {
-      "ticker": "MU",
-      "member_count": 2,
-      "members": [
-        "Josh Gottheimer",
-        "Lisa McClain"
-      ],
-      "last_txn_date": "2026-05-21"
-    },
-    {
-      "ticker": "PANW",
-      "member_count": 2,
-      "members": [
-        "Josh Gottheimer",
-        "Marjorie Taylor Greene"
-      ],
-      "last_txn_date": "2026-05-14"
     },
     {
       "ticker": "SNDK",
@@ -33474,15 +34008,6 @@
       "last_txn_date": "2026-05-01"
     },
     {
-      "ticker": "FCX",
-      "member_count": 2,
-      "members": [
-        "Josh Gottheimer",
-        "Lisa McClain"
-      ],
-      "last_txn_date": "2026-04-15"
-    },
-    {
       "ticker": "NTES",
       "member_count": 2,
       "members": [
@@ -33492,22 +34017,13 @@
       "last_txn_date": "2026-04-06"
     },
     {
-      "ticker": "PYPL",
+      "ticker": "NOW",
       "member_count": 2,
       "members": [
         "Byron Donalds",
-        "Lisa McClain"
+        "Josh Gottheimer"
       ],
-      "last_txn_date": "2026-03-13"
-    },
-    {
-      "ticker": "APD",
-      "member_count": 2,
-      "members": [
-        "Josh Gottheimer",
-        "Lisa McClain"
-      ],
-      "last_txn_date": "2026-03-05"
+      "last_txn_date": "2026-03-06"
     },
     {
       "ticker": "CMI",
@@ -33582,24 +34098,6 @@
       "last_txn_date": "2025-12-30"
     },
     {
-      "ticker": "PAYX",
-      "member_count": 2,
-      "members": [
-        "Lisa McClain",
-        "Marjorie Taylor Greene"
-      ],
-      "last_txn_date": "2025-11-12"
-    },
-    {
-      "ticker": "ABBV",
-      "member_count": 2,
-      "members": [
-        "Lisa McClain",
-        "Marjorie Taylor Greene"
-      ],
-      "last_txn_date": "2025-10-30"
-    },
-    {
       "ticker": "GOOG",
       "member_count": 2,
       "members": [
@@ -33672,15 +34170,6 @@
       "last_txn_date": "2025-10-30"
     },
     {
-      "ticker": "PLTR",
-      "member_count": 2,
-      "members": [
-        "Lisa McClain",
-        "Marjorie Taylor Greene"
-      ],
-      "last_txn_date": "2025-10-30"
-    },
-    {
       "ticker": "PEP",
       "member_count": 2,
       "members": [
@@ -33715,66 +34204,11 @@
         "Lisa McClain"
       ],
       "last_txn_date": "2025-10-10"
-    },
-    {
-      "ticker": "UPS",
-      "member_count": 2,
-      "members": [
-        "Lisa McClain",
-        "Marjorie Taylor Greene"
-      ],
-      "last_txn_date": "2025-10-09"
-    },
-    {
-      "ticker": "CVLT",
-      "member_count": 2,
-      "members": [
-        "Josh Gottheimer",
-        "Lisa McClain"
-      ],
-      "last_txn_date": "2025-09-23"
-    },
-    {
-      "ticker": "CRWD",
-      "member_count": 2,
-      "members": [
-        "Lisa McClain",
-        "Marjorie Taylor Greene"
-      ],
-      "last_txn_date": "2025-09-11"
-    },
-    {
-      "ticker": "RHP",
-      "member_count": 2,
-      "members": [
-        "Lisa McClain",
-        "Marjorie Taylor Greene"
-      ],
-      "last_txn_date": "2025-08-28"
     }
   ],
   "leaderboard": [
     {
-      "ticker": "NOW",
-      "member_count": 2,
-      "members": [
-        "Byron Donalds",
-        "Josh Gottheimer"
-      ],
-      "trade_count": 3,
-      "approx_dollars": 24000
-    },
-    {
       "ticker": "INTC",
-      "member_count": 1,
-      "members": [
-        "Nancy Pelosi"
-      ],
-      "trade_count": 1,
-      "approx_dollars": 3000000
-    },
-    {
-      "ticker": "AB",
       "member_count": 1,
       "members": [
         "Nancy Pelosi"
@@ -33801,60 +34235,6 @@
       "approx_dollars": 750000
     },
     {
-      "ticker": "GOOGL",
-      "member_count": 1,
-      "members": [
-        "Nancy Pelosi"
-      ],
-      "trade_count": 1,
-      "approx_dollars": 750000
-    },
-    {
-      "ticker": "AMZN",
-      "member_count": 1,
-      "members": [
-        "Nancy Pelosi"
-      ],
-      "trade_count": 1,
-      "approx_dollars": 750000
-    },
-    {
-      "ticker": "NVDA",
-      "member_count": 1,
-      "members": [
-        "Nancy Pelosi"
-      ],
-      "trade_count": 1,
-      "approx_dollars": 375000
-    },
-    {
-      "ticker": "VST",
-      "member_count": 1,
-      "members": [
-        "Nancy Pelosi"
-      ],
-      "trade_count": 1,
-      "approx_dollars": 175000
-    },
-    {
-      "ticker": "TEM",
-      "member_count": 1,
-      "members": [
-        "Nancy Pelosi"
-      ],
-      "trade_count": 1,
-      "approx_dollars": 75000
-    },
-    {
-      "ticker": "BBAI",
-      "member_count": 1,
-      "members": [
-        "Lisa McClain"
-      ],
-      "trade_count": 2,
-      "approx_dollars": 40500
-    },
-    {
       "ticker": "AMD",
       "member_count": 1,
       "members": [
@@ -33862,6 +34242,33 @@
       ],
       "trade_count": 3,
       "approx_dollars": 24000
+    },
+    {
+      "ticker": "GOOGN",
+      "member_count": 1,
+      "members": [
+        "Josh Gottheimer"
+      ],
+      "trade_count": 2,
+      "approx_dollars": 16000
+    },
+    {
+      "ticker": "PANW",
+      "member_count": 1,
+      "members": [
+        "Josh Gottheimer"
+      ],
+      "trade_count": 2,
+      "approx_dollars": 16000
+    },
+    {
+      "ticker": "ZTS",
+      "member_count": 1,
+      "members": [
+        "Byron Donalds"
+      ],
+      "trade_count": 2,
+      "approx_dollars": 16000
     },
     {
       "ticker": "FN",
@@ -33889,9 +34296,1202 @@
       ],
       "trade_count": 2,
       "approx_dollars": 16000
+    },
+    {
+      "ticker": "MRVL",
+      "member_count": 1,
+      "members": [
+        "Byron Donalds"
+      ],
+      "trade_count": 2,
+      "approx_dollars": 16000
+    },
+    {
+      "ticker": "NFLX",
+      "member_count": 1,
+      "members": [
+        "Byron Donalds"
+      ],
+      "trade_count": 2,
+      "approx_dollars": 16000
+    },
+    {
+      "ticker": "PYPL",
+      "member_count": 1,
+      "members": [
+        "Byron Donalds"
+      ],
+      "trade_count": 2,
+      "approx_dollars": 16000
+    },
+    {
+      "ticker": "GOOGM",
+      "member_count": 1,
+      "members": [
+        "Josh Gottheimer"
+      ],
+      "trade_count": 1,
+      "approx_dollars": 8000
+    },
+    {
+      "ticker": "NICE",
+      "member_count": 1,
+      "members": [
+        "Josh Gottheimer"
+      ],
+      "trade_count": 1,
+      "approx_dollars": 8000
     }
   ],
   "stocks": [
+    {
+      "ticker": "DEO",
+      "buys": 2,
+      "sells": 4,
+      "member_count": 3,
+      "members": [
+        "Josh Gottheimer",
+        "Kevin Hern",
+        "Lisa McClain"
+      ],
+      "last_txn_date": "2026-08-05",
+      "events": [
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-08-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-09-25",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "sell",
+          "txn_date": "2025-09-22",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-09-11",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-08-04",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-06-24",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "KVUE",
+      "buys": 2,
+      "sells": 4,
+      "member_count": 2,
+      "members": [
+        "Kevin Hern",
+        "Lisa McClain"
+      ],
+      "last_txn_date": "2026-08-05",
+      "events": [
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-08-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-03-17",
+          "instrument": "shares",
+          "amount_low": 15001,
+          "amount_high": 50000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-10-31",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-10-30",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-10-30",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-09-25",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "CMCSA",
+      "buys": 1,
+      "sells": 4,
+      "member_count": 3,
+      "members": [
+        "Kevin Hern",
+        "Mike Kelly",
+        "Rob Bresnahan"
+      ],
+      "last_txn_date": "2026-08-05",
+      "events": [
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-08-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Mike Kelly",
+          "side": "sell",
+          "txn_date": "2026-05-07",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-03-17",
+          "instrument": "shares",
+          "amount_low": 15001,
+          "amount_high": 50000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-04-08",
+          "instrument": "shares",
+          "amount_low": 15001,
+          "amount_high": 50000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "sell",
+          "txn_date": "2025-02-25",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "MDLZ",
+      "buys": 1,
+      "sells": 1,
+      "member_count": 2,
+      "members": [
+        "Kevin Hern",
+        "Rob Bresnahan"
+      ],
+      "last_txn_date": "2026-08-05",
+      "events": [
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-08-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-02-25",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "OGN",
+      "buys": 0,
+      "sells": 2,
+      "member_count": 1,
+      "members": [
+        "Kevin Hern"
+      ],
+      "last_txn_date": "2026-08-05",
+      "events": [
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-08-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-08-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "VSNT",
+      "buys": 0,
+      "sells": 2,
+      "member_count": 1,
+      "members": [
+        "Kevin Hern"
+      ],
+      "last_txn_date": "2026-08-05",
+      "events": [
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-08-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-08-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "EL",
+      "buys": 0,
+      "sells": 2,
+      "member_count": 1,
+      "members": [
+        "Kevin Hern"
+      ],
+      "last_txn_date": "2026-08-05",
+      "events": [
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2026-08-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2024-12-31",
+          "instrument": "shares",
+          "amount_low": 15001,
+          "amount_high": 50000
+        }
+      ]
+    },
+    {
+      "ticker": "GOOGN",
+      "buys": 2,
+      "sells": 0,
+      "member_count": 1,
+      "members": [
+        "Josh Gottheimer"
+      ],
+      "last_txn_date": "2026-07-24",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-07-24",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-07-23",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "GOOGM",
+      "buys": 1,
+      "sells": 0,
+      "member_count": 1,
+      "members": [
+        "Josh Gottheimer"
+      ],
+      "last_txn_date": "2026-07-24",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-07-24",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "CCI",
+      "buys": 0,
+      "sells": 1,
+      "member_count": 1,
+      "members": [
+        "Josh Gottheimer"
+      ],
+      "last_txn_date": "2026-07-23",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "sell",
+          "txn_date": "2026-07-23",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "NICE",
+      "buys": 2,
+      "sells": 1,
+      "member_count": 2,
+      "members": [
+        "Josh Gottheimer",
+        "Lisa McClain"
+      ],
+      "last_txn_date": "2026-07-20",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-07-20",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2025-10-17",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-07-16",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "SAIL",
+      "buys": 1,
+      "sells": 0,
+      "member_count": 1,
+      "members": [
+        "Josh Gottheimer"
+      ],
+      "last_txn_date": "2026-07-20",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-07-20",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "ABT",
+      "buys": 6,
+      "sells": 4,
+      "member_count": 4,
+      "members": [
+        "Byron Donalds",
+        "Josh Gottheimer",
+        "Lisa McClain",
+        "Mike Kelly"
+      ],
+      "last_txn_date": "2026-07-17",
+      "events": [
+        {
+          "member": "Mike Kelly",
+          "side": "sell",
+          "txn_date": "2026-07-17",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Byron Donalds",
+          "side": "sell",
+          "txn_date": "2025-12-04",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Byron Donalds",
+          "side": "sell",
+          "txn_date": "2025-12-04",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-07-10",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-06-24",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Byron Donalds",
+          "side": "buy",
+          "txn_date": "2025-03-20",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Byron Donalds",
+          "side": "buy",
+          "txn_date": "2025-03-20",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2025-02-13",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2025-01-29",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2025-01-28",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "PEP",
+      "buys": 5,
+      "sells": 5,
+      "member_count": 4,
+      "members": [
+        "Lisa McClain",
+        "Marjorie Taylor Greene",
+        "Mike Kelly",
+        "Rob Bresnahan"
+      ],
+      "last_txn_date": "2026-07-17",
+      "events": [
+        {
+          "member": "Mike Kelly",
+          "side": "sell",
+          "txn_date": "2026-07-17",
+          "instrument": "shares",
+          "amount_low": 15001,
+          "amount_high": 50000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-10-31",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-10-30",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-10-30",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-08-28",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-07-15",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-06-24",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "sell",
+          "txn_date": "2025-05-15",
+          "instrument": "shares",
+          "amount_low": 15001,
+          "amount_high": 50000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-04-08",
+          "instrument": "shares",
+          "amount_low": 15001,
+          "amount_high": 50000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "sell",
+          "txn_date": "2025-02-25",
+          "instrument": "shares",
+          "amount_low": 15001,
+          "amount_high": 50000
+        }
+      ]
+    },
+    {
+      "ticker": "MNST",
+      "buys": 3,
+      "sells": 1,
+      "member_count": 2,
+      "members": [
+        "Josh Gottheimer",
+        "Lisa McClain"
+      ],
+      "last_txn_date": "2026-07-17",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-07-17",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-02-02",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-07-10",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-06-17",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "DIS",
+      "buys": 0,
+      "sells": 5,
+      "member_count": 3,
+      "members": [
+        "Mike Kelly",
+        "Nancy Pelosi",
+        "Rob Bresnahan"
+      ],
+      "last_txn_date": "2026-07-17",
+      "events": [
+        {
+          "member": "Mike Kelly",
+          "side": "sell",
+          "txn_date": "2026-07-17",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Nancy Pelosi",
+          "side": "sell",
+          "txn_date": "2025-12-30",
+          "instrument": "shares",
+          "amount_low": 1000001,
+          "amount_high": 5000000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "sell",
+          "txn_date": "2025-04-08",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "sell",
+          "txn_date": "2025-01-21",
+          "instrument": "shares",
+          "amount_low": 15001,
+          "amount_high": 50000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "sell",
+          "txn_date": "2025-01-13",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "GTLS",
+      "buys": 0,
+      "sells": 1,
+      "member_count": 1,
+      "members": [
+        "Josh Gottheimer"
+      ],
+      "last_txn_date": "2026-07-17",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "sell",
+          "txn_date": "2026-07-17",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "PANW",
+      "buys": 10,
+      "sells": 3,
+      "member_count": 5,
+      "members": [
+        "Josh Gottheimer",
+        "Lisa McClain",
+        "Marjorie Taylor Greene",
+        "Nancy Pelosi",
+        "Rob Bresnahan"
+      ],
+      "last_txn_date": "2026-07-16",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-07-16",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-05-14",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "sell",
+          "txn_date": "2026-02-27",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-10-24",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-07-16",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-07-10",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-05-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-01-21",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "sell",
+          "txn_date": "2025-01-13",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-01-08",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-01-08",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Nancy Pelosi",
+          "side": "buy",
+          "txn_date": "2024-12-20",
+          "instrument": "options",
+          "amount_low": 1000001,
+          "amount_high": 5000000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2024-12-11",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "IBM",
+      "buys": 5,
+      "sells": 2,
+      "member_count": 3,
+      "members": [
+        "Josh Gottheimer",
+        "Lisa McClain",
+        "Rob Bresnahan"
+      ],
+      "last_txn_date": "2026-07-16",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "sell",
+          "txn_date": "2026-07-16",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-07-16",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-06-17",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-03-26",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-03-11",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2025-03-10",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-03-10",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "CRWD",
+      "buys": 7,
+      "sells": 2,
+      "member_count": 4,
+      "members": [
+        "Josh Gottheimer",
+        "Lisa McClain",
+        "Marjorie Taylor Greene",
+        "Rob Bresnahan"
+      ],
+      "last_txn_date": "2026-07-15",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-07-15",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-09-11",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-08-04",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-07-16",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-03-07",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-01-28",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-01-28",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-01-28",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "sell",
+          "txn_date": "2025-01-13",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "FN",
+      "buys": 3,
+      "sells": 3,
+      "member_count": 2,
+      "members": [
+        "Josh Gottheimer",
+        "Lisa McClain"
+      ],
+      "last_txn_date": "2026-07-14",
+      "events": [
+        {
+          "member": "Josh Gottheimer",
+          "side": "sell",
+          "txn_date": "2026-07-14",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-05-01",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Josh Gottheimer",
+          "side": "buy",
+          "txn_date": "2026-03-24",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-10-31",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-10-30",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-10-30",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
+    {
+      "ticker": "ZTS",
+      "buys": 5,
+      "sells": 4,
+      "member_count": 3,
+      "members": [
+        "Byron Donalds",
+        "Lisa McClain",
+        "Rob Bresnahan"
+      ],
+      "last_txn_date": "2026-06-09",
+      "events": [
+        {
+          "member": "Byron Donalds",
+          "side": "buy",
+          "txn_date": "2026-06-09",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Byron Donalds",
+          "side": "buy",
+          "txn_date": "2026-06-09",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-08-04",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2025-07-22",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-05-15",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "sell",
+          "txn_date": "2025-04-08",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "sell",
+          "txn_date": "2025-02-25",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "sell",
+          "txn_date": "2025-01-15",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Lisa McClain",
+          "side": "buy",
+          "txn_date": "2024-12-11",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        }
+      ]
+    },
     {
       "ticker": "BABA",
       "buys": 15,
@@ -34872,118 +36472,6 @@
       ]
     },
     {
-      "ticker": "PANW",
-      "buys": 9,
-      "sells": 3,
-      "member_count": 5,
-      "members": [
-        "Josh Gottheimer",
-        "Lisa McClain",
-        "Marjorie Taylor Greene",
-        "Nancy Pelosi",
-        "Rob Bresnahan"
-      ],
-      "last_txn_date": "2026-05-14",
-      "events": [
-        {
-          "member": "Josh Gottheimer",
-          "side": "buy",
-          "txn_date": "2026-05-14",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Josh Gottheimer",
-          "side": "sell",
-          "txn_date": "2026-02-27",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-10-24",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-07-16",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-07-10",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-05-05",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-01-21",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "sell",
-          "txn_date": "2025-01-13",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-01-08",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-01-08",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Nancy Pelosi",
-          "side": "buy",
-          "txn_date": "2024-12-20",
-          "instrument": "options",
-          "amount_low": 1000001,
-          "amount_high": 5000000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2024-12-11",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
       "ticker": "SNDK",
       "buys": 2,
       "sells": 4,
@@ -35039,52 +36527,6 @@
           "member": "Rob Bresnahan",
           "side": "sell",
           "txn_date": "2025-04-04",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
-      "ticker": "CMCSA",
-      "buys": 1,
-      "sells": 3,
-      "member_count": 3,
-      "members": [
-        "Kevin Hern",
-        "Mike Kelly",
-        "Rob Bresnahan"
-      ],
-      "last_txn_date": "2026-05-07",
-      "events": [
-        {
-          "member": "Mike Kelly",
-          "side": "sell",
-          "txn_date": "2026-05-07",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Kevin Hern",
-          "side": "sell",
-          "txn_date": "2026-03-17",
-          "instrument": "shares",
-          "amount_low": 15001,
-          "amount_high": 50000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-04-08",
-          "instrument": "shares",
-          "amount_low": 15001,
-          "amount_high": 50000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "sell",
-          "txn_date": "2025-02-25",
           "instrument": "shares",
           "amount_low": 1001,
           "amount_high": 15000
@@ -35500,59 +36942,6 @@
           "member": "Josh Gottheimer",
           "side": "buy",
           "txn_date": "2025-01-31",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
-      "ticker": "FN",
-      "buys": 3,
-      "sells": 2,
-      "member_count": 2,
-      "members": [
-        "Josh Gottheimer",
-        "Lisa McClain"
-      ],
-      "last_txn_date": "2026-05-01",
-      "events": [
-        {
-          "member": "Josh Gottheimer",
-          "side": "buy",
-          "txn_date": "2026-05-01",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Josh Gottheimer",
-          "side": "buy",
-          "txn_date": "2026-03-24",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-10-31",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-10-30",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-10-30",
           "instrument": "shares",
           "amount_low": 1001,
           "amount_high": 15000
@@ -37559,59 +38948,6 @@
       ]
     },
     {
-      "ticker": "KVUE",
-      "buys": 2,
-      "sells": 3,
-      "member_count": 2,
-      "members": [
-        "Kevin Hern",
-        "Lisa McClain"
-      ],
-      "last_txn_date": "2026-03-17",
-      "events": [
-        {
-          "member": "Kevin Hern",
-          "side": "sell",
-          "txn_date": "2026-03-17",
-          "instrument": "shares",
-          "amount_low": 15001,
-          "amount_high": 50000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-10-31",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-10-30",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-10-30",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-09-25",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
       "ticker": "CTSH",
       "buys": 1,
       "sells": 2,
@@ -38866,43 +40202,6 @@
       ]
     },
     {
-      "ticker": "MNST",
-      "buys": 2,
-      "sells": 1,
-      "member_count": 2,
-      "members": [
-        "Josh Gottheimer",
-        "Lisa McClain"
-      ],
-      "last_txn_date": "2026-02-02",
-      "events": [
-        {
-          "member": "Josh Gottheimer",
-          "side": "buy",
-          "txn_date": "2026-02-02",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-07-10",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-06-17",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
       "ticker": "GILD",
       "buys": 5,
       "sells": 1,
@@ -39945,51 +41244,6 @@
       ]
     },
     {
-      "ticker": "DIS",
-      "buys": 0,
-      "sells": 4,
-      "member_count": 2,
-      "members": [
-        "Nancy Pelosi",
-        "Rob Bresnahan"
-      ],
-      "last_txn_date": "2025-12-30",
-      "events": [
-        {
-          "member": "Nancy Pelosi",
-          "side": "sell",
-          "txn_date": "2025-12-30",
-          "instrument": "shares",
-          "amount_low": 1000001,
-          "amount_high": 5000000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "sell",
-          "txn_date": "2025-04-08",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "sell",
-          "txn_date": "2025-01-21",
-          "instrument": "shares",
-          "amount_low": 15001,
-          "amount_high": 50000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "sell",
-          "txn_date": "2025-01-13",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
       "ticker": "BTC",
       "buys": 1,
       "sells": 0,
@@ -40214,92 +41468,6 @@
           "member": "Josh Gottheimer",
           "side": "buy",
           "txn_date": "2025-09-30",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
-      "ticker": "ABT",
-      "buys": 6,
-      "sells": 3,
-      "member_count": 3,
-      "members": [
-        "Byron Donalds",
-        "Josh Gottheimer",
-        "Lisa McClain"
-      ],
-      "last_txn_date": "2025-12-04",
-      "events": [
-        {
-          "member": "Byron Donalds",
-          "side": "sell",
-          "txn_date": "2025-12-04",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Byron Donalds",
-          "side": "sell",
-          "txn_date": "2025-12-04",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-07-10",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-06-24",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Byron Donalds",
-          "side": "buy",
-          "txn_date": "2025-03-20",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Byron Donalds",
-          "side": "buy",
-          "txn_date": "2025-03-20",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Josh Gottheimer",
-          "side": "buy",
-          "txn_date": "2025-02-13",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Josh Gottheimer",
-          "side": "buy",
-          "txn_date": "2025-01-29",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Josh Gottheimer",
-          "side": "buy",
-          "txn_date": "2025-01-28",
           "instrument": "shares",
           "amount_low": 1001,
           "amount_high": 15000
@@ -43214,92 +44382,6 @@
           "instrument": "shares",
           "amount_low": 1001,
           "amount_high": 15000
-        }
-      ]
-    },
-    {
-      "ticker": "PEP",
-      "buys": 5,
-      "sells": 4,
-      "member_count": 3,
-      "members": [
-        "Lisa McClain",
-        "Marjorie Taylor Greene",
-        "Rob Bresnahan"
-      ],
-      "last_txn_date": "2025-10-31",
-      "events": [
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-10-31",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-10-30",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-10-30",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-08-28",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-07-15",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-06-24",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "sell",
-          "txn_date": "2025-05-15",
-          "instrument": "shares",
-          "amount_low": 15001,
-          "amount_high": 50000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-04-08",
-          "instrument": "shares",
-          "amount_low": 15001,
-          "amount_high": 50000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "sell",
-          "txn_date": "2025-02-25",
-          "instrument": "shares",
-          "amount_low": 15001,
-          "amount_high": 50000
         }
       ]
     },
@@ -49315,35 +50397,6 @@
       ]
     },
     {
-      "ticker": "NICE",
-      "buys": 1,
-      "sells": 1,
-      "member_count": 2,
-      "members": [
-        "Josh Gottheimer",
-        "Lisa McClain"
-      ],
-      "last_txn_date": "2025-10-17",
-      "events": [
-        {
-          "member": "Josh Gottheimer",
-          "side": "buy",
-          "txn_date": "2025-10-17",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-07-16",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
       "ticker": "ADBE",
       "buys": 8,
       "sells": 3,
@@ -50430,59 +51483,6 @@
       ]
     },
     {
-      "ticker": "DEO",
-      "buys": 2,
-      "sells": 3,
-      "member_count": 2,
-      "members": [
-        "Josh Gottheimer",
-        "Lisa McClain"
-      ],
-      "last_txn_date": "2025-09-25",
-      "events": [
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-09-25",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Josh Gottheimer",
-          "side": "sell",
-          "txn_date": "2025-09-22",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-09-11",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-08-04",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-06-24",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
       "ticker": "DLB",
       "buys": 2,
       "sells": 2,
@@ -51056,84 +52056,6 @@
           "member": "Josh Gottheimer",
           "side": "sell",
           "txn_date": "2025-03-19",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
-      "ticker": "CRWD",
-      "buys": 6,
-      "sells": 2,
-      "member_count": 3,
-      "members": [
-        "Lisa McClain",
-        "Marjorie Taylor Greene",
-        "Rob Bresnahan"
-      ],
-      "last_txn_date": "2025-09-11",
-      "events": [
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-09-11",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-08-04",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-07-16",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-03-07",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-01-28",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-01-28",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-01-28",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "sell",
-          "txn_date": "2025-01-13",
           "instrument": "shares",
           "amount_low": 1001,
           "amount_high": 15000
@@ -53147,75 +54069,6 @@
       ]
     },
     {
-      "ticker": "ZTS",
-      "buys": 3,
-      "sells": 4,
-      "member_count": 2,
-      "members": [
-        "Lisa McClain",
-        "Rob Bresnahan"
-      ],
-      "last_txn_date": "2025-08-04",
-      "events": [
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-08-04",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-07-22",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-05-15",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "sell",
-          "txn_date": "2025-04-08",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "sell",
-          "txn_date": "2025-02-25",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-01-15",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2024-12-11",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
       "ticker": "BUD",
       "buys": 2,
       "sells": 1,
@@ -54747,68 +55600,6 @@
           "member": "Lisa McClain",
           "side": "buy",
           "txn_date": "2025-07-16",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
-      "ticker": "IBM",
-      "buys": 5,
-      "sells": 1,
-      "member_count": 3,
-      "members": [
-        "Josh Gottheimer",
-        "Lisa McClain",
-        "Rob Bresnahan"
-      ],
-      "last_txn_date": "2025-07-16",
-      "events": [
-        {
-          "member": "Lisa McClain",
-          "side": "sell",
-          "txn_date": "2025-07-16",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Lisa McClain",
-          "side": "buy",
-          "txn_date": "2025-06-17",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-03-26",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-03-11",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Josh Gottheimer",
-          "side": "buy",
-          "txn_date": "2025-03-10",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-03-10",
           "instrument": "shares",
           "amount_low": 1001,
           "amount_high": 15000
@@ -63318,26 +64109,6 @@
       ]
     },
     {
-      "ticker": "MDLZ",
-      "buys": 1,
-      "sells": 0,
-      "member_count": 1,
-      "members": [
-        "Rob Bresnahan"
-      ],
-      "last_txn_date": "2025-02-25",
-      "events": [
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-02-25",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        }
-      ]
-    },
-    {
       "ticker": "STE",
       "buys": 1,
       "sells": 0,
@@ -64190,26 +64961,6 @@
           "instrument": "shares",
           "amount_low": 1001,
           "amount_high": 15000
-        }
-      ]
-    },
-    {
-      "ticker": "EL",
-      "buys": 0,
-      "sells": 1,
-      "member_count": 1,
-      "members": [
-        "Kevin Hern"
-      ],
-      "last_txn_date": "2024-12-31",
-      "events": [
-        {
-          "member": "Kevin Hern",
-          "side": "sell",
-          "txn_date": "2024-12-31",
-          "instrument": "shares",
-          "amount_low": 15001,
-          "amount_high": 50000
         }
       ]
     },
