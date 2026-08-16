@@ -5,6 +5,15 @@
   RewriteEngine On
   RewriteBase /
   RewriteRule ^index\.html$ - [L]
+
+  # App routes are ALWAYS the SPA, even if a directory of the same name exists
+  # on the server. A deploy once left a stale `krydda/` folder behind (git-ftp
+  # uploads new files but does not delete removed ones); the `!-d` condition
+  # below then skipped the rewrite, Apache redirected to `/krydda/` and denied
+  # the listing, and the live page returned 403 while every asset still worked.
+  # Matching these first makes the route immune to leftover directories.
+  RewriteRule ^(krydda|skarp)/?$ /index.html [L]
+
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
