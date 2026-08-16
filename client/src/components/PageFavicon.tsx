@@ -1,5 +1,4 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
+import { useEffect } from 'react'
 
 export interface PageFaviconProps {
     /** 32px icon shown in the browser tab. */
@@ -8,20 +7,52 @@ export interface PageFaviconProps {
     icon180: string
 }
 
+const ICON_SELECTOR =
+    'link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"]'
+
 /**
  * Swaps the tab icon for a product page.
  *
- * jacobhal.se hosts several apps under one domain, so every tab carried the
- * personal-site favicon and they were indistinguishable when a few were open at
- * once. `react-helmet` replaces same-`rel` tags rather than appending, so
- * leaving a page restores the site default from index.html.
+ * Deliberately imperative rather than a `react-helmet` block. Helmet *appends*
+ * its links, so index.html's own `<link rel="shortcut icon">` stayed in the
+ * document — first in the head, with an absolute URL — and browsers kept using
+ * it. Safari is the strictest: it resolves the favicon from the initial HTML
+ * before React runs and ignores links added afterwards unless the old ones are
+ * actually gone.
+ *
+ * So this removes every existing icon link, inserts its own, and puts the
+ * originals back on unmount, leaving the personal site's favicon intact
+ * everywhere else.
  */
-export const PageFavicon: React.FC<PageFaviconProps> = ({ icon32, icon180 }) => (
-    <Helmet>
-        <link rel="icon" type="image/png" sizes="32x32" href={icon32} />
-        <link rel="shortcut icon" type="image/png" href={icon32} />
-        <link rel="apple-touch-icon" sizes="180x180" href={icon180} />
-    </Helmet>
-)
+export const PageFavicon: React.FC<PageFaviconProps> = ({ icon32, icon180 }) => {
+    useEffect(() => {
+        const head = document.head
+        const previous = Array.from(head.querySelectorAll(ICON_SELECTOR))
+        previous.forEach((node) => node.remove())
+
+        const added = (
+            [
+                ['icon', icon32, 'image/png', '32x32'],
+                ['shortcut icon', icon32, 'image/png', undefined],
+                ['apple-touch-icon', icon180, undefined, '180x180'],
+            ] as const
+        ).map(([rel, href, type, sizes]) => {
+            const link = document.createElement('link')
+            link.setAttribute('rel', rel)
+            link.setAttribute('href', href)
+            if (type) link.setAttribute('type', type)
+            if (sizes) link.setAttribute('sizes', sizes)
+            head.appendChild(link)
+            return link
+        })
+
+        return () => {
+            added.forEach((node) => node.remove())
+            previous.forEach((node) => head.appendChild(node))
+        }
+    }, [icon32, icon180])
+
+    return null
+}
 
 export default PageFavicon
