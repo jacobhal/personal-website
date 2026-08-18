@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18T12:27:10.543102Z",
+  "updated": "2026-08-18T13:23:29.298692Z",
   "window_days": 365,
   "proven_members": [
     "David Rouzer",
@@ -9,6 +9,100 @@
     "Warren Davidson"
   ],
   "filings": [
+    {
+      "name": "Scott H. Peters",
+      "last": "Peters",
+      "first": "Scott H.",
+      "filing_type": "P",
+      "filing_date": "2026-08-17",
+      "year": "2026",
+      "doc_id": "20035191",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035191.pdf",
+      "proven": false,
+      "trades": [
+        {
+          "owner": "spouse",
+          "asset": "Pittsburgh, CA Successor Agency [GS]",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-30",
+          "amount_low": 50001,
+          "amount_high": 100000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Smash Capital Fund II LP [OT]",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-28",
+          "amount_low": 50001,
+          "amount_high": 100000
+        },
+        {
+          "owner": "spouse",
+          "asset": "U.S. Treasury Bill [GS]",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-27",
+          "amount_low": 50001,
+          "amount_high": 100000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Los Angeles CA IMPT SCH [GS]",
+          "ticker": null,
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-07-24",
+          "amount_low": 50001,
+          "amount_high": 100000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Los Angeles CA IMPTSch [GS]",
+          "ticker": null,
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-07-24",
+          "amount_low": 500001,
+          "amount_high": 1000000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Charlotte-Meckle HLTH [GS]",
+          "ticker": null,
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-07-22",
+          "amount_low": 250001,
+          "amount_high": 500000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Valo Ventures GP II, LP [OT]",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-22",
+          "amount_low": 15001,
+          "amount_high": 50000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Los Angeles Cnty CA TRANs [GS]",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-01",
+          "amount_low": 100001,
+          "amount_high": 250000
+        }
+      ],
+      "trades_version": 1
+    },
     {
       "name": "Rob Bresnahan",
       "last": "Bresnahan",
