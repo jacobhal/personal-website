@@ -14,6 +14,7 @@ const sections: { sv: LegalSection[]; en: LegalSection[] } = {
                 'Virtuella föremål som mynt, ädelstenar och Battle Pass-framsteg.',
                 'Köp- och entitlementstatus när du köper mynt eller andra föremål via RevenueCat och App Store eller Google Play.',
                 'Teknisk felinformation om krascher eller allvarliga fel, om felrapportering är aktiverad i den build du använder.',
+                'Annonsrelaterade uppgifter som enhetens annons-id och ditt samtyckesval, om du väljer att titta på en videoannons för att tjäna mynt.',
             ],
         },
         {
@@ -32,6 +33,20 @@ const sections: { sv: LegalSection[]; en: LegalSection[] } = {
                 'RevenueCat används för att validera och hantera köp i appen.',
                 'Apple App Store och Google Play hanterar själva betalningen när du gör ett köp.',
                 'Sentry kan användas för kraschrapportering och teknisk felspårning.',
+                'Google AdMob levererar de frivilliga videoannonser du kan välja att titta på för att tjäna mynt.',
+            ],
+        },
+        {
+            title: 'Annonser',
+            paragraphs: [
+                'Skarp visar bara frivilliga videoannonser. Du ser aldrig en annons utan att själv ha valt att titta på en, och det finns varken bannerannonser eller helskärmsannonser som avbryter spelet. Belöningen är mynt, som enbart går att använda till kosmetiska föremål.',
+            ],
+            bullets: [
+                'Annonserna levereras av Google AdMob. Google och Googles annonspartner kan behandla enhetens annons-id, ungefärlig plats utifrån IP-adress, enhetstyp och uppgifter om vilka annonser som visats.',
+                'Befinner du dig inom EU, EES, Storbritannien eller Schweiz frågar appen om ditt samtycke innan någon annons hämtas. Väljer du att inte samtycka hämtas ingen annons, och du kan då inte tjäna mynt den vägen. Allt annat i appen fungerar som vanligt.',
+                'Bor du i en amerikansk delstat med egen integritetslagstiftning kan du i stället välja bort att dina uppgifter säljs eller delas.',
+                'Du kan ändra ditt val när som helst i appen under Profil och Annonsinställningar.',
+                'Google beskriver sin egen behandling i Googles integritetspolicy på policies.google.com/privacy. Vilka annonspartner som omfattas visas i samtyckesdialogen.',
             ],
         },
         {
@@ -73,6 +88,7 @@ const sections: { sv: LegalSection[]; en: LegalSection[] } = {
                 'Virtual items such as coins, gems, and Battle Pass progress.',
                 'Purchase and entitlement status when you buy coins or other items through RevenueCat and the App Store or Google Play.',
                 'Technical diagnostics about crashes or serious errors, if crash reporting is enabled in the build you are using.',
+                'Advertising data such as your device advertising identifier and your consent choice, if you choose to watch a video ad to earn coins.',
             ],
         },
         {
@@ -91,6 +107,20 @@ const sections: { sv: LegalSection[]; en: LegalSection[] } = {
                 'RevenueCat is used to validate and manage in-app purchases.',
                 'Apple App Store and Google Play process payments when you make a purchase.',
                 'Sentry may be used for crash reporting and technical error monitoring.',
+                'Google AdMob delivers the optional video ads you can choose to watch to earn coins.',
+            ],
+        },
+        {
+            title: 'Advertising',
+            paragraphs: [
+                'Skarp shows optional video ads only. You never see an ad without choosing to watch one, and there are no banner or full-screen ads interrupting play. The reward is coins, which can only be spent on cosmetic items.',
+            ],
+            bullets: [
+                'Ads are delivered by Google AdMob. Google and its advertising partners may process your device advertising identifier, approximate location derived from your IP address, device type, and records of which ads were shown.',
+                'If you are in the EU, EEA, United Kingdom, or Switzerland, the app asks for your consent before any ad is requested. If you decline, no ad is requested and you cannot earn coins that way. Everything else in the app works as normal.',
+                'If you live in a US state with its own privacy law, you can instead opt out of the sale or sharing of your data.',
+                'You can change your choice at any time in the app under Profile and Ad settings.',
+                'Google describes its own processing in the Google Privacy Policy at policies.google.com/privacy. The advertising partners involved are listed in the consent dialog.',
             ],
         },
         {
@@ -136,7 +166,7 @@ const SkarpPrivacy: React.FC = () => {
             copy={{
                 appLabel: { sv: 'Skarp', en: 'Skarp' },
                 byline: { sv: 'av Jacob Hallman', en: 'by Jacob Hallman' },
-                updated: '2026-06-25',
+                updated: '2026-08-19',
                 lastUpdatedLabel: { sv: 'Senast uppdaterad', en: 'Last updated' },
                 contactLabel: { sv: 'Kontakt', en: 'Contact' },
             }}
