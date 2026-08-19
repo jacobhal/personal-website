@@ -1,0 +1,5 @@
+# app-ads.txt - IAB Tech Lab spec. Authorises AdMob to sell ad inventory in the
+# apps whose store listings name this domain as the developer website.
+# Covers every app under this publisher account, so one line serves both
+# Skarp and Krydda. Must stay at the domain ROOT and be served as text/plain.
+google.com, pub-5811013295944343, DIRECT, f08c47fec0942fa0
