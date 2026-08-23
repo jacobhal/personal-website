@@ -19,9 +19,10 @@ import {
 } from '@mui/material'
 
 import {
-    fetchAcquisitionSummary,
+    fetchAcquisitionReport,
     isAcquisitionStoreConfigured,
-    type AcquisitionSummaryRow,
+    type AcquisitionReport,
+    type AppOverview,
 } from '../../services/acquisitionStore'
 import type { AcquisitionApp } from '../../services/acquisitionTelemetry'
 import { summarize, type AppTotals } from './summarize'
@@ -74,10 +75,11 @@ const percent = (part: number, whole: number): string =>
 const numberFormat = new Intl.NumberFormat('sv-SE')
 const count = (value: number): string => numberFormat.format(value)
 
-const TotalsCard: React.FC<{ title: string; totals: AppTotals }> = ({
-    title,
-    totals,
-}) => (
+const TotalsCard: React.FC<{
+    title: string
+    totals: AppTotals
+    overview?: AppOverview
+}> = ({ title, totals, overview }) => (
     <Box
         sx={{
             flex: 1,
@@ -112,6 +114,43 @@ const TotalsCard: React.FC<{ title: string; totals: AppTotals }> = ({
         <Typography sx={{ color: colors.muted, fontSize: 12, mt: 1.5 }}>
             iOS {count(totals.appStore)} · Android {count(totals.googlePlay)}
         </Typography>
+        {overview && (
+            <Box
+                sx={{
+                    mt: 2,
+                    pt: 2,
+                    borderTop: `1px solid ${colors.border}`,
+                }}
+            >
+                <Stack direction="row" spacing={3}>
+                    {[
+                        ['Users', count(overview.registered_users)],
+                        ['New', count(overview.new_users)],
+                        ['Active', count(overview.active_users)],
+                    ].map(([label, value]) => (
+                        <Box key={label}>
+                            <Typography
+                                sx={{ fontSize: 18, fontWeight: 800 }}
+                            >
+                                {value}
+                            </Typography>
+                            <Typography
+                                sx={{ color: colors.muted, fontSize: 12 }}
+                            >
+                                {label}
+                            </Typography>
+                        </Box>
+                    ))}
+                </Stack>
+                {overview.anonymous_users > 0 && (
+                    <Typography
+                        sx={{ color: colors.muted, fontSize: 12, mt: 1 }}
+                    >
+                        plus {count(overview.anonymous_users)} guest accounts
+                    </Typography>
+                )}
+            </Box>
+        )}
     </Box>
 )
 
@@ -130,7 +169,7 @@ const Stats: React.FC = () => {
     const [draftToken, setDraftToken] = useState('')
     const [days, setDays] = useState<number>(30)
     const [app, setApp] = useState<AppFilter>('all')
-    const [rows, setRows] = useState<AcquisitionSummaryRow[] | null>(null)
+    const [report, setReport] = useState<AcquisitionReport | null>(null)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
 
@@ -139,8 +178,8 @@ const Stats: React.FC = () => {
         setLoading(true)
         setError(null)
         try {
-            setRows(
-                await fetchAcquisitionSummary(
+            setReport(
+                await fetchAcquisitionReport(
                     token,
                     days,
                     app === 'all' ? undefined : app
@@ -152,7 +191,7 @@ const Stats: React.FC = () => {
                     ? caught.message
                     : 'Could not load statistics'
             )
-            setRows(null)
+            setReport(null)
         } finally {
             setLoading(false)
         }
@@ -162,14 +201,17 @@ const Stats: React.FC = () => {
         void load()
     }, [load])
 
-    const summary = useMemo(() => summarize(rows ?? []), [rows])
+    const summary = useMemo(() => summarize(report?.rows ?? []), [report])
+    const overviewFor = (name: AcquisitionApp): AppOverview | undefined =>
+        report?.overviews.find((entry) => entry.app === name)
 
     if (!isAcquisitionStoreConfigured()) {
         return (
             <Box sx={{ backgroundColor: colors.bg, minHeight: '100vh', p: 4 }}>
                 <Alert severity="warning">
-                    Supabase is not configured for this build. Set
-                    VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.
+                    No Supabase project is configured for this build. Set
+                    VITE_SUPABASE_SKARP_URL / _ANON_KEY and
+                    VITE_SUPABASE_KRYDDA_URL / _ANON_KEY.
                 </Alert>
             </Box>
         )
@@ -311,9 +353,17 @@ const Stats: React.FC = () => {
                             </Alert>
                         )}
 
+                        {report !== null && report.failed.length > 0 && (
+                            <Alert severity="warning" sx={{ mb: 3 }}>
+                                Could not reach the{' '}
+                                {report.failed.join(' and ')} project. The
+                                figures below exclude it.
+                            </Alert>
+                        )}
+
                         {loading && <CircularProgress size={24} />}
 
-                        {!loading && rows !== null && rows.length === 0 && (
+                        {!loading && report !== null && report.rows.length === 0 && (
                             <Alert severity="info">
                                 No events in this window. If you have just set
                                 the passphrase, check it matches the one stored
@@ -321,7 +371,7 @@ const Stats: React.FC = () => {
                             </Alert>
                         )}
 
-                        {!loading && rows !== null && rows.length > 0 && (
+                        {!loading && report !== null && report.rows.length > 0 && (
                             <>
                                 <Stack
                                     direction="row"
@@ -333,10 +383,12 @@ const Stats: React.FC = () => {
                                     <TotalsCard
                                         title="Skarp"
                                         totals={summary.byApp.skarp}
+                                        overview={overviewFor('skarp')}
                                     />
                                     <TotalsCard
                                         title="Krydda"
                                         totals={summary.byApp.krydda}
+                                        overview={overviewFor('krydda')}
                                     />
                                 </Stack>
 

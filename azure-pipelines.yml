@@ -56,13 +56,18 @@ stages:
                   env:
                     VITE_SENTRY_RELEASE: jacobhal-se@$(Build.SourceVersion)
                     SENTRY_AUTH_TOKEN: $(SENTRY_AUTH_TOKEN)
-                    # Acquisition tracking for /skarp and /krydda, read back on
-                    # /stats. The anon key is public by design; the events table
-                    # is insert-only for it and the dashboard is passphrase
-                    # gated server-side. Both come from the mainGroup variable
-                    # group. If unset, the pages simply record nothing.
-                    VITE_SUPABASE_URL: $(WEB_SUPABASE_URL)
-                    VITE_SUPABASE_ANON_KEY: $(WEB_SUPABASE_ANON_KEY)
+                    # Acquisition tracking for /skarp and /krydda, read back
+                    # on /stats. One Supabase project per app, so each app's
+                    # marketing data sits beside its own auth.users and /stats
+                    # can show real user counts. The anon keys are public by
+                    # design: the events table is insert-only for them and the
+                    # dashboard is passphrase gated server-side. From the
+                    # mainGroup variable group; if unset the pages record
+                    # nothing and the download buttons still work.
+                    VITE_SUPABASE_SKARP_URL: $(WEB_SUPABASE_SKARP_URL)
+                    VITE_SUPABASE_SKARP_ANON_KEY: $(WEB_SUPABASE_SKARP_ANON_KEY)
+                    VITE_SUPABASE_KRYDDA_URL: $(WEB_SUPABASE_KRYDDA_URL)
+                    VITE_SUPABASE_KRYDDA_ANON_KEY: $(WEB_SUPABASE_KRYDDA_ANON_KEY)
 
                 - script: |
                       sudo apt-get update

@@ -1,0 +1,14 @@
+{
+  "name": "Skarp — Quiz & Trivia",
+  "short_name": "Skarp",
+  "start_url": "/skarp",
+  "scope": "/skarp",
+  "display": "standalone",
+  "background_color": "#0E0E14",
+  "theme_color": "#5C6BC0",
+  "icons": [
+    { "src": "/app-icons/skarp-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/app-icons/skarp-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/app-icons/skarp-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -109,6 +109,7 @@ const Skarp: React.FC = () => {
             <PageFavicon
                 icon32="/app-icons/skarp-32.png"
                 icon180="/app-icons/skarp-180.png"
+                manifest="/app-icons/skarp.webmanifest"
             />
             <Helmet>
                 <html lang={locale} />

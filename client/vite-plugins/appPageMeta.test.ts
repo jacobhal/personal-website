@@ -58,9 +58,20 @@ describe('appPageMeta', () => {
         const html = rewriteHead(INDEX, krydda())
 
         expect(html).toContain('src="/assets/index-Zf_HRMkA.js"')
-        expect(html).toContain('rel="manifest"')
         expect(html).toContain('name="viewport"')
         expect(html).toContain('<meta charset="utf-8" />')
+    })
+
+    test('swaps the personal manifest for the app one', () => {
+        const html = rewriteHead(INDEX, krydda())
+
+        // manifest.json names "Jacob Hallman" and declares favicon.ico as its
+        // icon, so leaving it in put the J monogram back on the tab.
+        expect(html).not.toContain('href="/manifest.json"')
+        expect(html).toContain('href="/app-icons/krydda.webmanifest"')
+        expect(html).toContain(
+            '<meta name="apple-mobile-web-app-title" content="Krydda" />'
+        )
     })
 
     test('declares the crawler language on the document', () => {

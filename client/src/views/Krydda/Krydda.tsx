@@ -157,6 +157,7 @@ const Krydda: React.FC = () => {
             <PageFavicon
                 icon32="/app-icons/krydda-32.png"
                 icon180="/app-icons/krydda-180.png"
+                manifest="/app-icons/krydda.webmanifest"
             />
             <Helmet>
                 <html lang={locale} />

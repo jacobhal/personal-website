@@ -5,10 +5,15 @@ export interface PageFaviconProps {
     icon32: string
     /** 180px icon used when the page is saved to a home screen. */
     icon180: string
+    /** Per-app web manifest. Without it the page keeps the personal site's
+     *  manifest.json, which names "Jacob Hallman" and declares favicon.ico —
+     *  the J monogram — so browsers can still pick that for the tab and for a
+     *  home-screen shortcut even after the icon links are replaced. */
+    manifest?: string
 }
 
 const ICON_SELECTOR =
-    'link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"]'
+    'link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"], link[rel="manifest"]'
 
 /**
  * Swaps the tab icon for a product page.
@@ -24,7 +29,11 @@ const ICON_SELECTOR =
  * originals back on unmount, leaving the personal site's favicon intact
  * everywhere else.
  */
-export const PageFavicon: React.FC<PageFaviconProps> = ({ icon32, icon180 }) => {
+export const PageFavicon: React.FC<PageFaviconProps> = ({
+    icon32,
+    icon180,
+    manifest,
+}) => {
     useEffect(() => {
         const head = document.head
         const previous = Array.from(head.querySelectorAll(ICON_SELECTOR))
@@ -35,6 +44,9 @@ export const PageFavicon: React.FC<PageFaviconProps> = ({ icon32, icon180 }) => 
                 ['icon', icon32, 'image/png', '32x32'],
                 ['shortcut icon', icon32, 'image/png', undefined],
                 ['apple-touch-icon', icon180, undefined, '180x180'],
+                ...(manifest
+                    ? ([['manifest', manifest, undefined, undefined]] as const)
+                    : []),
             ] as const
         ).map(([rel, href, type, sizes]) => {
             const link = document.createElement('link')
@@ -50,7 +62,7 @@ export const PageFavicon: React.FC<PageFaviconProps> = ({ icon32, icon180 }) => 
             added.forEach((node) => node.remove())
             previous.forEach((node) => head.appendChild(node))
         }
-    }, [icon32, icon180])
+    }, [icon32, icon180, manifest])
 
     return null
 }

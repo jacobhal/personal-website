@@ -66,8 +66,14 @@ create policy web_acquisition_events_anon_insert
 -- ---------------------------------------------------------------------------
 
 -- Secrets live outside the API schema so PostgREST cannot expose them.
+--
+-- This schema is SHARED: recipe-app-prod already had a `private` schema holding
+-- referral and creator-profile functions, and its own migrations grant
+-- `usage on schema private to anon, authenticated`. An earlier version of this
+-- file revoked that blanket-style and broke those grants in production. Never
+-- touch schema-level privileges here — protect the table instead, which works
+-- whether the schema is new or pre-existing.
 create schema if not exists private;
-revoke all on schema private from anon, authenticated;
 
 create table if not exists private.web_stats_access (
     id boolean primary key default true check (id),
@@ -80,6 +86,11 @@ create table if not exists private.web_stats_access (
 
 alter table private.web_stats_access enable row level security;
 -- No policies: only SECURITY DEFINER functions reach this table.
+
+-- Belt and braces. A new table grants nothing to these roles by default and RLS
+-- is on with no policies, but the passphrase hash is the one secret here, so the
+-- privileges are denied explicitly rather than left to the default.
+revoke all on table private.web_stats_access from anon, authenticated;
 
 /**
  * Aggregated acquisition figures for the /stats page.
@@ -177,3 +188,67 @@ as $$
 $$;
 
 revoke all on function private.set_web_stats_token(text) from public, anon, authenticated;
+
+-- ---------------------------------------------------------------------------
+-- App user counts
+-- ---------------------------------------------------------------------------
+
+/**
+ * Headline user numbers for the /stats page.
+ *
+ * This migration is applied to each app's own Supabase project, so `auth.users`
+ * here is that app's user table and no cross-project query is needed. The page
+ * calls this once per project and labels the result with the app it asked.
+ *
+ * Same passphrase gate as the acquisition summary, and the same silent-empty
+ * behaviour on a bad token. SECURITY DEFINER because `anon` cannot read the
+ * auth schema — and must not be granted that.
+ *
+ * Soft-deleted accounts are excluded. Anonymous sign-ins are counted separately
+ * rather than folded in: for Skarp they are guests who may never register, and
+ * lumping them into "users" would overstate the number.
+ */
+create or replace function public.web_app_overview(
+    p_token text,
+    p_days integer default 30
+)
+returns table (
+    total_users bigint,
+    registered_users bigint,
+    anonymous_users bigint,
+    new_users bigint,
+    active_users bigint
+)
+language plpgsql
+security definer
+set search_path = public, private, extensions, auth, pg_temp
+as $$
+declare
+    v_expected text;
+    v_days integer := least(greatest(coalesce(p_days, 30), 1), 365);
+    v_since timestamptz;
+begin
+    select token_sha256 into v_expected from private.web_stats_access limit 1;
+    if v_expected is null or p_token is null then
+        return;
+    end if;
+    if encode(digest(p_token, 'sha256'), 'hex') <> v_expected then
+        return;
+    end if;
+
+    v_since := now() - make_interval(days => v_days);
+
+    return query
+    select
+        count(*),
+        count(*) filter (where not coalesce(u.is_anonymous, false)),
+        count(*) filter (where coalesce(u.is_anonymous, false)),
+        count(*) filter (where u.created_at >= v_since),
+        count(*) filter (where u.last_sign_in_at >= v_since)
+    from auth.users u
+    where u.deleted_at is null;
+end;
+$$;
+
+revoke all on function public.web_app_overview(text, integer) from public;
+grant execute on function public.web_app_overview(text, integer) to anon, authenticated;

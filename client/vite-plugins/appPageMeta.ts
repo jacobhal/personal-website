@@ -30,6 +30,10 @@ export interface AppPage {
     icon180: string
     themeColor: string
     appleAppId: string
+    /** Per-app manifest. The site's own manifest.json names "Jacob Hallman"
+     *  and declares favicon.ico — the J monogram — as its icon, which browsers
+     *  will happily use for the tab and the home-screen shortcut. */
+    manifest: string
 }
 
 export const pages = (): AppPage[] => {
@@ -49,6 +53,7 @@ export const pages = (): AppPage[] => {
             icon180: '/app-icons/skarp-180.png',
             themeColor: '#0E0E14',
             appleAppId: '6763050250',
+            manifest: '/app-icons/skarp.webmanifest',
         },
         {
             file: 'krydda.html',
@@ -63,6 +68,7 @@ export const pages = (): AppPage[] => {
             icon180: '/app-icons/krydda-180.png',
             themeColor: '#14110E',
             appleAppId: '6777108071',
+            manifest: '/app-icons/krydda.webmanifest',
         },
     ]
 }
@@ -83,6 +89,8 @@ const head = (page: AppPage): string => {
         <link rel="icon" type="image/png" sizes="32x32" href="${page.icon32}" />
         <link rel="shortcut icon" href="${page.icon32}" />
         <link rel="apple-touch-icon" sizes="180x180" href="${page.icon180}" />
+        <link rel="manifest" href="${page.manifest}" />
+        <meta name="apple-mobile-web-app-title" content="${attr(page.siteName)}" />
         <meta name="apple-itunes-app" content="app-id=${page.appleAppId}" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="${attr(page.siteName)}" />
@@ -108,6 +116,7 @@ const STRIP_PATTERNS: RegExp[] = [
     /^\s*<meta\s+name="theme-color"[\s\S]*?\/>\s*$/,
     /^\s*<link\s+rel="shortcut icon"[\s\S]*?\/>\s*$/,
     /^\s*<!--\s*Linkedin Image\s*-->\s*$/,
+    /^\s*<link\s+rel="manifest"[\s\S]*?\/>\s*$/,
 ]
 
 /**
