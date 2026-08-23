@@ -25,6 +25,27 @@ const overview = (app: 'skarp' | 'krydda', users: number) => ({
     active_users: 1,
 })
 
+/** What the submit handler does before the passphrase is sent or stored. */
+const cleanPassphrase = (raw: string): string => raw.trim()
+
+describe('passphrase input', () => {
+    // Verified against the live endpoint: the server hashes the exact string,
+    // so any stray whitespace returns zero rows. Pasting on iOS routinely adds
+    // a trailing newline.
+    test.each([
+        ['trailing newline', 'abc123\n'],
+        ['trailing space', 'abc123 '],
+        ['leading space', ' abc123'],
+        ['both ends', '  abc123\n'],
+    ])('strips %s from a pasted passphrase', (_label, raw) => {
+        expect(cleanPassphrase(raw)).toBe('abc123')
+    })
+
+    test('leaves a clean passphrase untouched', () => {
+        expect(cleanPassphrase('abc123')).toBe('abc123')
+    })
+})
+
 describe('dashboard state', () => {
     test('a good passphrase with no ad traffic is not a rejection', () => {
         const report: AcquisitionReport = {

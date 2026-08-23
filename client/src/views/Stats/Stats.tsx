@@ -42,8 +42,9 @@ type AppFilter = AcquisitionApp | 'all'
 
 const readToken = (): string => {
     try {
-        return window.localStorage.getItem(TOKEN_KEY) ?? ''
+        return (window.localStorage.getItem(TOKEN_KEY) ?? '').trim()
     } catch {
+        // iOS Safari private browsing can refuse localStorage entirely.
         return ''
     }
 }
@@ -52,7 +53,8 @@ const storeToken = (token: string): void => {
     try {
         window.localStorage.setItem(TOKEN_KEY, token)
     } catch {
-        // Session-only access is still access.
+        // Private browsing refuses the write. Session-only access is still
+        // access — the passphrase lives in component state for this page view.
     }
 }
 
@@ -289,7 +291,19 @@ const Stats: React.FC = () => {
                     Marketing-page views and store clicks for Skarp and Krydda.
                 </Typography>
 
-                {!token && (
+                {!loading && passphraseRejected && (
+                    <Alert
+                        severity="error"
+                        sx={{ ...errorAlertSx, mb: 2.5, maxWidth: 560 }}
+                    >
+                        Passphrase not accepted. Check there is no trailing
+                        space or line break — that is the usual cause when
+                        pasting on a phone. It must match the value set with{' '}
+                        <code>private.set_web_stats_token()</code>.
+                    </Alert>
+                )}
+
+                {(!token || passphraseRejected) && (
                     <Stack
                         component="form"
                         direction="row"
@@ -297,8 +311,14 @@ const Stats: React.FC = () => {
                         sx={{ maxWidth: 480, mb: 4 }}
                         onSubmit={(event) => {
                             event.preventDefault()
-                            storeToken(draftToken)
-                            setToken(draftToken)
+                            // Trim: a passphrase pasted from a file or a
+                            // password manager on iOS commonly arrives with a
+                            // trailing newline or space, and the server-side
+                            // hash comparison is exact.
+                            const cleaned = draftToken.trim()
+                            if (!cleaned) return
+                            storeToken(cleaned)
+                            setToken(cleaned)
                         }}
                     >
                         <TextField
@@ -307,6 +327,12 @@ const Stats: React.FC = () => {
                             type="password"
                             label="Passphrase"
                             value={draftToken}
+                            autoComplete="current-password"
+                            inputProps={{
+                                autoCapitalize: 'none',
+                                autoCorrect: 'off',
+                                spellCheck: false,
+                            }}
                             onChange={(event) =>
                                 setDraftToken(event.target.value)
                             }
@@ -320,9 +346,13 @@ const Stats: React.FC = () => {
                         <Button
                             type="submit"
                             variant="contained"
+                            disableElevation
                             sx={{
                                 backgroundColor: colors.accent,
                                 textTransform: 'none',
+                                fontWeight: 700,
+                                px: 3,
+                                '&:hover': { backgroundColor: '#4d5bb0' },
                             }}
                         >
                             Open
@@ -330,13 +360,14 @@ const Stats: React.FC = () => {
                     </Stack>
                 )}
 
-                {token && (
+                {token && !passphraseRejected && (
                     <>
                         <Stack
                             direction="row"
                             spacing={2}
                             flexWrap="wrap"
                             useFlexGap
+                            alignItems="center"
                             sx={{ mb: 3 }}
                         >
                             <ToggleButtonGroup
@@ -426,27 +457,6 @@ const Stats: React.FC = () => {
                         )}
 
                         {loading && <CircularProgress size={24} />}
-
-                        {!loading && passphraseRejected && (
-                            <Alert
-                                severity="error"
-                                sx={{ ...errorAlertSx, mb: 3 }}
-                                action={
-                                    <Button
-                                        size="small"
-                                        onClick={forgetPassphrase}
-                                        sx={{ textTransform: 'none' }}
-                                    >
-                                        Re-enter
-                                    </Button>
-                                }
-                            >
-                                Passphrase not accepted by{' '}
-                                {app === 'all' ? 'either project' : app}. It must
-                                match the one set with
-                                {' '}<code>private.set_web_stats_token()</code>.
-                            </Alert>
-                        )}
 
                         {!loading && report !== null && !passphraseRejected && (
                             <>
