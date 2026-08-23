@@ -56,6 +56,32 @@ const storeToken = (token: string): void => {
     }
 }
 
+const alertSx = {
+    backgroundColor: 'rgba(92,107,192,0.10)',
+    border: `1px solid ${colors.border}`,
+    color: colors.text,
+    '& .MuiAlert-icon': { color: colors.accent },
+    '& code': {
+        backgroundColor: 'rgba(255,255,255,0.07)',
+        borderRadius: 1,
+        px: 0.75,
+        py: 0.25,
+        fontSize: 13,
+        color: colors.text,
+        // Without this the token breaks after the '?' onto the next line.
+        whiteSpace: 'nowrap',
+        display: 'inline-block',
+    },
+} as const
+
+const errorAlertSx = {
+    ...alertSx,
+    backgroundColor: 'rgba(198,40,40,0.14)',
+    border: '1px solid rgba(198,40,40,0.45)',
+    '& .MuiAlert-icon': { color: '#ef5350' },
+    '& code': alertSx['& code'],
+} as const
+
 const toggleSx = {
     color: colors.muted,
     borderColor: colors.border,
@@ -205,10 +231,32 @@ const Stats: React.FC = () => {
     const overviewFor = (name: AcquisitionApp): AppOverview | undefined =>
         report?.overviews.find((entry) => entry.app === name)
 
+    /**
+     * Both RPCs return an empty set for a bad passphrase, and `web_app_overview`
+     * always returns a row for a good one. So overviews coming back empty while
+     * nothing errored means the passphrase was rejected — as opposed to simply
+     * having no ad traffic yet, which is the normal state on day one.
+     */
+    const passphraseRejected =
+        report !== null &&
+        report.overviews.length === 0 &&
+        report.failed.length === 0
+
+    const forgetPassphrase = () => {
+        try {
+            window.localStorage.removeItem(TOKEN_KEY)
+        } catch {
+            // Nothing stored to forget.
+        }
+        setToken('')
+        setDraftToken('')
+        setReport(null)
+    }
+
     if (!isAcquisitionStoreConfigured()) {
         return (
             <Box sx={{ backgroundColor: colors.bg, minHeight: '100vh', p: 4 }}>
-                <Alert severity="warning">
+                <Alert severity="warning" sx={errorAlertSx}>
                     No Supabase project is configured for this build. Set
                     VITE_SUPABASE_SKARP_URL / _ANON_KEY and
                     VITE_SUPABASE_KRYDDA_URL / _ANON_KEY.
@@ -345,16 +393,32 @@ const Stats: React.FC = () => {
                             >
                                 Refresh
                             </Button>
+
+                            <Button
+                                onClick={forgetPassphrase}
+                                sx={{
+                                    color: colors.muted,
+                                    textTransform: 'none',
+                                }}
+                            >
+                                Forget passphrase
+                            </Button>
                         </Stack>
 
                         {error && (
-                            <Alert severity="error" sx={{ mb: 3 }}>
+                            <Alert
+                                severity="error"
+                                sx={{ ...errorAlertSx, mb: 3 }}
+                            >
                                 {error}
                             </Alert>
                         )}
 
                         {report !== null && report.failed.length > 0 && (
-                            <Alert severity="warning" sx={{ mb: 3 }}>
+                            <Alert
+                                severity="warning"
+                                sx={{ ...errorAlertSx, mb: 3 }}
+                            >
                                 Could not reach the{' '}
                                 {report.failed.join(' and ')} project. The
                                 figures below exclude it.
@@ -363,15 +427,28 @@ const Stats: React.FC = () => {
 
                         {loading && <CircularProgress size={24} />}
 
-                        {!loading && report !== null && report.rows.length === 0 && (
-                            <Alert severity="info">
-                                No events in this window. If you have just set
-                                the passphrase, check it matches the one stored
-                                in the database.
+                        {!loading && passphraseRejected && (
+                            <Alert
+                                severity="error"
+                                sx={{ ...errorAlertSx, mb: 3 }}
+                                action={
+                                    <Button
+                                        size="small"
+                                        onClick={forgetPassphrase}
+                                        sx={{ textTransform: 'none' }}
+                                    >
+                                        Re-enter
+                                    </Button>
+                                }
+                            >
+                                Passphrase not accepted by{' '}
+                                {app === 'all' ? 'either project' : app}. It must
+                                match the one set with
+                                {' '}<code>private.set_web_stats_token()</code>.
                             </Alert>
                         )}
 
-                        {!loading && report !== null && report.rows.length > 0 && (
+                        {!loading && report !== null && !passphraseRejected && (
                             <>
                                 <Stack
                                     direction="row"
@@ -397,6 +474,19 @@ const Stats: React.FC = () => {
                                 >
                                     By source
                                 </Typography>
+
+                                {summary.rows.length === 0 && (
+                                    <Alert severity="info" sx={alertSx}>
+                                        No marketing-page visits recorded in
+                                        this window yet. Visits and store clicks
+                                        appear here as soon as someone opens
+                                        /skarp or /krydda. Tag your links with{' '}
+                                        <code>?utm_source=…</code> to see them
+                                        split by campaign.
+                                    </Alert>
+                                )}
+
+                                {summary.rows.length > 0 && (
                                 <Box
                                     sx={{
                                         overflowX: 'auto',
@@ -475,6 +565,7 @@ const Stats: React.FC = () => {
                                         </TableBody>
                                     </Table>
                                 </Box>
+                                )}
                             </>
                         )}
                     </>
