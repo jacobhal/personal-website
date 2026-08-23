@@ -26,6 +26,7 @@ const KryddaInvite: React.FC = () => (
             background: '#14110E',
             surface: '#211B15',
             text: '#EFE7DD',
+            border: '#2C241B',
             muted: '#A89B8C',
         }}
     />

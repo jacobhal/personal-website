@@ -26,6 +26,7 @@ const SkarpInvite: React.FC = () => (
             background: '#0E0E14',
             surface: '#1A1A28',
             text: '#ECECF2',
+            border: '#2A2A40',
             muted: '#A0A0B4',
         }}
     />

@@ -1,6 +1,8 @@
 import * as Sentry from '@sentry/react'
 import type { Breadcrumb, BrowserOptions, Event } from '@sentry/react'
 
+import type { StoreCampaign } from '../config/storeCampaign'
+
 export type AcquisitionApp = 'skarp' | 'krydda'
 export type AcquisitionStage =
     | 'landing'
@@ -20,6 +22,9 @@ export interface AcquisitionBreadcrumb {
     stage: AcquisitionStage
     outcome: AcquisitionOutcome
     store?: AcquisitionStore
+    /** UTM parameters the visitor arrived with, so a store click can be
+     *  attributed to the campaign that produced it. */
+    campaign?: StoreCampaign
 }
 
 export interface AcquisitionFailureContext {
@@ -182,11 +187,22 @@ export const tagAcquisitionErrorScope = (
     )
 }
 
+/** Flattens a campaign into breadcrumb data, dropping the empty fields. */
+const campaignData = (
+    campaign: StoreCampaign | undefined
+): Record<string, string> =>
+    Object.fromEntries(
+        Object.entries(campaign ?? {})
+            .filter(([, value]) => Boolean(value))
+            .map(([key, value]) => [`campaign_${key}`, value as string])
+    )
+
 export const recordAcquisitionBreadcrumb = ({
     app,
     stage,
     outcome,
     store,
+    campaign,
 }: AcquisitionBreadcrumb): void => {
     setAcquisitionApp(app)
     Sentry.addBreadcrumb({
@@ -197,8 +213,89 @@ export const recordAcquisitionBreadcrumb = ({
             acquisition_app: app,
             outcome,
             ...(store === undefined ? {} : { store }),
+            ...campaignData(campaign),
         },
     })
+}
+
+/**
+ * Sends a real, countable Sentry event for one store click.
+ *
+ * A breadcrumb alone is not enough: breadcrumbs are only transmitted when
+ * something else — an error, or a sampled transaction — is captured, and
+ * `tracesSampleRate` here is 0.02. Ninety-eight percent of store clicks would
+ * leave no trace at all. `captureMessage` produces an event on every click, so
+ * "how many people tapped App Store from the TikTok campaign" is answerable.
+ *
+ * Grouped in Sentry under `acquisition.store_click`; split it with the
+ * `store`, `campaign_source` and `campaign_name` tags.
+ */
+export const captureStoreClick = ({
+    app,
+    store,
+    campaign,
+}: {
+    app: AcquisitionApp
+    store: AcquisitionStore
+    campaign: StoreCampaign
+}): void => {
+    Sentry.captureMessage('acquisition.store_click', {
+        level: 'info',
+        tags: {
+            feature: FEATURE_TAG,
+            acquisition_app: app,
+            store,
+            campaign_source: campaign.source ?? 'organic',
+            campaign_medium: campaign.medium ?? 'none',
+            campaign_name: campaign.campaign ?? 'none',
+            campaign_content: campaign.content ?? 'none',
+        },
+        contexts: {
+            acquisition: {
+                outcome: 'started',
+                stage: 'store_navigation',
+            },
+        },
+    })
+}
+
+/**
+ * Sends a countable event for one marketing-page view.
+ *
+ * Same reasoning as `captureStoreClick`: without it there is no denominator,
+ * so a click count cannot be turned into a conversion rate per campaign.
+ */
+export const captureLandingView = ({
+    app,
+    campaign,
+}: {
+    app: AcquisitionApp
+    campaign: StoreCampaign
+}): void => {
+    Sentry.captureMessage('acquisition.landing_view', {
+        level: 'info',
+        tags: {
+            feature: FEATURE_TAG,
+            acquisition_app: app,
+            campaign_source: campaign.source ?? 'organic',
+            campaign_medium: campaign.medium ?? 'none',
+            campaign_name: campaign.campaign ?? 'none',
+            campaign_content: campaign.content ?? 'none',
+        },
+    })
+}
+
+/**
+ * Tags the whole session with the campaign that produced the visit.
+ *
+ * Breadcrumbs alone cannot be grouped in Sentry; tags can, so `campaign_source`
+ * and `campaign_name` become filters over store clicks and page errors alike.
+ */
+export const setAcquisitionCampaign = (campaign: StoreCampaign): void => {
+    if (campaign.source) Sentry.setTag('campaign_source', campaign.source)
+    if (campaign.medium) Sentry.setTag('campaign_medium', campaign.medium)
+    if (campaign.campaign) Sentry.setTag('campaign_name', campaign.campaign)
+    if (campaign.content) Sentry.setTag('campaign_content', campaign.content)
 }
 
 const errorType = (error: unknown): string => {

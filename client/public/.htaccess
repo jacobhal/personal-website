@@ -6,13 +6,32 @@
   RewriteBase /
   RewriteRule ^index\.html$ - [L]
 
-  # App routes are ALWAYS the SPA, even if a directory of the same name exists
-  # on the server. A deploy once left a stale `krydda/` folder behind (git-ftp
-  # uploads new files but does not delete removed ones); the `!-d` condition
-  # below then skipped the rewrite, Apache redirected to `/krydda/` and denied
-  # the listing, and the live page returned 403 while every asset still worked.
-  # Matching these first makes the route immune to leftover directories.
-  RewriteRule ^(krydda|skarp)/?$ /index.html [L]
+  # App routes are ALWAYS the app's own prerendered entry, even if a directory
+  # of the same name exists on the server. A deploy once left a stale `krydda/`
+  # folder behind (git-ftp uploads new files but does not delete removed ones);
+  # the `!-d` condition below then skipped the rewrite, Apache redirected to
+  # `/krydda/` and denied the listing, and the live page returned 403 while
+  # every asset still worked. Matching these first makes the route immune to
+  # leftover directories.
+  #
+  # skarp.html and krydda.html are generated at build time by the
+  # `app-page-meta` Vite plugin. They load the identical JS bundle as
+  # index.html, but their initial <head> carries the app's own title,
+  # description and social image. Link crawlers (TikTok, iMessage, WhatsApp,
+  # Slack, LinkedIn) never run React, so without them every shared /skarp and
+  # /krydda link previewed as "Jacob Hallman - Fullstack developer".
+  # Flat files rather than skarp/index.html, so no directory can shadow them.
+  RewriteRule ^skarp/?$ /skarp.html [L]
+  RewriteRule ^krydda/?$ /krydda.html [L]
+
+  # Sub-routes (invite, privacy, terms, guide) get the same app metadata, but
+  # must never shadow a real file or directory such as /krydda/import/.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^skarp/.+$ /skarp.html [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^krydda/.+$ /krydda.html [L]
 
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

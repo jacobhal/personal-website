@@ -1,6 +1,5 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { PageFavicon } from '../../components/PageFavicon'
 import {
     Box,
     Button,
@@ -10,13 +9,18 @@ import {
     Stack,
     Typography,
 } from '@mui/material'
-import { NavBar } from '../../components/NavBar'
+
+import { PageFavicon } from '../../components/PageFavicon'
+import { AppMarketingBar } from '../../components/AppMarketingBar'
 import { PhoneShowcase } from '../../components/PhoneShowcase'
+import { useLocale } from '../../i18n/useLocale'
+import { useStoreLinks } from '../../hooks/useStoreLinks'
 import icon from '../../assets/images/krydda_icon.png'
 import {
     KRYDDA_APP_STORE_URL,
     KRYDDA_PLAY_STORE_URL,
 } from '../../config/appStores'
+import { KRYDDA_COPY } from './kryddaContent'
 
 const colors = {
     bg: '#14110E',
@@ -28,81 +32,120 @@ const colors = {
     muted: '#A89B8C',
 }
 
-/**
- * The alternating "show, don't tell" sections.
- *
- * Each has a still today and gains a video the moment one is recorded into
- * public/krydda — no code change needed beyond adding the `video` field. The
- * first two are the differentiators: no competitor can show a recipe arriving
- * from a web page or an Instagram post in three seconds.
- */
-interface Showcase {
-    eyebrow: string
-    title: string
-    body: string
-    image: string
-    alt: string
-    /** Drop a recording into public/krydda and point at it here; the section
-     *  upgrades from still to video with no other change. */
-    video?: string
-    /** Mirrors the layout so the page alternates rather than marching. */
-    reverse?: boolean
-}
+const CANONICAL = 'https://jacobhal.se/krydda'
+const OG_IMAGE = 'https://jacobhal.se/krydda-media/og-image.jpg'
 
-const showcases: Showcase[] = [
+/**
+ * Media for the alternating "show, don't tell" sections.
+ *
+ * Kept separate from the copy: the stills and recordings are the same in both
+ * languages, so only the words live in `kryddaContent`. A section upgrades from
+ * still to video the moment a `video` path is filled in.
+ */
+const showcaseMedia = [
     {
-        eyebrow: 'Save from anywhere',
-        title: 'Any recipe page.\nOne tap.',
-        body: 'Open a recipe in Krydda’s own browser and tap once. Ingredients, steps, times and the photo come across — no AI, no copying, no retyping. Tested against the biggest recipe sites in Sweden and abroad.',
         image: '/krydda-media/web-import-poster.jpg',
         video: '/krydda-media/web-import.mp4',
-        alt: 'Saving a recipe from a website inside Krydda',
+        alt: {
+            sv: 'Ett recept sparas från en webbsida i Krydda',
+            en: 'Saving a recipe from a website inside Krydda',
+        },
     },
     {
-        eyebrow: 'Instagram and TikTok',
-        title: 'Share a post.\nGet a real recipe.',
-        body: 'Found dinner in a Reel? Share the post to Krydda and its caption becomes a proper recipe with an ingredient list you can take to the shop — and a link back to the creator.',
         image: '/krydda-media/social.jpg',
-        alt: 'Sharing an Instagram post into Krydda',
+        alt: {
+            sv: 'Ett Instagram-inlägg delas till Krydda',
+            en: 'Sharing an Instagram post into Krydda',
+        },
         reverse: true,
     },
     {
-        eyebrow: 'Weekly planning',
-        title: 'A week of dinners,\nplanned in seconds.',
-        body: 'Tell Krydda what you like and it builds a full week from your own recipes — then turns the whole plan into one shopping list, sorted and de-duplicated.',
         image: '/krydda-media/weekly.jpg',
-        alt: 'Krydda generating a weekly meal plan',
+        alt: {
+            sv: 'Krydda skapar en veckoplan',
+            en: 'Krydda generating a weekly meal plan',
+        },
     },
     {
-        eyebrow: 'Cooking, not admin',
-        title: 'One list for\nthe whole week.',
-        body: 'Every ingredient from every planned meal, combined into a single list. Check things off as you shop, keep a pantry, and share the list with the household.',
         image: '/krydda-media/groceries.jpg',
-        alt: 'Krydda shopping list',
+        alt: { sv: 'Kryddas inköpslista', en: 'Krydda shopping list' },
         reverse: true,
     },
-]
-
-const features = [
-    {
-        title: 'Switch in one go',
-        body: 'Import a whole Paprika, Recipe Keeper, Crouton or Mela export at once. Nothing is left behind, and nothing is retyped.',
-    },
-    {
-        title: 'Instant, even offline',
-        body: 'Recipes live on your phone. Search thousands of them in a tap, on the train, in the shop, with no signal.',
-    },
-    {
-        title: 'Cook hands-free',
-        body: 'A cook mode built for messy hands: big steps, timers that keep ringing, and a screen that stays awake.',
-    },
-    {
-        title: 'One cookbook for the household',
-        body: 'Share a library with your family so the same recipes are on everyone’s phone — no screenshots, no forwarding.',
-    },
-]
+] as const
 
 const Krydda: React.FC = () => {
+    const { locale, setLocale } = useLocale()
+    const copy = KRYDDA_COPY[locale]
+    const { appStoreHref, playStoreHref, trackStoreClick } = useStoreLinks({
+        app: 'krydda',
+        appStoreUrl: KRYDDA_APP_STORE_URL,
+        playStoreUrl: KRYDDA_PLAY_STORE_URL,
+        countLandingView: true,
+        locale,
+    })
+
+    const footerLinks = [
+        { href: '/krydda/privacy', label: copy.footerPrivacy },
+        { href: '/krydda/terms', label: copy.footerTerms },
+        { href: '/krydda/delete-account', label: copy.footerDelete },
+        { href: '/contact', label: copy.footerContact },
+    ]
+
+    const storeButtons = (
+        <Stack
+            direction={{ xs: 'column', sm: 'row' }}
+            spacing={2}
+            sx={{ pt: 1 }}
+        >
+            <Button
+                component="a"
+                variant="contained"
+                size="large"
+                href={appStoreHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackStoreClick('app_store')}
+                sx={{
+                    backgroundColor: colors.accent,
+                    textTransform: 'none',
+                    fontWeight: 700,
+                    fontSize: 16,
+                    px: 4,
+                    py: 1.4,
+                    borderRadius: 2.5,
+                    '&:hover': { backgroundColor: '#c8571a' },
+                }}
+            >
+                {copy.appStore}
+            </Button>
+            <Button
+                component="a"
+                variant="outlined"
+                size="large"
+                href={playStoreHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackStoreClick('google_play')}
+                sx={{
+                    color: colors.text,
+                    borderColor: colors.border,
+                    textTransform: 'none',
+                    fontWeight: 700,
+                    fontSize: 16,
+                    px: 4,
+                    py: 1.4,
+                    borderRadius: 2.5,
+                    '&:hover': {
+                        borderColor: colors.accent,
+                        backgroundColor: 'rgba(226,103,28,0.06)',
+                    },
+                }}
+            >
+                {copy.playStore}
+            </Button>
+        </Stack>
+    )
+
     return (
         <Box
             sx={{
@@ -111,57 +154,56 @@ const Krydda: React.FC = () => {
                 color: colors.text,
             }}
         >
-            <PageFavicon icon32="/app-icons/krydda-32.png" icon180="/app-icons/krydda-180.png" />
+            <PageFavicon
+                icon32="/app-icons/krydda-32.png"
+                icon180="/app-icons/krydda-180.png"
+            />
             <Helmet>
-                <title>
-                    Krydda — every recipe you love, in one place
-                </title>
-                <meta
-                    name="description"
-                    content="Save recipes from any website or an Instagram post, plan the week, and shop from one list. Krydda keeps your collection on your phone — fast, offline and yours. Swedish and English."
-                />
+                <html lang={locale} />
+                <title>{copy.metaTitle}</title>
+                <meta name="description" content={copy.metaDescription} />
                 {/* Link previews. Outreach lives or dies on how the link looks
                     when a creator pastes it into a DM or a Slack thread. */}
                 <meta property="og:type" content="website" />
                 <meta property="og:site_name" content="Krydda" />
-                <meta
-                    property="og:title"
-                    content="Krydda — every recipe you love, in one place"
-                />
+                <meta property="og:locale" content={
+                    locale === 'sv' ? 'sv_SE' : 'en_GB'
+                } />
+                <meta property="og:title" content={copy.ogTitle} />
                 <meta
                     property="og:description"
-                    content="Save recipes from any website or an Instagram post, plan the week, and shop from one list."
+                    content={copy.ogDescription}
                 />
-                <meta
-                    property="og:url"
-                    content="https://jacobhal.se/krydda"
-                />
-                <meta
-                    property="og:image"
-                    content="https://jacobhal.se/krydda-media/og-image.jpg"
-                />
+                <meta property="og:url" content={CANONICAL} />
+                <meta property="og:image" content={OG_IMAGE} />
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta
-                    name="twitter:title"
-                    content="Krydda — every recipe you love, in one place"
-                />
+                <meta name="twitter:title" content={copy.ogTitle} />
                 <meta
                     name="twitter:description"
-                    content="Save recipes from any website or an Instagram post, plan the week, and shop from one list."
+                    content={copy.ogDescription}
                 />
-                <meta
-                    name="twitter:image"
-                    content="https://jacobhal.se/krydda-media/og-image.jpg"
-                />
-                <link rel="canonical" href="https://jacobhal.se/krydda" />
+                <meta name="twitter:image" content={OG_IMAGE} />
+                <link rel="canonical" href={CANONICAL} />
+                <meta name="apple-itunes-app" content="app-id=6777108071" />
             </Helmet>
-            <NavBar noImage />
+
+            <AppMarketingBar
+                appName="Krydda"
+                appIcon={icon}
+                homePath="/krydda"
+                accent={colors.accent}
+                text={colors.text}
+                muted={colors.muted}
+                border={colors.border}
+                locale={locale}
+                onLocaleChange={setLocale}
+            />
 
             {/* Hero */}
             <Box
                 sx={{
                     background: `radial-gradient(1100px 520px at 50% -12%, rgba(226,103,28,0.30), transparent 62%), ${colors.bg}`,
-                    pt: { xs: 9, md: 13 },
+                    pt: { xs: 7, md: 11 },
                     pb: { xs: 7, md: 10 },
                 }}
             >
@@ -188,10 +230,15 @@ const Krydda: React.FC = () => {
                                 maxWidth: 780,
                             }}
                         >
-                            Every recipe you love.
-                            <Box component="span" sx={{ color: colors.muted }}>
-                                {' '}
-                                In one place.
+                            {copy.headlineLead}
+                            <Box
+                                component="span"
+                                sx={{
+                                    color: colors.muted,
+                                    display: 'block',
+                                }}
+                            >
+                                {copy.headlineTail}
                             </Box>
                         </Typography>
                         <Typography
@@ -202,58 +249,9 @@ const Krydda: React.FC = () => {
                                 lineHeight: 1.5,
                             }}
                         >
-                            Save from any website or an Instagram post, plan the
-                            week, and shop from one list. Your recipes stay on
-                            your phone — fast, offline, and yours.
+                            {copy.subheading}
                         </Typography>
-                        <Stack
-                            direction={{ xs: 'column', sm: 'row' }}
-                            spacing={2}
-                            sx={{ pt: 1 }}
-                        >
-                            <Button
-                                variant="contained"
-                                size="large"
-                                href={KRYDDA_APP_STORE_URL}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                sx={{
-                                    backgroundColor: colors.accent,
-                                    textTransform: 'none',
-                                    fontWeight: 700,
-                                    fontSize: 16,
-                                    px: 4,
-                                    py: 1.4,
-                                    borderRadius: 2.5,
-                                    '&:hover': { backgroundColor: '#c8571a' },
-                                }}
-                            >
-                                Download on the App Store
-                            </Button>
-                            <Button
-                                variant="outlined"
-                                size="large"
-                                href={KRYDDA_PLAY_STORE_URL}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                sx={{
-                                    color: colors.text,
-                                    borderColor: colors.border,
-                                    textTransform: 'none',
-                                    fontWeight: 700,
-                                    fontSize: 16,
-                                    px: 4,
-                                    py: 1.4,
-                                    borderRadius: 2.5,
-                                    '&:hover': {
-                                        borderColor: colors.accent,
-                                        backgroundColor: 'rgba(226,103,28,0.06)',
-                                    },
-                                }}
-                            >
-                                Get it on Google Play
-                            </Button>
-                        </Stack>
+                        {storeButtons}
                         <Typography
                             sx={{
                                 color: colors.muted,
@@ -262,8 +260,7 @@ const Krydda: React.FC = () => {
                                 pt: 0.5,
                             }}
                         >
-                            Free to use · No account needed to start · Swedish
-                            and English
+                            {copy.trustLine}
                         </Typography>
                     </Stack>
                 </Container>
@@ -271,62 +268,72 @@ const Krydda: React.FC = () => {
 
             {/* Show, don't tell — alternating copy and phone */}
             <Container maxWidth="lg" sx={{ py: { xs: 2, md: 4 } }}>
-                {showcases.map((s) => (
-                    <Grid
-                        container
-                        key={s.title}
-                        spacing={{ xs: 4, md: 8 }}
-                        alignItems="center"
-                        direction={{
-                            xs: 'column-reverse',
-                            md: s.reverse ? 'row-reverse' : 'row',
-                        }}
-                        sx={{ py: { xs: 6, md: 10 } }}
-                    >
-                        <Grid item xs={12} md={6}>
-                            <Typography
-                                sx={{
-                                    color: colors.accent,
-                                    fontWeight: 800,
-                                    letterSpacing: 1.2,
-                                    textTransform: 'uppercase',
-                                    fontSize: 13,
-                                    mb: 1.5,
-                                }}
-                            >
-                                {s.eyebrow}
-                            </Typography>
-                            <Typography
-                                variant="h3"
-                                fontWeight={900}
-                                sx={{
-                                    fontSize: { xs: 30, md: 44 },
-                                    lineHeight: 1.1,
-                                    whiteSpace: 'pre-line',
-                                    mb: 2,
-                                }}
-                            >
-                                {s.title}
-                            </Typography>
-                            <Typography
-                                sx={{
-                                    color: colors.muted,
-                                    fontSize: { xs: 16, md: 18 },
-                                    maxWidth: 460,
-                                }}
-                            >
-                                {s.body}
-                            </Typography>
+                {copy.showcases.map((s, index) => {
+                    const media = showcaseMedia[index]
+                    return (
+                        <Grid
+                            container
+                            key={s.title}
+                            spacing={{ xs: 4, md: 8 }}
+                            alignItems="center"
+                            direction={{
+                                xs: 'column-reverse',
+                                md:
+                                    'reverse' in media && media.reverse
+                                        ? 'row-reverse'
+                                        : 'row',
+                            }}
+                            sx={{ py: { xs: 6, md: 10 } }}
+                        >
+                            <Grid item xs={12} md={6}>
+                                <Typography
+                                    sx={{
+                                        color: colors.accent,
+                                        fontWeight: 800,
+                                        letterSpacing: 1.2,
+                                        textTransform: 'uppercase',
+                                        fontSize: 13,
+                                        mb: 1.5,
+                                    }}
+                                >
+                                    {s.eyebrow}
+                                </Typography>
+                                <Typography
+                                    variant="h3"
+                                    fontWeight={900}
+                                    sx={{
+                                        fontSize: { xs: 30, md: 44 },
+                                        lineHeight: 1.1,
+                                        whiteSpace: 'pre-line',
+                                        mb: 2,
+                                    }}
+                                >
+                                    {s.title}
+                                </Typography>
+                                <Typography
+                                    sx={{
+                                        color: colors.muted,
+                                        fontSize: { xs: 16, md: 18 },
+                                        maxWidth: 460,
+                                    }}
+                                >
+                                    {s.body}
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={12} md={6}>
+                                <PhoneShowcase
+                                    image={media.image}
+                                    video={
+                                        'video' in media
+                                            ? media.video
+                                            : undefined
+                                    }
+                                    alt={media.alt[locale]}
+                                />
+                            </Grid>
                         </Grid>
-                        <Grid item xs={12} md={6}>
-                            <PhoneShowcase
-                                image={s.image}
-                                video={s.video}
-                                alt={s.alt}
-                            />
-                        </Grid>
-                    </Grid>
-                ))}
+                    )
+                })}
             </Container>
 
             {/* Features */}
@@ -341,10 +348,10 @@ const Krydda: React.FC = () => {
                         mb: { xs: 4, md: 6 },
                     }}
                 >
-                    And the everyday things, done properly
+                    {copy.featuresHeading}
                 </Typography>
                 <Grid container spacing={3}>
-                    {features.map((f) => (
+                    {copy.features.map((f) => (
                         <Grid item xs={12} sm={6} key={f.title}>
                             <Box
                                 sx={{
@@ -389,62 +396,17 @@ const Krydda: React.FC = () => {
                                 lineHeight: 1.1,
                             }}
                         >
-                            Start with one recipe.
+                            {copy.closingTitle}
                         </Typography>
                         <Typography
-                            sx={{ color: colors.muted, fontSize: { xs: 16, md: 18 } }}
+                            sx={{
+                                color: colors.muted,
+                                fontSize: { xs: 16, md: 18 },
+                            }}
                         >
-                            Save the next thing you want to cook. The rest of
-                            your collection can follow whenever you like.
+                            {copy.closingBody}
                         </Typography>
-                        <Stack
-                            direction={{ xs: 'column', sm: 'row' }}
-                            spacing={2}
-                            sx={{ pt: 1 }}
-                        >
-                            <Button
-                                variant="contained"
-                                size="large"
-                                href={KRYDDA_APP_STORE_URL}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                sx={{
-                                    backgroundColor: colors.accent,
-                                    textTransform: 'none',
-                                    fontWeight: 700,
-                                    fontSize: 16,
-                                    px: 4,
-                                    py: 1.4,
-                                    borderRadius: 2.5,
-                                    '&:hover': { backgroundColor: '#c8571a' },
-                                }}
-                            >
-                                Download on the App Store
-                            </Button>
-                            <Button
-                                variant="outlined"
-                                size="large"
-                                href={KRYDDA_PLAY_STORE_URL}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                sx={{
-                                    color: colors.text,
-                                    borderColor: colors.border,
-                                    textTransform: 'none',
-                                    fontWeight: 700,
-                                    fontSize: 16,
-                                    px: 4,
-                                    py: 1.4,
-                                    borderRadius: 2.5,
-                                    '&:hover': {
-                                        borderColor: colors.accent,
-                                        backgroundColor: 'rgba(226,103,28,0.06)',
-                                    },
-                                }}
-                            >
-                                Get it on Google Play
-                            </Button>
-                        </Stack>
+                        {storeButtons}
                     </Stack>
                 </Container>
             </Box>
@@ -459,37 +421,24 @@ const Krydda: React.FC = () => {
                         spacing={2}
                     >
                         <Typography sx={{ color: colors.muted, fontSize: 14 }}>
-                            Krydda · by Jacob Hallman
+                            Krydda
                         </Typography>
-                        <Stack direction="row" spacing={3}>
-                            <Link
-                                href="/krydda/privacy"
-                                underline="hover"
-                                sx={{ color: colors.muted, fontSize: 14 }}
-                            >
-                                Privacy
-                            </Link>
-                            <Link
-                                href="/krydda/terms"
-                                underline="hover"
-                                sx={{ color: colors.muted, fontSize: 14 }}
-                            >
-                                Terms
-                            </Link>
-                            <Link
-                                href="/krydda/delete-account"
-                                underline="hover"
-                                sx={{ color: colors.muted, fontSize: 14 }}
-                            >
-                                Delete account
-                            </Link>
-                            <Link
-                                href="/contact"
-                                underline="hover"
-                                sx={{ color: colors.muted, fontSize: 14 }}
-                            >
-                                Contact
-                            </Link>
+                        <Stack
+                            direction="row"
+                            spacing={3}
+                            flexWrap="wrap"
+                            justifyContent="center"
+                        >
+                            {footerLinks.map((link) => (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    underline="hover"
+                                    sx={{ color: colors.muted, fontSize: 14 }}
+                                >
+                                    {link.label}
+                                </Link>
+                            ))}
                         </Stack>
                     </Stack>
                 </Container>

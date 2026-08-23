@@ -1,4 +1,4 @@
 User-Agent: *
-Disallow:
+Disallow: /stats
 
 Sitemap: https://jacobhal.se/sitemap.xml

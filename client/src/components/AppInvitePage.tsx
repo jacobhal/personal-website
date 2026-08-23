@@ -3,7 +3,9 @@ import { Helmet } from 'react-helmet'
 import { Box, Button, Container, Stack, Typography } from '@mui/material'
 import { useParams } from 'react-router-dom'
 
-import { NavBar } from './NavBar'
+import { AppMarketingBar } from './AppMarketingBar'
+import { useLocale } from '../i18n/useLocale'
+import { useStoreLinks } from '../hooks/useStoreLinks'
 import {
     captureAcquisitionFailure,
     recordAcquisitionBreadcrumb,
@@ -28,6 +30,7 @@ export interface AppInviteConfig {
     surface: string
     text: string
     muted: string
+    border: string
 }
 
 const REFERRAL_CODE = /^[23456789ABCDEFGHJKMNPQRSTUVWXYZ]{12}$/
@@ -42,20 +45,12 @@ interface StoreDestination {
     error: unknown | null
 }
 
-const storeDestination = (
-    url: string,
-    referralCode?: string
-): StoreDestination => {
+/** Validates a built store URL before it is put on an anchor. */
+const storeDestination = (url: string): StoreDestination => {
     try {
         const storeUrl = new URL(url)
         if (storeUrl.protocol !== 'https:') {
             throw new TypeError('Store destination must use HTTPS')
-        }
-        if (referralCode !== undefined) {
-            storeUrl.searchParams.set(
-                'referrer',
-                `referral_code=${referralCode}`
-            )
         }
         return { href: storeUrl.toString(), error: null }
     } catch (error) {
@@ -70,17 +65,28 @@ interface AppInvitePageProps {
 const AppInvitePage: React.FC<AppInvitePageProps> = ({ config }) => {
     const { code: rawCode } = useParams<{ code: string }>()
     const code = normalizeReferralCode(rawCode)
+    const { locale, setLocale } = useLocale()
     const [copyStatus, setCopyStatus] = useState<string | null>(null)
+    // Campaign-tagged links, so an invite opened from an ad is still
+    // attributable. The referral code keeps its place at the front of the Play
+    // `referrer` value; the campaign is appended to the same parameter.
+    const { appStoreHref, playStoreHref, trackStoreClick } = useStoreLinks({
+        app: config.app,
+        appStoreUrl: config.appStoreUrl,
+        playStoreUrl: config.playStoreUrl,
+        referralCode: code ?? undefined,
+        locale,
+    })
     const appStore = useMemo(
-        () => storeDestination(config.appStoreUrl),
-        [config.appStoreUrl]
+        () => storeDestination(appStoreHref),
+        [appStoreHref]
     )
     const playStore = useMemo(
         () =>
             code === null
                 ? { href: null, error: null }
-                : storeDestination(config.playStoreUrl, code),
-        [code, config.playStoreUrl]
+                : storeDestination(playStoreHref),
+        [code, playStoreHref]
     )
 
     useEffect(() => {
@@ -159,12 +165,7 @@ const AppInvitePage: React.FC<AppInvitePageProps> = ({ config }) => {
             event.preventDefault()
             return
         }
-        recordAcquisitionBreadcrumb({
-            app: config.app,
-            stage: 'store_navigation',
-            outcome: 'started',
-            store,
-        })
+        trackStoreClick(store)
     }
 
     const pageStyle = {
@@ -187,7 +188,17 @@ const AppInvitePage: React.FC<AppInvitePageProps> = ({ config }) => {
                 <Helmet>
                     <title>Invalid {config.appName} invite</title>
                 </Helmet>
-                <NavBar noImage />
+                <AppMarketingBar
+                    appName={config.appName}
+                    appIcon={config.appIcon}
+                    homePath={config.marketingPath}
+                    accent={config.accent}
+                    text={config.text}
+                    muted={config.muted}
+                    border={config.border}
+                    locale={locale}
+                    onLocaleChange={setLocale}
+                />
                 <Container
                     maxWidth="sm"
                     sx={{ py: { xs: 12, md: 18 }, textAlign: 'center' }}
@@ -237,7 +248,17 @@ const AppInvitePage: React.FC<AppInvitePageProps> = ({ config }) => {
                     content={`Use invite code ${code} after installing ${config.appName}.`}
                 />
             </Helmet>
-            <NavBar noImage />
+            <AppMarketingBar
+                    appName={config.appName}
+                    appIcon={config.appIcon}
+                    homePath={config.marketingPath}
+                    accent={config.accent}
+                    text={config.text}
+                    muted={config.muted}
+                    border={config.border}
+                    locale={locale}
+                    onLocaleChange={setLocale}
+                />
             <Container maxWidth="sm" className="app-invite-container">
                 <Stack spacing={3} alignItems="center" textAlign="center">
                     <Box

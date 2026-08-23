@@ -13,8 +13,11 @@ import { MemoryRouter, Route, Routes } from 'react-router-dom'
 
 const telemetry = vi.hoisted(() => ({
     captureAcquisitionFailure: vi.fn(),
+    captureLandingView: vi.fn(),
+    captureStoreClick: vi.fn(),
     recordAcquisitionBreadcrumb: vi.fn(),
     setAcquisitionApp: vi.fn(),
+    setAcquisitionCampaign: vi.fn(),
 }))
 
 vi.mock('../services/acquisitionTelemetry', () => telemetry)
@@ -37,6 +40,7 @@ const config = (overrides: Partial<AppInviteConfig> = {}): AppInviteConfig => ({
     background: '#000',
     surface: '#111',
     text: '#fff',
+    border: '#222',
     muted: '#aaa',
     ...overrides,
 })
@@ -124,7 +128,7 @@ describe('AppInvitePage telemetry', () => {
         ).toBe('true')
     })
 
-    test('records only the app and store when navigation starts', () => {
+    test('records only the app, store and campaign when navigation starts', () => {
         renderInvite()
 
         fireEvent.click(
@@ -136,6 +140,23 @@ describe('AppInvitePage telemetry', () => {
             stage: 'store_navigation',
             outcome: 'started',
             store: 'app_store',
+            campaign: {},
+        })
+    })
+
+    test('captures a countable store-click event per store', () => {
+        renderInvite()
+
+        fireEvent.click(
+            screen.getByRole('link', { name: 'Get it on Google Play' })
+        )
+
+        // A breadcrumb alone would only reach Sentry attached to an error or a
+        // sampled transaction, so the click needs its own event.
+        expect(telemetry.captureStoreClick).toHaveBeenCalledWith({
+            app: 'skarp',
+            store: 'google_play',
+            campaign: {},
         })
     })
 })

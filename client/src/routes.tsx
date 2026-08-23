@@ -24,6 +24,7 @@ import {
     KryddaDeleteAccount,
 } from './views/Krydda'
 import { HitQuiz } from './views/HitQuiz'
+import { Stats } from './views/Stats'
 import { DagensOrd } from './views/DagensOrd'
 import ScrollRestoration from './components/ScrollRestoration'
 import { NotFound } from './views/404'
@@ -62,6 +63,8 @@ export const Routes: React.FC = () => {
                     path="/krydda/delete-account"
                     element={<KryddaDeleteAccount />}
                 />
+                {/* Unlisted: acquisition dashboard, passphrase-gated. */}
+                <Route path="/stats" element={<Stats />} />
                 <Route path="/404" element={<NotFound />} />
                 <Route path="*" element={<Navigate to="/404" replace />} />
             </RouterRoutes>

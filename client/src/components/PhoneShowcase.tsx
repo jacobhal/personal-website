@@ -52,7 +52,9 @@ export const PhoneShowcase: React.FC<PhoneShowcaseProps> = ({
         if (inView) {
             // play() rejects when the tab is backgrounded or autoplay is
             // blocked; the poster stays up, which is a fine outcome.
-            void el.play().catch(() => undefined)
+            // Older WebKit and some embedded webviews return undefined here
+            // instead of a promise, so the result cannot be assumed thenable.
+            void Promise.resolve(el.play()).catch(() => undefined)
         } else {
             el.pause()
         }

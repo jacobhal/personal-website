@@ -51,14 +51,14 @@ describe('app invite routes', () => {
                 .getByRole('link', { name: 'Download on the App Store' })
                 .getAttribute('href')
         ).toBe(
-            'https://apps.apple.com/se/app/skarp-quiz-trivia/id6763050250?l=en-GB'
+            'https://apps.apple.com/app/id6763050250'
         )
         expect(
             screen
                 .getByRole('link', { name: 'Get it on Google Play' })
                 .getAttribute('href')
         ).toBe(
-            'https://play.google.com/store/apps/details?id=se.jacobhallman.quizapp&hl=en&referrer=referral_code%3DABC234XYZ789'
+            'https://play.google.com/store/apps/details?id=se.jacobhallman.quizapp&referrer=referral_code%3DABC234XYZ789'
         )
     })
 
@@ -90,7 +90,7 @@ describe('app invite routes', () => {
                 .getByRole('link', { name: 'Download on the App Store' })
                 .getAttribute('href')
         ).toBe(
-            'https://apps.apple.com/se/app/krydda-recipes-meal-plan/id6777108071?l=en-GB'
+            'https://apps.apple.com/app/id6777108071'
         )
         expect(
             screen

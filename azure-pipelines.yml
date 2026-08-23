@@ -56,6 +56,13 @@ stages:
                   env:
                     VITE_SENTRY_RELEASE: jacobhal-se@$(Build.SourceVersion)
                     SENTRY_AUTH_TOKEN: $(SENTRY_AUTH_TOKEN)
+                    # Acquisition tracking for /skarp and /krydda, read back on
+                    # /stats. The anon key is public by design; the events table
+                    # is insert-only for it and the dashboard is passphrase
+                    # gated server-side. Both come from the mainGroup variable
+                    # group. If unset, the pages simply record nothing.
+                    VITE_SUPABASE_URL: $(WEB_SUPABASE_URL)
+                    VITE_SUPABASE_ANON_KEY: $(WEB_SUPABASE_ANON_KEY)
 
                 - script: |
                       sudo apt-get update

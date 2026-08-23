@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { sentryVitePlugin } from '@sentry/vite-plugin'
+import { appPageMeta } from './vite-plugins/appPageMeta'
 
 const uploadToken = process.env.SENTRY_AUTH_TOKEN?.trim() ?? ''
 const canUploadSourceMaps =
@@ -9,6 +10,7 @@ const canUploadSourceMaps =
 export default defineConfig({
     plugins: [
         react(),
+        appPageMeta(),
         ...(canUploadSourceMaps
             ? [
                   sentryVitePlugin({
