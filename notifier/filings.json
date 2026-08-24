@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-24T12:29:38.317130Z",
+  "updated": "2026-08-24T13:31:15.882018Z",
   "window_days": 365,
   "proven_members": [
     "David Rouzer",
@@ -9,6 +9,150 @@
     "Warren Davidson"
   ],
   "filings": [
+    {
+      "name": "Suzan K. DelBene",
+      "last": "DelBene",
+      "first": "Suzan K.",
+      "filing_type": "P",
+      "filing_date": "2026-08-21",
+      "year": "2026",
+      "doc_id": "20035274",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035274.pdf",
+      "proven": false,
+      "trades": [
+        {
+          "owner": "joint",
+          "asset": "Washington ST 5% Go Utx Due",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-08-07",
+          "amount_low": 250001,
+          "amount_high": 500000
+        },
+        {
+          "owner": "joint",
+          "asset": "California CMNTY Choice Fing Auth",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-08-06",
+          "amount_low": 250001,
+          "amount_high": 500000
+        },
+        {
+          "owner": "joint",
+          "asset": "Southeast Energy Auth Coop Dist Ala",
+          "ticker": null,
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-06",
+          "amount_low": 250001,
+          "amount_high": 500000
+        }
+      ],
+      "trades_version": 1
+    },
+    {
+      "name": "Nancy Pelosi",
+      "last": "Pelosi",
+      "first": "Nancy",
+      "filing_type": "P",
+      "filing_date": "2026-08-21",
+      "year": "2026",
+      "doc_id": "20035143",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035143.pdf",
+      "proven": true,
+      "trades": [
+        {
+          "owner": "spouse",
+          "asset": "Bloom Energy Corporation Class A",
+          "ticker": "BE",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-28",
+          "amount_low": 500001,
+          "amount_high": 1000000,
+          "price_then": 166.84,
+          "price_now": 201.45,
+          "pct_since": 20.7
+        },
+        {
+          "owner": "spouse",
+          "asset": "Bloom Energy Corporation Class A",
+          "ticker": "BE",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2026-07-28",
+          "amount_low": 500001,
+          "amount_high": 1000000,
+          "price_then": 166.84,
+          "price_now": 201.45,
+          "pct_since": 20.7
+        },
+        {
+          "owner": "spouse",
+          "asset": "REOF XXV, LLC [AB]",
+          "ticker": null,
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-27",
+          "amount_low": 500001,
+          "amount_high": 1000000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Bloom Energy Corporation Class A",
+          "ticker": "BE",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-24",
+          "amount_low": 1000001,
+          "amount_high": 5000000,
+          "price_then": 184.89,
+          "price_now": 201.45,
+          "pct_since": 9.0
+        },
+        {
+          "owner": "spouse",
+          "asset": "Bloom Energy Corporation Class A",
+          "ticker": "BE",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2026-07-24",
+          "amount_low": 1000001,
+          "amount_high": 5000000,
+          "price_then": 184.89,
+          "price_now": 201.45,
+          "pct_since": 9.0
+        },
+        {
+          "owner": "spouse",
+          "asset": "Intel Corporation - Common Stock",
+          "ticker": "INTC",
+          "side": "buy",
+          "instrument": "options",
+          "txn_date": "2026-07-24",
+          "amount_low": 250001,
+          "amount_high": 500000,
+          "price_now": 90.07,
+          "pct_since": null
+        },
+        {
+          "owner": "spouse",
+          "asset": "Intel Corporation - Common Stock",
+          "ticker": "INTC",
+          "side": "buy",
+          "instrument": "shares",
+          "txn_date": "2026-07-24",
+          "amount_low": 500001,
+          "amount_high": 1000000,
+          "price_now": 90.07,
+          "pct_since": null
+        }
+      ],
+      "trades_version": 1
+    },
     {
       "name": "Scott H. Peters",
       "last": "Peters",
@@ -34302,13 +34446,22 @@
   ],
   "leaderboard": [
     {
+      "ticker": "BE",
+      "member_count": 1,
+      "members": [
+        "Nancy Pelosi"
+      ],
+      "trade_count": 4,
+      "approx_dollars": 7500000
+    },
+    {
       "ticker": "INTC",
       "member_count": 1,
       "members": [
         "Nancy Pelosi"
       ],
-      "trade_count": 1,
-      "approx_dollars": 3000000
+      "trade_count": 3,
+      "approx_dollars": 4125000
     },
     {
       "ticker": "MSFT",
@@ -34420,15 +34573,6 @@
     },
     {
       "ticker": "GOOGM",
-      "member_count": 1,
-      "members": [
-        "Josh Gottheimer"
-      ],
-      "trade_count": 1,
-      "approx_dollars": 8000
-    },
-    {
-      "ticker": "NICE",
       "member_count": 1,
       "members": [
         "Josh Gottheimer"
@@ -34725,6 +34869,201 @@
           "instrument": "shares",
           "amount_low": 15001,
           "amount_high": 50000
+        }
+      ]
+    },
+    {
+      "ticker": "BE",
+      "buys": 4,
+      "sells": 0,
+      "member_count": 1,
+      "members": [
+        "Nancy Pelosi"
+      ],
+      "last_txn_date": "2026-07-28",
+      "events": [
+        {
+          "member": "Nancy Pelosi",
+          "side": "buy",
+          "txn_date": "2026-07-28",
+          "instrument": "shares",
+          "amount_low": 500001,
+          "amount_high": 1000000
+        },
+        {
+          "member": "Nancy Pelosi",
+          "side": "buy",
+          "txn_date": "2026-07-28",
+          "instrument": "options",
+          "amount_low": 500001,
+          "amount_high": 1000000
+        },
+        {
+          "member": "Nancy Pelosi",
+          "side": "buy",
+          "txn_date": "2026-07-24",
+          "instrument": "shares",
+          "amount_low": 1000001,
+          "amount_high": 5000000
+        },
+        {
+          "member": "Nancy Pelosi",
+          "side": "buy",
+          "txn_date": "2026-07-24",
+          "instrument": "options",
+          "amount_low": 1000001,
+          "amount_high": 5000000
+        }
+      ]
+    },
+    {
+      "ticker": "INTC",
+      "buys": 15,
+      "sells": 2,
+      "member_count": 4,
+      "members": [
+        "Kevin Hern",
+        "Marjorie Taylor Greene",
+        "Nancy Pelosi",
+        "Rob Bresnahan"
+      ],
+      "last_txn_date": "2026-07-24",
+      "events": [
+        {
+          "member": "Nancy Pelosi",
+          "side": "buy",
+          "txn_date": "2026-07-24",
+          "instrument": "options",
+          "amount_low": 250001,
+          "amount_high": 500000
+        },
+        {
+          "member": "Nancy Pelosi",
+          "side": "buy",
+          "txn_date": "2026-07-24",
+          "instrument": "shares",
+          "amount_low": 500001,
+          "amount_high": 1000000
+        },
+        {
+          "member": "Nancy Pelosi",
+          "side": "buy",
+          "txn_date": "2026-05-29",
+          "instrument": "options",
+          "amount_low": 1000001,
+          "amount_high": 5000000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "sell",
+          "txn_date": "2025-06-11",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-05-05",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-03-13",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-03-03",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-02-26",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-02-20",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-02-14",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-02-12",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-02-03",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-02-03",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Rob Bresnahan",
+          "side": "buy",
+          "txn_date": "2025-02-03",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-01-08",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Marjorie Taylor Greene",
+          "side": "buy",
+          "txn_date": "2025-01-08",
+          "instrument": "shares",
+          "amount_low": 1001,
+          "amount_high": 15000
+        },
+        {
+          "member": "Kevin Hern",
+          "side": "sell",
+          "txn_date": "2024-12-31",
+          "instrument": "shares",
+          "amount_low": 50001,
+          "amount_high": 100000
         }
       ]
     },
@@ -35866,141 +36205,6 @@
           "instrument": "shares",
           "amount_low": 1001,
           "amount_high": 15000
-        }
-      ]
-    },
-    {
-      "ticker": "INTC",
-      "buys": 13,
-      "sells": 2,
-      "member_count": 4,
-      "members": [
-        "Kevin Hern",
-        "Marjorie Taylor Greene",
-        "Nancy Pelosi",
-        "Rob Bresnahan"
-      ],
-      "last_txn_date": "2026-05-29",
-      "events": [
-        {
-          "member": "Nancy Pelosi",
-          "side": "buy",
-          "txn_date": "2026-05-29",
-          "instrument": "options",
-          "amount_low": 1000001,
-          "amount_high": 5000000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "sell",
-          "txn_date": "2025-06-11",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-05-05",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-03-13",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-03-03",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-02-26",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-02-20",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-02-14",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-02-12",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-02-03",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-02-03",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Rob Bresnahan",
-          "side": "buy",
-          "txn_date": "2025-02-03",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-01-08",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Marjorie Taylor Greene",
-          "side": "buy",
-          "txn_date": "2025-01-08",
-          "instrument": "shares",
-          "amount_low": 1001,
-          "amount_high": 15000
-        },
-        {
-          "member": "Kevin Hern",
-          "side": "sell",
-          "txn_date": "2024-12-31",
-          "instrument": "shares",
-          "amount_low": 50001,
-          "amount_high": 100000
         }
       ]
     },
