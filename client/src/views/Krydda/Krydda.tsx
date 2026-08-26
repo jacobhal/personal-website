@@ -65,16 +65,20 @@ interface ShowcaseMedia {
  * Media for the alternating "show, don't tell" sections.
  *
  * Kept separate from the copy: only the words live in `kryddaContent`.
+ *
+ * Replacements get a new path rather than overwriting the old one. `.htaccess`
+ * serves images as `immutable, max-age=31536000`, so reusing a poster filename
+ * would leave every returning visitor on the old frame for a year.
  */
 const showcaseMedia: readonly ShowcaseMedia[] = [
     {
         image: {
             sv: '/krydda-media/web-import-poster.jpg',
-            en: '/krydda-media/web-import-en-poster.jpg',
+            en: '/krydda-media/web-import-en-v2-poster.jpg',
         },
         video: {
             sv: '/krydda-media/web-import.mp4',
-            en: '/krydda-media/web-import-en.mp4',
+            en: '/krydda-media/web-import-en-v2.mp4',
         },
         alt: {
             sv: 'Ett recept sparas från en webbsida i Krydda',

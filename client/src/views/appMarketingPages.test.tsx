@@ -167,10 +167,10 @@ describe('Krydda showcase recording', () => {
         const video = container.querySelector('video')
 
         expect(video?.getAttribute('src')).toBe(
-            '/krydda-media/web-import-en.mp4'
+            '/krydda-media/web-import-en-v2.mp4'
         )
         expect(video?.getAttribute('poster')).toBe(
-            '/krydda-media/web-import-en-poster.jpg'
+            '/krydda-media/web-import-en-v2-poster.jpg'
         )
     })
 
