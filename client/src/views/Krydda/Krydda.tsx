@@ -14,6 +14,7 @@ import { PageFavicon } from '../../components/PageFavicon'
 import { AppMarketingBar } from '../../components/AppMarketingBar'
 import { PhoneShowcase } from '../../components/PhoneShowcase'
 import { useLocale } from '../../i18n/useLocale'
+import type { Locale } from '../../i18n/locale'
 import { useStoreLinks } from '../../hooks/useStoreLinks'
 import icon from '../../assets/images/krydda_icon.png'
 import {
@@ -36,16 +37,45 @@ const CANONICAL = 'https://jacobhal.se/krydda'
 const OG_IMAGE = 'https://jacobhal.se/krydda-media/og-image.jpg'
 
 /**
+ * A media path that is identical in both languages, or one path per language.
+ *
+ * Most stills show no app chrome worth translating, so they stay a single
+ * path. A screen recording does show the interface, and an English visitor
+ * being shown a Swedish app is a credibility leak, so recordings are
+ * per-language wherever both have been captured.
+ */
+type LocalizedMedia = string | Record<Locale, string>
+
+const forLocale = (media: LocalizedMedia, locale: Locale): string =>
+    typeof media === 'string' ? media : media[locale]
+
+interface ShowcaseMedia {
+    /** Poster/still frame. Always present, so a section without a recording
+     *  still reads correctly. */
+    image: LocalizedMedia
+    /** Optional screen recording. A section upgrades from still to video the
+     *  moment a path is filled in. */
+    video?: LocalizedMedia
+    alt: Record<Locale, string>
+    /** Flips the copy/phone order so the sections alternate down the page. */
+    reverse?: boolean
+}
+
+/**
  * Media for the alternating "show, don't tell" sections.
  *
- * Kept separate from the copy: the stills and recordings are the same in both
- * languages, so only the words live in `kryddaContent`. A section upgrades from
- * still to video the moment a `video` path is filled in.
+ * Kept separate from the copy: only the words live in `kryddaContent`.
  */
-const showcaseMedia = [
+const showcaseMedia: readonly ShowcaseMedia[] = [
     {
-        image: '/krydda-media/web-import-poster.jpg',
-        video: '/krydda-media/web-import.mp4',
+        image: {
+            sv: '/krydda-media/web-import-poster.jpg',
+            en: '/krydda-media/web-import-en-poster.jpg',
+        },
+        video: {
+            sv: '/krydda-media/web-import.mp4',
+            en: '/krydda-media/web-import-en.mp4',
+        },
         alt: {
             sv: 'Ett recept sparas från en webbsida i Krydda',
             en: 'Saving a recipe from a website inside Krydda',
@@ -71,7 +101,7 @@ const showcaseMedia = [
         alt: { sv: 'Kryddas inköpslista', en: 'Krydda shopping list' },
         reverse: true,
     },
-] as const
+]
 
 const Krydda: React.FC = () => {
     const { locale, setLocale } = useLocale()
@@ -279,10 +309,7 @@ const Krydda: React.FC = () => {
                             alignItems="center"
                             direction={{
                                 xs: 'column-reverse',
-                                md:
-                                    'reverse' in media && media.reverse
-                                        ? 'row-reverse'
-                                        : 'row',
+                                md: media.reverse ? 'row-reverse' : 'row',
                             }}
                             sx={{ py: { xs: 6, md: 10 } }}
                         >
@@ -323,10 +350,10 @@ const Krydda: React.FC = () => {
                             </Grid>
                             <Grid item xs={12} md={6}>
                                 <PhoneShowcase
-                                    image={media.image}
+                                    image={forLocale(media.image, locale)}
                                     video={
-                                        'video' in media
-                                            ? media.video
+                                        media.video
+                                            ? forLocale(media.video, locale)
                                             : undefined
                                     }
                                     alt={media.alt[locale]}

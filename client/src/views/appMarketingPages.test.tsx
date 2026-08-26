@@ -159,3 +159,30 @@ describe('store links', () => {
         )
     })
 })
+
+describe('Krydda showcase recording', () => {
+    test('English visitors get the English screen recording', () => {
+        const { container } = renderPage(<Krydda />)
+
+        const video = container.querySelector('video')
+
+        expect(video?.getAttribute('src')).toBe(
+            '/krydda-media/web-import-en.mp4'
+        )
+        expect(video?.getAttribute('poster')).toBe(
+            '/krydda-media/web-import-en-poster.jpg'
+        )
+    })
+
+    test('Swedish visitors keep the Swedish screen recording', () => {
+        setBrowserLanguages(['sv-SE', 'en-US'])
+        const { container } = renderPage(<Krydda />)
+
+        const video = container.querySelector('video')
+
+        expect(video?.getAttribute('src')).toBe('/krydda-media/web-import.mp4')
+        expect(video?.getAttribute('poster')).toBe(
+            '/krydda-media/web-import-poster.jpg'
+        )
+    })
+})
