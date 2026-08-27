@@ -12,6 +12,7 @@ import {
     Skarp,
     SkarpDeleteAccount,
     SkarpInvite,
+    SkarpLiveRoom,
     SkarpPrivacy,
     SkarpTerms,
 } from './views/Skarp'
@@ -46,6 +47,11 @@ export const Routes: React.FC = () => {
                 <Route path="/congress" element={<CongressFilings />} />
                 <Route path="/skarp" element={<Skarp />} />
                 <Route path="/skarp/invite/:code" element={<SkarpInvite />} />
+                <Route path="/skarp/room/:code" element={<SkarpLiveRoom />} />
+                <Route
+                    path="/skarp/room/:code/display"
+                    element={<SkarpLiveRoom />}
+                />
                 <Route path="/hitquiz" element={<HitQuiz />} />
                 <Route path="/dagens-ord" element={<DagensOrd />} />
                 <Route

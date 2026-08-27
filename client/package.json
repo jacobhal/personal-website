@@ -12,6 +12,7 @@
         "@mui/icons-material": "^5.15.6",
         "@mui/material": "^5.15.6",
         "@sentry/react": "^10.65.0",
+        "@supabase/supabase-js": "2.112.4",
         "axios": "^1.6.7",
         "d3-scale": "^4.0.2",
         "react": "^18.2.0",

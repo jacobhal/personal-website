@@ -4,7 +4,7 @@
     "details": [
       {
         "appID": "9423J75LZV.se.jacobhallman.quizapp",
-        "paths": ["/skarp/invite/*"]
+        "paths": ["/skarp/invite/*", "/skarp/room/*"]
       },
       {
         "appID": "9423J75LZV.se.jacobhallman.krydda",

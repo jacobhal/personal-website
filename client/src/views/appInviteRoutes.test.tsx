@@ -50,9 +50,7 @@ describe('app invite routes', () => {
             screen
                 .getByRole('link', { name: 'Download on the App Store' })
                 .getAttribute('href')
-        ).toBe(
-            'https://apps.apple.com/app/id6763050250'
-        )
+        ).toBe('https://apps.apple.com/app/id6763050250')
         expect(
             screen
                 .getByRole('link', { name: 'Get it on Google Play' })
@@ -89,9 +87,7 @@ describe('app invite routes', () => {
             screen
                 .getByRole('link', { name: 'Download on the App Store' })
                 .getAttribute('href')
-        ).toBe(
-            'https://apps.apple.com/app/id6777108071'
-        )
+        ).toBe('https://apps.apple.com/app/id6777108071')
         expect(
             screen
                 .getByRole('link', { name: 'Get it on Google Play' })
@@ -126,6 +122,16 @@ describe('app invite routes', () => {
             })
         ).toBeTruthy()
     })
+
+    test('renders browser join UI for a valid live room link', () => {
+        renderRoute('/skarp/room/abc234')
+
+        expect(screen.getByRole('heading', { name: 'ABC234' })).toBeTruthy()
+        expect(screen.getByLabelText('Nickname')).toBeTruthy()
+        expect(
+            screen.getByRole('button', { name: 'Join live quiz' })
+        ).toBeTruthy()
+    })
 })
 
 describe('app-link association sources', () => {
@@ -141,7 +147,7 @@ describe('app-link association sources', () => {
             expect.arrayContaining([
                 expect.objectContaining({
                     appID: '9423J75LZV.se.jacobhallman.quizapp',
-                    paths: ['/skarp/invite/*'],
+                    paths: ['/skarp/invite/*', '/skarp/room/*'],
                 }),
                 expect.objectContaining({
                     appID: '9423J75LZV.se.jacobhallman.krydda',
@@ -153,29 +159,19 @@ describe('app-link association sources', () => {
 
     test('publishes the verified Google Play signing fingerprints', () => {
         const source = JSON.parse(
-            readFileSync(
-                resolve('association-files/assetlinks.json'),
-                'utf8'
-            )
+            readFileSync(resolve('association-files/assetlinks.json'), 'utf8')
         )
         const published = JSON.parse(
-            readFileSync(
-                resolve('public/.well-known/assetlinks.json'),
-                'utf8'
-            )
+            readFileSync(resolve('public/.well-known/assetlinks.json'), 'utf8')
         )
 
         expect(published).toEqual(source)
         expect(published).toHaveLength(2)
-        expect(published[0].target.package_name).toBe(
-            'se.jacobhallman.quizapp'
-        )
+        expect(published[0].target.package_name).toBe('se.jacobhallman.quizapp')
         expect(published[0].target.sha256_cert_fingerprints).toEqual([
             '86:4A:25:AC:D4:46:D2:66:D7:DF:C9:C4:F5:77:FF:E4:6A:3E:D3:5A:75:A7:52:DF:41:8E:A0:00:59:7C:A3:37',
         ])
-        expect(published[1].target.package_name).toBe(
-            'se.jacobhallman.krydda'
-        )
+        expect(published[1].target.package_name).toBe('se.jacobhallman.krydda')
         expect(published[1].target.sha256_cert_fingerprints).toEqual([
             '57:91:66:94:16:BE:CA:F6:2E:07:32:B6:97:03:69:BE:44:B1:C2:67:F3:87:D0:EE:8E:C4:54:FC:55:61:C5:29',
         ])
