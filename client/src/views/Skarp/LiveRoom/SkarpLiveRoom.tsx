@@ -66,6 +66,18 @@ const SEA_IDS = Array.from(
     )
 )
 
+const recordLiveBreadcrumb = (
+    operation: string,
+    data: Record<string, unknown> = {}
+) => {
+    Sentry.addBreadcrumb({
+        category: 'live_room',
+        level: 'info',
+        message: operation,
+        data: { operation, ...data },
+    })
+}
+
 const countyNames: Record<string, string> = {
     'SE-AB': 'Stockholm County',
     'SE-C': 'Uppsala County',
@@ -122,6 +134,8 @@ const SkarpLiveRoom: React.FC = () => {
     const [error, setError] = useState<string | null>(null)
     const tokenRef = useRef<string | null>(code ? storedRoomToken(code) : null)
     const roomRef = useRef<LiveRoomState | null>(null)
+    const pollFailureReportedRef = useRef(false)
+    const lastStateBreadcrumbRef = useRef('')
 
     useEffect(() => {
         roomRef.current = room
@@ -135,13 +149,25 @@ const SkarpLiveRoom: React.FC = () => {
                 : tokenRef.current
                   ? await getLiveRoomState(code, tokenRef.current)
                   : null
-            if (next) setRoom(next)
+            if (next) {
+                if (pollFailureReportedRef.current) {
+                    recordLiveBreadcrumb('liveRoom.webRefresh.recovered', {
+                        displayMode,
+                        phase: next.phase,
+                    })
+                }
+                pollFailureReportedRef.current = false
+                setRoom(next)
+            }
         } catch (cause) {
             if (!roomRef.current) setError('The room could not be loaded.')
-            Sentry.captureException(cause, {
-                tags: { operation: 'liveRoom.webRefresh' },
-                extra: { displayMode, phase: roomRef.current?.phase },
-            })
+            if (!pollFailureReportedRef.current) {
+                pollFailureReportedRef.current = true
+                Sentry.captureException(cause, {
+                    tags: { operation: 'liveRoom.webRefresh' },
+                    extra: { displayMode, phase: roomRef.current?.phase },
+                })
+            }
         }
     }, [code, displayMode])
 
@@ -151,14 +177,28 @@ const SkarpLiveRoom: React.FC = () => {
 
     useEffect(() => {
         if (
-            !room ||
-            room.phase === 'finished' ||
-            room.phase === 'cancelled'
+            (!room && !displayMode) ||
+            room?.phase === 'finished' ||
+            room?.phase === 'cancelled'
         )
             return
         const timer = window.setInterval(() => void refresh(), 1000)
         return () => window.clearInterval(timer)
-    }, [refresh, room?.phase])
+    }, [displayMode, refresh, room?.phase])
+
+    useEffect(() => {
+        if (!room) return
+        const signature = `${room.phase}:${room.currentQuestionIndex}`
+        if (lastStateBreadcrumbRef.current === signature) return
+        lastStateBreadcrumbRef.current = signature
+        recordLiveBreadcrumb('liveRoom.webState.changed', {
+            displayMode,
+            phase: room.phase,
+            questionIndex: room.currentQuestionIndex,
+            participantCount: room.participants.length,
+            revealedAnswerCount: room.answers.length,
+        })
+    }, [displayMode, room])
 
     const join = async (event: React.FormEvent) => {
         event.preventDefault()
@@ -169,6 +209,10 @@ const SkarpLiveRoom: React.FC = () => {
             const result = await joinLiveRoom(code, name.trim())
             tokenRef.current = result.token
             setRoom(result.state)
+            recordLiveBreadcrumb('liveRoom.webJoin.succeeded', {
+                phase: result.state.phase,
+                participantCount: result.state.participants.length,
+            })
         } catch (cause) {
             setError(
                 'Could not join. Check the code and nickname, then try again.'
@@ -186,7 +230,18 @@ const SkarpLiveRoom: React.FC = () => {
         setLoading(true)
         setError(null)
         try {
-            setRoom(await submitLiveRoomAnswer(code, tokenRef.current, answer))
+            const next = await submitLiveRoomAnswer(
+                code,
+                tokenRef.current,
+                answer
+            )
+            setRoom(next)
+            recordLiveBreadcrumb('liveRoom.webAnswer.succeeded', {
+                questionType: room?.question?.quizType,
+                questionIndex: room?.currentQuestionIndex,
+                nextPhase: next.phase,
+                revealedAnswerCount: next.answers.length,
+            })
         } catch (cause) {
             setError('Your answer could not be submitted. Try once more.')
             Sentry.captureException(cause, {
