@@ -150,10 +150,15 @@ const SkarpLiveRoom: React.FC = () => {
     }, [displayMode, refresh])
 
     useEffect(() => {
-        if (!room) return
+        if (
+            !room ||
+            room.phase === 'finished' ||
+            room.phase === 'cancelled'
+        )
+            return
         const timer = window.setInterval(() => void refresh(), 1000)
         return () => window.clearInterval(timer)
-    }, [refresh, room])
+    }, [refresh, room?.phase])
 
     const join = async (event: React.FormEvent) => {
         event.preventDefault()
