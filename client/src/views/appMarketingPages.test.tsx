@@ -73,9 +73,11 @@ describe('marketing page language', () => {
         setBrowserLanguages(['sv-SE', 'en-US'])
         renderPage(<Skarp />)
 
-        expect(
-            screen.getByText(/Quizet som gör dig vassare/)
-        ).toBeTruthy()
+        // Asserts the Swedish headline, mirroring the Krydda case below. The
+        // old assertion matched the tagline, which no longer carries the
+        // "quizet som gör dig vassare" line — that now lives in the page title
+        // and meta description rather than the visible copy.
+        expect(screen.getByText('Allt du borde kunna.')).toBeTruthy()
         expect(storeLink('Ladda ner på App Store')).toBeTruthy()
     })
 
