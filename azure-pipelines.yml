@@ -65,9 +65,11 @@ stages:
                           echo "GITHUB_READ_TOKEN is missing from the pipeline secret variables." >&2
                           exit 1
                       fi
-                      git -c "http.extraHeader=Authorization: Bearer $GITHUB_READ_TOKEN" \
+                      github_auth="$(printf 'x-access-token:%s' "$GITHUB_READ_TOKEN" | base64 | tr -d '\n')"
+                      git -c "http.extraHeader=Authorization: Basic $github_auth" \
                           clone --branch main --depth 1 \
                           https://github.com/jacobhal/quiz-app.git "$quiz_dir"
+                      unset github_auth
                       cd "$quiz_dir"
                       flutter pub get
                       sentry_args=()
