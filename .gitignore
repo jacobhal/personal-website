@@ -12,6 +12,7 @@
 # production
 /build
 /client/build
+/client/public/skarp-live/
 
 # misc
 .DS_Store

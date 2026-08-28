@@ -39,8 +39,8 @@ stages:
                 - task: NodeTool@0
                   inputs:
                     versionSource: 'spec'
-                    versionSpec: '20.x'
-                  displayName: 'Install Node.js 20'
+                    versionSpec: '22.x'
+                  displayName: 'Install Node.js 22'
 
                 - script: npm install -f
                   workingDirectory: client
@@ -49,6 +49,43 @@ stages:
                 - script: npm test -- --run
                   workingDirectory: client
                   displayName: 'npm test'
+
+                - script: |
+                      git clone --branch 3.47.0 --depth 1 https://github.com/flutter/flutter.git "$(Agent.ToolsDirectory)/flutter"
+                      echo "##vso[task.prependpath]$(Agent.ToolsDirectory)/flutter/bin"
+                      "$(Agent.ToolsDirectory)/flutter/bin/flutter" config --no-analytics
+                      "$(Agent.ToolsDirectory)/flutter/bin/flutter" precache --web
+                  displayName: 'Install Flutter 3.47.0'
+
+                - script: |
+                      set -euo pipefail
+                      quiz_dir="$(Agent.TempDirectory)/quiz-app-live"
+                      output_dir="$(Build.SourcesDirectory)/client/public/skarp-live"
+                      git clone --branch master --depth 1 https://github.com/jacobhal/quiz-app.git "$quiz_dir"
+                      cd "$quiz_dir"
+                      flutter pub get
+                      sentry_args=()
+                      case "${SKARP_SENTRY_DSN:-}" in
+                          ''|'$('*) ;;
+                          *) sentry_args+=(--dart-define="SENTRY_DSN=$SKARP_SENTRY_DSN") ;;
+                      esac
+                      flutter build web \
+                          --release \
+                          --target lib/live_room_web_main.dart \
+                          --base-href /skarp-live/ \
+                          --dart-define="SUPABASE_URL=$WEB_SUPABASE_SKARP_URL" \
+                          --dart-define="SUPABASE_ANON_KEY=$WEB_SUPABASE_SKARP_ANON_KEY" \
+                          --dart-define=SUPABASE_TARGET=prod \
+                          --dart-define=APP_ENV=prod \
+                          "${sentry_args[@]}"
+                      rm -rf "$output_dir"
+                      mkdir -p "$output_dir"
+                      cp -R build/web/. "$output_dir/"
+                  displayName: 'Build shared Skarp Live Quiz client'
+                  env:
+                    WEB_SUPABASE_SKARP_URL: $(WEB_SUPABASE_SKARP_URL)
+                    WEB_SUPABASE_SKARP_ANON_KEY: $(WEB_SUPABASE_SKARP_ANON_KEY)
+                    SKARP_SENTRY_DSN: $(SKARP_SENTRY_DSN)
                 
                 - script: npm run build
                   workingDirectory: client

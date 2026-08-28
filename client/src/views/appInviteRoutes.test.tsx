@@ -123,14 +123,23 @@ describe('app invite routes', () => {
         ).toBeTruthy()
     })
 
-    test('renders browser join UI for a valid live room link', () => {
+    test('embeds the shared Flutter live-room client for a valid link', () => {
         renderRoute('/skarp/room/abc234')
 
-        expect(screen.getByRole('heading', { name: 'ABC234' })).toBeTruthy()
-        expect(screen.getByLabelText('Nickname')).toBeTruthy()
+        const frame = screen.getByTitle('Skarp Live Quiz')
+        expect(frame.getAttribute('src')).toMatch(
+            /^\/skarp-live\/index\.html\?code=ABC234&locale=(sv|en)$/
+        )
+    })
+
+    test('embeds shared-display mode for a display link', () => {
+        renderRoute('/skarp/room/abc234/display')
+
         expect(
-            screen.getByRole('button', { name: 'Join live quiz' })
-        ).toBeTruthy()
+            screen.getByTitle('Skarp Live Quiz display').getAttribute('src')
+        ).toMatch(
+            /^\/skarp-live\/index\.html\?code=ABC234&display=1&locale=(sv|en)$/
+        )
     })
 })
 
