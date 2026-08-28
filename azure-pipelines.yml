@@ -61,7 +61,7 @@ stages:
                       set -euo pipefail
                       quiz_dir="$(Agent.TempDirectory)/quiz-app-live"
                       output_dir="$(Build.SourcesDirectory)/client/public/skarp-live"
-                      git clone --branch master --depth 1 https://github.com/jacobhal/quiz-app.git "$quiz_dir"
+                      git clone --branch main --depth 1 https://github.com/jacobhal/quiz-app.git "$quiz_dir"
                       cd "$quiz_dir"
                       flutter pub get
                       sentry_args=()
