@@ -61,7 +61,13 @@ stages:
                       set -euo pipefail
                       quiz_dir="$(Agent.TempDirectory)/quiz-app-live"
                       output_dir="$(Build.SourcesDirectory)/client/public/skarp-live"
-                      git clone --branch main --depth 1 https://github.com/jacobhal/quiz-app.git "$quiz_dir"
+                      if [[ -z "${GITHUB_READ_TOKEN:-}" || "$GITHUB_READ_TOKEN" == '$('* ]]; then
+                          echo "GITHUB_READ_TOKEN is missing from the pipeline secret variables." >&2
+                          exit 1
+                      fi
+                      git -c "http.extraHeader=Authorization: Bearer $GITHUB_READ_TOKEN" \
+                          clone --branch main --depth 1 \
+                          https://github.com/jacobhal/quiz-app.git "$quiz_dir"
                       cd "$quiz_dir"
                       flutter pub get
                       sentry_args=()
@@ -86,6 +92,7 @@ stages:
                     WEB_SUPABASE_SKARP_URL: $(WEB_SUPABASE_SKARP_URL)
                     WEB_SUPABASE_SKARP_ANON_KEY: $(WEB_SUPABASE_SKARP_ANON_KEY)
                     SKARP_SENTRY_DSN: $(SKARP_SENTRY_DSN)
+                    GITHUB_READ_TOKEN: $(GITHUB_READ_TOKEN)
                 
                 - script: npm run build
                   workingDirectory: client
