@@ -12,6 +12,8 @@ import {
 
 import { PageFavicon } from '../../components/PageFavicon'
 import { AppMarketingBar } from '../../components/AppMarketingBar'
+import { PhoneShowcase } from '../../components/PhoneShowcase'
+import type { Locale } from '../../i18n/locale'
 import { useLocale } from '../../i18n/useLocale'
 import { useStoreLinks } from '../../hooks/useStoreLinks'
 import owl from '../../assets/images/skarp_owl.png'
@@ -30,6 +32,76 @@ const colors = {
     text: '#ECECF2',
     muted: '#A0A0B4',
 }
+
+/** A still is either one file for both languages, or one per language. */
+type LocalizedMedia = string | Record<Locale, string>
+
+const forLocale = (media: LocalizedMedia, locale: Locale): string =>
+    typeof media === 'string' ? media : media[locale]
+
+interface ShowcaseMedia {
+    image: LocalizedMedia
+    alt: Record<Locale, string>
+    /** Flips the copy/phone order so the sections alternate down the page. */
+    reverse?: boolean
+}
+
+/**
+ * Stills for the alternating "show, don't tell" sections, in the same order as
+ * `SKARP_COPY.showcases`. Only the words live in `skarpContent`.
+ *
+ * Captured from the real app on a booted simulator by
+ * `integration_test/site_shots_test.dart` in the quiz-app repo, so these are
+ * the current build rather than mock-ups.
+ *
+ * Replacements get a new path rather than overwriting the old one: images are
+ * served `immutable, max-age=31536000`, so reusing a filename would leave every
+ * returning visitor on the old frame for a year.
+ */
+const showcaseMedia: readonly ShowcaseMedia[] = [
+    {
+        image: {
+            sv: '/skarp-media/live-sv-v1.jpg',
+            en: '/skarp-media/live-en-v1.jpg',
+        },
+        alt: {
+            sv: 'Ett livequizrum skapas i Skarp',
+            en: 'Creating a live quiz room in Skarp',
+        },
+    },
+    {
+        image: {
+            sv: '/skarp-media/solo-sv-v1.jpg',
+            en: '/skarp-media/solo-en-v1.jpg',
+        },
+        alt: {
+            sv: 'En fråga under en solorunda i Skarp',
+            en: 'A question during a solo round in Skarp',
+        },
+        reverse: true,
+    },
+    {
+        image: {
+            sv: '/skarp-media/duel-sv-v1.jpg',
+            en: '/skarp-media/duel-en-v1.jpg',
+        },
+        alt: {
+            sv: 'En duell mot en vän i Skarp',
+            en: 'A head-to-head duel in Skarp',
+        },
+    },
+    {
+        image: {
+            sv: '/skarp-media/leaderboard-sv-v1.jpg',
+            en: '/skarp-media/leaderboard-en-v1.jpg',
+        },
+        alt: {
+            sv: 'Topplistan i Skarp',
+            en: 'The Skarp leaderboard',
+        },
+        reverse: true,
+    },
+]
 
 const CANONICAL = 'https://jacobhal.se/skarp'
 const OG_IMAGE = 'https://jacobhal.se/app-social/skarp-og.png'
@@ -177,9 +249,17 @@ const Skarp: React.FC = () => {
                         <Typography
                             component="h1"
                             fontWeight={900}
-                            sx={{ fontSize: { xs: 36, md: 56 } }}
+                            sx={{
+                                fontSize: { xs: 36, md: 56 },
+                                lineHeight: 1.05,
+                                letterSpacing: '-0.02em',
+                            }}
                         >
-                            Skarp
+                            {copy.headlineLead}
+                            <Box component="span" sx={{ color: colors.accent }}>
+                                {' '}
+                                {copy.headlineTail}
+                            </Box>
                         </Typography>
                         <Typography
                             variant="h6"
@@ -202,8 +282,83 @@ const Skarp: React.FC = () => {
                 </Container>
             </Box>
 
+            {/* Show, don't tell — alternating copy and phone */}
+            <Container maxWidth="lg" sx={{ py: { xs: 2, md: 4 } }}>
+                {copy.showcases.map((sc, index) => {
+                    const media = showcaseMedia[index]
+                    if (!media) return null
+                    return (
+                        <Grid
+                            container
+                            key={sc.title}
+                            spacing={{ xs: 4, md: 8 }}
+                            alignItems="center"
+                            direction={{
+                                xs: 'column-reverse',
+                                md: media.reverse ? 'row-reverse' : 'row',
+                            }}
+                            sx={{ py: { xs: 6, md: 10 } }}
+                        >
+                            <Grid item xs={12} md={6}>
+                                <Typography
+                                    sx={{
+                                        color: colors.accent,
+                                        fontWeight: 800,
+                                        letterSpacing: 1.2,
+                                        textTransform: 'uppercase',
+                                        fontSize: 13,
+                                        mb: 1.5,
+                                    }}
+                                >
+                                    {sc.eyebrow}
+                                </Typography>
+                                <Typography
+                                    variant="h3"
+                                    fontWeight={900}
+                                    sx={{
+                                        fontSize: { xs: 30, md: 44 },
+                                        lineHeight: 1.1,
+                                        whiteSpace: 'pre-line',
+                                        mb: 2,
+                                    }}
+                                >
+                                    {sc.title}
+                                </Typography>
+                                <Typography
+                                    sx={{
+                                        color: colors.muted,
+                                        fontSize: { xs: 16, md: 18 },
+                                        maxWidth: 460,
+                                    }}
+                                >
+                                    {sc.body}
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={12} md={6}>
+                                <PhoneShowcase
+                                    image={forLocale(media.image, locale)}
+                                    alt={media.alt[locale]}
+                                />
+                            </Grid>
+                        </Grid>
+                    )
+                })}
+            </Container>
+
             {/* Features */}
             <Container maxWidth="lg" sx={{ py: { xs: 6, md: 10 } }}>
+                <Typography
+                    component="h2"
+                    fontWeight={900}
+                    sx={{
+                        fontSize: { xs: 28, md: 38 },
+                        letterSpacing: '-0.02em',
+                        textAlign: 'center',
+                        mb: { xs: 4, md: 6 },
+                    }}
+                >
+                    {copy.featuresHeading}
+                </Typography>
                 <Grid container spacing={3}>
                     {copy.features.map((f) => (
                         <Grid item xs={12} sm={6} key={f.title}>
@@ -241,6 +396,26 @@ const Skarp: React.FC = () => {
             >
                 <Container maxWidth="sm" sx={{ py: { xs: 7, md: 10 } }}>
                     <Stack alignItems="center" textAlign="center" spacing={2}>
+                        <Typography
+                            component="h2"
+                            fontWeight={900}
+                            sx={{
+                                fontSize: { xs: 28, md: 38 },
+                                letterSpacing: '-0.02em',
+                            }}
+                        >
+                            {copy.closingTitle}
+                        </Typography>
+                        <Typography
+                            sx={{
+                                color: colors.muted,
+                                fontSize: { xs: 16, md: 18 },
+                                maxWidth: 420,
+                                pb: 1,
+                            }}
+                        >
+                            {copy.closingBody}
+                        </Typography>
                         {storeButtons}
                     </Stack>
                 </Container>
