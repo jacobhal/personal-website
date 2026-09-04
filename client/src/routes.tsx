@@ -26,6 +26,7 @@ import {
 } from './views/Krydda'
 import { HitQuiz } from './views/HitQuiz'
 import { Stats } from './views/Stats'
+import { Integrity } from './views/Integrity'
 import { DagensOrd } from './views/DagensOrd'
 import ScrollRestoration from './components/ScrollRestoration'
 import { NotFound } from './views/404'
@@ -71,6 +72,9 @@ export const Routes: React.FC = () => {
                 />
                 {/* Unlisted: acquisition dashboard, passphrase-gated. */}
                 <Route path="/stats" element={<Stats />} />
+                {/* Unlisted: read-only player-integrity review, gated by its
+                    own passphrase so the marketing one does not open it. */}
+                <Route path="/skarp/integrity" element={<Integrity />} />
                 <Route path="/404" element={<NotFound />} />
                 <Route path="*" element={<Navigate to="/404" replace />} />
             </RouterRoutes>
