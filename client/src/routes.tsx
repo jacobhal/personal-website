@@ -27,7 +27,7 @@ import {
 import { HitQuiz } from './views/HitQuiz'
 import { Stats } from './views/Stats'
 import { Integrity } from './views/Integrity'
-import { DagensOrd } from './views/DagensOrd'
+import { DagensOrd, DagensOrdPrivacy } from './views/DagensOrd'
 import ScrollRestoration from './components/ScrollRestoration'
 import { NotFound } from './views/404'
 import { Route, Routes as RouterRoutes, Navigate } from 'react-router-dom'
@@ -55,6 +55,10 @@ export const Routes: React.FC = () => {
                 />
                 <Route path="/hitquiz" element={<HitQuiz />} />
                 <Route path="/dagens-ord" element={<DagensOrd />} />
+                <Route
+                    path="/dagens-ord/privacy"
+                    element={<DagensOrdPrivacy />}
+                />
                 <Route
                     path="/skarp/delete-account"
                     element={<SkarpDeleteAccount />}

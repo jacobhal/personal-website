@@ -34,6 +34,11 @@ export interface AppStep {
     body: string
 }
 
+export interface AppLegalLink {
+    label: string
+    href: string
+}
+
 export interface AppLandingPageProps {
     appName: string
     icon: string
@@ -45,6 +50,8 @@ export interface AppLandingPageProps {
     theme: AppLandingTheme
     features: AppFeature[]
     steps: AppStep[]
+    /** Extra footer links, for stores that require a reachable policy page. */
+    legalLinks?: AppLegalLink[]
 }
 
 const AppLandingPage: React.FC<AppLandingPageProps> = ({
@@ -58,6 +65,7 @@ const AppLandingPage: React.FC<AppLandingPageProps> = ({
     theme,
     features,
     steps,
+    legalLinks = [],
 }) => {
     const cssVariables = {
         '--app-background': theme.background,
@@ -236,13 +244,22 @@ const AppLandingPage: React.FC<AppLandingPageProps> = ({
                         <Typography component="p" className="app-landing-footer-copy">
                             {appName} · an independent project by Jacob Hallman
                         </Typography>
-                        <Stack direction="row" spacing={3}>
+                        <Stack direction="row" spacing={3} flexWrap="wrap" useFlexGap>
                             <Link href="/portfolio" className="app-landing-footer-link">
                                 Portfolio
                             </Link>
                             <Link href="/contact" className="app-landing-footer-link">
                                 Contact
                             </Link>
+                            {legalLinks.map((link) => (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    className="app-landing-footer-link"
+                                >
+                                    {link.label}
+                                </Link>
+                            ))}
                         </Stack>
                     </Stack>
                 </Container>

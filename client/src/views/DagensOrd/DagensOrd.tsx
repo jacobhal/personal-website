@@ -63,6 +63,7 @@ const DagensOrd: React.FC = () => (
         theme={theme}
         features={features}
         steps={steps}
+        legalLinks={[{ label: 'Privacy', href: '/dagens-ord/privacy' }]}
     />
 )
 

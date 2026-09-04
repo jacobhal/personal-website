@@ -5,6 +5,7 @@ import { MemoryRouter } from 'react-router-dom'
 import { Routes } from '../routes'
 import { Krydda } from './Krydda'
 import { Skarp } from './Skarp'
+import { DagensOrd } from './DagensOrd'
 
 const renderHtml = (element: React.ReactElement) => renderToStaticMarkup(element)
 
@@ -31,5 +32,22 @@ describe('app legal links', () => {
         )
 
         expect(html).toContain('Användarvillkor')
+    })
+
+    test('Dagens Ord landing page links to privacy policy', () => {
+        const html = renderHtml(<DagensOrd />)
+
+        expect(html).toContain('href="/dagens-ord/privacy"')
+    })
+
+    test('Dagens Ord privacy route renders the policy', () => {
+        const html = renderHtml(
+            <MemoryRouter initialEntries={['/dagens-ord/privacy']}>
+                <Routes />
+            </MemoryRouter>
+        )
+
+        expect(html).toContain('Integritetspolicy')
+        expect(html).toContain('samlar inte in')
     })
 })
