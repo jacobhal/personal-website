@@ -48,6 +48,7 @@ import {
     sampleCaveats,
     type Comparison,
 } from './present'
+import { historyAssessment, scoreContributions } from './evidence'
 
 const colors = {
     bg: '#0E0E14',
@@ -138,12 +139,13 @@ const nameOf = (row: {
     user_id: string
 }): string => row.display_name || row.username || row.user_id
 
-const BandChip: React.FC<{ band: 'high' | 'review' | 'watch' }> = ({
-    band,
-}) => (
+const BandChip: React.FC<{
+    band: 'high' | 'review' | 'watch'
+    score?: number
+}> = ({ band, score }) => (
     <Chip
         size="small"
-        label={band.toUpperCase()}
+        label={`${band.toUpperCase()}${score == null ? '' : ` · score ${score}`}`}
         sx={{
             backgroundColor: `${bandColor(band)}22`,
             color: bandColor(band),
@@ -259,6 +261,93 @@ const Glossary: React.FC = () => (
     </Accordion>
 )
 
+/**
+ * Where the risk score came from, signal by signal.
+ *
+ * The board hands over one integer. "Score 3" from three weak signals and
+ * "score 3" from a single z-score band are different findings, and only the
+ * second one is answered by looking at the player's answers. Showing the
+ * breakdown also makes a zero visible: a row reading "0 of 3" states that app
+ * exits were measured and found nothing, which the total cannot say.
+ */
+const ScoreBreakdown: React.FC<{
+    total: number | undefined
+    comparableAnswers: number
+    contributions: ReturnType<typeof scoreContributions>
+}> = ({ total, comparableAnswers, contributions }) => (
+    <Box
+        sx={{
+            border: `1px solid ${colors.border}`,
+            borderRadius: 2,
+            p: 2,
+            mb: 2,
+        }}
+    >
+        <Stack
+            direction="row"
+            spacing={1.5}
+            alignItems="baseline"
+            flexWrap="wrap"
+            useFlexGap
+            sx={{ mb: 1 }}
+        >
+            <Typography sx={{ fontSize: 15, fontWeight: 800 }}>
+                Why this account is on the board
+            </Typography>
+            <Typography sx={{ color: colors.muted, fontSize: 13 }}>
+                {total == null
+                    ? 'No score reported'
+                    : `Risk score ${total} of 12`}
+            </Typography>
+        </Stack>
+        {contributions.map((item) => (
+            <Box
+                key={item.label}
+                sx={{
+                    display: 'grid',
+                    gridTemplateColumns: '1fr auto',
+                    columnGap: 1.5,
+                    py: 0.9,
+                    borderBottom: `1px solid ${colors.border}`,
+                }}
+            >
+                <Typography sx={{ fontSize: 13, fontWeight: 700 }}>
+                    {item.label}
+                </Typography>
+                <Typography
+                    sx={{
+                        fontSize: 13,
+                        fontWeight: 800,
+                        color:
+                            item.points == null
+                                ? colors.muted
+                                : item.points > 0
+                                  ? colors.bad
+                                  : colors.good,
+                    }}
+                >
+                    {item.points == null
+                        ? 'not measured'
+                        : `${item.points} of ${item.max}`}
+                </Typography>
+                <Typography
+                    sx={{
+                        gridColumn: '1 / -1',
+                        color: colors.muted,
+                        fontSize: 12,
+                        mt: 0.25,
+                    }}
+                >
+                    {item.detail}
+                </Typography>
+            </Box>
+        ))}
+        <Typography sx={{ color: colors.muted, fontSize: 12.5, mt: 1.25 }}>
+            {historyAssessment(comparableAnswers)}
+        </Typography>
+    </Box>
+)
+
 const PlayerPanel: React.FC<{ report: PlayerReport }> = ({ report }) => {
     const { player, population, restriction, answers } = report
     const caveats = sampleCaveats({
@@ -288,7 +377,12 @@ const PlayerPanel: React.FC<{ report: PlayerReport }> = ({ report }) => {
                 <Typography sx={{ fontSize: 22, fontWeight: 900 }}>
                     {nameOf(player)}
                 </Typography>
-                {player.review_band && <BandChip band={player.review_band} />}
+                {player.review_band && (
+                    <BandChip
+                        band={player.review_band}
+                        score={player.risk_score}
+                    />
+                )}
                 {player.actively_restricted && (
                     <Chip
                         size="small"
@@ -309,9 +403,45 @@ const PlayerPanel: React.FC<{ report: PlayerReport }> = ({ report }) => {
                     player.scored_answers,
                     player.raw_ranked_answers
                 )}{' '}
-                · {report.window_days} day window ·{' '}
-                {population.accounts} accounts in the comparison
+                · {report.window_days} day window · {population.accounts}{' '}
+                accounts in the comparison
             </Typography>
+
+            <ScoreBreakdown
+                total={player.risk_score}
+                comparableAnswers={player.scored_answers}
+                contributions={scoreContributions({
+                    z_score: player.z_score,
+                    background_events: player.background_events,
+                    slow_correct_share: player.slow_correct_share,
+                    hard_answers: player.hard_answers,
+                    hard_accuracy: player.hard_accuracy,
+                })}
+            />
+
+            <Alert severity="info" sx={{ ...alertSx, mb: 2 }}>
+                <Box sx={{ mb: 1 }}>
+                    This is a selected subset, not the player's overall
+                    accuracy. Comparable answers exclude unsupported question
+                    types and questions with too few attempts. Repeated attempts
+                    can come from the same person.
+                </Box>
+                <Typography sx={{ fontWeight: 800, fontSize: 14 }}>
+                    Next step
+                </Typography>
+                Check repeated unusual answers across the 7, 30 and 90 day
+                windows. Read the comparison counts beside each answer before
+                trusting its difficulty. Receipt gaps include reveals and
+                network delay; app exits can be innocent, and zero exits cannot
+                rule out another device.
+                <Box sx={{ mt: 1 }}>
+                    Do not restrict an account from its score or rank alone.
+                    Record the specific answers and supporting context before
+                    deciding whether a manual ranked restriction is justified.
+                    Uneven matches need a matchmaking review even when there is
+                    no cheating evidence.
+                </Box>
+            </Alert>
 
             {restriction && (
                 <Alert severity="warning" sx={{ ...alertSx, mb: 2 }}>
@@ -340,7 +470,7 @@ const PlayerPanel: React.FC<{ report: PlayerReport }> = ({ report }) => {
             ) : (
                 <>
                     <StatRow
-                        label="Accuracy"
+                        label="Comparable-answer accuracy"
                         value={formatPercent(player.accuracy)}
                         median={formatPercent(population.median_accuracy)}
                         comparison={compareToMedian(
@@ -376,7 +506,7 @@ const PlayerPanel: React.FC<{ report: PlayerReport }> = ({ report }) => {
                         )}
                     />
                     <StatRow
-                        label={`Median answer time (${player.timed_answers ?? 0} timed)`}
+                        label={`Median receipt gap (${player.timed_answers ?? 0} timed)`}
                         value={formatSeconds(player.median_answer_ms)}
                         median={formatSeconds(population.median_answer_ms)}
                         comparison={compareToMedian(
@@ -385,7 +515,7 @@ const PlayerPanel: React.FC<{ report: PlayerReport }> = ({ report }) => {
                         )}
                     />
                     <StatRow
-                        label="Correct answers that took over 12s"
+                        label="Correct answers with receipt gaps over 12s"
                         value={formatPercent(player.slow_correct_share)}
                         median={formatPercent(
                             population.median_slow_correct_share
@@ -422,9 +552,7 @@ const PlayerPanel: React.FC<{ report: PlayerReport }> = ({ report }) => {
             {answers.length > 0 && (
                 <>
                     <Divider sx={{ borderColor: colors.border, my: 2.5 }} />
-                    <Typography
-                        sx={{ fontSize: 15, fontWeight: 800, mb: 1 }}
-                    >
+                    <Typography sx={{ fontSize: 15, fontWeight: 800, mb: 1 }}>
                         Recent ranked answers
                     </Typography>
                     <Box sx={{ overflowX: 'auto' }}>
@@ -438,10 +566,10 @@ const PlayerPanel: React.FC<{ report: PlayerReport }> = ({ report }) => {
                                         Result
                                     </TableCell>
                                     <TableCell sx={headCellSx} align="center">
-                                        Time
+                                        Receipt gap
                                     </TableCell>
                                     <TableCell sx={headCellSx} align="center">
-                                        Others correct
+                                        Baseline correct
                                     </TableCell>
                                 </TableRow>
                             </TableHead>
@@ -484,7 +612,10 @@ const PlayerPanel: React.FC<{ report: PlayerReport }> = ({ report }) => {
                                                     ml: 0.5,
                                                 }}
                                             >
-                                                ({answer.population_answers})
+                                                {countLabel(
+                                                    answer.population_answers,
+                                                    'total attempt'
+                                                )}
                                             </Box>
                                         </TableCell>
                                     </TableRow>
@@ -551,9 +682,7 @@ export const Integrity: React.FC = () => {
         try {
             setResults(await searchIntegrityPlayers(token, cleaned))
         } catch (caught) {
-            setError(
-                caught instanceof Error ? caught.message : 'Search failed'
-            )
+            setError(caught instanceof Error ? caught.message : 'Search failed')
         }
     }
 
@@ -562,9 +691,7 @@ export const Integrity: React.FC = () => {
         try {
             setPlayer(await fetchIntegrityPlayer(token, userId, days))
         } catch (caught) {
-            setError(
-                caught instanceof Error ? caught.message : 'Lookup failed'
-            )
+            setError(caught instanceof Error ? caught.message : 'Lookup failed')
         } finally {
             setLoading(false)
         }
@@ -583,7 +710,7 @@ export const Integrity: React.FC = () => {
             overview.tracked_accounts === 1 ? 'account' : 'accounts'
         } tracked · ${overview.eligible_accounts} above the ${
             overview.review_floor
-        }-answer email floor · ${overview.flagged_accounts} flagged · ${
+        }-answer email floor · ${overview.flagged_accounts} with review signals (score 3+) · ${
             overview.restricted_accounts
         } currently restricted`
     }, [overview])
@@ -768,6 +895,23 @@ export const Integrity: React.FC = () => {
                             </Typography>
                         )}
 
+                        {overview && (
+                            <Alert severity="info" sx={{ ...alertSx, mb: 3 }}>
+                                Watch: score 0 to 3. Review: 4 to 6. High: 7+.
+                                Score 3 still belongs to Watch but counts as a
+                                review signal above. No score proves cheating or
+                                applies a restriction. Accuracy covers only
+                                comparable answers, not every answer the player
+                                submitted.
+                                <Box sx={{ mt: 1 }}>
+                                    Counts cover the whole window, regardless of
+                                    the selected answer filter. The 40-answer
+                                    floor is for the weekly email, not a
+                                    threshold for proving cheating.
+                                </Box>
+                            </Alert>
+                        )}
+
                         <Stack
                             component="form"
                             direction="row"
@@ -855,7 +999,9 @@ export const Integrity: React.FC = () => {
 
                         <Glossary />
 
-                        <Typography sx={{ fontSize: 18, fontWeight: 900, mb: 1 }}>
+                        <Typography
+                            sx={{ fontSize: 18, fontWeight: 900, mb: 1 }}
+                        >
                             Review board
                         </Typography>
                         {board !== null && board.length === 0 ? (
@@ -889,7 +1035,7 @@ export const Integrity: React.FC = () => {
                                                 sx={headCellSx}
                                                 align="center"
                                             >
-                                                Accuracy
+                                                Comparable-answer accuracy
                                             </TableCell>
                                             <TableCell
                                                 sx={headCellSx}
@@ -901,7 +1047,7 @@ export const Integrity: React.FC = () => {
                                                 sx={headCellSx}
                                                 align="center"
                                             >
-                                                Median time
+                                                Median receipt gap
                                             </TableCell>
                                             <TableCell
                                                 sx={headCellSx}
@@ -923,9 +1069,7 @@ export const Integrity: React.FC = () => {
                                                 key={row.user_id}
                                                 hover
                                                 onClick={() =>
-                                                    void openPlayer(
-                                                        row.user_id
-                                                    )
+                                                    void openPlayer(row.user_id)
                                                 }
                                                 sx={{ cursor: 'pointer' }}
                                             >
@@ -948,6 +1092,7 @@ export const Integrity: React.FC = () => {
                                                 >
                                                     <BandChip
                                                         band={row.review_band}
+                                                        score={row.risk_score}
                                                     />
                                                 </TableCell>
                                                 <TableCell

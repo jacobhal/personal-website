@@ -86,10 +86,7 @@ export const sampleCaveats = (sizes: SampleSizes): string[] => {
  * overall to carry a difficulty estimate. At this app's volume that is a small
  * fraction of what a player actually saw, so both numbers are shown.
  */
-export const describeCoverage = (
-    scored: number,
-    rawRanked: number
-): string => {
+export const describeCoverage = (scored: number, rawRanked: number): string => {
     if (rawRanked === 0) return 'No ranked answers yet'
     if (scored === 0) {
         return `No comparable answers yet, from ${rawRanked} ranked answers`
@@ -113,37 +110,37 @@ export const COLUMN_GLOSSARY: GlossaryEntry[] = [
     {
         term: 'Answers',
         meaning:
-            'Ranked answers that can be compared. A question only counts once at least four ranked players have answered it, because a question nobody else has met has no known difficulty. This is normally far below the number of questions the player actually saw, and the player card shows both numbers.',
+            'Ranked answers that can be compared. A question only counts once there are at least four answer records, including this account. These are attempts, not distinct players, and repeated attempts may come from the same person. This is normally far below the number of questions the player actually saw, and the player card shows both numbers.',
     },
     {
-        term: 'Accuracy',
+        term: 'Comparable-answer accuracy',
         meaning:
             'Share of those comparable answers the player got right. On its own it says very little: it depends entirely on which questions they happened to draw. Always read it against the expected accuracy next to it.',
     },
     {
         term: 'Expected accuracy (exp)',
         meaning:
-            'What these exact questions predict, from how often every other player got each one right. "exp 71%" means a typical player would score about 71% on this specific set of questions. A player who draws easy questions has a high expected accuracy and it means nothing about them.',
+            'What these exact questions predict, from the recorded attempts on each one. The baseline excludes only the current answer, not all attempts by this player. Other attempts from this account and repeated attempts from other accounts may still count. "exp 71%" means a typical player would score about 71% on this specific set of questions. A player who draws easy questions has a high expected accuracy and it means nothing about them.',
     },
     {
         term: 'Z score',
         meaning:
-            'How far above the expected accuracy the player actually landed, counted in standard deviations. 0 is exactly as predicted. 1 is a good day. 2 is roughly a 1-in-40 result by luck alone, 3 about 1 in 700. It measures surprise, not skill or guilt: a genuinely strong player and someone looking answers up both score high, which is why it is read together with timing and app exits, never on its own. It is also unstable on small samples, so treat anything under about 40 answers as a hint at best.',
+            'How far above the expected accuracy the player actually landed, counted in standard deviations. 0 is exactly as predicted. Larger positive values mean the player exceeded this baseline. The comparison population can be small or biased, and question outcomes are not necessarily independent, so this is not a calibrated probability. It measures surprise, not skill or guilt: a genuinely strong player and someone looking answers up both score high, which is why it is read together with timing and app exits, never on its own. It is also unstable on small samples, so treat anything under about 40 answers as a hint at best.',
     },
     {
         term: 'Hard-question accuracy',
         meaning:
-            'Accuracy on questions fewer than 35% of players get right. Someone with ordinary overall accuracy who is near-perfect on the hardest questions is a more interesting pattern than someone who is simply good at everything.',
+            'Accuracy on questions whose estimated correct rate is below 35%, based on answer records rather than distinct players. Someone with ordinary overall accuracy who is near-perfect on the hardest questions is a more interesting pattern than someone who is simply good at everything.',
     },
     {
-        term: 'Median time',
+        term: 'Median receipt gap',
         meaning:
-            'The middle gap between two consecutive answer submissions from this player. It is not think time: it includes reading the next question and watching the answer reveal, so it runs longer than the question clock. Answers played before the app started recording receipt times have no timing at all, which is why the timed count beside it is usually small.',
+            'The middle gap between two consecutive answer submissions from this player. It is not think time: it includes reading the next question, watching the answer reveal and network delay. It can exceed the question clock. Answers played before the app started recording receipt times have no timing at all, which is why the timed count beside it is usually small.',
     },
     {
-        term: 'Correct answers over 12s',
+        term: 'Correct answers with receipt gaps over 12s',
         meaning:
-            'Of the correct answers that have a timing at all, the share that took 12 seconds or more. Read it with the timed count next to it: at 1 timed answer, "100%" means one slow answer, not a habit. This is the closest thing here to "used the whole clock", and it is a weak signal on its own.',
+            'Of the correct answers with a recorded receipt gap, the share whose gap was over 12 seconds. Read it with the timed count next to it: at 1 timed answer, "100%" means one slow answer, not a habit. This measures gaps between server receipts, including reveals and network delay. It cannot establish that someone used the whole question clock.',
     },
     {
         term: 'App exits',
@@ -153,7 +150,7 @@ export const COLUMN_GLOSSARY: GlossaryEntry[] = [
     {
         term: 'Band',
         meaning:
-            'WATCH, REVIEW or HIGH, from a risk score that adds points for a high z score, app exits, slow correct answers and unusually high accuracy on hard questions. It is a queue order for human review. It is not a probability that somebody cheated, and no band restricts anybody.',
+            'WATCH (score 0 to 3), REVIEW (4 to 6) or HIGH (7+), from a risk score that adds points for a high z score, app exits, slow correct answers and unusually high accuracy on hard questions. It is a queue order for human review. It is not a probability that somebody cheated, and no band restricts anybody.',
     },
     {
         term: 'Restricted',

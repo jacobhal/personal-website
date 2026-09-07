@@ -126,12 +126,12 @@ describe('glossary', () => {
         const terms = COLUMN_GLOSSARY.map((entry) => entry.term)
         for (const column of [
             'Answers',
-            'Accuracy',
+            'Comparable-answer accuracy',
             'Expected accuracy (exp)',
             'Z score',
             'Hard-question accuracy',
-            'Median time',
-            'Correct answers over 12s',
+            'Median receipt gap',
+            'Correct answers with receipt gaps over 12s',
             'App exits',
             'Band',
             'Restricted',

@@ -1,6 +1,10 @@
 // @vitest-environment jsdom
 import React from 'react'
 import { cleanup, render, screen, waitFor } from '@testing-library/react'
+import {
+    fetchIntegrityBoard,
+    fetchIntegrityOverview,
+} from '../../services/integrityStore'
 import userEvent from '@testing-library/user-event'
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest'
 
@@ -161,7 +165,61 @@ describe('integrity panel with live-shaped data', () => {
 
         expect(
             screen.getByText(
-                /9 ranked accounts tracked · 0 above the 40-answer email floor · 0 flagged · 0 currently restricted/
+                /9 ranked accounts tracked · 0 above the 40-answer email floor · 0 with review signals \(score 3\+\) · 0 currently restricted/
+            )
+        ).toBeTruthy()
+    })
+
+    test('score-three watch accounts explain the overview signal count', async () => {
+        vi.mocked(fetchIntegrityOverview).mockResolvedValueOnce({
+            ...overview,
+            flagged_accounts: 2,
+        })
+        vi.mocked(fetchIntegrityBoard).mockResolvedValueOnce(
+            board.map((row) => ({ ...row, risk_score: 3 }))
+        )
+        await renderPage()
+
+        expect(
+            screen.getByText(/2 with review signals \(score 3\+\)/)
+        ).toBeTruthy()
+        expect(screen.getAllByText('WATCH · score 3')).toHaveLength(2)
+        expect(screen.getByText(/Score 3 still belongs to Watch/)).toBeTruthy()
+        expect(screen.getByText(/Counts cover the whole window/)).toBeTruthy()
+    })
+
+    test('the player card explains where the risk score came from', async () => {
+        await renderPage()
+        await userEvent.click(screen.getAllByText('ananya')[0])
+
+        await waitFor(() =>
+            expect(
+                screen.getByText('Why this account is on the board')
+            ).toBeTruthy()
+        )
+        // ananya scores 2 from one slow correct answer and nothing else. A bare
+        // "score 2" reads as two independent findings.
+        expect(screen.getByText('Slow correct answers')).toBeTruthy()
+        expect(screen.getByText('2 of 2')).toBeTruthy()
+        expect(screen.getAllByText('0 of 5').length).toBe(1)
+        expect(
+            screen.getByText(/Limited comparison history: 16 comparable answers/)
+        ).toBeTruthy()
+    })
+
+    test('player review gives an evidence check before any restriction', async () => {
+        await renderPage()
+        await userEvent.click(screen.getAllByText('ananya')[0])
+
+        await waitFor(() => expect(screen.getByText('Next step')).toBeTruthy())
+        expect(
+            screen.getByText(
+                /Check repeated unusual answers across the 7, 30 and 90 day windows/
+            )
+        ).toBeTruthy()
+        expect(
+            screen.getByText(
+                /Do not restrict an account from its score or rank alone/
             )
         ).toBeTruthy()
     })
@@ -191,7 +249,7 @@ describe('integrity panel with live-shaped data', () => {
         expect(
             screen.getByText('Timing is based on 1 timed answer.')
         ).toBeTruthy()
-        expect(screen.getByText(/Median answer time \(1 timed\)/)).toBeTruthy()
+        expect(screen.getByText(/Median receipt gap \(1 timed\)/)).toBeTruthy()
         // "(1 answers)" shipped in the first render of this card.
         expect(
             screen.getByText(/Hard-question accuracy \(1 answer\)/)
@@ -229,7 +287,7 @@ describe('integrity panel with live-shaped data', () => {
         expect(screen.getByText('12 timed')).toBeTruthy()
     })
 
-    test('a recent answer shows how many others got it right', async () => {
+    test('the evidence distinguishes comparable answers, total attempts and receipt gaps', async () => {
         await renderPage()
         await userEvent.click(screen.getAllByText('ananya')[0])
 
@@ -240,5 +298,25 @@ describe('integrity panel with live-shaped data', () => {
         )
         expect(screen.getByText('Wrong')).toBeTruthy()
         expect(screen.getByText('80.0%')).toBeTruthy()
+        expect(screen.getByText('4 total attempts')).toBeTruthy()
+        expect(screen.getByText('Receipt gap')).toBeTruthy()
+        expect(
+            screen.getAllByText('Comparable-answer accuracy').length
+        ).toBeGreaterThan(1)
+        expect(
+            screen.getByText(
+                /This is a selected subset, not the player's overall accuracy/
+            )
+        ).toBeTruthy()
+        expect(
+            screen.getByText(
+                /at least four answer records, including this account/
+            )
+        ).toBeTruthy()
+        expect(
+            screen.getByText(
+                /excludes only the current answer, not all attempts by this player/
+            )
+        ).toBeTruthy()
     })
 })
