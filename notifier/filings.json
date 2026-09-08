@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-07T04:34:49.969552Z",
+  "updated": "2026-09-08T13:44:12.731330Z",
   "window_days": 365,
   "proven_members": [
     "David Rouzer",
@@ -9,6 +9,19 @@
     "Warren Davidson"
   ],
   "filings": [
+    {
+      "name": "Rohit Khanna",
+      "last": "Khanna",
+      "first": "Rohit",
+      "filing_type": "P",
+      "filing_date": "2026-09-04",
+      "year": "2026",
+      "doc_id": "9116328",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9116328.pdf",
+      "proven": false,
+      "trades": [],
+      "trades_version": 1
+    },
     {
       "name": "Kevin Hern",
       "last": "Hern",
