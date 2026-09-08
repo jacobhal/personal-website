@@ -82,31 +82,31 @@ export const scoreContributions = (
             label: 'Z score',
             points: z_score == null ? null : zPoints(z_score),
             max: 5,
-            detail:
-                'Scores from 2.0 up. It measures distance from the question baseline, so a genuinely strong player scores here too.',
+            detail: 'Z ≥ 2 adds 2 points; ≥ 3 adds 3; ≥ 4 adds 4; ≥ 5 adds 5. Below 2 adds 0. Strong knowledge can also produce a high Z score.',
         },
         {
             label: 'App exits',
             points:
-                background_events == null ? null : exitPoints(background_events),
+                background_events == null
+                    ? null
+                    : exitPoints(background_events),
             max: 3,
-            detail:
-                'One exit scores 1, two score 2, five score 3. The app cannot see where the player went, and a second device leaves no exit at all.',
+            detail: 'One exit scores 1, two score 2, five score 3. The app cannot see where the player went, and a second device leaves no exit at all.',
         },
         {
             label: 'Slow correct answers',
             points:
-                slow_correct_share == null ? null : slowPoints(slow_correct_share),
+                slow_correct_share == null
+                    ? null
+                    : slowPoints(slow_correct_share),
             max: 2,
-            detail:
-                'Half of correct answers over 12s scores 1, seven in ten scores 2. Receipt gaps include the reveal and network delay.',
+            detail: 'Half of correct answers over 12s scores 1, seven in ten scores 2. Receipt gaps include the reveal and network delay.',
         },
         {
             label: 'Hard-question accuracy',
             points: hard,
             max: 2,
-            detail:
-                'Scores 2 only at 10 or more hard answers and at least 85% correct. Below 10 answers it contributes nothing, however high the accuracy.',
+            detail: 'Scores 2 only at 10 or more hard answers and at least 85% correct. Below 10 answers it contributes nothing, however high the accuracy.',
         },
     ]
 }

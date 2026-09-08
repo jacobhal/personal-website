@@ -45,6 +45,6 @@ describe('/skarp/integrity', () => {
         const html = await renderIntegrity()
 
         expect(html).toContain('never proof of cheating')
-        expect(html).toContain('nothing on this page can restrict an account')
+        expect(html).toContain('This page is read-only.')
     })
 })

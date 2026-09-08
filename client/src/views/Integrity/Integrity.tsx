@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import {
     Accordion,
@@ -12,11 +12,6 @@ import {
     Container,
     Divider,
     Stack,
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableRow,
     TextField,
     ToggleButton,
     ToggleButtonGroup,
@@ -54,7 +49,7 @@ const colors = {
     bg: '#0E0E14',
     surface: '#1A1A28',
     border: '#2A2A40',
-    accent: '#5C6BC0',
+    accent: '#A5B4FC',
     text: '#ECECF2',
     muted: '#A0A0B4',
     good: '#66bb6a',
@@ -123,16 +118,6 @@ const toggleSx = {
     },
 } as const
 
-const cellSx = { color: colors.text, borderColor: colors.border } as const
-const headCellSx = {
-    color: colors.muted,
-    borderColor: colors.border,
-    fontWeight: 700,
-    fontSize: 12,
-    textTransform: 'uppercase',
-    letterSpacing: 0.6,
-} as const
-
 const nameOf = (row: {
     display_name: string | null
     username: string | null
@@ -162,16 +147,12 @@ const StatRow: React.FC<{
     value: string
     median: string
     comparison: Comparison
-    /** Higher than the median is suspicious for most of these, but not all. */
-    higherIsSuspicious?: boolean
-}> = ({ label, value, median, comparison, higherIsSuspicious = true }) => {
-    const suspicious =
-        comparison.direction === (higherIsSuspicious ? 'above' : 'below')
+}> = ({ label, value, median, comparison }) => {
     return (
         <Box
             sx={{
                 display: 'grid',
-                gridTemplateColumns: '1fr auto auto',
+                gridTemplateColumns: { xs: '1fr auto', sm: '1fr auto auto' },
                 gap: 1.5,
                 alignItems: 'baseline',
                 py: 1,
@@ -188,15 +169,18 @@ const StatRow: React.FC<{
                     color:
                         comparison.direction === 'unknown'
                             ? colors.text
-                            : suspicious
-                              ? colors.bad
-                              : colors.good,
+                            : colors.accent,
                 }}
             >
                 {value}
             </Typography>
             <Typography
-                sx={{ color: colors.muted, fontSize: 12, minWidth: 96 }}
+                sx={{
+                    color: colors.muted,
+                    fontSize: 12,
+                    minWidth: 96,
+                    gridColumn: { xs: '1 / -1', sm: 'auto' },
+                }}
             >
                 median {median}
             </Typography>
@@ -210,9 +194,9 @@ const StatRow: React.FC<{
  */
 const Glossary: React.FC = () => (
     <Accordion
-        defaultExpanded
         disableGutters
         sx={{
+            color: colors.text,
             backgroundColor: colors.surface,
             border: `1px solid ${colors.border}`,
             borderRadius: 3,
@@ -224,38 +208,44 @@ const Glossary: React.FC = () => (
             expandIcon={<ExpandMoreIcon sx={{ color: colors.muted }} />}
         >
             <Typography sx={{ fontWeight: 800, fontSize: 15 }}>
-                What every column means
+                What the numbers mean
             </Typography>
         </AccordionSummary>
         <AccordionDetails sx={{ pt: 0 }}>
             {COLUMN_GLOSSARY.map((entry) => (
-                <Box
+                <Accordion
                     key={entry.term}
+                    disableGutters
+                    elevation={0}
                     sx={{
-                        py: 1.25,
+                        backgroundColor: 'transparent',
+                        color: colors.text,
+                        '&:before': { display: 'none' },
                         borderTop: `1px solid ${colors.border}`,
                     }}
                 >
-                    <Typography
-                        sx={{
-                            fontSize: 13,
-                            fontWeight: 800,
-                            color: colors.accent,
-                            mb: 0.25,
-                        }}
+                    <AccordionSummary
+                        expandIcon={
+                            <ExpandMoreIcon sx={{ color: colors.muted }} />
+                        }
                     >
-                        {entry.term}
-                    </Typography>
-                    <Typography
-                        sx={{
-                            fontSize: 13,
-                            color: colors.muted,
-                            lineHeight: 1.55,
-                        }}
-                    >
-                        {entry.meaning}
-                    </Typography>
-                </Box>
+                        <Typography sx={{ fontSize: 14, fontWeight: 700 }}>
+                            {entry.term}
+                        </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Typography
+                            sx={{
+                                fontSize: 14,
+                                color: colors.muted,
+                                lineHeight: 1.7,
+                                maxWidth: 680,
+                            }}
+                        >
+                            {entry.meaning}
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
             ))}
         </AccordionDetails>
     </Accordion>
@@ -297,50 +287,63 @@ const ScoreBreakdown: React.FC<{
             <Typography sx={{ color: colors.muted, fontSize: 13 }}>
                 {total == null
                     ? 'No score reported'
-                    : `Risk score ${total} of 12`}
+                    : `Review score ${total} of 12`}
             </Typography>
         </Stack>
+        <Typography sx={{ color: colors.muted, fontSize: 12, mb: 1 }}>
+            Tap a signal to see its scoring rule.
+        </Typography>
         {contributions.map((item) => (
-            <Box
+            <Accordion
                 key={item.label}
+                disableGutters
+                elevation={0}
                 sx={{
-                    display: 'grid',
-                    gridTemplateColumns: '1fr auto',
-                    columnGap: 1.5,
-                    py: 0.9,
+                    backgroundColor: 'transparent',
+                    color: colors.text,
                     borderBottom: `1px solid ${colors.border}`,
+                    '&:before': { display: 'none' },
                 }}
             >
-                <Typography sx={{ fontSize: 13, fontWeight: 700 }}>
-                    {item.label}
-                </Typography>
-                <Typography
-                    sx={{
-                        fontSize: 13,
-                        fontWeight: 800,
-                        color:
-                            item.points == null
-                                ? colors.muted
-                                : item.points > 0
-                                  ? colors.bad
-                                  : colors.good,
-                    }}
+                <AccordionSummary
+                    sx={{ px: 0 }}
+                    expandIcon={<ExpandMoreIcon sx={{ color: colors.muted }} />}
                 >
-                    {item.points == null
-                        ? 'not measured'
-                        : `${item.points} of ${item.max}`}
-                </Typography>
-                <Typography
-                    sx={{
-                        gridColumn: '1 / -1',
-                        color: colors.muted,
-                        fontSize: 12,
-                        mt: 0.25,
-                    }}
-                >
-                    {item.detail}
-                </Typography>
-            </Box>
+                    <Stack
+                        direction="row"
+                        justifyContent="space-between"
+                        gap={1}
+                        sx={{ width: '100%', pr: 1 }}
+                    >
+                        <Typography sx={{ fontSize: 13, fontWeight: 700 }}>
+                            {item.label}
+                        </Typography>
+                        <Typography
+                            sx={{
+                                fontSize: 13,
+                                fontWeight: 800,
+                                color: item.points ? '#FFCC80' : colors.muted,
+                                whiteSpace: 'nowrap',
+                            }}
+                        >
+                            {item.points == null
+                                ? 'not measured'
+                                : `${item.points} of ${item.max}`}
+                        </Typography>
+                    </Stack>
+                </AccordionSummary>
+                <AccordionDetails sx={{ px: 0 }}>
+                    <Typography
+                        sx={{
+                            fontSize: 13,
+                            lineHeight: 1.6,
+                            color: colors.muted,
+                        }}
+                    >
+                        {item.detail}
+                    </Typography>
+                </AccordionDetails>
+            </Accordion>
         ))}
         <Typography sx={{ color: colors.muted, fontSize: 12.5, mt: 1.25 }}>
             {historyAssessment(comparableAnswers)}
@@ -350,6 +353,10 @@ const ScoreBreakdown: React.FC<{
 
 const PlayerPanel: React.FC<{ report: PlayerReport }> = ({ report }) => {
     const { player, population, restriction, answers } = report
+    const panelRef = useRef<HTMLDivElement>(null)
+    useEffect(() => {
+        panelRef.current?.focus()
+    }, [report])
     const caveats = sampleCaveats({
         scored_answers: player.scored_answers,
         timed_answers: player.timed_answers ?? 0,
@@ -358,6 +365,10 @@ const PlayerPanel: React.FC<{ report: PlayerReport }> = ({ report }) => {
 
     return (
         <Box
+            ref={panelRef}
+            tabIndex={-1}
+            role="region"
+            aria-label="Player evidence"
             sx={{
                 backgroundColor: colors.surface,
                 border: `1px solid ${colors.border}`,
@@ -419,29 +430,56 @@ const PlayerPanel: React.FC<{ report: PlayerReport }> = ({ report }) => {
                 })}
             />
 
-            <Alert severity="info" sx={{ ...alertSx, mb: 2 }}>
-                <Box sx={{ mb: 1 }}>
-                    This is a selected subset, not the player's overall
-                    accuracy. Comparable answers exclude unsupported question
-                    types and questions with too few attempts. Repeated attempts
-                    can come from the same person.
-                </Box>
-                <Typography sx={{ fontWeight: 800, fontSize: 14 }}>
-                    Next step
-                </Typography>
-                Check repeated unusual answers across the 7, 30 and 90 day
-                windows. Read the comparison counts beside each answer before
-                trusting its difficulty. Receipt gaps include reveals and
-                network delay; app exits can be innocent, and zero exits cannot
-                rule out another device.
-                <Box sx={{ mt: 1 }}>
-                    Do not restrict an account from its score or rank alone.
-                    Record the specific answers and supporting context before
-                    deciding whether a manual ranked restriction is justified.
-                    Uneven matches need a matchmaking review even when there is
-                    no cheating evidence.
-                </Box>
-            </Alert>
+            <Accordion
+                disableGutters
+                elevation={0}
+                sx={{
+                    backgroundColor: colors.bg,
+                    color: colors.text,
+                    borderRadius: 2,
+                    mb: 2,
+                    '&:before': { display: 'none' },
+                }}
+            >
+                <AccordionSummary
+                    expandIcon={<ExpandMoreIcon sx={{ color: colors.muted }} />}
+                >
+                    <Box>
+                        <Typography sx={{ fontWeight: 800 }}>
+                            Next step
+                        </Typography>
+                        <Typography sx={{ color: colors.muted, fontSize: 13 }}>
+                            Check the evidence before taking action.
+                        </Typography>
+                    </Box>
+                </AccordionSummary>
+                <AccordionDetails sx={{ fontSize: 14, lineHeight: 1.65 }}>
+                    <Box sx={{ mb: 1 }}>
+                        This is a selected subset, not the player's overall
+                        accuracy. Comparable answers exclude unsupported
+                        question types and questions with too few attempts.
+                        Repeated attempts can come from the same person.
+                    </Box>
+                    Check repeated unusual answers across the 7, 30 and 90 day
+                    windows. Read the comparison counts beside each answer
+                    before trusting its difficulty. Receipt gaps include reveals
+                    and network delay; app exits can be innocent, and zero exits
+                    cannot rule out another device.
+                    <Box sx={{ mt: 1 }}>
+                        Do not restrict an account from its score or rank alone.
+                        Record the specific answers and supporting context
+                        before deciding whether a manual ranked restriction is
+                        justified. Uneven matches need a matchmaking review even
+                        when there is no cheating evidence.
+                    </Box>
+                    <Box sx={{ mt: 1.5, color: colors.muted }}>
+                        This page is read-only. It cannot send a warning or
+                        restrict an account. A neutral fair-play reminder is an
+                        option when evidence is uncertain, but this score alone
+                        does not justify accusing a player.
+                    </Box>
+                </AccordionDetails>
+            </Accordion>
 
             {restriction && (
                 <Alert severity="warning" sx={{ ...alertSx, mb: 2 }}>
@@ -555,74 +593,87 @@ const PlayerPanel: React.FC<{ report: PlayerReport }> = ({ report }) => {
                     <Typography sx={{ fontSize: 15, fontWeight: 800, mb: 1 }}>
                         Recent ranked answers
                     </Typography>
-                    <Box sx={{ overflowX: 'auto' }}>
-                        <Table size="small">
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell sx={headCellSx}>
-                                        Question
-                                    </TableCell>
-                                    <TableCell sx={headCellSx} align="center">
-                                        Result
-                                    </TableCell>
-                                    <TableCell sx={headCellSx} align="center">
-                                        Receipt gap
-                                    </TableCell>
-                                    <TableCell sx={headCellSx} align="center">
-                                        Baseline correct
-                                    </TableCell>
-                                </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {answers.map((answer, index) => (
-                                    <TableRow
-                                        key={`${answer.question_id}-${index}`}
+                    <Stack spacing={1.5}>
+                        {answers.map((answer, index) => (
+                            <Box
+                                key={`${answer.question_id}-${index}`}
+                                sx={{
+                                    p: 2,
+                                    borderRadius: 2,
+                                    backgroundColor: colors.bg,
+                                    border: `1px solid ${colors.border}`,
+                                }}
+                            >
+                                <Typography
+                                    sx={{
+                                        fontSize: 15,
+                                        lineHeight: 1.5,
+                                        mb: 1.5,
+                                    }}
+                                >
+                                    {answer.question_en ?? answer.question_id}
+                                </Typography>
+                                <Stack direction="row" gap={2} flexWrap="wrap">
+                                    <Typography
+                                        sx={{
+                                            fontWeight: 700,
+                                            color:
+                                                answer.is_correct == null
+                                                    ? colors.muted
+                                                    : answer.is_correct
+                                                      ? colors.good
+                                                      : colors.bad,
+                                        }}
                                     >
-                                        <TableCell sx={cellSx}>
-                                            {answer.question_en ??
-                                                answer.question_id}
-                                        </TableCell>
-                                        <TableCell sx={cellSx} align="center">
-                                            <Box
-                                                component="span"
-                                                sx={{
-                                                    color: answer.is_correct
-                                                        ? colors.good
-                                                        : colors.bad,
-                                                    fontWeight: 800,
-                                                }}
-                                            >
-                                                {answer.is_correct
-                                                    ? 'Correct'
-                                                    : 'Wrong'}
-                                            </Box>
-                                        </TableCell>
-                                        <TableCell sx={cellSx} align="center">
+                                        {answer.is_correct == null
+                                            ? 'Unknown'
+                                            : answer.is_correct
+                                              ? 'Correct'
+                                              : 'Wrong'}
+                                    </Typography>
+                                    <Box>
+                                        <Typography
+                                            sx={{
+                                                fontSize: 12,
+                                                color: colors.muted,
+                                            }}
+                                        >
+                                            Receipt gap
+                                        </Typography>
+                                        <Typography>
                                             {formatSeconds(answer.answer_ms)}
-                                        </TableCell>
-                                        <TableCell sx={cellSx} align="center">
+                                        </Typography>
+                                    </Box>
+                                    <Box>
+                                        <Typography
+                                            sx={{
+                                                fontSize: 12,
+                                                color: colors.muted,
+                                            }}
+                                        >
+                                            Baseline correct
+                                        </Typography>
+                                        <Typography>
                                             {formatPercent(
                                                 answer.population_correct_rate
                                             )}
-                                            <Box
-                                                component="span"
-                                                sx={{
-                                                    color: colors.muted,
-                                                    fontSize: 12,
-                                                    ml: 0.5,
-                                                }}
-                                            >
-                                                {countLabel(
-                                                    answer.population_answers,
-                                                    'total attempt'
-                                                )}
-                                            </Box>
-                                        </TableCell>
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    </Box>
+                                        </Typography>
+                                        <Typography
+                                            sx={{
+                                                fontSize: 12,
+                                                color: colors.muted,
+                                            }}
+                                        >
+                                            {countLabel(
+                                                answer.population_answers,
+                                                'total attempt'
+                                            )}
+                                        </Typography>
+                                    </Box>
+                                </Stack>
+                            </Box>
+                        ))}
+                    </Stack>
                 </>
             )}
         </Box>
@@ -732,6 +783,12 @@ export const Integrity: React.FC = () => {
                 backgroundColor: colors.bg,
                 minHeight: '100vh',
                 color: colors.text,
+                overflowWrap: 'anywhere',
+                '& button:focus-visible': {
+                    outline: `2px solid ${colors.accent}`,
+                    outlineOffset: 3,
+                },
+                '& .MuiAccordion-root': { color: colors.text },
             }}
         >
             <Helmet>
@@ -747,9 +804,8 @@ export const Integrity: React.FC = () => {
                     Player integrity
                 </Typography>
                 <Typography sx={{ color: colors.muted, fontSize: 14, mb: 3 }}>
-                    Ranked answer patterns for manual review. These figures are
-                    review priorities, never proof of cheating, and nothing on
-                    this page can restrict an account.
+                    Review priorities, never proof of cheating. This page is
+                    read-only.
                 </Typography>
 
                 {error && (
@@ -856,24 +912,36 @@ export const Integrity: React.FC = () => {
                                 ))}
                             </ToggleButtonGroup>
 
-                            <ToggleButtonGroup
-                                size="small"
-                                exclusive
-                                value={floor}
-                                onChange={(_event, next) =>
-                                    next !== null && setFloor(next)
-                                }
-                            >
-                                {FLOORS.map((value) => (
-                                    <ToggleButton
-                                        key={value}
-                                        value={value}
-                                        sx={toggleSx}
-                                    >
-                                        {value}+ answers
-                                    </ToggleButton>
-                                ))}
-                            </ToggleButtonGroup>
+                            <Box>
+                                <Typography
+                                    sx={{
+                                        fontSize: 12,
+                                        color: colors.muted,
+                                        mb: 0.5,
+                                    }}
+                                >
+                                    Minimum comparable answers
+                                </Typography>
+                                <ToggleButtonGroup
+                                    aria-label="Minimum comparable answers"
+                                    size="small"
+                                    exclusive
+                                    value={floor}
+                                    onChange={(_event, next) =>
+                                        next !== null && setFloor(next)
+                                    }
+                                >
+                                    {FLOORS.map((value) => (
+                                        <ToggleButton
+                                            key={value}
+                                            value={value}
+                                            sx={toggleSx}
+                                        >
+                                            {value}+
+                                        </ToggleButton>
+                                    ))}
+                                </ToggleButtonGroup>
+                            </Box>
 
                             {loading && (
                                 <CircularProgress
@@ -883,40 +951,162 @@ export const Integrity: React.FC = () => {
                             )}
                         </Stack>
 
-                        {headline && (
-                            <Typography
-                                sx={{
-                                    color: colors.muted,
-                                    fontSize: 13,
-                                    mb: 3,
-                                }}
-                            >
-                                {headline}
-                            </Typography>
-                        )}
-
                         {overview && (
-                            <Alert severity="info" sx={{ ...alertSx, mb: 3 }}>
-                                Watch: score 0 to 3. Review: 4 to 6. High: 7+.
-                                Score 3 still belongs to Watch but counts as a
-                                review signal above. No score proves cheating or
-                                applies a restriction. Accuracy covers only
-                                comparable answers, not every answer the player
-                                submitted.
-                                <Box sx={{ mt: 1 }}>
-                                    Counts cover the whole window, regardless of
-                                    the selected answer filter. The 40-answer
-                                    floor is for the weekly email, not a
-                                    threshold for proving cheating.
+                            <Box sx={{ mb: 3 }}>
+                                <Box
+                                    sx={{
+                                        display: 'grid',
+                                        gridTemplateColumns: {
+                                            xs: 'repeat(2, minmax(0, 1fr))',
+                                            md: 'repeat(4, minmax(0, 1fr))',
+                                        },
+                                        gap: 1.5,
+                                        mb: 2,
+                                    }}
+                                >
+                                    {[
+                                        [
+                                            overview.tracked_accounts,
+                                            'Accounts tracked',
+                                        ],
+                                        [
+                                            overview.flagged_accounts,
+                                            'Review signals',
+                                        ],
+                                        [
+                                            overview.eligible_accounts,
+                                            '40+ comparable answers',
+                                        ],
+                                        [
+                                            overview.restricted_accounts,
+                                            'Currently restricted',
+                                        ],
+                                    ].map(([value, label]) => (
+                                        <Box
+                                            key={label}
+                                            sx={{
+                                                p: 2,
+                                                borderRadius: 2.5,
+                                                border: `1px solid ${colors.border}`,
+                                                backgroundColor: colors.surface,
+                                            }}
+                                        >
+                                            <Typography
+                                                sx={{
+                                                    fontSize: 28,
+                                                    fontWeight: 800,
+                                                }}
+                                            >
+                                                {value}
+                                            </Typography>
+                                            <Typography
+                                                sx={{
+                                                    fontSize: 12,
+                                                    color: colors.muted,
+                                                }}
+                                            >
+                                                {label}
+                                            </Typography>
+                                        </Box>
+                                    ))}
                                 </Box>
-                            </Alert>
+                                <Typography sx={{ fontSize: 14, mb: 1 }}>
+                                    Scores prioritise review. They never prove
+                                    cheating or trigger restrictions.
+                                </Typography>
+                                <Stack
+                                    direction="row"
+                                    spacing={1}
+                                    flexWrap="wrap"
+                                    useFlexGap
+                                    sx={{ mb: 1 }}
+                                >
+                                    <Chip
+                                        size="small"
+                                        label="Watch 0–3"
+                                        sx={{
+                                            color: colors.text,
+                                            backgroundColor: colors.surface,
+                                        }}
+                                    />
+                                    <Chip
+                                        size="small"
+                                        label="Review 4–6"
+                                        sx={{
+                                            color: '#FFCC80',
+                                            backgroundColor: '#33291E',
+                                        }}
+                                    />
+                                    <Chip
+                                        size="small"
+                                        label="High 7–12"
+                                        sx={{
+                                            color: '#FFABAB',
+                                            backgroundColor: '#352126',
+                                        }}
+                                    />
+                                </Stack>
+                                <Accordion
+                                    disableGutters
+                                    elevation={0}
+                                    sx={{
+                                        backgroundColor: 'transparent',
+                                        color: colors.muted,
+                                        '&:before': { display: 'none' },
+                                    }}
+                                >
+                                    <AccordionSummary
+                                        expandIcon={
+                                            <ExpandMoreIcon
+                                                sx={{ color: colors.muted }}
+                                            />
+                                        }
+                                        sx={{ px: 0 }}
+                                    >
+                                        <Typography sx={{ fontSize: 13 }}>
+                                            How scores and counts work
+                                        </Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails
+                                        sx={{
+                                            px: 0,
+                                            fontSize: 13,
+                                            lineHeight: 1.7,
+                                        }}
+                                    >
+                                        <Typography
+                                            sx={{ fontSize: 13, mb: 1 }}
+                                        >
+                                            {headline}
+                                        </Typography>
+                                        Score 3 still belongs to Watch but
+                                        counts as a review signal above.
+                                        Accuracy covers only comparable answers,
+                                        not every answer the player submitted.
+                                        <Box sx={{ mt: 1 }}>
+                                            Counts cover the whole window,
+                                            regardless of the selected answer
+                                            filter. The 40-answer floor is for
+                                            the weekly email, not a threshold
+                                            for proving cheating.
+                                        </Box>
+                                    </AccordionDetails>
+                                </Accordion>
+                            </Box>
                         )}
 
                         <Stack
                             component="form"
                             direction="row"
                             spacing={2}
-                            sx={{ maxWidth: 480, mb: 2 }}
+                            sx={{
+                                maxWidth: 560,
+                                mb: 2,
+                                '& .MuiTextField-root': { minWidth: 0 },
+                                '& .MuiOutlinedInput-notchedOutline': {
+                                    borderColor: colors.border,
+                                },
+                            }}
                             onSubmit={(event) => {
                                 event.preventDefault()
                                 void runSearch(query)
@@ -947,7 +1137,10 @@ export const Integrity: React.FC = () => {
                                     borderColor: colors.border,
                                     textTransform: 'none',
                                     fontWeight: 700,
-                                    px: 3,
+                                    px: 2,
+                                    minHeight: 44,
+                                    flexShrink: 0,
+                                    whiteSpace: 'nowrap',
                                 }}
                             >
                                 Search
@@ -997,8 +1190,6 @@ export const Integrity: React.FC = () => {
 
                         {player && <PlayerPanel report={player} />}
 
-                        <Glossary />
-
                         <Typography
                             sx={{ fontSize: 18, fontWeight: 900, mb: 1 }}
                         >
@@ -1012,161 +1203,220 @@ export const Integrity: React.FC = () => {
                                 answers in this window.
                             </Typography>
                         ) : (
-                            <Box sx={{ overflowX: 'auto' }}>
-                                <Table size="small">
-                                    <TableHead>
-                                        <TableRow>
-                                            <TableCell sx={headCellSx}>
-                                                Player
-                                            </TableCell>
-                                            <TableCell
-                                                sx={headCellSx}
-                                                align="center"
-                                            >
-                                                Band
-                                            </TableCell>
-                                            <TableCell
-                                                sx={headCellSx}
-                                                align="center"
-                                            >
-                                                Answers
-                                            </TableCell>
-                                            <TableCell
-                                                sx={headCellSx}
-                                                align="center"
+                            <Box
+                                sx={{
+                                    display: 'grid',
+                                    gridTemplateColumns: {
+                                        xs: 'minmax(0, 1fr)',
+                                        md: 'repeat(2, minmax(0, 1fr))',
+                                    },
+                                    gap: 2,
+                                }}
+                            >
+                                {(board ?? []).map((row) => (
+                                    <Box
+                                        component="article"
+                                        key={row.user_id}
+                                        sx={{
+                                            minWidth: 0,
+                                            backgroundColor: colors.surface,
+                                            border: `1px solid ${colors.border}`,
+                                            borderRadius: 3,
+                                            p: { xs: 2, sm: 2.5 },
+                                        }}
+                                    >
+                                        <Stack
+                                            direction="row"
+                                            justifyContent="space-between"
+                                            alignItems="flex-start"
+                                            gap={1}
+                                            flexWrap="wrap"
+                                            sx={{ mb: 2 }}
+                                        >
+                                            <Box sx={{ minWidth: 0 }}>
+                                                <Button
+                                                    onClick={() =>
+                                                        void openPlayer(
+                                                            row.user_id
+                                                        )
+                                                    }
+                                                    aria-label={`Review ${nameOf(row)}`}
+                                                    sx={{
+                                                        color: colors.text,
+                                                        fontSize: 20,
+                                                        fontWeight: 800,
+                                                        textTransform: 'none',
+                                                        p: 0,
+                                                        minHeight: 44,
+                                                        justifyContent:
+                                                            'flex-start',
+                                                        overflowWrap:
+                                                            'anywhere',
+                                                        textAlign: 'left',
+                                                    }}
+                                                >
+                                                    {nameOf(row)}
+                                                </Button>
+                                                <Typography
+                                                    sx={{
+                                                        color: colors.muted,
+                                                        fontSize: 12,
+                                                    }}
+                                                >
+                                                    Rating {row.rating} ·{' '}
+                                                    {row.actively_restricted
+                                                        ? 'Ranked restricted'
+                                                        : 'No restriction'}
+                                                </Typography>
+                                            </Box>
+                                            <BandChip
+                                                band={row.review_band}
+                                                score={row.risk_score}
+                                            />
+                                        </Stack>
+                                        <Box
+                                            sx={{
+                                                backgroundColor: colors.bg,
+                                                borderRadius: 2,
+                                                p: 1.5,
+                                                mb: 2,
+                                            }}
+                                        >
+                                            <Typography
+                                                sx={{
+                                                    color: colors.muted,
+                                                    fontSize: 12,
+                                                    mb: 1,
+                                                }}
                                             >
                                                 Comparable-answer accuracy
-                                            </TableCell>
-                                            <TableCell
-                                                sx={headCellSx}
-                                                align="center"
+                                            </Typography>
+                                            <Stack
+                                                direction="row"
+                                                alignItems="baseline"
+                                                spacing={1}
+                                                flexWrap="wrap"
+                                                useFlexGap
                                             >
-                                                Z
-                                            </TableCell>
-                                            <TableCell
-                                                sx={headCellSx}
-                                                align="center"
-                                            >
-                                                Median receipt gap
-                                            </TableCell>
-                                            <TableCell
-                                                sx={headCellSx}
-                                                align="center"
-                                            >
-                                                App exits
-                                            </TableCell>
-                                            <TableCell
-                                                sx={headCellSx}
-                                                align="center"
-                                            >
-                                                Restricted
-                                            </TableCell>
-                                        </TableRow>
-                                    </TableHead>
-                                    <TableBody>
-                                        {(board ?? []).map((row) => (
-                                            <TableRow
-                                                key={row.user_id}
-                                                hover
-                                                onClick={() =>
-                                                    void openPlayer(row.user_id)
-                                                }
-                                                sx={{ cursor: 'pointer' }}
-                                            >
-                                                <TableCell sx={cellSx}>
-                                                    {nameOf(row)}
-                                                    <Box
-                                                        component="span"
-                                                        sx={{
-                                                            color: colors.muted,
-                                                            fontSize: 12,
-                                                            ml: 1,
-                                                        }}
-                                                    >
-                                                        {row.rating}
-                                                    </Box>
-                                                </TableCell>
-                                                <TableCell
-                                                    sx={cellSx}
-                                                    align="center"
-                                                >
-                                                    <BandChip
-                                                        band={row.review_band}
-                                                        score={row.risk_score}
-                                                    />
-                                                </TableCell>
-                                                <TableCell
-                                                    sx={cellSx}
-                                                    align="center"
-                                                >
-                                                    {row.scored_answers}
-                                                </TableCell>
-                                                <TableCell
-                                                    sx={cellSx}
-                                                    align="center"
+                                                <Typography
+                                                    sx={{
+                                                        fontSize: 28,
+                                                        fontWeight: 800,
+                                                        fontVariantNumeric:
+                                                            'tabular-nums',
+                                                    }}
                                                 >
                                                     {formatPercent(
                                                         row.accuracy
                                                     )}
-                                                    <Box
-                                                        component="span"
-                                                        sx={{
-                                                            color: colors.muted,
-                                                            fontSize: 12,
-                                                            ml: 0.5,
-                                                        }}
-                                                    >
-                                                        exp{' '}
-                                                        {formatPercent(
-                                                            row.expected_accuracy
-                                                        )}
-                                                    </Box>
-                                                </TableCell>
-                                                <TableCell
-                                                    sx={cellSx}
-                                                    align="center"
+                                                </Typography>
+                                                <Typography
+                                                    sx={{
+                                                        color: colors.muted,
+                                                        fontSize: 14,
+                                                    }}
                                                 >
-                                                    {formatZ(row.z_score)}
-                                                </TableCell>
-                                                <TableCell
-                                                    sx={cellSx}
-                                                    align="center"
-                                                >
-                                                    {formatSeconds(
-                                                        row.median_answer_ms
+                                                    expected{' '}
+                                                    {formatPercent(
+                                                        row.expected_accuracy
                                                     )}
-                                                    <Box
-                                                        component="span"
+                                                </Typography>
+                                            </Stack>
+                                            <Typography
+                                                sx={{
+                                                    color: colors.muted,
+                                                    fontSize: 12,
+                                                    mt: 0.5,
+                                                }}
+                                            >
+                                                {row.scored_answers} comparable
+                                                answers ·{' '}
+                                                {row.scored_answers < 40
+                                                    ? 'Limited comparison history'
+                                                    : 'Review the supporting evidence'}
+                                            </Typography>
+                                        </Box>
+                                        <Box
+                                            sx={{
+                                                display: 'grid',
+                                                gridTemplateColumns:
+                                                    'repeat(3, minmax(0, 1fr))',
+                                                gap: 1,
+                                            }}
+                                        >
+                                            {[
+                                                [
+                                                    'Z score',
+                                                    formatZ(row.z_score),
+                                                    'Baseline distance',
+                                                ],
+                                                [
+                                                    'Receipt gap',
+                                                    formatSeconds(
+                                                        row.median_answer_ms
+                                                    ),
+                                                    `${row.timed_answers} timed`,
+                                                ],
+                                                [
+                                                    'App exits',
+                                                    String(
+                                                        row.background_events
+                                                    ),
+                                                    'Recorded events',
+                                                ],
+                                            ].map(([label, value, detail]) => (
+                                                <Box key={label}>
+                                                    <Typography
                                                         sx={{
                                                             color: colors.muted,
                                                             fontSize: 12,
-                                                            ml: 0.5,
                                                         }}
                                                     >
-                                                        {row.timed_answers}{' '}
-                                                        timed
-                                                    </Box>
-                                                </TableCell>
-                                                <TableCell
-                                                    sx={cellSx}
-                                                    align="center"
-                                                >
-                                                    {row.background_events}
-                                                </TableCell>
-                                                <TableCell
-                                                    sx={cellSx}
-                                                    align="center"
-                                                >
-                                                    {row.actively_restricted
-                                                        ? 'Yes'
-                                                        : 'No'}
-                                                </TableCell>
-                                            </TableRow>
-                                        ))}
-                                    </TableBody>
-                                </Table>
+                                                        {label}
+                                                    </Typography>
+                                                    <Typography
+                                                        sx={{
+                                                            fontSize: 19,
+                                                            fontWeight: 700,
+                                                            my: 0.5,
+                                                        }}
+                                                    >
+                                                        {value}
+                                                    </Typography>
+                                                    <Typography
+                                                        sx={{
+                                                            color: colors.muted,
+                                                            fontSize: 11,
+                                                        }}
+                                                    >
+                                                        {detail}
+                                                    </Typography>
+                                                </Box>
+                                            ))}
+                                        </Box>
+                                        <Button
+                                            fullWidth
+                                            onClick={() =>
+                                                void openPlayer(row.user_id)
+                                            }
+                                            sx={{
+                                                mt: 2,
+                                                minHeight: 44,
+                                                color: colors.accent,
+                                                border: `1px solid ${colors.border}`,
+                                                borderRadius: 2,
+                                                textTransform: 'none',
+                                            }}
+                                        >
+                                            View evidence and score breakdown
+                                        </Button>
+                                    </Box>
+                                ))}
                             </Box>
                         )}
+                        <Box sx={{ mt: 3 }}>
+                            <Glossary />
+                        </Box>
                     </>
                 )}
             </Container>

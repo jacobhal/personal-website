@@ -160,6 +160,33 @@ const renderPage = async () => {
 }
 
 describe('integrity panel with live-shaped data', () => {
+    test('definitions start collapsed and open one metric at a time', async () => {
+        await renderPage()
+        const glossary = screen.getByRole('button', {
+            name: 'What the numbers mean',
+        })
+        expect(glossary.getAttribute('aria-expanded')).toBe('false')
+        await userEvent.click(glossary)
+        const metric = screen.getByRole('button', { name: 'Z score' })
+        expect(metric.getAttribute('aria-expanded')).toBe('false')
+        await userEvent.click(metric)
+        expect(metric.getAttribute('aria-expanded')).toBe('true')
+    })
+
+    test('player summaries expose an accessible review action', async () => {
+        await renderPage()
+        const review = screen.getByRole('button', { name: 'Review ananya' })
+        await userEvent.click(review)
+        await waitFor(() =>
+            expect(
+                screen.getByText('Why this account is on the board')
+            ).toBeTruthy()
+        )
+        expect(document.activeElement?.getAttribute('aria-label')).toBe(
+            'Player evidence'
+        )
+    })
+
     test('the header states the population and the email floor', async () => {
         await renderPage()
 
@@ -203,7 +230,9 @@ describe('integrity panel with live-shaped data', () => {
         expect(screen.getByText('2 of 2')).toBeTruthy()
         expect(screen.getAllByText('0 of 5').length).toBe(1)
         expect(
-            screen.getByText(/Limited comparison history: 16 comparable answers/)
+            screen.getByText(
+                /Limited comparison history: 16 comparable answers/
+            )
         ).toBeTruthy()
     })
 
@@ -269,8 +298,8 @@ describe('integrity panel with live-shaped data', () => {
     test('every column on the page is defined in plain language', async () => {
         await renderPage()
 
-        expect(screen.getByText('What every column means')).toBeTruthy()
-        expect(screen.getByText('Z score')).toBeTruthy()
+        expect(screen.getByText('What the numbers mean')).toBeTruthy()
+        expect(screen.getAllByText('Z score').length).toBeGreaterThan(0)
         expect(
             screen.getByText(/It measures surprise, not skill or guilt/)
         ).toBeTruthy()
@@ -299,7 +328,7 @@ describe('integrity panel with live-shaped data', () => {
         expect(screen.getByText('Wrong')).toBeTruthy()
         expect(screen.getByText('80.0%')).toBeTruthy()
         expect(screen.getByText('4 total attempts')).toBeTruthy()
-        expect(screen.getByText('Receipt gap')).toBeTruthy()
+        expect(screen.getAllByText('Receipt gap').length).toBeGreaterThan(0)
         expect(
             screen.getAllByText('Comparable-answer accuracy').length
         ).toBeGreaterThan(1)

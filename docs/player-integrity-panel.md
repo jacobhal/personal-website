@@ -12,12 +12,12 @@ proof of anything on its own.
 - **Header counts.** Ranked accounts tracked in the window, how many clear the
   40-answer floor the weekly email uses, how many the algorithm has flagged, and
   how many are currently restricted.
-- **Review board.** One row per account with at least N comparable answers,
+- **Review board.** One card per account with at least N comparable answers,
   most suspicious first. Band, answer count, accuracy against the accuracy the
   question difficulties predict, z score, median answer time, app exits during
   ranked questions, and whether the account is restricted.
-- **Player card.** Every figure beside the population median for the same
-  window, coloured by which side of it the player sits on, plus the sample sizes
+- **Player card.** Expandable score rules and individual answer cards. Every
+  figure sits beside the population median for the same window, plus the sample sizes
   each figure rests on and the player's recent ranked answers with the share of
   other players who got each one right.
 
@@ -40,6 +40,17 @@ leaving it to be misread.
 
 Answer timings come from server receipt timestamps on `challenge_rounds`, so
 rows answered before that trigger existed show no time at all.
+
+## Mobile review
+
+The board uses one column on phones and two on larger screens. Names, accuracy
+against expected accuracy, and sample counts stay together. Selecting a player
+moves keyboard focus to their evidence. Score rules and metric definitions open
+individually, and the longer review guidance starts closed.
+
+The page cannot send warnings. Scores never trigger an automatic restriction.
+A neutral fair-play reminder may be appropriate when evidence is uncertain, but
+sending one needs a separate authorised workflow.
 
 ## First-time setup
 
