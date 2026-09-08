@@ -1,3 +1,4 @@
+import { IntegrityAdmin } from './IntegrityAdmin'
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import {
@@ -473,10 +474,10 @@ const PlayerPanel: React.FC<{ report: PlayerReport }> = ({ report }) => {
                         when there is no cheating evidence.
                     </Box>
                     <Box sx={{ mt: 1.5, color: colors.muted }}>
-                        This page is read-only. It cannot send a warning or
-                        restrict an account. A neutral fair-play reminder is an
-                        option when evidence is uncertain, but this score alone
-                        does not justify accusing a player.
+                        Only authorised admins can send a reminder. This page
+                        cannot restrict an account. A neutral fair-play reminder
+                        is an option when evidence is uncertain, but this score
+                        alone does not justify accusing a player.
                     </Box>
                 </AccordionDetails>
             </Accordion>
@@ -804,9 +805,15 @@ export const Integrity: React.FC = () => {
                     Player integrity
                 </Typography>
                 <Typography sx={{ color: colors.muted, fontSize: 14, mb: 3 }}>
-                    Review priorities, never proof of cheating. This page is
-                    read-only.
+                    Review priorities, never proof of cheating. Viewing is
+                    read-only; only authorised admins can send reminders.
                 </Typography>
+
+                <IntegrityAdmin
+                    userId={player?.player.user_id}
+                    playerName={player ? nameOf(player.player) : undefined}
+                    restricted={player?.player.actively_restricted}
+                />
 
                 {error && (
                     <Alert

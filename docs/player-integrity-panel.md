@@ -1,7 +1,7 @@
 # Player integrity panel
 
 `https://jacobhal.se/skarp/integrity` — unlisted, `Disallow`ed in robots.txt,
-and opened with its own passphrase. Read-only.
+and opened with its own viewing passphrase. Sending reminders requires a separate admin account.
 
 It answers one question: does this player's ranked record look different from
 everybody else's, and by how much. It cannot restrict an account, and it is not
@@ -48,9 +48,12 @@ against expected accuracy, and sample counts stay together. Selecting a player
 moves keyboard focus to their evidence. Score rules and metric definitions open
 individually, and the longer review guidance starts closed.
 
-The page cannot send warnings. Scores never trigger an automatic restriction.
-A neutral fair-play reminder may be appropriate when evidence is uncertain, but
-sending one needs a separate authorised workflow.
+The shared passphrase grants viewing access only. The Admin reminders section
+uses a separate Supabase Auth account and a server-maintained allowlist. An admin
+can send a neutral reminder after reviewing evidence, with a private note and an
+evidence reference. History shows sent, displayed and acknowledged timestamps.
+The server blocks duplicate evidence, another pending reminder and reminders
+within 30 days. Scores never trigger reminders or restrictions automatically.
 
 ## First-time setup
 
@@ -107,3 +110,6 @@ need a real signed-in admin role first.
 | `client/src/services/integrityStore.ts` | The four read RPCs |
 | `quiz-app` `20260904160000_web_integrity_review_panel.sql` | Shared scoring, passphrase gate, board / search / player |
 | `quiz-app` `20260904170000_web_integrity_overview.sql` | Header counts and the passphrase signal |
+
+Admin setup is documented in `quiz-app/docs/fair_play_reminders.md`. Deploy the
+new migration, website and app before inviting the dedicated admin account.
