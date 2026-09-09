@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-09T10:06:27.366737Z",
+  "updated": "2026-09-09T14:32:58.325181Z",
   "window_days": 365,
   "proven_members": [
     "David Rouzer",
@@ -9,6 +9,40 @@
     "Warren Davidson"
   ],
   "filings": [
+    {
+      "name": "Mike Kelly",
+      "last": "Kelly",
+      "first": "Mike",
+      "filing_type": "P",
+      "filing_date": "2026-09-08",
+      "year": "2026",
+      "doc_id": "20035403",
+      "pdf_url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035403.pdf",
+      "proven": false,
+      "trades": [
+        {
+          "owner": "spouse",
+          "asset": "New Jersey St 19 GO Emer Go 5% due",
+          "ticker": null,
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-28",
+          "amount_low": 50001,
+          "amount_high": 100000
+        },
+        {
+          "owner": "spouse",
+          "asset": "Mississippi St Ref Go P/R 10/1/27 5%",
+          "ticker": null,
+          "side": "sell",
+          "instrument": "shares",
+          "txn_date": "2026-08-17",
+          "amount_low": 50001,
+          "amount_high": 100000
+        }
+      ],
+      "trades_version": 1
+    },
     {
       "name": "Rohit Khanna",
       "last": "Khanna",
