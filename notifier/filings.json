@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-20T23:13:14.470308Z",
+  "updated": "2026-09-21T01:08:05.398618Z",
   "window_days": 365,
   "proven_members": [
     "David Rouzer",
@@ -34932,15 +34932,6 @@
       "approx_dollars": 16000
     },
     {
-      "ticker": "FN",
-      "member_count": 1,
-      "members": [
-        "Josh Gottheimer"
-      ],
-      "trade_count": 2,
-      "approx_dollars": 16000
-    },
-    {
       "ticker": "LLY",
       "member_count": 1,
       "members": [
@@ -34978,6 +34969,15 @@
     },
     {
       "ticker": "QSR",
+      "member_count": 1,
+      "members": [
+        "Josh Gottheimer"
+      ],
+      "trade_count": 1,
+      "approx_dollars": 8000
+    },
+    {
+      "ticker": "GOOGM",
       "member_count": 1,
       "members": [
         "Josh Gottheimer"
